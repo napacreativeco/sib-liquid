@@ -1,14 +1,14 @@
 {
-    "sections": {
-      "james": {
-        "type": "james",
-        "settings": {
-          "title": ""
-        }
+  "sections": {
+    "main": {
+      "type": "james",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
       }
-    },
-    "order": [
-      "james"
-    ]
-  }
-  
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
