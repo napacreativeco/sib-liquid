@@ -1,0 +1,14 @@
+{
+    "sections": {
+      "james": {
+        "type": "james",
+        "settings": {
+          "title": ""
+        }
+      }
+    },
+    "order": [
+      "james"
+    ]
+  }
+  
