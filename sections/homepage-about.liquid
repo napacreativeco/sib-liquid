@@ -1,12 +1,20 @@
-<div class="about-component">
+<section class="about-component">
   <div class="about-wrapper">
   
-    <div>{{ section.settings.about_title }}</div>
+    <div class="title">
+      <h2>{{ section.settings.about_title }}</h2>
+    </div>
 
-    <div>{{ section.settings.about_tagline }}</div>
+    <div class="tagline">
+      <span>{{ section.settings.about_tagline }}</span>
+    </div>
+
+    <div class="content">
+      <p>{{ section.settings.about_body }}</p>
+    </div>
 
   </div>
-</div>
+</section>
 
 {% schema %}
 {
@@ -33,7 +41,13 @@
       "id": "about_tagline",
       "label": "Tagline",
       "default": "based on a true story"
-  }
+    },
+    {
+      "type": "textarea",
+      "id": "about_body",
+      "label": "Body Text",
+      "default": "siberia hills is an idea created in the himalayas during soviet union era by daf of siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops"
+    }
   ],
   "presets": [
     {
