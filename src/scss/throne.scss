@@ -1,0 +1,41 @@
+@import 'reset.scss';
+
+@font-face {
+  font-family: 'MingLiU';
+  src: url('./MingLiU.eot');
+  src: url('./MingLiU.eot?#iefix') format('embedded-opentype'),
+      url('./MingLiU.woff2') format('woff2'),
+      url('./MingLiU.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+  
+  
+/* Root */
+:root {
+
+  --mingliu: 'MingLiU';
+  --siberia-blue: #B6FFFE;
+  --black: #00241D;
+  --dark-grey: #555555;
+  --white: #ffffff;
+  --red: #FF0000;
+  --blue: #403F8B;
+  --thin: 960px;
+}
+
+body {
+  font-family: 'Times New Roman';
+  font-size: 100%;
+  line-height: 1;
+}
+
+main.page-container {
+  position: relative;
+}
+
+.page-component {
+  display: none;
+}
+
+@import 'navbar.scss';
