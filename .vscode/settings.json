@@ -7,11 +7,13 @@
     "editor.formatOnSave": true
   },
   "[liquid]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false
   },
   "workbench.colorCustomizations": {
     "activityBar.background": "#1E3038",
-    "titleBar.activeBackground": "#2A434E",
+    "titleBar.activeBackground": "#4f0999",
     "titleBar.activeForeground": "#F9FBFC"
-  }
+  },
+  "emmet.includeLanguages": { "liquid": "html" },
 }
+

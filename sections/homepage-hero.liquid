@@ -1,1 +1,55 @@
-homepage hero
+<section class="homepage-hero">
+  <div class="hero-wrapper">
+    <div class="left">
+    
+        <ul>
+          <li>
+            <span data-component="shop-component">
+              {{ 'Shop' | escape }}
+            </span>
+          </li>
+          <li>
+            <span data-component="about-component">
+              {{ 'About' | escape }}
+            </span>
+          </li>
+          <li>
+            <span data-component="contact-component">
+              {{ 'Contact' | escape }}
+            </span>
+          </li>
+          <li>
+            <span data-component="lookbook-component">
+              {{ 'Lookbook' | escape }}
+            </span>
+          </li>
+          <li></li>
+        </ul>
+
+    </div>
+    <div class="right">section images</div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_background_desktop",
+      "label": "Background (Desktop)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}

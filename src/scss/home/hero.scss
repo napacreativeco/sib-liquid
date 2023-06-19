@@ -1,0 +1,13 @@
+.homepage-hero {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .hero-wrapper {
+        display: grid;
+        grid-template-columns: 50% 1fr;
+    }
+}

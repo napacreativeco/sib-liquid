@@ -1,0 +1,31 @@
+<div class="page-component about-component">
+About component: {{ section.settings.about_featured_image }}
+</div>
+
+{% schema %}
+{
+  "name": "About",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "about_featured_image",
+      "label": "Background (Desktop)"
+    },
+    {
+        "type": "text",
+        "id": "about_title",
+        "label": "About Title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About"
+    }
+  ]
+}
+{% endschema %}

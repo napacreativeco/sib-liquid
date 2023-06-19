@@ -9,10 +9,15 @@
       "settings": {
         "collection": "all"
       }
+    },
+    "about_component": {
+        "type": "homepage-about",
+        "settings": {}
     }
   },
   "order": [
     "hero",
-    "home_collection"
+    "home_collection",
+    "about_component"
   ]
 }

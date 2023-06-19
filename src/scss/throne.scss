@@ -38,4 +38,5 @@ main.page-container {
   display: none;
 }
 
-@import 'navbar.scss';
+@import './navbar.scss';
+@import './home/hero.scss';
