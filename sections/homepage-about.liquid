@@ -1,5 +1,11 @@
-<div class="page-component about-component">
-About component: {{ section.settings.about_featured_image }}
+<div class="about-component">
+  <div class="about-wrapper">
+  
+    <div>{{ section.settings.about_title }}</div>
+
+    <div>{{ section.settings.about_tagline }}</div>
+
+  </div>
 </div>
 
 {% schema %}
@@ -20,11 +26,20 @@ About component: {{ section.settings.about_featured_image }}
         "type": "text",
         "id": "about_title",
         "label": "About Title"
-    }
+    },
+    {
+      "type": "text",
+      "id": "about_tagline",
+      "label": "Tagline"
+  }
   ],
   "presets": [
     {
-      "name": "About"
+      "name": "About",
+      "settings": {
+          "about_title": "about",
+          "about_tagline": "based on a true story"
+      }
     }
   ]
 }

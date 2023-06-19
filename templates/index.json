@@ -11,7 +11,7 @@
         "collection": "all"
       }
     },
-    "about_component": {
+    "about": {
       "type": "homepage-about",
       "settings": {
         "about_featured_image": "shopify:\/\/shop_images\/277984898_1096288294548636_6181915236425730110_n.jpg",
@@ -22,6 +22,6 @@
   "order": [
     "hero",
     "home_collection",
-    "about_component"
+    "about"
   ]
 }
