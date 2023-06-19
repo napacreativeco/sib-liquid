@@ -2,7 +2,8 @@
   "sections": {
     "hero": {
       "type": "homepage-hero",
-      "settings": {}
+      "settings": {
+      }
     },
     "home_collection": {
       "type": "homepage-collection",
@@ -11,8 +12,11 @@
       }
     },
     "about_component": {
-        "type": "homepage-about",
-        "settings": {}
+      "type": "homepage-about",
+      "settings": {
+        "about_featured_image": "shopify:\/\/shop_images\/277984898_1096288294548636_6181915236425730110_n.jpg",
+        "about_title": "this is the title"
+      }
     }
   },
   "order": [
