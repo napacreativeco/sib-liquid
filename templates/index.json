@@ -8,7 +8,7 @@
     "home_collection": {
       "type": "homepage-collection",
       "settings": {
-        "collection": "all"
+        "collection": "frontpage"
       }
     },
     "about": {
