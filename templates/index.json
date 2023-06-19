@@ -1,5 +1,8 @@
 {
   "sections": {
+    "throne_hero": {
+      "type": "throne-hero"
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -58,6 +61,7 @@
     }
   },
   "order": [
+    "throne_hero",
     "featured_collection",
     "featured_collection_second"
   ]
