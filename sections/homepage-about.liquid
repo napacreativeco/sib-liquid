@@ -1,17 +1,32 @@
 <section class="about-component">
   <div class="about-wrapper">
+
+    <div class="left">
+
+      <div class="title">
+        <h2>{{ section.settings.about_title }}</h2>
+      </div>
   
-    <div class="title">
-      <h2>{{ section.settings.about_title }}</h2>
+      <div class="tagline">
+        <span>{{ section.settings.about_tagline }}</span>
+      </div>
+  
+      <div class="content">
+        <p>{{ section.settings.about_body }}</p>
+      </div>
+
     </div>
 
-    <div class="tagline">
-      <span>{{ section.settings.about_tagline }}</span>
+    <div class="right">
+      <div class="featured-image">
+        <img src="{{ section.settings.about_featured_image | image_url }}" alt="" />
+      </div>
+      <div class="question-mark">
+        <img src="{{ section.settings.about_question_mark | image_url }}" alt="" />
+      </div>
     </div>
+  
 
-    <div class="content">
-      <p>{{ section.settings.about_body }}</p>
-    </div>
 
   </div>
 </section>
@@ -28,7 +43,12 @@
     {
       "type": "image_picker",
       "id": "about_featured_image",
-      "label": "Background (Desktop)"
+      "label": "Featured Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "about_question_mark",
+      "label": "Question Mark"
     },
     {
         "type": "text",
