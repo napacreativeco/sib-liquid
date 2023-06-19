@@ -1,1 +1,32 @@
 this is the hero
+
+<ul>
+  {%- for product in section.settings.collection.products limit: 16 -%}
+    <li>
+      {{ product.title }}
+    </li>
+  {%- endfor -%}
+</ul>
+
+{% schema %}
+{
+  "name": "t:sections.featured-collection.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "t:sections.featured-collection.settings.collection.label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.featured-collection.presets.name"
+    }
+  ]
+}
+{% endschema %}

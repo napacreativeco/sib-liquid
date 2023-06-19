@@ -1,7 +1,10 @@
 {
   "sections": {
     "throne_hero": {
-      "type": "throne-hero"
+      "type": "throne-hero",
+      "settings": {
+        "collection": "all"
+      }
     },
     "featured_collection": {
       "type": "featured-collection",
