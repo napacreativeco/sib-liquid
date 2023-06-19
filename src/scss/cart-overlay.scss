@@ -1,0 +1,93 @@
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--white);
+    z-index: 8;
+    display: flex;
+    justify-content: center;
+
+    .cart-overlay-wrapper {
+        padding-top: 140px;
+
+        width: 100%;
+        max-width: var(--thin);
+
+        .subtotal {
+            border-top: var(--border-blk);
+            border-bottom: var(--border-blk);
+            padding: 20px 0;
+        }
+
+        .subtotal-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .buttons {
+            .checkout-button {
+                background: transparent;
+                color: var(--black);
+                border: var(--border-blk);
+                padding: 10px 20px;
+            }
+
+            .update-cart {
+                background: transparent;
+                color: var(--black);
+                border: var(--border-blk);
+                padding: 10px 20px;
+            }
+        }
+
+        table {
+            width: 100%;
+
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        ul.cart-items {
+
+            li.cart-item {
+                .cart-item-wrapper {
+                    display: grid;
+                    grid-template-columns: 2fr 4fr 2fr 2fr 1fr 1fr 1fr;
+                    align-items: center;
+                }
+
+                .quantity-wrapper {
+                    display: grid;
+                    grid-template-columns: 1fr 2fr 1fr;
+                    align-items: center;
+                }
+
+                .quantity:after,
+                .quantity:before {
+                    display: none;
+                }
+
+                .quantity button {
+                    border: 0;
+                    outline: 0;
+                    background: transparent;
+                    border-radius: 0;
+                    padding: 0;
+                }
+
+                input:focus {
+                    outline: 0;
+                    border: 0;
+                }
+            }
+
+        }
+
+    }
+
+}
