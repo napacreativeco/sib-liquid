@@ -1,47 +1,18 @@
 {
   "sections": {
-    "homepage_hero": {
-      "type": "throne--homepage-hero",
+    "hero": {
+      "type": "homepage-hero",
       "settings": {}
     },
-    "homepage_collection": {
-      "type": "throne--homepage-collection",
+    "home_collection": {
+      "type": "homepage-collection",
       "settings": {
         "collection": "all"
-      }
-    },
-    "featured_collection_original": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured Collection",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "homepage_hero",
-    "homepage_collection",
-    "featured_collection_original"
+    "hero",
+    "home_collection"
   ]
 }
