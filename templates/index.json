@@ -4,7 +4,9 @@
       "type": "homepage-hero",
       "settings": {
         "hero_background_desktop": "shopify:\/\/shop_images\/BG_WIDE.png",
-        "hero_cloud": "shopify:\/\/files\/videos\/siberia_cloud_variant_loop_02_preview.mp4"
+        "hero_cloud": "shopify:\/\/files\/videos\/siberia_cloud_variant_loop_02_preview.mp4",
+        "hero_top_left": "shopify:\/\/files\/videos\/topleft_video.mp4",
+        "hero_top_right": "shopify:\/\/files\/videos\/topright_video.mp4"
       }
     },
     "home_collection": {
