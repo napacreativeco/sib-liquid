@@ -1,8 +1,11 @@
 <section class="homepage-hero">
+
+  <div class="hero-image hero-image-desktop" style="background: url({{ section.settings.hero_background_desktop | image_url }}); background-size: cover; background-position: center center;">&nbsp;</div>
+  <div class="hero-image hero-image-mobile" style="background: url({{ section.settings.hero_background_mobile | image_url: width: 700 }}); background-size: cover; background-position: center center;">&nbsp;</div>
+
   <div class="hero-wrapper">
     <div class="left">
 
-        {{ section.settings.hero_background_desktop }}
         <div class="hero-logo">
           <img src="{{ 'logo.svg' | asset_url }}" alt="Siberia" />
         </div>
@@ -32,7 +35,11 @@
         </ul>
 
     </div>
-    <div class="right">section images</div>
+
+    <div class="right">
+      section images
+    </div>
+
   </div>
 </section>
 <script>
@@ -63,6 +70,31 @@
       "type": "image_picker",
       "id": "hero_background_mobile",
       "label": "Background (Mobile)"
+    },
+    {
+      "type": "video",
+      "id": "hero_cloud",
+      "label": "Cloud"
+    },
+    {
+      "type": "video",
+      "id": "hero_top_left",
+      "label": "Floating Image (Top Left)"
+    },
+    {
+      "type": "video",
+      "id": "hero_top_right",
+      "label": "Floating Image (Top Right)"
+    },
+    {
+      "type": "video",
+      "id": "hero_bottom_left",
+      "label": "Floating Image (Bottom Left)"
+    },
+    {
+      "type": "video",
+      "id": "hero_bottom_right",
+      "label": "Floating Image (Bottom Right)"
     }
   ],
   "presets": [
