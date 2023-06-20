@@ -3,15 +3,13 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "price": {
+            "type": "price"
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
             "picker_type": "button"
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {
           }
         },
         "buy_buttons": {
@@ -23,8 +21,8 @@
         }
       },
       "block_order": [
+        "price",
         "variant_picker",
-        "quantity_selector",
         "buy_buttons"
       ],
       "settings": {
