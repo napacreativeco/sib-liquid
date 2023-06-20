@@ -1,7 +1,7 @@
 {
   "editor.formatOnSave": false,
   "[javascript]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false
   },
   "[css]": {
     "editor.formatOnSave": true
@@ -10,8 +10,8 @@
     "editor.formatOnSave": false
   },
   "workbench.colorCustomizations": {
-    "activityBar.background": "#1E3038",
-    "titleBar.activeBackground": "#4f0999",
+    // "activityBar.background": "#1E3038",
+    "titleBar.activeBackground": "#630181",
     "titleBar.activeForeground": "#F9FBFC"
   },
   "emmet.includeLanguages": { "liquid": "html" },

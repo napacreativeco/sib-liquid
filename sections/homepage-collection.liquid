@@ -1,4 +1,4 @@
-<section class="shop-component">
+<section class="shop-component page-component">
   <div class="shop-component-wrapper">
   
     {% render 'throne-grid-changer' %}
@@ -12,7 +12,9 @@
             <div class="product-image">
               {% for image in product.media limit: 1 %}
                 <div class="image">
-                  <img src="{{ image | image_url }}" alt="{{ product.title }}" />
+                  <a href="{{ product.url }}" title="{{ product.title }}">
+                    <img src="{{ image | image_url: width: 700 }}" alt="{{ product.title }}" />
+                  </a>
                 </div>
               {% endfor %}
             </div>
@@ -22,15 +24,21 @@
               <div class="product-data-wrapper">
               
                 <div class="vendor">
-                  <span>{{ product.vendor }}</span>
+                  <a href="{{ product.url }}" title="{{ product.title }}">
+                    <span>{{ product.vendor }}</span>
+                  </a>
                 </div>
               
                 <div class="name">
-                  <h3>{{ product.title }}</h3>
+                  <a href="{{ product.url }}" title="{{ product.title }}">
+                    <h3>{{ product.title }}</h3>
+                  </a>
                 </div>
     
                 <div class="price">
-                  <span>{{ product.price | money_without_trailing_zeros }}</span>
+                  <a href="{{ product.url }}" title="{{ product.title }}">
+                    <span>{{ product.price | money_without_trailing_zeros }}</span>
+                  </a>
                 </div>
 
               </div>

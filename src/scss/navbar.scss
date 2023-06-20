@@ -23,10 +23,17 @@
         width: 100%;
     }
 
+    .logo {
+        padding-left: 20px;
+    }
     .logo img {
         max-width: 120px;
     }
 
+    .hamburger {
+        padding-right: 10px;
+        cursor: pointer;
+    }
     .hamburger img {
         max-width: 64px;
     }

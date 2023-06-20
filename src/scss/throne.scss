@@ -20,29 +20,28 @@
   --white: #ffffff;
   --red: #FF0000;
   --blue: #403F8B;
+  --light-blue: #B6FFFE;
   --thin: 1000px;
   --border-blk: 1px solid var(--black);
+  --side-padding: 12px;
 }
 
 body {
   font-family: 'Times New Roman', serif;
   font-size: 100%;
   line-height: 1;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 main.page-container {
   position: relative;
   width: 100%;
-  max-width: calc(100% - 24px);
+  max-width: 100%;
   padding: 0 12px;
 }
 
-.page-component {
-  display: none;
-  width: 100%;
-  max-width: var(--thin);
-  margin: 0 auto;
-}
+
 
 img {
   z-index: 1;
@@ -54,3 +53,16 @@ img {
 @import './home/hero.scss';
 @import './home/shop.scss';
 @import './home/about.scss';
+@import './home/marquee.scss';
+@import './home/newsletter-modal.scss';
+
+.page-component {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  max-width: var(--thin);
+  margin: 0 auto;
+}
+
+
+

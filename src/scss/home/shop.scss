@@ -4,6 +4,8 @@
     max-width: 100%;
     display: flex;
     justify-content: center;
+    padding-top: 120px;
+    padding-bottom: 80px;
 
     .shop-component-wrapper {
 
@@ -13,7 +15,7 @@
         ul.products.grid {
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(4, 25%);
+            grid-template-columns: repeat(4, 1fr);
             grid-gap: 20px;
 
             li.item {
@@ -21,6 +23,14 @@
                     max-width: 100%;
                 }
     
+                a {
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                }
+
                 .product-data {
     
                     .vendor {

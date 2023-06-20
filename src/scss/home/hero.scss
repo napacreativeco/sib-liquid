@@ -11,5 +11,44 @@
         max-width: var(--thin);
         display: grid;
         grid-template-columns: 50% 1fr;
+
+        .left {
+            padding-left: var(--side-padding);
+
+            .hero-logo {
+                display: block;
+                margin-bottom: 80px;
+                img {   
+                    width: 350px;
+                    max-width: 100%;
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                li {
+                    width: 100%;
+                }
+            }
+
+            .scroll-to-link {
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            .scroll-to-link:hover {
+                font-weight: bold;
+                text-decoration: underline;
+            }
+
+        }
+
+        .right {
+            padding-right: var(--side-padding);
+        }
+
     }
 }
