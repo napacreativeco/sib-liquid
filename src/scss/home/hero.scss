@@ -67,6 +67,13 @@
 
         .right {
             padding-right: var(--side-padding);
+
+            .cloud-holder {
+                video {
+                    width: 50vw;
+                    max-width: 475px;
+                }
+            }
         }
 
     }

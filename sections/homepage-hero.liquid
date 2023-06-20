@@ -37,7 +37,12 @@
     </div>
 
     <div class="right">
-      section images
+      
+
+      <div class="cloud-holder">
+        {{ section.settings.hero_cloud | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+      </div>
+
     </div>
 
   </div>
@@ -79,20 +84,20 @@
     {
       "type": "video",
       "id": "hero_top_left",
-      "label": "Floating Image (Top Left)"
+      "label": "Floating Video (Top Left)"
     },
     {
       "type": "video",
       "id": "hero_top_right",
-      "label": "Floating Image (Top Right)"
+      "label": "Floating Video (Top Right)"
     },
     {
-      "type": "video",
+      "type": "image_picker",
       "id": "hero_bottom_left",
       "label": "Floating Image (Bottom Left)"
     },
     {
-      "type": "video",
+      "type": "image_picker",
       "id": "hero_bottom_right",
       "label": "Floating Image (Bottom Right)"
     }
