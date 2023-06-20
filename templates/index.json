@@ -3,7 +3,8 @@
     "hero": {
       "type": "homepage-hero",
       "settings": {
-        "hero_background_desktop": "shopify:\/\/shop_images\/BG_WIDE.png"
+        "hero_background_desktop": "shopify:\/\/shop_images\/BG_WIDE.png",
+        "hero_cloud": "shopify:\/\/files\/videos\/siberia_cloud_variant_loop_02_H.264.mp4"
       }
     },
     "home_collection": {
