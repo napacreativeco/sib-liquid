@@ -3,8 +3,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "price": {
-            "type": "price"
+        "9dc20cbf-947d-411f-8e1b-eb7481ecbdce": {
+          "type": "price",
+          "settings": {
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -21,7 +23,7 @@
         }
       },
       "block_order": [
-        "price",
+        "9dc20cbf-947d-411f-8e1b-eb7481ecbdce",
         "variant_picker",
         "buy_buttons"
       ],
