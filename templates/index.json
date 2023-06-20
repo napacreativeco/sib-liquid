@@ -3,6 +3,7 @@
     "hero": {
       "type": "homepage-hero",
       "settings": {
+        "hero_background_desktop": "shopify:\/\/shop_images\/BG_WIDE.png"
       }
     },
     "home_collection": {
@@ -24,12 +25,13 @@
     "marquee": {
       "type": "homepage-marquee",
       "settings": {
-        "marquee_content": "our fabric is our honor let the last "
+        "marquee_content": "our fabric is our honor let the last"
       }
     },
     "newsletter": {
       "type": "homepage-newsletter-modal",
-      "settings": {}
+      "settings": {
+      }
     }
   },
   "order": [
