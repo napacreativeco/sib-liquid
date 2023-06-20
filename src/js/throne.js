@@ -98,10 +98,16 @@
           
     /* Newsletter Popup */
     setTimeout(function() {
-        gsap.to(".newsletter-modal", {
-        display: "flex",
+        gsap.to(".shopify-section:has(.newsletter-modal)", {
+          display: "flex",
         });
-    }, 15000);
+    }, 1500);
+
+    $('.newsletter-close').on('click', function() {
+      gsap.to(".shopify-section:has(.newsletter-modal)", {
+        display: "none",
+      });
+    });
       
 
 
@@ -117,7 +123,7 @@ MARQUEE
 const wrapper = document.querySelector(".wrapper");
 const colors = ["#f38630","#6fb936", "#ccc", "#6fb936"];
 const boxes = gsap.utils.toArray(".box");
-console.clear();
+// console.clear();
 // gsap.set(boxes , {
 //   backgroundColor: gsap.utils.wrap(colors)
 // });

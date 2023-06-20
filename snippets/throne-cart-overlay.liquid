@@ -8,7 +8,7 @@
 </style>
 
 <div class="cart-overlay" data-displayed="true">
-    <div class="cart-overlay-wrapper">
+    <div class="cart-overlay-wrapper"  data-ajax-cart-section>
 
 
         {% comment %} <div id="CartDrawer-Overlay" class="cart-drawer__overlay"></div> {% endcomment %}
@@ -91,6 +91,7 @@
                                                         </button>
     
                                                         <input
+                                                            data-ajax-cart-quantity-input="{{ forloop.index }}"
                                                             type="number"
                                                             data-quantity-variant-id="{{ item.variant.id }}"
                                                             name="updates[]"
@@ -186,11 +187,7 @@
                                             </div>
 
                                             <div class="delete">
-                                                <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-                                                    <button type="button" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
-                                                        delete
-                                                    </button>
-                                                </cart-remove-button>                                         
+                                                <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0">&times;</a>                                         
                                             </div>
 
                                         </div>
@@ -205,6 +202,11 @@
                             <p id="CartDrawer-LineItemStatus" class="visually-hidden" aria-hidden="true" role="status">
                                 {{ 'accessibility.loading' | t }}
                             </p>
+                        </div>
+
+                        <!-- Container for errors -->
+                        <div class="ajax-messages">
+                            <div data-ajax-cart-messages="{{ item.key }}"></div>
                         </div>
 
                         <div id="CartDrawer-CartErrors" role="alert"></div>

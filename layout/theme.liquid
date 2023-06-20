@@ -284,12 +284,55 @@
       {{ content_for_layout }}
     </main>
 
+    
     <script src="{{ 'jquery.min.js' | asset_url }}"></script>
     <script src="{{ 'gsap.min.js' | asset_url }}"></script>
     <script src="{{ 'gsap-scrollTo.min.js' | asset_url }}"></script>
     <script src="{{ 'gsap-scrollTrigger.min.js' | asset_url }}"></script>
     <script src="{{ 'throne.js' | asset_url }}"></script>
+    {{ 'liquid-ajax-cart.js' | asset_url | script_tag }}
+    <script type="application/json" data-ajax-cart-initial-state >
+      {{ cart | json }}
+    </script>
+
+    <script type="module">
+      import { subscribeToCartSectionsUpdate } from '{{ "liquid-ajax-cart.js" | asset_url }}';
   
+      subscribeToCartSectionsUpdate( sections => {
+        console.log('Sections are updated: ', sections);
+  
+      });
+    </script>
+
+    <script type="application/json" data-ajax-cart-configuration>
+      {
+        "addToCartCssClass": "js-my-cart-open"
+      }
+    </script>
+
+    <script type="module">
+      import { subscribeToCartAjaxRequests, subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart.js" | asset_url }}';
+  
+      // Show a pop-up message after adding to cart
+      subscribeToCartAjaxRequests(( requestState, subscribeToResult ) => {
+        if ( requestState.requestType === 'add' ) {
+          subscribeToResult( requestState => {
+            if ( requestState.responseData?.ok ) {
+              let productName = requestState.responseData.body.title;
+              if ( requestState.responseData.body.items?.length === 1 ) {
+                productName = requestState.responseData.body.items[0].title;
+              }
+  
+              //cartSlideOut();
+  
+              console.log(`${ productName ? '«' + productName + '» is' : 'Products are' } successfully added`);
+            }
+          });
+        }
+      });
+    </script>
+
+    
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>

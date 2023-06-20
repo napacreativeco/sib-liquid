@@ -38,6 +38,21 @@
 
     <div class="right">
       
+      <div class="top-left floating-media">
+        {{ section.settings.hero_top_left | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+      </div>
+
+      <div class="top-right floating-media">
+        {{ section.settings.hero_top_right | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+      </div>
+
+      <div class="bottom-left floating-media">
+        <img src="{{ section.settings.hero_bottom_left | image_url: width: 700 }}" alt="" />
+      </div>
+      
+      <div class="bottom-right floating-media">
+        <img src="{{ section.settings.hero_bottom_right | image_url: width: 700 }}" alt="" />
+      </div>
 
       <div class="cloud-holder">
         {{ section.settings.hero_cloud | video_tag: autoplay: true, loop: true, muted: true, controls: false }}

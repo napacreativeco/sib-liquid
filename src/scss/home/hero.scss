@@ -67,11 +67,65 @@
 
         .right {
             padding-right: var(--side-padding);
+            position: relative;
 
             .cloud-holder {
+                position: absolute;
+                z-index: 8;
+                max-width: 450px;
                 video {
                     width: 50vw;
                     max-width: 475px;
+                }
+            }
+
+            .floating-media {
+                position: absolute;
+                object-fit: cover;
+            }
+
+            .top-left {
+                top: -8%;
+                left: -40px;
+                z-index: 3;
+                max-width: 260px;
+                video {
+                    width: 100%;
+                }
+            }
+
+            .top-right {
+                top: -80px;
+                right: -30px;
+                max-width: 240px;
+                z-index: 4;
+                
+                video {
+                    width: 100%;
+                }
+            }
+
+            .bottom-left {
+                bottom: -90%;
+                left: 10%;
+                max-width: 180px;
+                z-index: 5;
+
+                img {
+                    width: 100%;
+                    max-height: 50vh;
+                }
+            }
+
+            .bottom-right {
+                bottom: -100%;
+                right: 0%;
+                max-width: 160px;
+                z-index: 6;
+
+                img {
+                    width: 100%;
+                    max-height: 40vh;
                 }
             }
         }
@@ -85,3 +139,19 @@
     .hero-image-mobile { display: block; }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
