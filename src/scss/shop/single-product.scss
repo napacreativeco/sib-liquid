@@ -51,16 +51,18 @@
                 overflow: hidden;
 
                 .product-form__input input[type='radio']:checked+label {
-                    background-color: rgb(var(--color-foreground));
-                    color: rgb(var(--color-background));
+                    //background-color: rgb(var(--color-foreground));
+                    //color: rgb(var(--color-background));
+                    text-decoration: underline;
                 }
                 @media screen and (forced-colors: active) {
                     .product-form__input input[type='radio']:checked+label {
-                    text-decoration: underline;
+                        text-decoration: underline;
                     }
                 }
                 .product-form__input input[type='radio']:checked+label::selection {
-                    background-color: rgba(var(--color-background), 0.3);
+                    //background-color: rgba(var(--color-background), 0.3);
+                    text-decoration: underline;
                 }
 
                 variant-radios {
