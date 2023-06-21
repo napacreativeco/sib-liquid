@@ -41,10 +41,13 @@ main.page-container {
   padding: 0 12px;
 }
 
-
-
 img {
   z-index: 1;
+}
+
+@keyframes popUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0px); }
 }
 
 @import './navbar.scss';
@@ -56,6 +59,7 @@ img {
 @import './home/marquee.scss';
 @import './home/newsletter-modal.scss';
 @import './shop/single-product.scss';
+@import './shop/swiper.scss';
 
 .page-component {
   display: none;

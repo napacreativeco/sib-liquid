@@ -65,7 +65,7 @@
 
 
 
-
+    // Hiding Marquee
     window.addEventListener("scroll", () => {
 
         if (window.scrollY > 100) {
@@ -110,7 +110,34 @@
     });
       
 
+    // Show Variant Selectors
+    $('.variant-selector-title').on('click', function() {
 
+      var clicked = $(this).next('.variant-selector-box');
+      $('.variant-selector-box').hide();
+      $(clicked).css('display', 'flex');
+
+    });
+
+    $('.variant-selector-box > input').on('change', function() {
+      $('.variant-selector-box').hide();
+    });
+
+
+    /* Product Grid Switch */
+    $('.crosshair').on('click', function() {
+
+      if ( $('.shop-component-wrapper').attr('data-layout') === 'grid' ) {
+        $(this).find('img').css('transform', 'rotate(90deg)');
+        $('.shop-component-wrapper').attr('data-layout', 'list');
+      } else {
+        $(this).find('img').css('transform', 'rotate(0deg)');
+        $('.shop-component-wrapper').attr('data-layout', 'grid');
+      }
+
+    })
+
+    
 
 
 })(jQuery);

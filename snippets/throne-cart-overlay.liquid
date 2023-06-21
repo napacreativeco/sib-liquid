@@ -1,24 +1,9 @@
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 
-<style>
-    /*
-    .drawer {
-        visibility: hidden;
-    } */
-</style>
-
 <div class="cart-overlay" data-displayed="true">
     <div class="cart-overlay-wrapper"  data-ajax-cart-section>
 
 
-        {% comment %} <div id="CartDrawer-Overlay" class="cart-drawer__overlay"></div> {% endcomment %}
-
-
-        {% comment %} 
-        =================================
-        CART
-        =================================
-        {% endcomment %}
         {%- if cart == empty -%}
 
             <div class="empty-cart">
@@ -53,15 +38,14 @@
         {%- else -%}
 
             <div class="cart">
-                {% comment %} 
-                ITEMS
-                {% endcomment %}
-                <cart-drawer-items {% if cart == empty %} class=" is-empty" {% endif %}>
-                    <form action="{{ routes.cart_url }}" method="post">
+                
+                {% comment %} ITEMS {% endcomment %}
+                <cart-drawer-items {% if cart == empty %} class="is-empty" {% endif %}>
+                    <form id="add-to-cart-form" action="{{ routes.cart_url }}" method="post">
                      
                         {%- if cart != empty -%}
                             
-                            <ul class="cart-items">
+                            <ul class="cart-items" data-ajax-cart-section-scroll>
                                 {%- for item in cart.items -%}
 
                                     <li id="item-{{ item.index | plus: 1 }}" class="cart-item" role="row">
@@ -85,7 +69,7 @@
                                             <div class="quantity" role="cell">
                                                 <div class="quantity-wrapper">
     
-                                                        <button class="no-js-hidden" name="minus" type="button">
+                                                        <button class="no-js-hidden" name="minus" type="button" data-ajax-cart-request-button>
                                                             <span class="visually-hidden">{{- 'products.product.quantity.decrease' | t: product: item.product.title | escape -}}</span>
                                                             {% render 'icon-minus' %}
                                                         </button>
@@ -109,7 +93,7 @@
                                                             data-index="{{ item.index | plus: 1 }}"
                                                         >
     
-                                                        <button class="no-js-hidden" name="plus" type="button">
+                                                        <button class="no-js-hidden" name="plus" type="button" data-ajax-cart-request-button>
                                                             <span class="visually-hidden">
                                                                 {{- 'products.product.quantity.increase' | t: product: item.product.title | escape -}}
                                                             </span>
@@ -187,10 +171,12 @@
                                             </div>
 
                                             <div class="delete">
-                                                <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0">&times;</a>                                         
+                                                <cart-remove-button>delete</cart-remove-button>                                     
                                             </div>
 
                                         </div>
+
+                                        <div data-ajax-cart-messages="{{ item.key }}"></div>
                                     </li>
                                 {%- endfor -%}                          
                             </ul>

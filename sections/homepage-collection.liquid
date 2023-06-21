@@ -1,5 +1,5 @@
 <section class="shop-component page-component">
-  <div class="shop-component-wrapper">
+  <div class="shop-component-wrapper" data-layout="grid">
   
     {% render 'throne-grid-changer' %}
     
@@ -47,6 +47,57 @@
           </div>
         </li>
       {%- endfor -%}
+    </ul>
+
+    <ul class="products list">
+      {%- for product in section.settings.collection.products limit: 16 -%}
+        <li>
+          <div class="list-item-wrapper">
+          
+            <div class="product-image">
+              {% for image in product.media limit: 1 %}
+                <div class="image">
+                  <a href="{{ product.url }}" title="{{ product.title }}">
+                    <img src="{{ image | image_url: width: 700 }}" alt="{{ product.title }}" />
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+
+            <div class="vendor">
+              <a href="{{ product.url }}" title="{{ product.title }}">
+                <span>{{ product.vendor }}</span>
+              </a>
+            </div>
+
+            <div class="name">
+              <a href="{{ product.url }}" title="{{ product.title }}">
+                <h3>{{ product.title }}</h3>
+              </a>
+            </div>
+
+            <div class="price">
+              <a href="{{ product.url }}" title="Price">
+                <span>{{ product.price | money_without_trailing_zeros }}</span>
+              </a>
+            </div>
+
+            <div class="indicator-holder">
+            </div>
+
+            <div class="colors">
+              <div class="color-wrapper">
+                {% for variant in product.variants %}
+                  <div style="background: {{ variant.metafields.custom.display_color }}" class="color-swatch">
+                    &nbsp;
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+
+          </div>
+        </li>
+      {% endfor %}
     </ul>
 
   </div>

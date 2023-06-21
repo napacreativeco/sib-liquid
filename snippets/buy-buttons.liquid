@@ -26,6 +26,7 @@
     -%}
 
     <product-form class="product-form" data-hide-errors="{{ gift_card_recipient_feature_active }}">
+
       <div class="product-form__error-message-wrapper" role="alert" hidden>
         <svg aria-hidden="true" focusable="false" class="icon icon-error" viewBox="0 0 13 13">
           <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
@@ -43,7 +44,7 @@
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
 
-        <div class="product-form__buttons">
+        <div class="product-form-buttons">
           {%- liquid
             assign check_against_inventory = true
             if product.selected_or_first_available_variant.inventory_management != 'shopify' or  product.selected_or_first_available_variant.inventory_policy == 'continue'
@@ -74,7 +75,9 @@
           {%- endif -%}
 
         </div>
+        
       {%- endform -%}
+      
     </product-form>
 
   {%- else -%}

@@ -65,7 +65,7 @@
 
 
 
-
+    // Hiding Marquee
     window.addEventListener("scroll", () => {
 
         if (window.scrollY > 100) {
@@ -110,7 +110,23 @@
     });
       
 
+    // Show Variant Selectors
+    $('.variant-selector-title').on('click', function() {
 
+      var clicked = $(this).next('.variant-selector-box');
+      $('.variant-selector-box').hide();
+      $(clicked).css('display', 'flex');
+
+      
+
+    });
+
+    $('.variant-selector-box > input').on('change', function() {
+      $('.variant-selector-box').hide();
+    });
+
+
+    
 
 
 })(jQuery);

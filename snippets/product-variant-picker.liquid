@@ -17,9 +17,11 @@
       {%- for option in product.options_with_values -%}
         <fieldset class="js product-form__input">
 
-          <legend class="variant-selector-title">
-            {{ option.name }}
-          </legend>
+  
+            <span class="variant-selector-title">
+              {{ option.name }} {% render 'icon-caret' %}
+            </span>
+
 
           <div class="variant-selector-box">
             {% render 'product-variant-options', product: product, option: option, block: block %}
