@@ -247,8 +247,7 @@
     {{ 'throne.css' | asset_url | stylesheet_tag }}
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -258,12 +257,7 @@
     {%- endunless -%}
 
     {%- if settings.predictive_search_enabled -%}
-      <link
-        rel="stylesheet"
-        href="{{ 'component-predictive-search.css' | asset_url }}"
-        media="print"
-        onload="this.media='all'"
-      >
+      <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
     {%- endif -%}
 
     <script>
@@ -280,9 +274,7 @@
     </a>
 
     {% render 'throne-navbar' %}
-
     {% render 'throne-footer-menu' %}
-
     {% render 'throne-cart-overlay' %}
     
     <main id="MainContent" class="page-container content-for-layout focus-none" role="main" tabindex="-1">
@@ -290,22 +282,20 @@
     </main>
 
     
-    
     <script src="{{ 'gsap.min.js' | asset_url }}"></script>
     <script src="{{ 'gsap-scrollTo.min.js' | asset_url }}"></script>
     <script src="{{ 'gsap-scrollTrigger.min.js' | asset_url }}"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
     <script src="{{ 'throne.js' | asset_url }}"></script>
 
     <script type="module">
       import '{{ "liquid-ajax-cart.js" | asset_url }}';
     </script>
     
-    <script type="application/json" data-ajax-cart-initial-state >
+    <script type="application/json" data-ajax-cart-initial-state>
       {{ cart | json }}
     </script>
-    
-
 
     <script>
         // Hero Parallax

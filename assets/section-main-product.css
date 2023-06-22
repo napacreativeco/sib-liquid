@@ -166,6 +166,14 @@
   max-width: 44rem;
   min-width: fit-content;
   border: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.product-form__input:first-of-type {
+  border-right: var(--border-blk);
+  margin-right: 10px;
 }
 
 variant-radios,

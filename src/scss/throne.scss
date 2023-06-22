@@ -41,6 +41,16 @@ main.page-container {
   padding: 0 12px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Times New Roman', serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+p {
+  font-family: 'Times New Roman', serif;
+}
+
 img {
   z-index: 1;
 }
@@ -60,6 +70,7 @@ img {
 @import './home/newsletter-modal.scss';
 @import './shop/single-product.scss';
 @import './shop/swiper.scss';
+@import './shop/size-chart.scss';
 
 .page-component {
   display: none;
@@ -69,5 +80,10 @@ img {
   margin: 0 auto;
 }
 
-
+.color-swatch {
+  width: 16px;
+  height: 16px;
+  aspect-ratio: 1/1;
+  display: block;
+}
 

@@ -21,7 +21,6 @@
         }
 
     });
-
     
     /* Toggle Plus Menu */
     $('.plus').on('click', function() {
@@ -30,16 +29,15 @@
 
             $('.filter-menu').removeClass('filter-opened');
 
-            gsap.fromTo(".filter-menu", {x: 0}, {x: 1000, duration: 1});
+            gsap.fromTo(".filter-menu", {x: 0}, {x: 1000, duration: 0.68});
 
         } else {
 
             $('.filter-menu').addClass('filter-opened');
-            gsap.fromTo(".filter-menu", {x: 1000}, {x: 0, duration: 1});
+            gsap.fromTo(".filter-menu", {x: 1000}, {x: 0, duration: 0.68});
         }
 
     });
-
 
     // Hero Links
     $('.scroll-to-link').on('click', function(e) {
@@ -58,12 +56,10 @@
         }, 100);
 
         // Scroll to Component
-        gsap.to(window, {duration: 0.3, delay: 1, scrollTo: window.innerHeight  });
+        gsap.to(window, { duration: 1.1, delay: 0.24, scrollTo: window.innerHeight  });
 
         console.log($(this).attr('data-title'));
     });
-
-
 
     // Hiding Marquee
     window.addEventListener("scroll", () => {
@@ -74,7 +70,7 @@
             gsap.to(".marquee-holder", {
                 y: 100,
                 delay: 0.6,
-                duration: 0.2,
+                duration: 0.62,
                 onComplete: () => {
                     gsap.to(".marquee-holder", { display: "none" });
                 }
@@ -86,7 +82,7 @@
             gsap.to(".marquee-holder", {
                 y: 0,
                 delay: 0.6,
-                duration: 0.2,
+                duration: 0.62,
                 onComplete: () => {
                     gsap.to(".marquee-holder", { display: "block" });
                 }
@@ -94,21 +90,19 @@
         }
         
     });
-      
-          
+        
     /* Newsletter Popup */
     setTimeout(function() {
         gsap.to(".shopify-section:has(.newsletter-modal)", {
           display: "flex",
         });
-    }, 1500);
+    }, 15000);
 
     $('.newsletter-close').on('click', function() {
       gsap.to(".shopify-section:has(.newsletter-modal)", {
         display: "none",
       });
     });
-      
 
     // Show Variant Selectors
     $('.variant-selector-title').on('click', function() {
@@ -135,11 +129,9 @@
         $('.shop-component-wrapper').attr('data-layout', 'grid');
       }
 
-    })
+    });
 
     
-
-
 })(jQuery);
 
 /*

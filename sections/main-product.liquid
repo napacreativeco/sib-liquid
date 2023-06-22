@@ -118,6 +118,87 @@
             <p>{{ product.description }}</p>
           </div>
 
+          <div class="size-chart">
+
+            <div class="size-chart-title">
+              <h3>size chart</h3>
+            </div>
+
+            <table class="size-chart-table">
+              <thead>
+                <tr>
+                  <th class="legend">label:</th>
+                  {% for option in product.options_with_values %}
+
+                    {% case option.name %}
+                      {% when 'Size'%}
+
+                        {% for value in option.values %}
+                          <th>{{ value }}</th>
+                        {% endfor %}
+                    {% endcase %}
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="legend">chest:</td>
+                  {% for size in shop.metaobjects.size_chart.values %}
+                    <td>{{ size.s_chest }}</td>
+                  {% endfor %}
+                  {% for size in shop.metaobjects.size_chart.values %}
+                    <td>{{ size.m_chest }}</td>
+                  {% endfor %}
+                  {% for size in shop.metaobjects.size_chart.values %}
+                    <td>{{ size.l_chest }}</td>
+                  {% endfor %}
+                  {% for size in shop.metaobjects.size_chart.values %}
+                    <td>{{ size.xl_chest }}</td>
+                  {% endfor %}
+                </tr>
+                <tr>
+                  <td class="legend">waist:</td>
+                  {% for size in shop.metaobjects.size_chart.values %}
+                    <td>{{ size.s_waist }}</td>
+                  {% endfor %}
+                  {% for size in shop.metaobjects.size_chart.values %}
+                    <td>{{ size.m_waist }}</td>
+                  {% endfor %}
+                  {% for size in shop.metaobjects.size_chart.values %}
+                    <td>{{ size.l_waist }}</td>
+                  {% endfor %}
+                  {% for size in shop.metaobjects.size_chart.values %}
+                    <td>{{ size.xl_waist }}</td>
+                  {% endfor %}
+                </tr>
+                <tr>
+                  <td class="legend">shoulder:</td>
+                  {% for size in shop.metaobjects.size_chart.values %}
+                    <td>{{ size.s_shoulder }}</td>
+                  {% endfor %}
+                  {% for size in shop.metaobjects.size_chart.values %}
+                    <td>{{ size.m_shoulder }}</td>
+                  {% endfor %}
+                  {% for size in shop.metaobjects.size_chart.values %}
+                    <td>{{ size.l_shoulder }}</td>
+                  {% endfor %}
+                  {% for size in shop.metaobjects.size_chart.values %}
+                    <td>{{ size.xl_shoulder }}</td>
+                  {% endfor %}
+                </tr>
+              </tbody>
+            
+            </table>
+            {% for size in shop.metaobjects %}
+              <script>console.log("{{ size | json }}");</script>
+            {% endfor %}
+
+            {% if collection.previous_product %}
+              {{ 'Previous' | link_to: collection.previous_product.url, 'Previous product' }}
+            {% endif %}
+           
+          </div>
+
         </product-info>
       </div>
       
