@@ -102,6 +102,17 @@
     ]
   },
   {
+    "name": "Marquee Speed",
+    "settings": [
+      {
+        "type": "number",
+        "id": "marquee_speed",
+        "label": "Marquee Speed",
+        "default": 1
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.typography.name",
     "settings": [
       {
