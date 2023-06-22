@@ -117,8 +117,6 @@
       $('.variant-selector-box').hide();
       $(clicked).css('display', 'flex');
 
-      
-
     });
 
     $('.variant-selector-box > input').on('change', function() {
@@ -126,7 +124,20 @@
     });
 
 
-    
+    $('.crosshair').on('click', function() {
+
+      var grid = $('ul.products.grid');
+      var list = $('ul.products.list');
+
+      if ( $(grid).css('display') === 'grid') {
+        $('ul.products').hide();
+        $(list).css('display', 'grid');
+      } else {
+        $('ul.products').hide();
+        $(grid).css('display', 'grid');
+      }
+
+    });
 
 
 })(jQuery);
