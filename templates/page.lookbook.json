@@ -6,9 +6,36 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "b136a70b-63c4-44aa-852b-659a24d293ac": {
+      "type": "throne-slideshow",
+      "blocks": {
+        "template--19480154243362__b136a70b-63c4-44aa-852b-659a24d293ac-168747512067217c7e-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BOTTOMLEFT_IMAGE.png",
+            "slide_caption": "junker jeans"
+          }
+        },
+        "6c253d7f-4154-4cf9-b32e-543ea51709d8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BG_MOBILE.png",
+            "slide_caption": "baby helmet"
+          }
+        }
+      },
+      "block_order": [
+        "template--19480154243362__b136a70b-63c4-44aa-852b-659a24d293ac-168747512067217c7e-0",
+        "6c253d7f-4154-4cf9-b32e-543ea51709d8"
+      ],
+      "settings": {
+        "lookbook_title": "Fall\/Winter 2022"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "b136a70b-63c4-44aa-852b-659a24d293ac"
   ]
 }
