@@ -2,7 +2,28 @@
   "sections": {
     "main": {
       "type": "throne-lookbook",
+      "blocks": {
+        "c56dc9f7-3b61-486c-b89c-c219a3f6f55e": {
+          "type": "slide",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/washed-hoodie_93c5373e-9f7d-4368-bc85-1e433eaeaf98.png",
+            "slide_Caption": "<p>this is a linebreak space &lt;br \/&gt;<\/p><p>example<\/p><p>and this is a natural break<\/p><p><\/p>"
+          }
+        },
+        "4ed88f3e-2e21-4993-82ee-29c5c619bd58": {
+          "type": "slide",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/parka-coat_d50508c1-4199-4b3a-852b-07ca6e061a62.png",
+            "slide_Caption": "<p>this is a super cool jacket &lt;br \/&gt;<\/p><p>take it with you<\/p><p>everywhere<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "c56dc9f7-3b61-486c-b89c-c219a3f6f55e",
+        "4ed88f3e-2e21-4993-82ee-29c5c619bd58"
+      ],
       "settings": {
+        "title": ""
       }
     }
   },
