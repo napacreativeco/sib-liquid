@@ -6,12 +6,18 @@ lookbook
 {
   "name": "Lookbook",
   "tag": "section",
-  "class": "lookbook-section",
+  "class": "slideshow",
+  "max_blocks": 10,
   "settings": [
     {
       "type": "text",
       "id": "title",
-      "label": "Lookbook"
+      "label": "Collection Title"
+    },
+    {
+      "type": "richtext",
+      "id": "collecton_description",
+      "label": "Collection Description"
     }
   ],
   "blocks": [
@@ -21,43 +27,16 @@ lookbook
        "settings": [
          {
            "type": "image_picker",
-           "id": "slide",
+           "id": "image",
            "label": "Image"
          },
          {
-            "type": "richtext",
-            "id": "slide_Caption",
-            "label": "Caption"
-          }
+          "type": "richtext",
+          "id": "slide_caption",
+          "label": "Caption"
+        }
        ]
      }
-  ],
-  "presets": [
-    {
-      "name": "Slideshow",
-      "settings": {
-        "title": "Slideshow"
-      },
-      "blocks": [
-        {
-          "type": "slide"
-        },
-        {
-          "type": "slide"
-        }
-      ]
-    }
-  ],
-  "locales": {
-    "en": {
-      "title": "Slideshow"
-    },
-    "fr": {
-      "title": "Diaporama"
-    }
-  },
-  "enabled_on": {
-    "templates": ["*"]
-  }
+   ]
 }
 {% endschema %}
