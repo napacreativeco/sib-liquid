@@ -21,23 +21,25 @@
         }
 
     });
+
     
     /* Toggle Plus Menu */
     $('.plus').on('click', function() {
 
-        if ( $('.filter-menu').hasClass('filter-opened') ) {
+      if ( $('.filter-menu').hasClass('filter-opened') ) {
 
-            $('.filter-menu').removeClass('filter-opened');
+          $('.filter-menu').removeClass('filter-opened');
 
-            gsap.fromTo(".filter-menu", {x: 0}, {x: 1000, duration: 0.68});
+          gsap.fromTo(".filter-menu", {x: 0}, {x: 1000, duration: 1});
 
-        } else {
+      } else {
 
-            $('.filter-menu').addClass('filter-opened');
-            gsap.fromTo(".filter-menu", {x: 1000}, {x: 0, duration: 0.68});
-        }
+          $('.filter-menu').addClass('filter-opened');
+          gsap.fromTo(".filter-menu", {x: 1000}, {x: 0, duration: 1});
+      }
 
     });
+
 
     // Hero Links
     $('.scroll-to-link').on('click', function(e) {
@@ -56,53 +58,79 @@
         }, 100);
 
         // Scroll to Component
-        gsap.to(window, { duration: 1.1, delay: 0.24, scrollTo: window.innerHeight  });
+        gsap.to(window, {duration: 0.3, delay: 1, scrollTo: window.innerHeight  });
 
         console.log($(this).attr('data-title'));
     });
 
+
+    function showLogo() {
+      document.querySelector('.logo a').style.display = 'block';
+    }
+
+    function hideLogo() {
+      document.querySelector('.logo a').style.display = 'none';
+    }
+
+    function showPlus() {
+      document.querySelector('.plus').style.display = 'block';
+    }
+
+    function hidePlus() {
+      document.querySelector('.plus').style.display = 'none';
+    }
+
+
     // Hiding Marquee
     window.addEventListener("scroll", () => {
 
-        if (window.scrollY > 100) {
-    
-            // Hide Marquee
-            gsap.to(".marquee-holder", {
-                y: 100,
-                delay: 0.6,
-                duration: 0.62,
-                onComplete: () => {
-                    gsap.to(".marquee-holder", { display: "none" });
-                }
-            });
-    
-        } else {
-    
-            // Show Marquee
-            gsap.to(".marquee-holder", {
-                y: 0,
-                delay: 0.6,
-                duration: 0.62,
-                onComplete: () => {
-                    gsap.to(".marquee-holder", { display: "block" });
-                }
-            });
-        }
+      if (window.scrollY > 100) {
+  
+          // Hide Marquee
+          gsap.to(".marquee-holder", {
+              y: 100,
+              delay: 0.6,
+              duration: 0.2,
+              onComplete: () => {
+                  gsap.to(".marquee-holder", { display: "none" });
+              }
+          });
+
+          showLogo();
+          showPlus();
+  
+      } else {
+  
+          // Show Marquee
+          gsap.to(".marquee-holder", {
+              y: 0,
+              delay: 0.6,
+              duration: 0.2,
+              onComplete: () => {
+                  gsap.to(".marquee-holder", { display: "block" });
+              }
+          });
+
+          hideLogo();
+          hidePlus();
+      }
         
     });
-        
+      
+          
     /* Newsletter Popup */
     setTimeout(function() {
         gsap.to(".shopify-section:has(.newsletter-modal)", {
           display: "flex",
         });
-    }, 15000);
+    }, 1500);
 
     $('.newsletter-close').on('click', function() {
       gsap.to(".shopify-section:has(.newsletter-modal)", {
         display: "none",
       });
     });
+      
 
     // Show Variant Selectors
     $('.variant-selector-title').on('click', function() {
@@ -118,20 +146,6 @@
     });
 
 
-    /* Product Grid Switch */
-    $('.crosshair').on('click', function() {
-
-      if ( $('.shop-component-wrapper').attr('data-layout') === 'grid' ) {
-        $(this).find('img').css('transform', 'rotate(90deg)');
-        $('.shop-component-wrapper').attr('data-layout', 'list');
-      } else {
-        $(this).find('img').css('transform', 'rotate(0deg)');
-        $('.shop-component-wrapper').attr('data-layout', 'grid');
-      }
-
-    });
-
-    
 })(jQuery);
 
 /*
@@ -150,7 +164,7 @@ const boxes = gsap.utils.toArray(".box");
 let activeElement;
 const loop = horizontalLoop(boxes, {
   paused: false, 
-  draggable: false,
+  draggable: true,
   center: true,
   onChange: (element, index) => { // when the active element changes, this function gets called.
     //activeElement && activeElement.classList.remove("active");
@@ -159,7 +173,7 @@ const loop = horizontalLoop(boxes, {
   }
 });
 
-boxes.forEach((box, i) => box.addEventListener("click", () => loop.toIndex(i, {duration: 8.0, ease: "power1.inOut"})));
+boxes.forEach((box, i) => box.addEventListener("click", () => loop.toIndex(i, {duration: 0.8, ease: "power1.inOut"})));
 
 document.querySelector(".toggle").addEventListener("click", () => wrapper.classList.toggle("show-overflow"));
 document.querySelector(".next").addEventListener("click", () => loop.next({duration: 0.4, ease: "power1.inOut"}));
@@ -203,7 +217,7 @@ function horizontalLoop(items, config) {
     curIndex = 0,
     indexIsDirty = false,
     center = config.center,
-    pixelsPerSecond = (config.speed || 1) * 50,
+    pixelsPerSecond = (config.speed || 1) * 100,
     snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
     timeOffset = 0,
     container = center === true ? items[0].parentNode : gsap.utils.toArray(center)[0] || items[0].parentNode,

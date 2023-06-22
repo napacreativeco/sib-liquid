@@ -21,13 +21,15 @@
   --red: #FF0000;
   --blue: #403F8B;
   --light-blue: #B6FFFE;
-  --thin: 1000px;
+  --thin: 1100px;
   --border-blk: 1px solid var(--black);
   --side-padding: 12px;
 }
 
 body {
   font-family: 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: 0px;
   font-size: 100%;
   line-height: 1;
   overflow-x: hidden;
