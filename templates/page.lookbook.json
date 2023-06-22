@@ -16,11 +16,19 @@
             "slide": "shopify:\/\/shop_images\/parka-coat_d50508c1-4199-4b3a-852b-07ca6e061a62.png",
             "slide_Caption": "<p>this is a super cool jacket &lt;br \/&gt;<\/p><p>take it with you<\/p><p>everywhere<\/p>"
           }
+        },
+        "e09d90a5-d173-4227-b9f3-7c0250fd301d": {
+          "type": "slide",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/hoodie-example_8cb8d104-f4fc-4123-841b-e903834f4d19.png",
+            "slide_Caption": "<p>is is also a cool thing<\/p><p>try another paragraph<\/p>"
+          }
         }
       },
       "block_order": [
         "c56dc9f7-3b61-486c-b89c-c219a3f6f55e",
-        "4ed88f3e-2e21-4993-82ee-29c5c619bd58"
+        "4ed88f3e-2e21-4993-82ee-29c5c619bd58",
+        "e09d90a5-d173-4227-b9f3-7c0250fd301d"
       ],
       "settings": {
         "title": ""
