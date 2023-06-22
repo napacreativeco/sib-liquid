@@ -32,10 +32,37 @@
       "settings": {
         "lookbook_title": "Fall\/Winter 2022"
       }
+    },
+    "05e6d7f9-ee60-421f-82ea-80dcf5722a74": {
+      "type": "throne-slideshow",
+      "blocks": {
+        "template--19480154243362__05e6d7f9-ee60-421f-82ea-80dcf5722a74-168747512067217c7e-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hoodie-example_8cb8d104-f4fc-4123-841b-e903834f4d19.png",
+            "slide_caption": "little hoodie"
+          }
+        },
+        "0dfa8b00-e8e5-4f1b-a7c4-d7d6a0727cc5": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/parka-coat_9d848fdc-7ea3-4b03-820f-a7fe6e1be0c7.png",
+            "slide_caption": "shiny jack"
+          }
+        }
+      },
+      "block_order": [
+        "template--19480154243362__05e6d7f9-ee60-421f-82ea-80dcf5722a74-168747512067217c7e-0",
+        "0dfa8b00-e8e5-4f1b-a7c4-d7d6a0727cc5"
+      ],
+      "settings": {
+        "lookbook_title": "Spring\/Summer 2023"
+      }
     }
   },
   "order": [
     "main",
-    "b136a70b-63c4-44aa-852b-659a24d293ac"
+    "b136a70b-63c4-44aa-852b-659a24d293ac",
+    "05e6d7f9-ee60-421f-82ea-80dcf5722a74"
   ]
 }
