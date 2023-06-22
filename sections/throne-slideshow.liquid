@@ -265,7 +265,7 @@
 
 {% schema %}
 {
-  "name": "Throne Slideshow",
+  "name": "Lookbook",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -274,36 +274,33 @@
   "settings": [
     {
       "type": "text",
-      ""
+      "id": "lookbook_title",
+      "label": "title"
     }
   ],
   "blocks": [
     {
       "type": "slide",
-      "name": "t:sections.slideshow.blocks.slide.name",
-      "limit": 5,
+      "name": "Slide",
+      "limit": 50,
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "t:sections.slideshow.blocks.slide.settings.image.label"
+          "label": "Image"
         },
         {
           "type": "inline_richtext",
           "id": "slide_caption",
-          "default": "Image slide",
-          "label": "t:sections.slideshow.blocks.slide.settings.heading.label"
+          "label": "Slide Caption"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Throne Slideshow",
+      "name": "Lookbook",
       "blocks": [
-        {
-          "type": "slide"
-        },
         {
           "type": "slide"
         }
