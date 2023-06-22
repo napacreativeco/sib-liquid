@@ -150,7 +150,7 @@ const boxes = gsap.utils.toArray(".box");
 let activeElement;
 const loop = horizontalLoop(boxes, {
   paused: false, 
-  draggable: true,
+  draggable: false,
   center: true,
   onChange: (element, index) => { // when the active element changes, this function gets called.
     //activeElement && activeElement.classList.remove("active");
@@ -159,7 +159,7 @@ const loop = horizontalLoop(boxes, {
   }
 });
 
-boxes.forEach((box, i) => box.addEventListener("click", () => loop.toIndex(i, {duration: 0.8, ease: "power1.inOut"})));
+boxes.forEach((box, i) => box.addEventListener("click", () => loop.toIndex(i, {duration: 8.0, ease: "power1.inOut"})));
 
 document.querySelector(".toggle").addEventListener("click", () => wrapper.classList.toggle("show-overflow"));
 document.querySelector(".next").addEventListener("click", () => loop.next({duration: 0.4, ease: "power1.inOut"}));
@@ -203,7 +203,7 @@ function horizontalLoop(items, config) {
     curIndex = 0,
     indexIsDirty = false,
     center = config.center,
-    pixelsPerSecond = (config.speed || 1) * 100,
+    pixelsPerSecond = (config.speed || 1) * 50,
     snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
     timeOffset = 0,
     container = center === true ? items[0].parentNode : gsap.utils.toArray(center)[0] || items[0].parentNode,

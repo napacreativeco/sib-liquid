@@ -139,6 +139,31 @@
     .hero-image-desktop { display: none; }
     .hero-image-mobile { display: block; }
 
+    .homepage-hero {
+        .hero-wrapper {
+            display: flex;
+            flex-direction: column-reverse;
+            height: 100%;
+    
+            .left, .right {
+                width: 100%;
+            }
+
+            .right {
+                .top-left {
+                    top: -200px;
+                    left: 20px;
+                    max-width: 170px;
+                }
+                .top-right {
+                    top: -330px;
+                    max-width: 190px;
+                }
+            }
+        }
+    }
+
+
 }
 
 
