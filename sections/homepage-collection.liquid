@@ -64,17 +64,20 @@
               {% endfor %}
             </div>
 
-            <div class="vendor">
-              <a href="{{ product.url }}" title="{{ product.title }}">
-                <span>{{ product.vendor }}</span>
-              </a>
+            <div class="titles">
+              <div class="vendor">
+                <a href="{{ product.url }}" title="{{ product.title }}">
+                  <span>{{ product.vendor }}</span>
+                </a>
+              </div>
+  
+              <div class="name">
+                <a href="{{ product.url }}" title="{{ product.title }}">
+                  <h3>{{ product.title }}</h3>
+                </a>
+              </div>
             </div>
 
-            <div class="name">
-              <a href="{{ product.url }}" title="{{ product.title }}">
-                <h3>{{ product.title }}</h3>
-              </a>
-            </div>
 
             <div class="price">
               <a href="{{ product.url }}" title="Price">
