@@ -1,16 +1,24 @@
 .lookbook-collection {
 
     .lookbook-wrapper {
+        padding: 100px 0;
+
+        .swiper-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            align-items: flex-end;
+        }
 
         .swiper-slide {
             width: 100%;
             display: grid;
             grid-template-rows: 6fr 2fr;
-            height: 80vh;
+            height: 94vh;
         }
 
         .swiper-pagination {
             position: relative;
+            text-align: right;
         }
 
     }

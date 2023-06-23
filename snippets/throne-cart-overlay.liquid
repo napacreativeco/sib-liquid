@@ -1,6 +1,15 @@
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 
 <div class="cart-overlay" data-displayed="true">
+
+    <div class="cart-header">
+        <div class="cart-name">
+            <h1>Cart</h1>
+        </div>
+        <div class="cart-logo">
+            <img src="{{ 'outline-logo.svg' | asset_url }}" alt="{{ 'Cart' | escape }}" />
+        </div>
+    </div>
     <div class="cart-overlay-wrapper"  data-ajax-cart-section>
 
 

@@ -21,6 +21,7 @@
   --red: #FF0000;
   --blue: #403F8B;
   --light-blue: #B6FFFE;
+  --light-grey: #888888;
   --thin: 1100px;
   --border-blk: 1px solid var(--black);
   --side-padding: 12px;
@@ -75,6 +76,7 @@ img {
 @import './shop/single-product.scss';
 @import './shop/swiper.scss';
 @import './shop/size-chart.scss';
+@import './pages/contact.scss';
 
 .page-component {
   display: none;
@@ -90,4 +92,3 @@ img {
   aspect-ratio: 1/1;
   display: block;
 }
-

@@ -16,8 +16,14 @@
 
 {% if page.handle == 'lookbook' %}
 
-  main page template: lookbook
+  {% comment %} lookbook page {% endcomment %}
+  [ lookbook selectors ]
+  <script>
+    console.log("{{ content_for_layout }}")
+  </script>
 
+{% elsif page.handle == 'contact' %}
+  {% comment %} contact page {% endcomment %}
 {% else %}
   <div class="page-width page-width--narrow section-{{ section.id }}-padding">
     <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
