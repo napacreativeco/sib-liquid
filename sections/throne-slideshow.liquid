@@ -1,19 +1,76 @@
 slideshow module
 
+<style>
+  .swiper {
+    width: 600px;
+    height: 300px;
+  }
+</style>
 
 <div class="lookbook-collection">
-  <div class="lookbook-wrapper" data-lookbook="{{ section.settings.lookbook_title }}">
-  
-    <h1 style="font-size: 4rem;">{{ section.settings.lookbook_title }}</h1>
+  <div class="lookbook-wrapper" data-lookbook="{{ section.settings.lookbook_title }}">    
 
-    {% for block in section.blocks %}
-      <div class="swiper-slider">
-        <img src="{{ block.settings.image | image_url }}" />
+    <h1 style="font-size: 4rem;">{{ section.settings.lookbook_title }}</h1>
+    <div class="swiper-{{ section.id }}">
+
+      <div class="swiper-pagination"></div>
+
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+
+          <div class="swiper-slide" data-index="{{ forloop.index }}">
+            <div class="image" style="background: url('{{ block.settings.image | image_url }}'); background-size: cover; background-position: center center;">
+              &nbsp;
+            </div>
+            <div class="caption">
+              <div class="caption-wrapper">
+                {{ block.settings.slide_caption }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
       </div>
-    {% endfor %}
+
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+ 
 
   </div>
 </div>
+
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
+
+  const swiper = new Swiper('.swiper-{{ section.id }}', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction'
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+
+  swiper.on('slideChange', function () {
+    console.log('slide changed');
+  });
+</script>
 
 
 {% schema %}

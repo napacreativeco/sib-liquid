@@ -1,0 +1,18 @@
+.lookbook-collection {
+
+    .lookbook-wrapper {
+
+        .swiper-slide {
+            width: 100%;
+            display: grid;
+            grid-template-rows: 6fr 2fr;
+            height: 80vh;
+        }
+
+        .swiper-pagination {
+            position: relative;
+        }
+
+    }
+
+}

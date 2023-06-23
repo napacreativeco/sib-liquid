@@ -62,9 +62,6 @@
 
         console.log($(this).attr('data-title'));
     });
-
-
-
           
     /* Newsletter Popup */
     setTimeout(function() {
@@ -93,9 +90,6 @@
       $('.variant-selector-box').hide();
     });
 
-
-
-
     /* Grid Changer */
     $('.crosshair').on('click', function() {
 
@@ -115,11 +109,6 @@
       }
 
     });
-
-
-
-
-
 
 })(jQuery);
 

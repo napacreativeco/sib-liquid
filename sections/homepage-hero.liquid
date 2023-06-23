@@ -82,6 +82,8 @@
   }
 
 
+  const mediaQuery = window.matchMedia('(max-width: 767px)');
+
   // Hiding Marquee
   window.addEventListener("scroll", () => {
 
@@ -117,6 +119,9 @@
       }
       
   });
+
+  
+
     
 })(jQuery)
 </script>
@@ -132,7 +137,12 @@
   }
 
   hidePlus();
-  hideLogo();
+
+  const mediaQuery = window.matchMedia('(max-width: 767px)')
+
+  if (!mediaQuery.matches) {
+    hideLogo();
+  }
 
   /*
     ========================================

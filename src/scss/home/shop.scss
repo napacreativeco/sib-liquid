@@ -142,3 +142,15 @@
     }
 }
 
+
+@media screen and (max-width: 767px) {
+    .shop-component {
+
+        .shop-component-wrapper {
+            ul.products.grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+    }
+}
