@@ -86,12 +86,19 @@
       </div>
 
       <div class="field-holder">
-        <input type="tel" id="ContactForm-phone" class="" autocomplete="tel" name="contact[{{ 'templates.contact.form.phone' | t }}]" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}" placeholder="{{ 'templates.contact.form.phone' | t }}">
-        <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+        <div class="request-type">
+          <label for="request-type">What is this regarding?</label>
+          <select id="request-type" name="contact[request_type]">
+            <option>Returns</option>
+            <option>Shipping</option>
+            <option>Custom order</option>
+            <option>Other</option>
+          </select>
+        </div>
       </div>
 
-      <div class="field">
-        <textarea rows="10" id="ContactForm-body" class="" name="contact[{{ 'templates.contact.form.comment' | t }}]" placeholder="{{ 'templates.contact.form.comment' | t }}">
+      <div class="field-holder">
+        <textarea rows="10" id="ContactForm-body" class="" name="contact[{{ 'templates.contact.form.comment' | t }}]" placeholder="Hello friend.">
           {{- form.body -}}
         </textarea>
         <label class="" for="ContactForm-body">
@@ -101,7 +108,7 @@
 
       <div class="contact__button">
         <button type="submit" class="button">
-          {{ 'templates.contact.form.send' | t }}
+          {{ 'SUBMIT' | escape }}
         </button>
       </div>
 

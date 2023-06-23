@@ -6,6 +6,14 @@
         max-width: var(--thin);
         margin: 0 auto;
 
+        form#ContactForm {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 350px;
+            width: 100%;
+        }
+
         .contact-form-title {
             font-size: 16px;
             font-weight: bold;
@@ -17,8 +25,9 @@
         }
 
         label {
+            display: none;
             font-size: 16px;
-            padding: 0 0 0 20px;
+            padding: 0;
             color: var(--light-grey);
             text-transform: lowercase;
             visibility: hidden;
@@ -26,22 +35,48 @@
             height: 0px;
             overflow: hidden;
         }
-        input[type="email"] {
+        input,
+        textarea,
+        select {
+            width: 100%;
             border: var(--border-blk);
+            font-family: inherit;
             font-size: 16px;
             padding: 6px;
+            color: var(--light-grey);
         }
+        input {
+            height: 100%;
+        }
+
+        label[for="ContactForm-body"] { display: none; }
 
         .field-holder {
             width: 100%;
         }
         .field-holder.half-width {
-            width: 50%;
+            // width: 50%;
         }
 
         .grouped-fields {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
+
+        .contact__button {
+            button {
+                border: var(--border-blk);
+                color: var(--black);
+                padding: 10px 20px;
+                text-transform: uppercase;
+                font-size: 16px;
+                letter-spacing: 0px;
+            }
+            button[aria-disabled="true"] {
+                background-color: var(--light-grey);
+                color: var(--white);
+            }
         }
 
         
