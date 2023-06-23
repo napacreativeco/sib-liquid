@@ -21,11 +21,27 @@
             padding: 0 0 0 20px;
             color: var(--light-grey);
             text-transform: lowercase;
+            visibility: hidden;
+            width: 0px;
+            height: 0px;
+            overflow: hidden;
         }
         input[type="email"] {
             border: var(--border-blk);
             font-size: 16px;
             padding: 6px;
+        }
+
+        .field-holder {
+            width: 100%;
+        }
+        .field-holder.half-width {
+            width: 50%;
+        }
+
+        .grouped-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
 
         
