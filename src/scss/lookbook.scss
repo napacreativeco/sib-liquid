@@ -2,6 +2,9 @@
 
     .lookbook-wrapper {
         padding: 100px 0;
+        width: 100%;
+        max-width: var(--thin);
+        margin: 0 auto;
 
         .swiper-header {
             display: grid;
@@ -23,4 +26,11 @@
 
     }
 
+}
+
+.lookbook-page {
+    padding-top: 140px;
+    width: 100%;
+    max-width: var(--thin);
+    margin: 0 auto;
 }
