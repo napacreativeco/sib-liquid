@@ -233,9 +233,12 @@
                         </button>
                     </noscript>
 
-                    <button type="submit" class="checkout-button" name="checkout" form="CartDrawer-Form"  {% if cart == empty %} disabled{% endif %}>
+                    {% comment %} <button type="submit" class="checkout-button" name="checkout" form="CartDrawer-Form"  {% if cart == empty %} disabled{% endif %}>
                         CHECKOUT ({{ cart.item_count }})
-                    </button>
+                    </button> {% endcomment %}
+                    <a href="/checkout" type="submit" class="checkout-button" name="checkout" form="CartDrawer-Form"  {% if cart == empty %} disabled{% endif %}>
+                        CHECKOUT ({{ cart.item_count }})
+                    </a>
                 </div>
             </div>
 

@@ -76,7 +76,9 @@
 
             li > .list-item-wrapper {
                 display: grid;
-                grid-template-columns: 2fr 2fr 2fr 1fr 1fr 1fr;
+                grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+                grid-gap: 20px;
+                align-items: center;
 
                 a { text-decoration: none; }
 
@@ -88,9 +90,9 @@
                 }
 
                 .titles {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 8px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 20px;
 
                     .vendor {
                         span {
@@ -109,6 +111,20 @@
 
                 }
 
+                .price {
+                    text-align: center;
+                }
+
+                .indicator-holder {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .colors {
+                    display: flex;
+                    justify-content: center;
+                }
                 .color-wrapper {
                     display: flex;
                     flex-direction: row;

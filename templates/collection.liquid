@@ -10,6 +10,7 @@ Collection Page
       
       <ul class="products grid">
         {% if collection.products.size > 0 %}
+
             {%- for product in collection.products -%}
             <li class="item">
                 <div class="item-wrapper">
@@ -27,6 +28,11 @@ Collection Page
     
                 {% comment %} DATA {% endcomment %}
                 <div class="product-data">
+                    {% if product.compare_at_price > product.price %}
+                    <span class="sale-indicator">
+                        sale
+                    </span>
+                    {% endif %}
                     <div class="product-data-wrapper">
                     
                     <div class="vendor">
@@ -53,6 +59,7 @@ Collection Page
                 </div>
             </li>
             {%- endfor -%}
+
         {% else %}
         
             {% render 'no-products' %}
@@ -62,8 +69,9 @@ Collection Page
   
       <ul class="products list">
         {% if collection.products.size > 0 %}
-            
+
             {%- for product in collection.products -%}
+    
             <li>
                 <div class="list-item-wrapper">
                 
@@ -77,17 +85,20 @@ Collection Page
                     {% endfor %}
                 </div>
     
-                <div class="vendor">
+                <div class="titles">
+                    <div class="vendor">
                     <a href="{{ product.url }}" title="{{ product.title }}">
-                    <span>{{ product.vendor }}</span>
+                        <span>{{ product.vendor }}</span>
                     </a>
+                    </div>
+        
+                    <div class="name">
+                    <a href="{{ product.url }}" title="{{ product.title }}">
+                        <h3>{{ product.title }}</h3>
+                    </a>
+                    </div>
                 </div>
     
-                <div class="name">
-                    <a href="{{ product.url }}" title="{{ product.title }}">
-                    <h3>{{ product.title }}</h3>
-                    </a>
-                </div>
     
                 <div class="price">
                     <a href="{{ product.url }}" title="Price">
@@ -96,6 +107,11 @@ Collection Page
                 </div>
     
                 <div class="indicator-holder">
+                    {% if product.compare_at_price > product.price %}
+                    <span class="sale-indicator">
+                        sale
+                    </span>
+                    {% endif %}
                 </div>
     
                 <div class="colors">
@@ -159,4 +175,4 @@ Collection Page
       </ul>
   
     </div>
-</section>
+  </section>

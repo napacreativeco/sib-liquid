@@ -171,10 +171,10 @@
   align-items: center;
 }
 
-.product-form__input:first-of-type {
+/* .product-form__input:first-of-type {
   border-right: var(--border-blk);
   margin-right: 10px;
-}
+} */
 
 variant-radios,
 variant-selects {
