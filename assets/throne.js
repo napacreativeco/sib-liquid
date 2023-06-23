@@ -64,6 +64,23 @@
     });
 
 
+    
+    function hidePlus() {
+      document.querySelector('.plus').style.display = 'none';
+    }
+
+    function hideLogo() {
+      document.querySelector('.logo a').style.display = 'none';
+    }
+
+    function showPlus() {
+      document.querySelector('.plus').style.display = 'block';
+    }
+
+    function showLogo() {
+      document.querySelector('.logo a').style.display = 'block';
+    }
+
 
     // Hiding Marquee
     window.addEventListener("scroll", () => {
@@ -79,6 +96,10 @@
                     gsap.to(".marquee-holder", { display: "none" });
                 }
             });
+
+            showPlus();
+            showLogo();
+        
     
         } else {
     
@@ -91,6 +112,11 @@
                     gsap.to(".marquee-holder", { display: "block" });
                 }
             });
+
+            hidePlus();
+            hideLogo();
+
+            
         }
         
     });
@@ -124,6 +150,9 @@
     });
 
 
+
+
+    /* Grid Changer */
     $('.crosshair').on('click', function() {
 
       var grid = $('ul.products.grid');
