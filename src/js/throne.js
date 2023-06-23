@@ -161,9 +161,13 @@
       if ( $(grid).css('display') === 'grid') {
         $('ul.products').hide();
         $(list).css('display', 'grid');
+
+        $('.crosshair-icon > img').css('transform', 'rotate(90deg)');
       } else {
         $('ul.products').hide();
         $(grid).css('display', 'grid');
+
+        $('.crosshair-icon > img').css('transform', 'rotate(0deg)');
       }
 
     });
