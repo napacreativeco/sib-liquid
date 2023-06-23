@@ -49,8 +49,17 @@
       {%- endfor -%}
     </ul>
 
+    {% assign collection = collections["New Arrivals"] %}
+    {% assign date_now = 'now' | date:'%s' %}
+    {% assign limit = 3600 | times: 24 | times: 7 %}
+    {% assign in7days = 0 %}
+
     <ul class="products list">
       {%- for product in section.settings.collection.products limit: 16 -%}
+
+        {% assign date_published = product.created_at | date:'%s' %}
+        {% assign date_difference = date_now | minus: date_published %}
+
         <li>
           <div class="list-item-wrapper">
           
@@ -86,6 +95,11 @@
             </div>
 
             <div class="indicator-holder">
+              {% if product.compare_at_price > product.price %}
+                <span class="sale-indicator">
+                    sale
+                </span>
+              {% endif %}
             </div>
 
             <div class="colors">

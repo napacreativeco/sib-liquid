@@ -141,6 +141,21 @@
 }
 
 @media screen and (max-width: 767px) {
+
+    .footer-menu .footer-menu-wrapper .filter-menu {
+        max-width: calc(100% - 40px);
+        margin-right: 20px;
+    }
+
+    .footer-menu .footer-menu-wrapper .filter-menu .top  {
+        // padding: 0 20px;
+        ul {
+            justify-content: flex-start;
+            overflow-x: scroll;
+            max-width: calc(100% - 20px);
+        }
+    }
+
     .footer-menu .footer-menu-wrapper .plus {
         padding-right: 20px;
     }
