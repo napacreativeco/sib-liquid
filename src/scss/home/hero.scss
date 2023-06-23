@@ -53,13 +53,13 @@
                 }
             }
 
-            .scroll-to-link {
+            .hero-link {
                 font-size: 24px;
                 cursor: pointer;
                 text-transform: lowercase;
             }
 
-            .scroll-to-link:hover {
+            .hero-link:hover {
                 font-weight: bold;
                 text-decoration: underline;
             }
@@ -160,11 +160,11 @@
 
 
             .left {
-
                 height: 50vh;
                 display: flex;
                 align-items: flex-end;
                 padding: 0 10px 60px 10px;
+
                 .hero-logo {
                     display: block;
                     margin-bottom: 80px;

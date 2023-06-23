@@ -28,6 +28,10 @@
         "about_body": "siberia hills is an idea created in the himalayas during soviet union era by daf of siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops"
       }
     },
+    "contact": {
+      "type": "homepage-contact",
+      "settings": {}
+    },
     "marquee": {
       "type": "homepage-marquee",
       "settings": {
@@ -44,6 +48,7 @@
     "hero",
     "home_collection",
     "about",
+    "contact",
     "marquee",
     "newsletter"
   ]
