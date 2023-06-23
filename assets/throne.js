@@ -2,6 +2,7 @@
 
     $(document).on('ready', function() {
         console.log('document ready');
+
     });
 
     /* Toggle Cart Overlay */
@@ -40,7 +41,6 @@
 
     });
 
-
     // Hero Links
     $('.scroll-to-link').on('click', function(e) {
         e.preventDefault();
@@ -58,76 +58,20 @@
         }, 100);
 
         // Scroll to Component
-        gsap.to(window, {duration: 0.3, delay: 1, scrollTo: window.innerHeight  });
+        gsap.to(window, {duration: 1.3, delay: 1, scrollTo: window.innerHeight, ease: 'ease-in-out'  });
 
         console.log($(this).attr('data-title'));
     });
 
 
-    
-    function hidePlus() {
-      document.querySelector('.plus').style.display = 'none';
-    }
 
-    function hideLogo() {
-      document.querySelector('.logo a').style.display = 'none';
-    }
-
-    function showPlus() {
-      document.querySelector('.plus').style.display = 'block';
-    }
-
-    function showLogo() {
-      document.querySelector('.logo a').style.display = 'block';
-    }
-
-
-    // Hiding Marquee
-    window.addEventListener("scroll", () => {
-
-        if (window.scrollY > 100) {
-    
-            // Hide Marquee
-            gsap.to(".marquee-holder", {
-                y: 100,
-                delay: 0.6,
-                duration: 0.2,
-                onComplete: () => {
-                    gsap.to(".marquee-holder", { display: "none" });
-                }
-            });
-
-            showPlus();
-            showLogo();
-        
-    
-        } else {
-    
-            // Show Marquee
-            gsap.to(".marquee-holder", {
-                y: 0,
-                delay: 0.6,
-                duration: 0.2,
-                onComplete: () => {
-                    gsap.to(".marquee-holder", { display: "block" });
-                }
-            });
-
-            hidePlus();
-            hideLogo();
-
-            
-        }
-        
-    });
-      
           
     /* Newsletter Popup */
     setTimeout(function() {
         gsap.to(".shopify-section:has(.newsletter-modal)", {
           display: "flex",
         });
-    }, 1500);
+    }, 15000);
 
     $('.newsletter-close').on('click', function() {
       gsap.to(".shopify-section:has(.newsletter-modal)", {
@@ -171,6 +115,10 @@
       }
 
     });
+
+
+
+
 
 
 })(jQuery);
@@ -401,5 +349,6 @@ function horizontalLoop(items, config) {
 }
 
 
-
-
+/*
+  =======================================================================
+*/

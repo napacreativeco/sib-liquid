@@ -1,3 +1,19 @@
+slideshow module
+
+
+<div class="lookbook-collection">
+  <div class="lookbook-wrapper" data-lookbook="{{ section.settings.lookbook_title }}">
+  
+    <h1 style="font-size: 4rem;">{{ section.settings.lookbook_title }}</h1>
+
+    {% for block in section.blocks %}
+      <div class="swiper-slider">
+        <img src="{{ block.settings.image | image_url }}" />
+      </div>
+    {% endfor %}
+
+  </div>
+</div>
 
 
 {% schema %}
@@ -46,3 +62,5 @@
   ]
 }
 {% endschema %}
+
+

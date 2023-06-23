@@ -58,11 +58,12 @@ img {
 }
 
 @keyframes popUp {
-  0% { transform: translateY(100px); }
+  0% { transform: translateY(100%); }
   100% { transform: translateY(0px); }
 }
 
 @import './navbar.scss';
+@import './404.scss';
 @import './footer-menu.scss';
 @import './cart-overlay.scss';
 @import './home/hero.scss';
