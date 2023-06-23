@@ -1,4 +1,15 @@
+.cart-overlay .cart-items-holder.desktop {
+    display: flex;
+}
+.cart-overlay .cart-items-holder.mobile {
+    display: none;
+}
+
 .cart-overlay {
+
+
+
+
     position: fixed;
     flex-direction: column;
     align-items: center;
@@ -33,6 +44,11 @@
         width: 100%;
         max-width: var(--thin);
 
+        form#add-to-cart-form {
+            padding: 0 0 20px 0;
+            width: 100%;
+        }
+
         .subtotal {
             border-top: var(--border-blk);
             border-bottom: var(--border-blk);
@@ -65,11 +81,20 @@
                 text-decoration: none;
             }
 
+            .checkout-button:hover {
+                background: var(--black);
+                color: var(--white);
+            }
+
             .update-cart {
                 background: transparent;
                 color: var(--black);
                 border: var(--border-blk);
                 padding: 10px 20px;
+            }
+            .update-cart:hover {
+                background: var(--black);
+                color: var(--white0);
             }
         }
 
@@ -224,5 +249,54 @@
   }
 
 @media screen and (max-width: 767px) {
+
+    .cart-overlay .cart-items-holder.desktop {
+        display: none;
+    }
+    .cart-overlay .cart-items-holder.mobile {
+        display: flex;
+
+        .data {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .actions {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: flex-end;
+        }
+
+    }
+
+    .cart-overlay .cart-overlay-wrapper ul.cart-items li.cart-item .cart-item-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 2fr 1fr;
+        grid-gap: 20px;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        .size {
+            text-align: left;
+        }
+    }
+
+    .cart-overlay .cart {
+        padding: 0 12px;
+    }
+    .cart-overlay .cart-header {
+        padding: 0 12px;
+    }
+
+    .cart-items.desktop {
+        display: none;
+    }
+    .cart-items.mobile {
+        display: flex;
+    }
     
 }

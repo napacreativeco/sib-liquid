@@ -180,14 +180,14 @@
 
 
 @media screen and (max-width: 767px) {
-    .colors {
+    .shop-component .colors {
         display: none !important;
     }
-    .price {
+    .shop-component .price {
         display: none !important;
     }
 
-    .titles {
+    .shop-component .titles {
         flex-direction: column;
         gap: 8px;
     }
