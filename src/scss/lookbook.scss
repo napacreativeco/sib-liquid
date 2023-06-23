@@ -5,6 +5,7 @@
         width: 100%;
         max-width: var(--thin);
         margin: 0 auto;
+        overflow-x: hidden;
 
         .swiper-header {
             display: grid;
