@@ -44,7 +44,13 @@
             font-size: 16px;
             padding: 6px;
             color: var(--light-grey);
+            border-radius: 0px !important;
         }
+
+        select {
+            background: transparent;
+        }
+        
         input {
             height: 100%;
         }
