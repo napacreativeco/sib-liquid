@@ -77,12 +77,14 @@
         width: 100%;
         padding: 4px;
         font-size: 0.8rem;
+        border-radius: 0px !important;
       }
 
       input[type="submit"] {
         padding: 4px 14px;
         font-size: 0.8rem;
         text-transform: uppercase;
+        border-radius: 0px !important;
       }
 
     }
