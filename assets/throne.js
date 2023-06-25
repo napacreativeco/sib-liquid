@@ -5,6 +5,77 @@
 
     });
 
+    /* ============================================= */
+
+    const mediaQuery = window.matchMedia('(max-width: 767px)')
+
+    if (mediaQuery.matches) {
+      gsap.registerPlugin(Draggable);
+
+      Draggable.create("#top-left", {
+        type:"x,y",
+        bounds: document.getElementById("hero-wrapper"),
+        inertia: true,
+        onClick: function() {
+            console.log("clicked top-left");
+        },
+        onDragEnd: function() {
+            console.log("drag ended top-left");
+        }
+      });
+
+      Draggable.create("#top-right", {
+        type:"x,y",
+        bounds: document.getElementById("hero-wrapper"),
+        inertia: true,
+        onClick: function() {
+            console.log("clicked top-right");
+        },
+        onDragEnd: function() {
+            console.log("drag ended top-right");
+        }
+      });
+
+      Draggable.create("#bottom-left", {
+        type:"x,y",
+        bounds: document.getElementById("hero-wrapper"),
+        inertia: true,
+        onClick: function() {
+            console.log("clicked bottom-left");
+        },
+        onDragEnd: function() {
+            console.log("drag ended bottom-left");
+        }
+      });
+
+      Draggable.create("#bottom-right", {
+        type:"x,y",
+        bounds: document.getElementById("hero-wrapper"),
+        inertia: true,
+        onClick: function() {
+            console.log("clicked bottom-right");
+        },
+        onDragEnd: function() {
+            console.log("drag ended bottom-right");
+        }
+      });
+
+      Draggable.create("#cloud", {
+        type:"x,y",
+        bounds: document.getElementById("hero-wrapper"),
+        inertia: true,
+        onClick: function() {
+            console.log("clicked cloud");
+        },
+        onDragEnd: function() {
+            console.log("drag ended cloud");
+        }
+      });
+
+    }
+    
+    /* ============================================= */
+
     /* Toggle Cart Overlay */
     $('.hamburger').on('click', function() {
 

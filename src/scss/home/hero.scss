@@ -23,6 +23,10 @@
         z-index: 0;
     }
 
+    .hero-image-desktop {
+        display: block;
+    }
+    .hero-image-mobile { display: none; }
     .hero-wrapper {
         width: 100%;
         max-width: var(--thin);
@@ -137,8 +141,7 @@
 
 @media screen and (max-width: 767px) {
     
-    .hero-image-desktop { display: none; }
-    .hero-image-mobile { display: block; }
+
 
     .logo {
         display: block;
@@ -148,6 +151,11 @@
     .homepage-hero {
 
         min-height: 100vh;
+
+        .hero-image-desktop {
+            display: none;
+        }
+        .hero-image-mobile { display: block; }
 
         .hero-wrapper {
             display: flex;

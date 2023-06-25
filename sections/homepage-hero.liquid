@@ -3,7 +3,7 @@
   <div class="hero-image hero-image-desktop" style="background: url({{ section.settings.hero_background_desktop | image_url }}); background-size: cover; background-position: center center;">&nbsp;</div>
   <div class="hero-image hero-image-mobile" style="background: url({{ section.settings.hero_background_mobile | image_url: width: 700 }}); background-size: cover; background-position: center center;">&nbsp;</div>
 
-  <div class="hero-wrapper">
+  <div id="hero-wrapper" class="hero-wrapper">
     <div class="left">
 
         <div class="hero-logo">
@@ -126,6 +126,7 @@
 })(jQuery)
 </script>
 
+<script src="{{ 'gsap-draggable.min.js' | asset_url }}"></script>
 <script>
 
   function hidePlus() {
@@ -142,34 +143,30 @@
 
   if (!mediaQuery.matches) {
     hideLogo();
-  }
 
-  /*
-    ========================================
-  */
-  function coordinate(event) {
-    var x=event.clientX;
-    var y=event.clientY;
-    //document.getElementById("X").value=x;
-    //document.getElementById("Y").value=y;
+    function coordinate(event) {
+      var x=event.clientX;
+      var y=event.clientY;
+      //document.getElementById("X").value=x;
+      //document.getElementById("Y").value=y;
+  
+      var topLeft = document.getElementById("top-left");
+      var topRight = document.getElementById("top-right");
+      var bottomLeft = document.getElementById("bottom-left");
+      var bottomRight = document.getElementById("bottom-right");
+      var cloud = document.getElementById("cloud");
+  
+      topRight.style.transform = 'translate(' + x / 20 + 'px, ' + y / 16 + 'px)';
+      topLeft.style.transform = 'translate(' + (-x / 20) + 'px, ' + (-y / 18) + 'px)';
+      bottomRight.style.transform = 'translate(' + x / 32 + 'px, ' + y / 22 + 'px)';
+      bottomLeft.style.transform = 'translate(' + (-x / 42) + 'px, ' + (-y / 42) + 'px)';
+      cloud.style.transform = 'translate(' + (-x / 62) + 'px, ' + (-y / 62) + 'px)';
+  
+      console.log('x: '+x+' y: '+y);
+  
+    }
 
-    var topLeft = document.getElementById("top-left");
-    var topRight = document.getElementById("top-right");
-    var bottomLeft = document.getElementById("bottom-left");
-    var bottomRight = document.getElementById("bottom-right");
-    var cloud = document.getElementById("cloud");
-
-    topRight.style.transform = 'translate(' + x / 20 + 'px, ' + y / 16 + 'px)';
-    topLeft.style.transform = 'translate(' + (-x / 20) + 'px, ' + (-y / 18) + 'px)';
-    bottomRight.style.transform = 'translate(' + x / 32 + 'px, ' + y / 22 + 'px)';
-    bottomLeft.style.transform = 'translate(' + (-x / 42) + 'px, ' + (-y / 42) + 'px)';
-    cloud.style.transform = 'translate(' + (-x / 62) + 'px, ' + (-y / 62) + 'px)';
-
-    console.log('x: '+x+' y: '+y);
-
-  }
-
-
+  } 
 </script>
 
 {% schema %}
