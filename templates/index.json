@@ -5,7 +5,7 @@
       "settings": {
         "hero_background_desktop": "shopify:\/\/shop_images\/BG_WIDE.png",
         "hero_background_mobile": "shopify:\/\/shop_images\/BG_MOBILE.png",
-        "hero_cloud": "shopify:\/\/files\/videos\/siberia_cloud_variant_loop_02_preview.mp4",
+        "hero_cloud": "shopify:\/\/shop_images\/cloud-optimized.gif",
         "hero_top_left": "shopify:\/\/files\/videos\/topleft_video.mp4",
         "hero_top_right": "shopify:\/\/files\/videos\/topright_video.mp4",
         "hero_bottom_left": "shopify:\/\/shop_images\/BOTTOMLEFT_IMAGE.png",
@@ -30,7 +30,13 @@
     },
     "contact": {
       "type": "homepage-contact",
-      "settings": {}
+      "settings": {
+        "heading": "Contact form",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
     "marquee": {
       "type": "homepage-marquee",
