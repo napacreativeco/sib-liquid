@@ -20,16 +20,20 @@
   <div class="lookbook-page">
     <div class="lookbook-page-wrapper">
       [ lookbook selectors ]
+
+      {% for id in section.id %}
+        {{ id }}
+      {% endfor %}
+    
     </div>
   </div>
 
-  <script>
-    console.log("{{ content_for_layout }}")
-  </script>
-
 {% elsif page.handle == 'contact' %}
+
   {% comment %} contact page {% endcomment %}
+
 {% else %}
+
   <div class="page-width page-width--narrow section-{{ section.id }}-padding">
     <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
       {{ page.title | escape }}
@@ -38,6 +42,7 @@
       {{ page.content }}
     </div>
   </div>
+
 {% endif %}
 
 {% schema %}

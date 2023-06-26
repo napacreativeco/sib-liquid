@@ -5,7 +5,7 @@
   }
 </style>
 
-<div class="lookbook-collection">
+<div id="{{ section.id }}" class="lookbook-collection">
   <div class="lookbook-wrapper" data-lookbook="{{ section.settings.lookbook_title }}">    
 
     
@@ -79,7 +79,7 @@
 {
   "name": "Lookbook",
   "tag": "section",
-  "class": "section",
+  "class": "lookbook-section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
