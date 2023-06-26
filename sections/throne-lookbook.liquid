@@ -1,42 +1,134 @@
-<div class="lookbook">
-I DONT THINK THIS IS CONNECTED
+<style>
+  .swiper {
+    width: 600px;
+    height: 300px;
+  }
+</style>
+
+<div id="{{ section.id }}" class="lookbook-collection">
+  <div class="lookbook-wrapper" data-lookbook="{{ section.settings.lookbook_title }}">    
+
+    
+    <div class="swiper-{{ section.id }}">
+
+      <div class="swiper-header">
+        <div><h1>{{ section.settings.lookbook_title }}</h1></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      
+
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+
+          <div class="swiper-slide" data-index="{{ forloop.index }}">
+            <div class="image" style="background: url('{{ block.settings.image | image_url }}'); background-size: cover; background-position: center center;">
+              &nbsp;
+            </div>
+            <div class="caption">
+              <div class="caption-wrapper">
+                {{ block.settings.slide_caption }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+ 
+
+  </div>
 </div>
+
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
+
+  const swiper = new Swiper('.swiper-{{ section.id }}', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction'
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+
+  swiper.on('slideChange', function () {
+    console.log('slide changed');
+  });
+</script>
+
 
 {% schema %}
 {
-  "name": "Lookbook",
+  "name": "Lookbook 6/26",
   "tag": "section",
-  "class": "slideshow",
-  "max_blocks": 10,
+  "class": "throne-lookbook-section",
+  "limit": 1,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
   "settings": [
     {
       "type": "text",
-      "id": "title",
-      "label": "Collection Title"
-    },
-    {
-      "type": "richtext",
-      "id": "collecton_description",
-      "label": "Collection Description"
+      "id": "lookbook_title",
+      "label": "title"
     }
   ],
   "blocks": [
-     {
-       "name": "Slide",
-       "type": "slide",
-       "settings": [
-         {
-           "type": "image_picker",
-           "id": "image",
-           "label": "Image"
-         },
-         {
-          "type": "richtext",
+    {
+      "type": "slide",
+      "name": "Slide",
+      "limit": 50,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "inline_richtext",
           "id": "slide_caption",
-          "label": "Caption"
+          "label": "Slide Caption"
+        },
+        {
+          "type": "text",
+          "id": "identifier",
+          "Label": "Collection Name"
+        },
+        {
+          "type": "text",
+          "id": "collection_handle",
+          "Label": "Collection Handle"
         }
-       ]
-     }
-   ]
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lookbook",
+      "blocks": [
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
