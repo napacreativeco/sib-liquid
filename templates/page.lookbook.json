@@ -58,11 +58,41 @@
       "settings": {
         "lookbook_title": "Spring\/Summer 2023"
       }
+    },
+    "255e6532-92bb-4a98-8554-9751591dedd6": {
+      "type": "throne-slideshow",
+      "blocks": {
+        "template--19480154243362__255e6532-92bb-4a98-8554-9751591dedd6-16878054027c29e005-0": {
+          "type": "slide",
+          "settings": {
+            "slide_caption": "",
+            "identifier": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19480154243362__255e6532-92bb-4a98-8554-9751591dedd6-16878054027c29e005-0"
+      ],
+      "settings": {
+        "lookbook_title": ""
+      }
+    },
+    "ac9d5ec8-ed0b-4574-a68d-5d912b30692c": {
+      "type": "page",
+      "settings": {
+        "page": "fall-winter-2022",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "b136a70b-63c4-44aa-852b-659a24d293ac",
-    "05e6d7f9-ee60-421f-82ea-80dcf5722a74"
+    "05e6d7f9-ee60-421f-82ea-80dcf5722a74",
+    "255e6532-92bb-4a98-8554-9751591dedd6",
+    "ac9d5ec8-ed0b-4574-a68d-5d912b30692c"
   ]
 }
