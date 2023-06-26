@@ -8,4 +8,10 @@
     {% endcomment %}
     [new lookbook page]
 
+    {% for blog in shop.blogs %}
+        {{ blog.title }}
+    {% endfor %}
+    <script>
+        console.log('{{ blog | json }}');
+    </script>
 </div>
