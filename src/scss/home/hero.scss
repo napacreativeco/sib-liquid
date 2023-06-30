@@ -1,3 +1,39 @@
+@keyframes topLeftRounder {
+    0% { margin-left: 0%; margin-top: 0%; }
+    25% { margin-left: -5%; margin-top: 5%; }
+    50% { margin-left: 0%; margin-top: 10%; }
+    75% { margin-left: 5%; margin-top: 5%; }
+}
+
+@keyframes topRightRounder {
+    0% { margin-right: 0%; margin-top: 0%; }
+    25% { margin-right: -5%; margin-top: 5%; }
+    50% { margin-right: 0%; margin-top: 10%; }
+    75% { margin-right: 5%; margin-top: 5%; }
+}
+
+@keyframes bottomLeftRounder {
+    0% { margin-left: 0%; margin-bottom: 0%; }
+    25% { margin-left: -5%; margin-bottom: 5%; }
+    50% { margin-left: 0%; margin-bottom: 10%; }
+    75% { margin-left: 5%; margin-bottom: 5%; }
+}
+
+@keyframes bottomRightRounder {
+    0% { margin-right: 0%; margin-bottom: 0%; }
+    25% { margin-right: -5%; margin-bottom: 5%; }
+    50% { margin-right: 0%; margin-bottom: 10%; }
+    75% { margin-right: 5%; margin-bottom: 5%; }
+}
+
+@keyframes cloudRounder {
+    0% { margin-right: 0%; margin-top: 0%; }
+    25% { margin-right: -5%; margin-top: 5%; }
+    50% { margin-right: 0%; margin-top: 10%; }
+    75% { margin-right: 5%; margin-top: 5%; }
+}
+
+
 .homepage-hero {
     width: calc(100% + 24px);
     max-width: calc(100% + 24px);
@@ -103,6 +139,7 @@
                 }
             }
 
+
             .top-right {
                 top: -40%;
                 right: 30px;
@@ -200,21 +237,32 @@
                         width: 100%;
                     }
                 }
-                .top-left {
+                #top-left {
                     top: 90px;
                     left: 20px;
                     max-width: 170px;
+                    animation: topLeftRounder 4s linear infinite;
                 }
-                .top-right {
+                #top-right {
                     top: 120px;
                     max-width: 190px;
+                    animation: topRightRounder 5s linear infinite;
                 }
 
-                .bottom-left {
+                #bottom-left {
                     bottom: -50px;
                     left: 20%;
                     max-width: 180px;
+                    animation: bottomLeftRounder 4s infinite linear;
                     z-index: 2;
+                }
+
+                #bottom-right {
+                    animation: bottomRightRounder 5s infinite linear;
+                }
+
+                #cloud {
+                    animation: cloudRounder 5s infinite linear;
                 }
             }
         }

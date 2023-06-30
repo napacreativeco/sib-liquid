@@ -139,7 +139,7 @@
         gsap.to(".shopify-section:has(.newsletter-modal)", {
           display: "flex",
         });
-    }, 15000);
+    }, 30000);
 
     $('.newsletter-close').on('click', function() {
       gsap.to(".shopify-section:has(.newsletter-modal)", {
