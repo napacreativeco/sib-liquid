@@ -129,7 +129,7 @@
         }, 100);
 
         // Scroll to Component
-        gsap.to(window, {duration: 0.7, delay: 0.5, scrollTo: window.innerHeight, ease: 'ease-in-out'  });
+        gsap.to(window, { duration: 0.7, delay: 0.1, scrollTo: window.innerHeight, ease: 'ease-in-out' });
 
         console.log($(this).attr('data-title'));
     });

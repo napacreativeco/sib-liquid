@@ -47,7 +47,7 @@
         .warning {
           text-align: center;
           width: 100%;
-          font-size: 0.9rem;
+          font-size: 16px;
           padding: 10px 40px;
         }
 
@@ -76,13 +76,15 @@
       input[type="email"] {
         width: 100%;
         padding: 4px;
-        font-size: 0.8rem;
+        font-size: 14px;
         border-radius: 0px !important;
+        font-family: inherit;
       }
 
       input[type="submit"] {
         padding: 4px 14px;
-        font-size: 0.8rem;
+        font-size: 14px;
+        font-family: inherit;
         text-transform: uppercase;
         border-radius: 0px !important;
       }
@@ -94,3 +96,16 @@
 
 
 
+@media screen and (max-width: 767px) {
+  .newsletter-modal {
+
+    .newsletter-wrapper {
+
+      input {
+        font-size: 14px;
+      }
+
+    }
+
+  }
+}

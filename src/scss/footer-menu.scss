@@ -135,6 +135,13 @@
         .plus {
             pointer-events: all;
             cursor: pointer;
+
+            .icon {
+
+                img {
+                    width: 44.79px;
+                }
+            }
         }
     }
 

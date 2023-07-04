@@ -91,6 +91,7 @@
                 li {
                     width: 100%;
                 }
+                padding-bottom: 20px;
             }
 
             .hero-link {
@@ -109,7 +110,6 @@
         .right {
             padding-right: var(--side-padding);
             position: relative;
-
             .cloud-holder {
                 position: absolute;
                 z-index: 8;
@@ -212,7 +212,11 @@
                 display: flex;
                 align-items: flex-end;
                 padding: 0 10px 60px 10px;
-
+                .hero-link {
+                    font-size: 16px;
+                    cursor: pointer;
+                    text-transform: lowercase;
+                }
                 .hero-logo {
                     display: block;
                     margin-bottom: 80px;

@@ -45,6 +45,9 @@
     .throne--navbar {
         .logo {
             padding-left: 20px;
+            img {
+                max-width: 107px;
+            }
         }
         .hamburger {
             padding-right: 10px;
