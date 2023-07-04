@@ -129,7 +129,7 @@
         }, 100);
 
         // Scroll to Component
-        gsap.to(window, {duration: 1.3, delay: 1, scrollTo: window.innerHeight, ease: 'ease-in-out'  });
+        gsap.to(window, {duration: 0.7, delay: 0.5, scrollTo: window.innerHeight, ease: 'ease-in-out'  });
 
         console.log($(this).attr('data-title'));
     });
@@ -191,16 +191,13 @@ MARQUEE
 const wrapper = document.querySelector(".wrapper");
 const colors = ["#f38630","#6fb936", "#ccc", "#6fb936"];
 const boxes = gsap.utils.toArray(".box");
-// console.clear();
-// gsap.set(boxes , {
-//   backgroundColor: gsap.utils.wrap(colors)
-// });
 
 let activeElement;
 const loop = horizontalLoop(boxes, {
   paused: false, 
-  draggable: true,
+  draggable: false,
   center: true,
+  duration: 6,
   onChange: (element, index) => { // when the active element changes, this function gets called.
     //activeElement && activeElement.classList.remove("active");
     //element.classList.add("active");
@@ -208,11 +205,8 @@ const loop = horizontalLoop(boxes, {
   }
 });
 
-boxes.forEach((box, i) => box.addEventListener("click", () => loop.toIndex(i, {duration: 0.8, ease: "power1.inOut"})));
+boxes.forEach((box, i) => box.addEventListener("click", () => loop.toIndex(i, {duration: 8, ease: "power1.inOut"})));
 
-document.querySelector(".toggle").addEventListener("click", () => wrapper.classList.toggle("show-overflow"));
-document.querySelector(".next").addEventListener("click", () => loop.next({duration: 0.4, ease: "power1.inOut"}));
-document.querySelector(".prev").addEventListener("click", () => loop.previous({duration: 0.4, ease: "power1.inOut"}));
 
 
 
@@ -252,7 +246,7 @@ function horizontalLoop(items, config) {
     curIndex = 0,
     indexIsDirty = false,
     center = config.center,
-    pixelsPerSecond = (config.speed || 1) * 100,
+    pixelsPerSecond = (config.speed || 1) * 20,
     snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
     timeOffset = 0,
     container = center === true ? items[0].parentNode : gsap.utils.toArray(center)[0] || items[0].parentNode,
