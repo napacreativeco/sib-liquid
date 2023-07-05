@@ -74,6 +74,11 @@ p {
   font-family: 'Times New Roman', serif;
 }
 
+select {
+  font-family: inherit;
+  color: inherit;
+}
+
 img {
   z-index: 1;
 }

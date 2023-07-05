@@ -28,7 +28,7 @@
                 -moz-appearance: none;
                 appearance: none;
                 border: 0px;
-                font-size: 14px;
+                font-size: var(--14px);
                 font-family: inherit;
                 width: auto;
                 padding-right: 10px;
@@ -43,7 +43,7 @@
                 pointer-events: none;
 
                 svg { 
-                    width: 20px;
+                    width: 12px;
                 }
             }
         }
@@ -77,6 +77,15 @@
 
         article.article-component {
             display: none;
+
+            .caption {
+                padding: 20px 0 0 0;
+
+                p {
+                    font-size: var(--14px);
+                    margin: 0;
+                }
+            }
         }
         article.article-component:first-of-type {
             display: block;

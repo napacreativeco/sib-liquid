@@ -18,7 +18,7 @@
 
         .about-title {
             h2 {
-                font-size: 1rem;
+                font-size: var(--16px);
                 font-family: inherit;
                 margin: 0 0 16px 0;
             }
@@ -26,6 +26,7 @@
     
         .tagline {
             span {
+                font-size: var(--16px);
                 color: var(--red);
                 font-style: italic;
             }

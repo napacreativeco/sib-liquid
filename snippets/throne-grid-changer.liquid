@@ -8,7 +8,17 @@
         </div>
 
         <div class="pagination">
-            <a href="{{ }}" title="Page 01">01</a> - <a href="/collections/all" title="Shop All">all</a>
+            <a href="{{ }}" title="Page 01">01</a> 
+            &nbsp;&ndash;&nbsp; 
+            {% if template.name == 'index' %}
+                <a href="/collections/all" title="Shop All">all</a>
+            {% elsif collection %}
+                {% if collection.title == 'Products' %}
+                    {{ 'All | escape }}
+                {% else %}
+                    {{ collection.title }}
+                {% endif %}
+            {% endif %}
         </div>
 
     </div>
