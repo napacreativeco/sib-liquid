@@ -60,69 +60,70 @@
     </div>
 
   </div>
+  {% render 'privacy-footer' %}
 </section>
 
 <script>
-(function($) {
-  function hidePlus() {
-    document.querySelector('.plus').style.display = 'none';
-  }
+  (function($) {
+    function hidePlus() {
+      document.querySelector('.plus').style.display = 'none';
+    }
 
-  function hideLogo() {
-    document.querySelector('.logo a').style.display = 'none';
-  }
+    function hideLogo() {
+      document.querySelector('.logo a').style.display = 'none';
+    }
 
-  function showPlus() {
-    document.querySelector('.plus').style.display = 'block';
-  }
+    function showPlus() {
+      document.querySelector('.plus').style.display = 'block';
+    }
 
-  function showLogo() {
-    document.querySelector('.logo a').style.display = 'block';
-  }
+    function showLogo() {
+      document.querySelector('.logo a').style.display = 'block';
+    }
 
 
-  const mediaQuery = window.matchMedia('(max-width: 767px)');
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
 
-  // Hiding Marquee
-  window.addEventListener("scroll", () => {
+    // Hiding Marquee
+    window.addEventListener("scroll", () => {
 
-      if (window.scrollY > 100) {
-  
-          // Hide Marquee
-          gsap.to(".marquee-holder", {
-              y: 100,
-              delay: 0.6,
-              duration: 0.2,
-              onComplete: () => {
-                  gsap.to(".marquee-holder", { display: "none" });
-              }
-          });
+        if (window.scrollY > 100) {
+    
+            // Hide Marquee
+            gsap.to(".marquee-holder", {
+                y: 100,
+                delay: 0.6,
+                duration: 0.2,
+                onComplete: () => {
+                    gsap.to(".marquee-holder", { display: "none" });
+                }
+            });
 
-          showPlus();
-          showLogo();
-  
-      } else {
-  
-          // Show Marquee
-          gsap.to(".marquee-holder", {
-              y: 0,
-              delay: 0.6,
-              duration: 0.2,
-              onComplete: () => {
-                  gsap.to(".marquee-holder", { display: "block" });
-              }
-          });
+            showPlus();
+            showLogo();
+    
+        } else {
+    
+            // Show Marquee
+            gsap.to(".marquee-holder", {
+                y: 0,
+                delay: 0.6,
+                duration: 0.2,
+                onComplete: () => {
+                    gsap.to(".marquee-holder", { display: "block" });
+                }
+            });
 
-          hidePlus();
-          hideLogo();
-      }
-      
-  });
-
-  
+            hidePlus();
+            hideLogo();
+        }
+        
+    });
 
     
-})(jQuery)
+
+      
+  })(jQuery);
 </script>
 
 <script src="{{ 'gsap-draggable.min.js' | asset_url }}"></script>
@@ -163,11 +164,11 @@
         
 
         if (!wait) {
-          topRight.style.transform = 'translate(' + x / 20 + 'px, ' + y / 16 + 'px)';
-          topLeft.style.transform = 'translate(' + (-x / 20) + 'px, ' + (-y / 18) + 'px)';
-          bottomRight.style.transform = 'translate(' + x / 32 + 'px, ' + y / 22 + 'px)';
-          bottomLeft.style.transform = 'translate(' + (-x / 42) + 'px, ' + (-y / 42) + 'px)';
-          cloud.style.transform = 'translate(' + (-x / 62) + 'px, ' + (-y / 62) + 'px)';
+          topRight.style.transform = 'translate(' + x / 40 + 'px, ' + y / 36 + 'px)';
+          topLeft.style.transform = 'translate(' + (-x / 40) + 'px, ' + (-y / 38) + 'px)';
+          bottomRight.style.transform = 'translate(' + x / 52 + 'px, ' + y / 52 + 'px)';
+          bottomLeft.style.transform = 'translate(' + (-x / 62) + 'px, ' + (-y / 62) + 'px)';
+          cloud.style.transform = 'translate(' + (-x / 82) + 'px, ' + (-y / 82) + 'px)';
           wait = true;
             setTimeout(function () {
               wait = false;

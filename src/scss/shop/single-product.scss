@@ -39,7 +39,7 @@
 
         .actions-header {
             display: grid;
-            grid-template-columns: 2fr 4fr 2fr;
+            grid-template-columns: 1fr 4fr 2fr;
             border: var(--border-blk);
 
             .price-holder {
@@ -47,13 +47,19 @@
                 display: flex;
                 align-items: center;
                 padding-left: 10px;
+                text-transform: lowercase;
             }
 
 
             .size-holder {
                 position: relative;
                 overflow: hidden;
+                text-transform: lowercase;
 
+                label {
+                    text-transform: uppercase;
+                }
+                
                 .product-form__input input[type='radio']:checked+label {
                     //background-color: rgb(var(--color-foreground));
                     //color: rgb(var(--color-background));
@@ -92,8 +98,8 @@
                     cursor: pointer;
 
                     svg {
-                        width: 14px;
-                        height: 14px;
+                        width: 10px;
+                        height: 10px;
                     }
                 }
                 .variant-selector-title:hover {

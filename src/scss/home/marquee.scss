@@ -41,38 +41,38 @@
       position: relative;
       flex-shrink: 0;
       color: black;
-      font-size: 32px;
+      font-size: var(--28px);
       cursor: pointer;
       font-family: var(--mingliu);
     }
-    .box.active {
-      color: white;
-      border: 2px solid white;
-    }
+    // .box.active {
+    //   color: white;
+    //   border: 2px solid white;
+    // }
     
-    .prev {
-      position: absolute;
-      top: 10%;
-      left: 15%;
-    }
-    .next {
-      position: absolute;
-      top: 10%;
-      right: 15%;
-    }
-    button {
-      padding: 1rem 2rem 1rem 2rem;
-      border: none;
-      background: #555;
-      color: white;
-      text-transform: uppercase;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .toggle {
-      position: absolute;
-      top: 10%;
-    }
+    // .prev {
+    //   position: absolute;
+    //   top: 10%;
+    //   left: 15%;
+    // }
+    // .next {
+    //   position: absolute;
+    //   top: 10%;
+    //   right: 15%;
+    // }
+    // button {
+    //   padding: 1rem 2rem 1rem 2rem;
+    //   border: none;
+    //   background: #555;
+    //   color: white;
+    //   text-transform: uppercase;
+    //   font-weight: bold;
+    //   cursor: pointer;
+    // }
+    // .toggle {
+    //   position: absolute;
+    //   top: 10%;
+    // }
     
     .show-overflow {
       overflow: visible;

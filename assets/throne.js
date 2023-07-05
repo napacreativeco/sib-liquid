@@ -97,17 +97,18 @@
     
     /* Toggle Plus Menu */
     $('.plus').on('click', function() {
-
+      $('.filter-menu-text').hide();
+      
         if ( $('.filter-menu').hasClass('filter-opened') ) {
 
             $('.filter-menu').removeClass('filter-opened');
-            $('.filter-menu-text').hide();
-            gsap.fromTo(".filter-menu", {x: 0}, {x: 1000, duration: 0.2});
+            
+            gsap.fromTo(".filter-menu", {x: '0vw'}, {x: '100vw', duration: 0.2});
 
         } else {
 
             $('.filter-menu').addClass('filter-opened');
-            gsap.fromTo(".filter-menu", {x: 1000}, {x: 0, duration: 0.2});
+            gsap.fromTo(".filter-menu", {x: '100vw' }, {x: '0vw', duration: 0.2});
         }
 
     });

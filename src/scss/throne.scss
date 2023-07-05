@@ -22,16 +22,30 @@
   --blue: #403F8B;
   --light-blue: #B6FFFE;
   --light-grey: #888888;
-  --thin: 1100px;
+  --thin: 50vw;
   --border-blk: 1px solid var(--black);
   --side-padding: 12px;
 
   --36px: 2.571rem;
+  --32px: 2.286rem;
+  --28px: 2rem;
   --24px: 1.714rem;
   --16px: 1.143rem;
   --14px: 1rem;
   --12px: 0.857rem;
   --10px: 0.714rem;
+}
+
+@media screen and (max-width: 1100px) {
+  :root {
+    --thin: 66vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    --thin: 100%;
+  }
 }
 
 body {
@@ -48,7 +62,6 @@ main.page-container {
   position: relative;
   width: 100%;
   max-width: 100%;
-  padding: 0 12px;
 }
 
 h1, h2, h3, h4, h5, h6 {
