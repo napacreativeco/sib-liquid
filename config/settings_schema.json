@@ -34,13 +34,19 @@
     ]
   },
   {
-    "name": "testrrrroo",
+    "name": "Marquee",
     "settings": [
       {
-        "type": "text",
-        "id": "testo_setting",
-        "label": "the littie icon",
-        "info": "t:settings_schema.logo.settings.favicon.info"
+        "type": "color",
+        "id": "marquee_color",
+        "label": "Marquee Color",
+        "info": "Set the color for the Marquee"
+      },
+      {
+        "type": "number",
+        "id": "marquee_speed",
+        "label": "Marquee Speed",
+        "info": "Set the speed for the Marquee (0 - 100)"
       }
     ]
   },
