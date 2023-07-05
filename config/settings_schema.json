@@ -34,6 +34,17 @@
     ]
   },
   {
+    "name": "testrrrroo",
+    "settings": [
+      {
+        "type": "text",
+        "id": "testo_setting",
+        "label": "the littie icon",
+        "info": "t:settings_schema.logo.settings.favicon.info"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.colors.name",
     "settings": [
       {
