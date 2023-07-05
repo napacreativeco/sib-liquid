@@ -25,13 +25,20 @@
   --thin: 1100px;
   --border-blk: 1px solid var(--black);
   --side-padding: 12px;
+
+  --36px: 2.571rem;
+  --24px: 1.714rem;
+  --16px: 1.143rem;
+  --14px: 1rem;
+  --12px: 0.857rem;
+  --10px: 0.714rem;
 }
 
 body {
   font-family: 'Times New Roman', serif;
   font-weight: 400;
   letter-spacing: 0px;
-  font-size: 100%;
+  font-size: 14px;
   line-height: 1;
   overflow-x: hidden;
   overflow-y: scroll;

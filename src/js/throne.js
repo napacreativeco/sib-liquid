@@ -101,13 +101,13 @@
         if ( $('.filter-menu').hasClass('filter-opened') ) {
 
             $('.filter-menu').removeClass('filter-opened');
-
-            gsap.fromTo(".filter-menu", {x: 0}, {x: 1000, duration: 1});
+            $('.filter-menu-text').hide();
+            gsap.fromTo(".filter-menu", {x: 0}, {x: 1000, duration: 0.2});
 
         } else {
 
             $('.filter-menu').addClass('filter-opened');
-            gsap.fromTo(".filter-menu", {x: 1000}, {x: 0, duration: 1});
+            gsap.fromTo(".filter-menu", {x: 1000}, {x: 0, duration: 0.2});
         }
 
     });
@@ -123,9 +123,9 @@
 
         // Then, show the proper Component
         setTimeout(function() {
-            $('.'+sect).css({
-                'display': 'flex'
-            });
+          $('.'+sect).css({
+              'display': 'flex'
+          });
         }, 100);
 
         // Scroll to Component

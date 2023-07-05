@@ -13,7 +13,7 @@
         top: 0.2rem;
         color: var(--red);
         font-style: italic;
-        font-size: .74rem;
+        font-size: var(--10px);
         letter-spacing: 1px;
         text-transform: lowercase;
     }
@@ -53,14 +53,14 @@
                     .vendor {
                         span {
                             font-family: var(--mingliu);
-                            font-size: 12px;
+                            font-size: var(--12px);
                         }
                     }
                     .name {
                         h3 {
                             margin: 4px 0 4px 0;
                             font-family: var(--mingliu);
-                            font-size: 12px;
+                            font-size: var(--12px);
                         }
                     }
 
@@ -95,7 +95,7 @@
                     .vendor {
                         span {
                             font-family: var(--mingliu);
-                            font-size: 12px;
+                            font-size: var(--12px);
                         }
                     }
     
@@ -103,7 +103,7 @@
                         h3 {
                             margin: 4px 0 4px 0;
                             font-family: var(--mingliu);
-                            font-size: 12px;
+                            font-size: var(--12px);
                         }
                     }
 
@@ -135,7 +135,7 @@
         .sale-indicator {
             color: var(--red);
             font-style: italic;
-            font-size: 10px;
+            font-size: var(--10px);
         }
 
     }

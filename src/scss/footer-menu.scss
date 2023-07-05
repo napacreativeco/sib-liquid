@@ -40,13 +40,13 @@
                     flex-direction: row;
                     justify-content: space-around;
                     gap: 10px;
-                    padding: 10px;
+                    padding: 16px 10px;
 
                     li {
                         padding: 10px;
 
                         a {
-                            font-size: 12px;
+                            font-size: var(--12px);
                             text-decoration: none;
                             padding: 8px;
                         }
@@ -87,6 +87,7 @@
                         a {
                             text-decoration: none;
                             text-transform: lowercase;
+                            font-size: var(--36px);
                         }
 
                         a::before {
@@ -119,11 +120,12 @@
                 flex-direction: row;
                 justify-content: space-between;
                 gap: 20px;
-                padding: 10px;
+                padding: 16px;
                 
                 a {
-                    font-size: 12px;
+                    font-size: var(--12px);
                     text-decoration: none;
+                    text-transform: lowercase;
                 }
 
                 a:hover {
@@ -135,6 +137,15 @@
         .plus {
             pointer-events: all;
             cursor: pointer;
+            text-align: center;
+
+            .filter-menu-text {
+                font-family: var(--mingliu);
+                font-size: var(--16px);
+                text-align: center;
+                display: block;
+                margin: 0 0 8px 0;
+            }
 
             .icon {
 

@@ -77,6 +77,7 @@
             .hero-logo {
                 display: block;
                 margin-bottom: 140px;
+
                 img {   
                     width: 300px;
                     max-width: 100%;
@@ -95,7 +96,7 @@
             }
 
             .hero-link {
-                font-size: 24px;
+                font-size: 1.714rem;
                 cursor: pointer;
                 text-transform: lowercase;
             }
@@ -110,6 +111,7 @@
         .right {
             padding-right: var(--side-padding);
             position: relative;
+
             .cloud-holder {
                 position: absolute;
                 z-index: 8;
@@ -126,49 +128,50 @@
             .floating-media {
                 position: absolute;
                 object-fit: cover;
-                transition: 0.2s ease-out;
+                transition: 0.2s;
             }
 
-            .top-left {
+            #top-left {
                 top: -14%;
                 left: 0px;
                 z-index: 3;
                 max-width: 260px;
+                animation-delay: 0;
                 video {
                     width: 100%;
                 }
             }
 
 
-            .top-right {
+            #top-right {
                 top: -40%;
                 right: 30px;
                 max-width: 240px;
                 z-index: 4;
-                
+                animation-delay: 0;
                 video {
                     width: 100%;
                 }
             }
 
-            .bottom-left {
+            #bottom-left {
                 bottom: -40%;
                 left: 20%;
                 max-width: 180px;
                 z-index: 2;
-
+                animation-delay: 0;
                 img {
                     width: 100%;
                     max-height: 50vh;
                 }
             }
 
-            .bottom-right {
+            #bottom-right {
                 bottom: -30%;
                 right: 20%;
                 max-width: 160px;
                 z-index: 2;
-
+                animation-delay: 0;
                 img {
                     width: 100%;
                     max-height: 40vh;
@@ -236,7 +239,7 @@
                     top: 50%;
                     transform: translateY(-50%);
                     left: 20%;
-                    animation-delay: 300;
+                    //animation-delay: 300;
 
                     img {
                         width: 100%;
@@ -246,13 +249,13 @@
                     top: 90px;
                     left: 20px;
                     max-width: 170px;
-                    animation-delay: 300;
+                    //animation-delay: 300;
                     animation: topLeftRounder 6s linear infinite;
                 }
                 #top-right {
                     top: 120px;
                     max-width: 190px;
-                    animation-delay: 300;
+                    //animation-delay: 300;
                     animation: topRightRounder 6s linear infinite;
                 }
 
@@ -260,18 +263,18 @@
                     bottom: -50px;
                     left: 20%;
                     max-width: 180px;
-                    animation-delay: 300;
+                    //animation-delay: 300;
                     animation: bottomLeftRounder 7s infinite linear;
                     z-index: 2;
                 }
 
                 #bottom-right {
-                    animation-delay: 300;
+                    //animation-delay: 300;
                     animation: bottomRightRounder 6s infinite linear;
                 }
 
                 #cloud {
-                    animation-delay: 300;
+                    //animation-delay: 300;
                     animation: cloudRounder 9s infinite linear;
                 }
             }
