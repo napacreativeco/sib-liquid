@@ -13,7 +13,7 @@
               {% for image in product.media limit: 1 %}
                 <div class="image">
                   <a href="{{ product.url }}" title="{{ product.title }}">
-                    <img src="{{ image | image_url: width: 700 }}" alt="{{ product.title }}" />
+                    <img src="{{ image | image_url: width: 500 }}" alt="{{ product.title }}" />
                   </a>
                 </div>
               {% endfor %}
@@ -64,7 +64,7 @@
               {% for image in product.media limit: 1 %}
                 <div class="image">
                   <a href="{{ product.url }}" title="{{ product.title }}">
-                    <img src="{{ image | image_url: width: 700 }}" alt="{{ product.title }}" />
+                    <img src="{{ image | image_url: width: 400 }}" alt="{{ product.title }}" />
                   </a>
                 </div>
               {% endfor %}
