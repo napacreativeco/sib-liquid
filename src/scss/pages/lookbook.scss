@@ -18,6 +18,13 @@
             z-index: 3;
             transform: translateY(34px);
             
+            select {
+                text-transform: lowercase;
+            }
+
+            option {
+                text-transform: lowercase;
+            }
 
             select::-ms-expand {
                 display: none;
@@ -41,7 +48,7 @@
                 right: 0px;
                 transform: translateY(-50%);
                 pointer-events: none;
-
+                padding-left: 10px;
                 svg { 
                     width: 10px;
                 }
@@ -119,6 +126,7 @@
                         p {
                             font-size: var(--14px);
                             margin: 0;
+                            line-height: 1.4;
                         }
                     }
 
