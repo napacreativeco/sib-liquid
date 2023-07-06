@@ -58,6 +58,8 @@
                 flex-direction: row;
                 justify-content: flex-end;
                 align-items: center;
+                margin: 0 0 15px 0;
+                min-height: 15px;
 
                 .slider-nav-link {
                     position: relative;
@@ -99,7 +101,6 @@
             }
 
             .swiper-wrapper {
-                padding-top: 15px;
 
                 .swiper-slide {
                     width: 100%;
