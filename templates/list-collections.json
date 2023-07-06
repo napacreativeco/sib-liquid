@@ -2,7 +2,8 @@
   "sections": {
     "main": {
       "type": "throne-collection-page",
-      "settings": {}
+      "settings": {
+      }
     }
   },
   "order": [
