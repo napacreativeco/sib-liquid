@@ -94,6 +94,12 @@
         font-family: inherit;
         text-transform: uppercase;
         border-radius: 0px !important;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background: var(--black);
+        color: var(--red);
       }
 
     }

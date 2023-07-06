@@ -14,7 +14,7 @@
                 <a href="/collections/all" title="Shop All">all</a>
             {% elsif collection %}
                 {% if collection.title == 'Products' %}
-                    {{ 'All | escape }}
+                    {{ 'All' | escape }}
                 {% else %}
                     {{ collection.title }}
                 {% endif %}
