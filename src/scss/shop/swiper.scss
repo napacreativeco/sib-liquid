@@ -1,5 +1,20 @@
 .swiper {
     width: 100%;
+
+    .swiper-pagination {
+        position: relative;
+        padding: 14px 0 0 0;
+
+        .swiper-pagination-bullet {
+            background: #D2D2D2;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--black);
+        }
+    }
+
 }
 
 .swiper-controls {

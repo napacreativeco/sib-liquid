@@ -106,3 +106,17 @@
     }
 
 }
+
+@media screen and (max-width: 767px) {
+    
+    .contact-page {
+
+        .contact-page-wrapper {
+            padding: 120px 10px 40px 10px;
+    
+            form#ContactForm {
+                max-width: 66vw;
+            }
+        }
+    }
+}

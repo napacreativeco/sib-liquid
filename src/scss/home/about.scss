@@ -13,8 +13,9 @@
     }
 
     .left {
-
-        font-size: 18px;
+        font-size: var(--16px);
+        letter-spacing: 0.014rem;
+        line-height: 1.1;
 
         .about-title {
             h2 {
@@ -54,5 +55,44 @@
             }
         }
     }
+
+}
+
+/*
+-----------------------------------------------------------
+*/
+@media screen and (max-width: 767px) {
+
+    .about-component {
+
+        .about-wrapper {
+            display: flex;
+            flex-direction: column;
+            padding: 80px 20px 0 20px;
+
+            .left {
+                font-size: var(--12px);
+            }
+            .right {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                .question-mark {
+                    position: relative;
+                    float: left;
+                    bottom: -6%;
+                    right: -4%;
+            
+                    img {
+                        width: 240px;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+
+    } 
 
 }

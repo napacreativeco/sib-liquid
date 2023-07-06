@@ -29,6 +29,7 @@
             position: relative;
             z-index: 99;
             pointer-events: all;
+            max-width: 25vw;
             transform: translateX(1000px);
 
             .top {
@@ -38,12 +39,13 @@
                 ul {
                     display: flex;
                     flex-direction: row;
-                    justify-content: space-around;
-                    gap: 10px;
+                    justify-content: flex-start;
+                    overflow: hidden;
+                    gap: 0px;
                     padding: 16px 10px;
 
                     li {
-                        padding: 10px;
+                        padding: 6px;
 
                         a {
                             font-size: var(--12px);
@@ -61,6 +63,7 @@
 
                 }
             }
+
             .filters::-webkit-scrollbar {
                 display: none;
             }
@@ -68,7 +71,7 @@
             .filters {
                 width: 100%;
                 overflow-y: scroll;
-                max-height: 30vh;
+                max-height: 40vh;
                 -ms-overflow-style: none;  /* IE and Edge */
                 scrollbar-width: none;  /* Firefox */
 
@@ -88,7 +91,7 @@
                         a {
                             text-decoration: none;
                             text-transform: lowercase;
-                            font-size: var(--36px);
+                            font-size: var(--30px);
                         }
 
                         a::before {

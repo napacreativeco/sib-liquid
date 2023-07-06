@@ -96,7 +96,11 @@
 
     });
     
-    /* Toggle Plus Menu */
+    /* 
+    ------------------------
+    Plus Menu
+    ------------------------
+    */
     $('.plus').on('click', function() {
       $('.filter-menu-text').hide();
       
