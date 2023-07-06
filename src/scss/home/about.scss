@@ -13,13 +13,12 @@
     }
 
     .left {
-        font-size: var(--16px);
         letter-spacing: 0.014rem;
         line-height: 1.1;
+        font-size: var(--14px);
 
         .about-title {
             h2 {
-                font-size: var(--16px);
                 font-family: inherit;
                 margin: 0 0 16px 0;
             }
@@ -27,7 +26,6 @@
     
         .tagline {
             span {
-                font-size: var(--16px);
                 color: var(--red);
                 font-style: italic;
             }

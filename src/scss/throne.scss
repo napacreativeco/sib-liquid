@@ -86,6 +86,14 @@ img {
   z-index: 1;
 }
 
+/* Resets */
+button, input {
+  border-radius: 0px;
+}
+a {
+  color: inherit;
+}
+
 @keyframes popUp {
   0% { transform: translateY(100%); }
   100% { transform: translateY(0px); }

@@ -118,7 +118,11 @@
 
     });
 
-    // Hero Links
+    /* 
+    ------------------------
+    Hero Links
+    ------------------------
+    */
     $('.scroll-to-link').on('click', function(e) {
         e.preventDefault();
 
