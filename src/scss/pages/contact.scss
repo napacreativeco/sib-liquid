@@ -10,8 +10,9 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            max-width: 350px;
+            max-width: 300px;
             width: 100%;
+            text-transform: lowercase;
         }
 
         .contact-form-title {
@@ -35,6 +36,7 @@
             height: 0px;
             overflow: hidden;
         }
+
         input,
         textarea,
         select {
@@ -43,16 +45,26 @@
             font-family: inherit;
             font-size: 16px;
             padding: 6px;
-            color: var(--light-grey);
             border-radius: 0px !important;
+            text-transform: lowercase;
         }
 
         select {
             background: transparent;
+            color: var(--light-grey);
+        }
+
+        select::selection {
+            color: var(--black);
         }
         
         input {
             height: 100%;
+            color: var(--black);
+        }
+
+        input::placeholder {
+            color: #888888;
         }
 
         label[for="ContactForm-body"] { display: none; }
@@ -79,8 +91,13 @@
                 font-size: 16px;
                 letter-spacing: 0px;
             }
+
+            button:hover {
+                background: var(--black);
+                color: var(--red);
+            }
             button[aria-disabled="true"] {
-                background-color: var(--light-grey);
+                background: #888888;
                 color: var(--white);
             }
         }
