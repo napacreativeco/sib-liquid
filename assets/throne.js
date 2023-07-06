@@ -1,5 +1,7 @@
 (function ($) {
 
+    /* ============================================= */
+    
     $(document).on('ready', function() {
         console.log('document ready');
 
@@ -206,6 +208,7 @@
       pinSpacing: false,
       pinType: 'transform'
     });
+
 
 })(jQuery);
 

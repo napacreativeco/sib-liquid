@@ -1,0 +1,34 @@
+<div class="product-pagination">
+    <a class="back-to-all" href="{{ '/collections/all' | escape}}" title="Back to all">
+    {{ 'BACK TO ALL' | escape }}
+    </a>
+    {%- liquid
+    assign previous_product = collection.previous_product
+    assign next_product = collection.next_product
+    if previous_product or next_product
+    else
+        assign collectionList = product.collections[0].handle
+        assign previous_product = nil
+        assign next_product = nil
+        assign last = collections[collectionList].products_count
+        for p in collections[collectionList].products
+        if p.handle == product.handle
+            assign prev = forloop.index | minus: 2
+            assign next = forloop.index
+            if prev >= 0
+            assign previous_product = collections[collectionList].products[prev].handle
+            endif
+            if last >= next
+            assign next_product = collections[collectionList].products[next].handle
+            endif
+            break
+        endif
+        endfor
+    endif
+    -%}
+    {%- if next_product -%}
+        <a class="next-product" href="{{ next_product }}">
+            {{ 'NEXT' | escape }}
+        </a>
+    {%- endif -%}
+</div>
