@@ -56,9 +56,11 @@
             .price-holder {
                 border-right: var(--border-blk);
                 display: flex;
+                flex-direction: row;
+                white-space: nowrap;
                 align-items: center;
                 padding: 0 10px;
-                text-transform: lowercase;
+
             }
 
 

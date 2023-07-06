@@ -63,7 +63,7 @@
           <div class="actions-header">
 
             <div class="price-holder">
-                {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
+                {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros | remove: '$' }} <span style="text-transform: uppercase;">{{ shop.currency }}</span>
             </div>
 
             {%- for block in section.blocks -%}
