@@ -16,7 +16,7 @@
             border: 0px;
             position: relative;
             z-index: 3;
-            transform: translateY(28px);
+            transform: translateY(34px);
             
 
             select::-ms-expand {
@@ -43,50 +43,93 @@
                 pointer-events: none;
 
                 svg { 
-                    width: 12px;
+                    width: 10px;
                 }
             }
         }
+
 
         /* Post */
         .swiper {
             padding-top: 20px;
-        }
 
-        .swiper-wrapper {
-            padding-top: 15px;
-        }
+            .swiper-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+
+                .slider-nav-link {
+                    position: relative;
+                    top: 0;
+                    margin-top: 0;
+                    height: auto;
+                    right: 0;
+                    left: 0;
+                }
+
+                .slider-nav-link:hover {
+                    text-decoration: underline;
+                }
+
+                .swiper-button-next {
+                    color: inherit;
+                }
+
+                .swiper-button-prev {
+                    color: inherit;
+                }
+                .swiper-button-next::after {
+                    display: none;
+                }
+
+                .swiper-button-prev::after {
+                    display: none;
+                }
+
+                .swiper-pagination {
+                    position: relative;
+                    text-align: center;
+                    width: 40px;
+                    top: 0;
+                    bottom: 0;
+                }
+
+            }
+
+            .swiper-wrapper {
+                padding-top: 15px;
+
+                .swiper-slide {
+                    width: 100%;
+                    max-width: 100%;
+                    height: auto;
+                    display: grid;
+                    grid-template-rows: 6fr 2fr;
+                    
+                    .image {
+                        aspect-ratio: 16/13;
+                    }
+
+                    .caption {
+                        padding: 20px 0 0 0;
         
-        .swiper-header {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            align-items: flex-end;
-        }
+                        p {
+                            font-size: var(--14px);
+                            margin: 0;
+                        }
+                    }
 
-        .swiper-slide {
-            width: 100%;
-            display: grid;
-            grid-template-rows: 6fr 2fr;
-            height: 94vh;
-        }
+                }
 
-        .swiper-pagination {
-            position: relative;
-            text-align: right;
+            }
+
         }
 
         article.article-component {
             display: none;
-
-            .caption {
-                padding: 20px 0 0 0;
-
-                p {
-                    font-size: var(--14px);
-                    margin: 0;
-                }
-            }
         }
+
         article.article-component:first-of-type {
             display: block;
         }
