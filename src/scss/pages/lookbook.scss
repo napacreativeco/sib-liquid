@@ -148,3 +148,28 @@
 .lookbook-section {
     // display: none;
 }
+
+
+@media screen and (max-width: 767px) {
+    .lookbook-blog {
+
+        .lookbook-blog-wrapper {
+            padding: 50px 10px 20px 10px;
+
+            .swiper {
+                .swiper-wrapper {
+    
+                    .swiper-slide {
+                        
+                        .image {
+                            aspect-ratio: 3/5;
+                        }
+    
+                    }
+    
+                }
+            }
+        }   
+
+    }
+}

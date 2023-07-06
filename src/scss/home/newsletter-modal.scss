@@ -26,19 +26,26 @@
       border: 1px solid var(--black);
 
       .action-bar {
-        background: var(--black);
-        color: var(--red);
-        text-align: left;
+        background: var(--white);
+        color: var(--black);
+        text-align: center;
+        text-transform: uppercase;
         padding: 8px;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         font-size:  var(--16px);
+        position: relative;
+        border-bottom: var(--border-blk);
 
         .action-title {
         }
         .newsletter-close {
           cursor: pointer;
+          position: absolute;
+          right: 10px;
+          top: 4px;
+          color: var(--black);
         }
 
       }
@@ -50,7 +57,7 @@
           text-align: center;
           width: 100%;
           font-size: var(--16px);
-          padding: 10px 40px;
+          padding: 20px 40px 10px 40px;
         }
 
       }

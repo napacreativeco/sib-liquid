@@ -24,12 +24,17 @@
                         <div class="swiper-pagination"></div>
                         <span class="swiper-button-next slider-nav-link">{{ '>' | escape }}</span>
                     </div>
+
                     
+                    <script>
+                        console.log('{{ metaobject | json }}');
+                    </script>
+                        
                     <div class="swiper-wrapper">
                         {% for metaobject in shop.metaobjects['lookbook'].values %}
                 
                             <div class="swiper-slide" data-index="{{ forloop.index }}">
-                                <div class="image" style="background: url('{{ metaobject.image | image_url }}'); background-size: cover; background-position: center center;">
+                                <div class="image" style="background: url('{{ metaobject.image | image_url: width: 1000 }}'); background-size: cover; background-position: center center;">
                                     &nbsp;
                                 </div>
                                 <div class="caption">
@@ -81,7 +86,6 @@
 
 
 <script>
-
     (function($) {
         $('.collection-selector').on('change', function() {
             var selectedValue = $(this).find('option:selected').attr('value');
@@ -96,7 +100,6 @@
 </script>
 
 <script>
-
     (function($, window){
         $(function() {
           let arrowWidth = 30;
