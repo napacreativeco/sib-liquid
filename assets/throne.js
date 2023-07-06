@@ -93,7 +93,6 @@
         }
 
     });
-
     
     /* Toggle Plus Menu */
     $('.plus').on('click', function() {
@@ -135,7 +134,11 @@
         console.log($(this).attr('data-title'));
     });
           
-    /* Newsletter Popup */
+    /* 
+    ------------------------
+    Newsletter Popup
+    ------------------------
+    */
     setTimeout(function() {
         gsap.to(".shopify-section:has(.newsletter-modal)", {
           display: "flex",
@@ -149,7 +152,11 @@
     });
       
 
-    // Show Variant Selectors
+    /* 
+    ------------------------
+    Variant Selectors
+    ------------------------
+    */
     $('.variant-selector-title').on('click', function() {
 
       var clicked = $(this).next('.variant-selector-box');
@@ -162,7 +169,11 @@
       $('.variant-selector-box').hide();
     });
 
-    /* Grid Changer */
+    /* 
+    ------------------------
+    Grid Changer
+    ------------------------
+    */
     $('.crosshair').on('click', function() {
 
       var grid = $('ul.products.grid');
@@ -180,6 +191,20 @@
         $('.crosshair-icon > img').css('transform', 'rotate(0deg)');
       }
 
+    });
+
+    /* 
+    ------------------------
+    Grid Changer - Pinning
+    ------------------------
+    */
+    let st = ScrollTrigger.create({
+      trigger: ".shop-component",
+      pin: ".grid-changer-wrapper",
+      start: "top top",
+      end: document.querySelector('.shop-component').innerHeight,
+      pinSpacing: false,
+      pinType: 'transform'
     });
 
 })(jQuery);

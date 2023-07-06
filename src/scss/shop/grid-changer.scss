@@ -1,0 +1,25 @@
+.grid-changer {
+    display: block;
+    margin: 20px 0 30px 0;
+    top: 0;
+    left: 0;
+
+    .grid-changer-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        .crosshair {
+            position: relative;
+            cursor: pointer;
+
+            img {
+                width: 22px;
+                height: 22px;
+                position: absolute;
+                transition: all 0.24s ease-in-out;
+            }
+        }
+    }
+}

@@ -1,5 +1,4 @@
 .throne--navbar {
-
     width: 100%;
     max-width: 100%;
     position: fixed;
@@ -25,17 +24,19 @@
 
     .logo {
         padding-left: 0px;
-    }
-    .logo img {
-        max-width: 120px;
+
+        img {
+            max-width: 120px;
+        }
     }
 
     .hamburger {
         padding-right: 0px;
         cursor: pointer;
-    }
-    .hamburger img {
-        max-width: 60px;
+
+        img {
+            max-width: 60px;
+        }
     }
 
 }
@@ -52,6 +53,7 @@
                 max-width: 107px;
             }
         }
+
         .hamburger {
             padding-right: 12px;
         }

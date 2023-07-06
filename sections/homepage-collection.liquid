@@ -1,7 +1,22 @@
 <section class="shop-component page-component">
+
+
   <div class="shop-component-wrapper" data-layout="grid">
-  
     {% render 'throne-grid-changer' %}
+    
+    <div class="pagination">
+      <a href="{{ }}" title="Page 01">01</a> 
+      &nbsp;&ndash;&nbsp; 
+      {% if template.name == 'index' %}
+          <a href="/collections/all" title="Shop All">all</a>
+      {% elsif collection %}
+          {% if collection.title == 'Products' %}
+              {{ 'All' | escape }}
+          {% else %}
+              {{ collection.title }}
+          {% endif %}
+      {% endif %}
+    </div>
     
     <ul class="products grid">
       {%- for product in section.settings.collection.products limit: 16 -%}

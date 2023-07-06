@@ -1,5 +1,4 @@
 .shop-component {
-
     width: 100%;
     max-width: 100%;
     display: flex;
@@ -19,9 +18,19 @@
     }
 
     .shop-component-wrapper {
-
         width: 100%;
         max-width: var(--thin);
+        position: relative;
+
+        .pagination {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            position: absolute;
+            right: 0;
+            top: 20px;
+            text-transform: lowercase;
+        }
 
         ul.products.grid {
             width: 100%;
@@ -145,6 +154,9 @@
 
     }
 
+    /* 
+        Switching between list and grid
+    */
     .shop-component-wrapper[data-layout="grid"] {
         ul.products.grid { display: grid; }
         ul.products.list { display: none;}
@@ -156,29 +168,6 @@
 
 }
 
-.grid-changer {
-    display: block;
-    margin: 20px 0 30px 0;
-
-    .grid-changer-wrapper {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        text-transform: lowercase;
-
-        .crosshair {
-            position: relative;
-            cursor: pointer;
-
-            img {
-                width: 22px;
-                height: 22px;
-                position: absolute;
-                transition: all 0.24s ease-in-out;
-            }
-        }
-    }
-}
 
 /*
 ------------------------------------------------------------------------------------
@@ -214,12 +203,20 @@
     .shop-component {
 
         .shop-component-wrapper {
+
+            .pagination {
+                padding: 0 20px 0 0;
+                top: 10px;
+            }
+
             ul.products.grid {
                 grid-template-columns: repeat(2, 1fr);
+                padding: 20px;
             }
 
             ul.products.list {
                 font-size: 14px;
+                padding: 20px;
             }
 
         }
@@ -228,5 +225,9 @@
 
     .grid-changer {
         margin: 16px 0 30px 0;
+
+        .grid-changer-wrapper {
+            padding: 0 20px;
+        }
     }
 }
