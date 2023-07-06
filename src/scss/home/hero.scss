@@ -211,6 +211,9 @@
     .homepage-hero {
 
         height: 100dvh;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
 
         .hero-image-desktop {
             display: none;
@@ -233,7 +236,7 @@
                 height: 50vh;
                 display: flex;
                 align-items: flex-end;
-                padding: 0 0 16px 20px;
+                padding: 0 0 5.4vh 20px;
 
                 .hero-link {
                     font-size: 16px;
