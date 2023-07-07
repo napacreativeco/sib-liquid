@@ -1,5 +1,5 @@
-<section class="about-component page-component">
-  <div class="about-wrapper">
+<section class="about-component page">
+  <div class="page-wrapper">
 
     <div class="left">
 
@@ -22,6 +22,7 @@
         <img src="{{ section.settings.about_page_featured_image | image_url }}" alt="" />
       </div>
       <div class="question-mark">
+      test{{ section.settings.about_page_question_mark }}
         <img src="{{ section.settings.about_page_question_mark | image_url }}" alt="" />
       </div>
     </div>
@@ -31,7 +32,7 @@
 
 {% schema %}
 {
-  "name": "About",
+  "name": "About Page",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -69,7 +70,7 @@
   ],
   "presets": [
     {
-      "name": "About",
+      "name": "About Page",
       "settings": {}
     }
   ]
