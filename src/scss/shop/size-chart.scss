@@ -2,6 +2,21 @@
 
     padding: 40px 0;
 
+    details > .content {
+        overflow: hidden;
+    }
+
+    .content {
+        transition: all 0.24s ease-in-out; 
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    
+    details[open] > .content {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
     .size-chart-title {
         h3 {
             font-size: 16px;
@@ -12,6 +27,8 @@
     }
 
     .size-chart-table {
+        // animation: popUp 0.24s ease-in-out forwards;
+        // transform: translateY(100%);
 
         tr {
             display: flex;
