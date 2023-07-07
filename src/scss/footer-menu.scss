@@ -93,17 +93,7 @@
                             text-transform: lowercase;
                             font-size: var(--30px);
                         }
-
-                        a::before {
-                            content: counter(filters) ' - ';
-                        }
-
          
-                    }
-                    li:nth-child(-n+9) {
-                        a::before {
-                            content: '0' counter(filters) ' - ';
-                        }
                     }
 
                     li:last-of-type {
