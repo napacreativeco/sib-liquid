@@ -7,6 +7,9 @@
     </div>
     <div class="hamburger">
       <img src="{{ 'cart.gif' | asset_url }}" alt="Menu">
+      <span class="cart-counter">
+        {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}
+      </span>
     </div>
   </div>
 </div>

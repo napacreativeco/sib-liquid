@@ -8,7 +8,7 @@
 
     .single-product-wrapper {
         display: grid;
-        grid-template-columns: 48% 1fr;
+        grid-template-columns: 46% 1fr;
         grid-gap: 40px;
         align-items: center;
         width: 100%;
@@ -206,6 +206,7 @@
             letter-spacing: 0.014rem;
             line-height: 1.5;
             text-transform: lowercase;
+            padding: 40px 0 0 0;
         }
 
         .product-pagination {

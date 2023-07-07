@@ -42,7 +42,7 @@
                     justify-content: flex-start;
                     overflow: hidden;
                     gap: 0px;
-                    padding: 16px 10px;
+                    padding: 16px 0;
 
                     li {
                         padding: 6px;
@@ -71,7 +71,7 @@
             .filters {
                 width: 100%;
                 overflow-y: scroll;
-                max-height: 40vh;
+                max-height: 50vh;
                 -ms-overflow-style: none;  /* IE and Edge */
                 scrollbar-width: none;  /* Firefox */
 
@@ -167,7 +167,7 @@
     .footer-menu .footer-menu-wrapper .filter-menu {
         max-width: 86vw;
         margin-right: 0px;
-        margin-bottom: 40px;
+        margin-bottom: 10px;
     }
 
     .footer-menu .footer-menu-wrapper .filter-menu .top  {
@@ -175,7 +175,7 @@
         ul {
             justify-content: flex-start;
             overflow-x: scroll;
-            max-width: calc(100% - 20px);
+            max-width: 100%;
         }
     }
 

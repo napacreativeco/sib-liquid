@@ -52,8 +52,7 @@
       
       <div class="right-side">
           
-        <product-info id="ProductInfo-{{ section.id }}" data-section="{{ section.id }}" data-url="{{ product.url }}" class="product__info-container {% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}">
-          
+
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
           <div class="product-title">
@@ -87,9 +86,8 @@
             {%- endfor -%}
           </div>
 
-          <div data-ajax-cart-messages="form" > 
-            <!-- Errors and messages appear here --> 
-          </div>
+          <div class="cart-messages"></div>
+          <div data-ajax-cart-messages="form"></div>
 
           <div class="product-description">
             <span class="description-title">{{ 'about' | escape }}</span>
@@ -98,88 +96,83 @@
 
           <div class="size-chart">
 
-            <div class="size-chart-title">
-              <h3>size chart</h3>
-            </div>
+            <details>
+              <summary>
+                <div class="size-chart-title">
+                  <h3>size chart</h3>
+                </div>
+              </summary>
 
-            <table class="size-chart-table">
-              <thead>
-                <tr>
-                  <th class="legend">label:</th>
-                  {% for option in product.options_with_values %}
+              <table class="size-chart-table">
+                <thead>
+                  <tr>
+                    <th class="legend">label:</th>
+                    {% for option in product.options_with_values %}
 
-                    {% case option.name %}
-                      {% when 'Size'%}
+                      {% case option.name %}
+                        {% when 'Size'%}
 
-                        {% for value in option.values %}
-                          <th>{{ value }}</th>
-                        {% endfor %}
-                    {% endcase %}
-                  {% endfor %}
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="legend">chest:</td>
-                  {% for size in shop.metaobjects.size_chart.values %}
-                    <td>{{ size.s_chest }}</td>
-                  {% endfor %}
-                  {% for size in shop.metaobjects.size_chart.values %}
-                    <td>{{ size.m_chest }}</td>
-                  {% endfor %}
-                  {% for size in shop.metaobjects.size_chart.values %}
-                    <td>{{ size.l_chest }}</td>
-                  {% endfor %}
-                  {% for size in shop.metaobjects.size_chart.values %}
-                    <td>{{ size.xl_chest }}</td>
-                  {% endfor %}
-                </tr>
-                <tr>
-                  <td class="legend">waist:</td>
-                  {% for size in shop.metaobjects.size_chart.values %}
-                    <td>{{ size.s_waist }}</td>
-                  {% endfor %}
-                  {% for size in shop.metaobjects.size_chart.values %}
-                    <td>{{ size.m_waist }}</td>
-                  {% endfor %}
-                  {% for size in shop.metaobjects.size_chart.values %}
-                    <td>{{ size.l_waist }}</td>
-                  {% endfor %}
-                  {% for size in shop.metaobjects.size_chart.values %}
-                    <td>{{ size.xl_waist }}</td>
-                  {% endfor %}
-                </tr>
-                <tr>
-                  <td class="legend">shoulder:</td>
-                  {% for size in shop.metaobjects.size_chart.values %}
-                    <td>{{ size.s_shoulder }}</td>
-                  {% endfor %}
-                  {% for size in shop.metaobjects.size_chart.values %}
-                    <td>{{ size.m_shoulder }}</td>
-                  {% endfor %}
-                  {% for size in shop.metaobjects.size_chart.values %}
-                    <td>{{ size.l_shoulder }}</td>
-                  {% endfor %}
-                  {% for size in shop.metaobjects.size_chart.values %}
-                    <td>{{ size.xl_shoulder }}</td>
-                  {% endfor %}
-                </tr>
-              </tbody>
-            
-            </table>
-            {% for size in shop.metaobjects %}
-              <script>console.log("{{ size | json }}");</script>
-            {% endfor %}
-
-            {% if collection.previous_product %}
-              {{ 'Previous' | link_to: collection.previous_product.url, 'Previous product' }}
-            {% endif %}
-           
+                          {% for value in option.values %}
+                            <th>{{ value }}</th>
+                          {% endfor %}
+                      {% endcase %}
+                    {% endfor %}
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="legend">chest:</td>
+                    {% for size in shop.metaobjects.size_chart.values %}
+                      <td>{{ size.s_chest }}</td>
+                    {% endfor %}
+                    {% for size in shop.metaobjects.size_chart.values %}
+                      <td>{{ size.m_chest }}</td>
+                    {% endfor %}
+                    {% for size in shop.metaobjects.size_chart.values %}
+                      <td>{{ size.l_chest }}</td>
+                    {% endfor %}
+                    {% for size in shop.metaobjects.size_chart.values %}
+                      <td>{{ size.xl_chest }}</td>
+                    {% endfor %}
+                  </tr>
+                  <tr>
+                    <td class="legend">waist:</td>
+                    {% for size in shop.metaobjects.size_chart.values %}
+                      <td>{{ size.s_waist }}</td>
+                    {% endfor %}
+                    {% for size in shop.metaobjects.size_chart.values %}
+                      <td>{{ size.m_waist }}</td>
+                    {% endfor %}
+                    {% for size in shop.metaobjects.size_chart.values %}
+                      <td>{{ size.l_waist }}</td>
+                    {% endfor %}
+                    {% for size in shop.metaobjects.size_chart.values %}
+                      <td>{{ size.xl_waist }}</td>
+                    {% endfor %}
+                  </tr>
+                  <tr>
+                    <td class="legend">shoulder:</td>
+                    {% for size in shop.metaobjects.size_chart.values %}
+                      <td>{{ size.s_shoulder }}</td>
+                    {% endfor %}
+                    {% for size in shop.metaobjects.size_chart.values %}
+                      <td>{{ size.m_shoulder }}</td>
+                    {% endfor %}
+                    {% for size in shop.metaobjects.size_chart.values %}
+                      <td>{{ size.l_shoulder }}</td>
+                    {% endfor %}
+                    {% for size in shop.metaobjects.size_chart.values %}
+                      <td>{{ size.xl_shoulder }}</td>
+                    {% endfor %}
+                  </tr>
+                </tbody>
+              
+              </table>
+            </details>
           </div>
 
           {% render 'throne-product-pagination' %}
 
-        </product-info>
       </div>
       
     </div>
@@ -307,6 +300,32 @@
     }
   </script>
 </section>
+
+<script type="module">
+  //------------------------------------------
+  // This Works
+  //------------------------------------------
+  import { subscribeToCartAjaxRequests, subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart.js" | asset_url }}';
+
+
+  subscribeToCartAjaxRequests(( requestState, subscribeToResult ) => {
+    if ( requestState.requestType === 'add' ) {
+      subscribeToResult( requestState => {
+        if ( requestState.responseData?.ok ) {
+          let productName = requestState.responseData.body.title;
+          if ( requestState.responseData.body.items?.length === 1 ) {
+            productName = requestState.responseData.body.items[0].title;
+          }
+          // alert(`${ productName ? '«' + productName + '» is' : 'Products are' } successfully added`);
+
+          document.querySelector('.cart-counter').text('{{ cart.item_count }}');
+          // document.querySelector('.cart-messages').text(productName+'has been added to the cart');
+          window.location.reload(true);
+        }
+      });
+    }
+  });
+</script>
 
 {% schema %}
 {
