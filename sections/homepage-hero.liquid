@@ -128,7 +128,7 @@
 
     const mediaQuery = window.matchMedia('(max-width: 767px)');
 
-// Hiding Marquee
+    // Hiding Marquee
     window.addEventListener("scroll", () => {
 
       if (window.scrollY > 100) { // Hide Marquee
@@ -140,6 +140,8 @@
             gsap.to(".marquee-holder", {display: "none"});
           }
         });
+
+        $('meta[name="theme-color"]').attr('content', '#ff0000');
 
         showPlus();
         showLogo();
