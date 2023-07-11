@@ -1,7 +1,21 @@
 <section class="homepage-hero" onmousemove="coordinate(event)">
 
-  <div class="hero-image hero-image-desktop" style="background: url({{ section.settings.hero_background_desktop | image_url }}); background-size: cover; background-position: center center;">&nbsp;</div>
-  <div class="hero-image hero-image-mobile" style="background: url({{ section.settings.hero_background_mobile | image_url: width: 700 }}); background-size: cover; background-position: center center;">&nbsp;</div>
+  <style>
+    .homepage-hero {
+      background: url('{{ section.settings.hero_background_desktop | image_url }}');
+      background-size: cover;
+      background-position: center center;
+    }
+
+    @media screen and (max-width: 767px) {
+      .homepage-hero {
+        background: url('{{ section.settings.hero_background_mobile | image_url: width: 700 }}');
+      }  
+    }
+  </style>
+
+  {% comment %} <div class="hero-image hero-image-desktop" style="background: url({{ section.settings.hero_background_desktop | image_url }}); background-size: cover; background-position: center center;">&nbsp;</div>
+  <div class="hero-image hero-image-mobile" style="background: url({{ section.settings.hero_background_mobile | image_url: width: 700 }}); background-size: cover; background-position: center center;">&nbsp;</div> {% endcomment %}
 
   <div id="hero-wrapper" class="hero-wrapper">
     <div class="left">
@@ -45,18 +59,28 @@
 
     <div class="right movable-elements-wrapper">
 
+      {% comment %}
+      To Do: if statements for wether videos or gifs
+      {% endcomment %}
+
       <div
         id="top-left"
         data-value="4"
         class="top-left floating-media element movable">
-        {{ section.settings.hero_top_left | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+          <img src="{{ section.settings.hero_top_left | image_url: width: 300 }}" alt="" />
+          {% comment %}  
+            {{ section.settings.hero_top_left | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+          {% endcomment %}
       </div>
 
       <div
         id="top-right"
         data-value="1"
         class="top-right floating-media element movable">
-        {{ section.settings.hero_top_right | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+          <img src="{{ section.settings.hero_top_right | image_url: width: 300 }}" alt="" />
+          {% comment %}  
+            {{ section.settings.hero_top_right | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+          {% endcomment %}
       </div>
 
       <div
@@ -143,22 +167,17 @@
 
 <script src="{{ 'gsap-draggable.min.js' | asset_url }}"></script>
 <script>
-
   function hidePlus() {
     document.querySelector('.plus').style.display = 'none';
   }
-
   function hideLogo() {
     document.querySelector('.logo a').style.display = 'none';
   }
-
   hidePlus();
 
-  const mediaQuery = window.matchMedia('(max-width: 767px)')
+  const mediaQuery = window.matchMedia('(max-width: 767px)');
 
-// Throttling Test
-
-
+// Throttling
   if (! mediaQuery.matches) {
     hideLogo();
 
@@ -221,11 +240,11 @@
         "label": "Cloud"
       },
       {
-        "type": "video",
+        "type": "image_picker",
         "id": "hero_top_left",
         "label": "Floating Video (Top Left)"
       }, {
-        "type": "video",
+        "type": "image_picker",
         "id": "hero_top_right",
         "label": "Floating Video (Top Right)"
       }, {
