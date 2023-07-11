@@ -109,6 +109,11 @@
 
 <script>
   (function($) {
+
+    $(document).ready(function() {
+      $('meta[name="theme-color"]').attr('content', '#B6FFFE');
+    });
+
     function hidePlus() {
       document.querySelector('.plus').style.display = 'none';
     }
@@ -141,7 +146,7 @@
           }
         });
 
-        $('meta[name="theme-color"]').attr('content', '#ff0000');
+        $('meta[name="theme-color"]').attr('content', '#ffffff');
 
         showPlus();
         showLogo();
@@ -155,6 +160,8 @@
             gsap.to(".marquee-holder", {display: "block"});
           }
         });
+
+        $('meta[name="theme-color"]').attr('content', '#000000');
 
         hidePlus();
         hideLogo();
