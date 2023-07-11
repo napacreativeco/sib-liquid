@@ -14,9 +14,6 @@
     }
   </style>
 
-  {% comment %} <div class="hero-image hero-image-desktop" style="background: url({{ section.settings.hero_background_desktop | image_url }}); background-size: cover; background-position: center center;">&nbsp;</div>
-  <div class="hero-image hero-image-mobile" style="background: url({{ section.settings.hero_background_mobile | image_url: width: 700 }}); background-size: cover; background-position: center center;">&nbsp;</div> {% endcomment %}
-
   <div id="hero-wrapper" class="hero-wrapper">
     <div class="left">
 
@@ -110,32 +107,41 @@
 <script>
   (function($) {
 
+    // Theme Color
     $(document).ready(function() {
       $('meta[name="theme-color"]').attr('content', '#B6FFFE');
     });
 
+    // ----------------------
+    // Plus Menu
+    // -----------------------
     function hidePlus() {
       document.querySelector('.plus').style.display = 'none';
     }
-
-    function hideLogo() {
-      document.querySelector('.logo a').style.display = 'none';
-    }
-
     function showPlus() {
       document.querySelector('.plus').style.display = 'block';
     }
 
+    // ----------------------
+    // Logo
+    // -----------------------
+    function hideLogo() {
+      const mediaQuery = window.matchMedia('(max-width: 767px)');
+      if (! mediaQuery.matches) {
+        document.querySelector('.logo a').style.display = 'none';
+      }
+      
+    }
     function showLogo() {
       document.querySelector('.logo a').style.display = 'block';
     }
+    
+ 
 
-
-    const mediaQuery = window.matchMedia('(max-width: 767px)');
-
-    // Hiding Marquee
+    // Scroll Function
     window.addEventListener("scroll", () => {
 
+      // Theme Bar
       if (window.scrollY == 0) {
         $('meta[name="theme-color"]').attr('content', '#000000');
       }
@@ -189,7 +195,7 @@
 
   const mediaQuery = window.matchMedia('(max-width: 767px)');
 
-// Throttling
+  // Throttling
   if (! mediaQuery.matches) {
     hideLogo();
 
@@ -197,8 +203,8 @@
       var x = event.clientX;
       var y = event.clientY;
 
-// document.getElementById("X").value=x;
-// document.getElementById("Y").value=y;
+      // document.getElementById("X").value=x;
+      // document.getElementById("Y").value=y;
 
       var timesPerSecond = 5;
       var wait = false;

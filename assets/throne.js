@@ -8,6 +8,11 @@
 
     /* ============================================= */
 
+    /* 
+    ------------------------
+    Draggables
+    ------------------------
+    */
     const mediaQuery = window.matchMedia('(max-width: 767px)')
 
     if (mediaQuery.matches) {
@@ -16,68 +21,42 @@
       Draggable.create("#top-left", {
         type:"x,y",
         bounds: document.getElementById("hero-wrapper"),
-        inertia: true,
-        onClick: function() {
-            console.log("clicked top-left");
-        },
-        onDragEnd: function() {
-            console.log("drag ended top-left");
-        }
+        inertia: true
       });
 
       Draggable.create("#top-right", {
         type:"x,y",
         bounds: document.getElementById("hero-wrapper"),
-        inertia: true,
-        onClick: function() {
-            console.log("clicked top-right");
-        },
-        onDragEnd: function() {
-            console.log("drag ended top-right");
-        }
+        inertia: true
       });
 
       Draggable.create("#bottom-left", {
         type:"x,y",
         bounds: document.getElementById("hero-wrapper"),
-        inertia: true,
-        onClick: function() {
-            console.log("clicked bottom-left");
-        },
-        onDragEnd: function() {
-            console.log("drag ended bottom-left");
-        }
+        inertia: true
       });
 
       Draggable.create("#bottom-right", {
         type:"x,y",
         bounds: document.getElementById("hero-wrapper"),
-        inertia: true,
-        onClick: function() {
-            console.log("clicked bottom-right");
-        },
-        onDragEnd: function() {
-            console.log("drag ended bottom-right");
-        }
+        inertia: true
       });
 
       Draggable.create("#cloud", {
         type:"x,y",
         bounds: document.getElementById("hero-wrapper"),
-        inertia: true,
-        onClick: function() {
-            console.log("clicked cloud");
-        },
-        onDragEnd: function() {
-            console.log("drag ended cloud");
-        }
+        inertia: true
       });
 
     }
     
     /* ============================================= */
 
-    /* Toggle Cart Overlay */
+    /* 
+    ------------------------
+    Cart Overlay
+    ------------------------
+    */
     $('.hamburger').on('click', function() {
 
         if ($('.cart-overlay').is(':visible')) {
@@ -104,11 +83,8 @@
       $('.filter-menu-text').hide();
       
         if ( $('.filter-menu').hasClass('filter-opened') ) {
-
             $('.filter-menu').removeClass('filter-opened');
-            
             gsap.fromTo(".filter-menu", {x: '0vw'}, {x: '100vw', duration: 0.2});
-
         } else {
 
             $('.filter-menu').addClass('filter-opened');
@@ -148,12 +124,6 @@
     Newsletter Popup
     ------------------------
     */
-    // setTimeout(function() {
-    //     gsap.to(".shopify-section:has(.newsletter-modal)", {
-    //       display: "flex",
-    //     });
-    // }, 30000);
-
     $('.newsletter-opener').on('click', function() {
         gsap.to(".shopify-section:has(.newsletter-modal)", {
           display: "flex",
