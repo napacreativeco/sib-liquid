@@ -136,6 +136,11 @@
     // Hiding Marquee
     window.addEventListener("scroll", () => {
 
+      if (window.scrollY == 0) {
+        $('meta[name="theme-color"]').attr('content', '#000000');
+      }
+
+
       if (window.scrollY > 100) { // Hide Marquee
         gsap.to(".marquee-holder", {
           y: 100,
@@ -160,8 +165,6 @@
             gsap.to(".marquee-holder", {display: "block"});
           }
         });
-
-        $('meta[name="theme-color"]').attr('content', '#000000');
 
         hidePlus();
         hideLogo();
