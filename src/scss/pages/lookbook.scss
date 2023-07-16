@@ -1,6 +1,7 @@
 .lookbook-blog {
 
     .lookbook-blog-wrapper {
+        animation: slideDown  0.3s ease-in-out forwards;
         padding: 50px 0 40px 0;
         width: 100%;
         max-width: var(--thin);
