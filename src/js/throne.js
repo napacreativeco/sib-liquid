@@ -234,9 +234,26 @@
 
     /* 
     ------------------------
-    Cart Delete Items
+    Cart Increment Items
     ------------------------
     */
+    // $('.cart-quantity-controllers').on('click', function() {
+    //   var inputs = $(this).find('.cart-quantity-input').attr('value');
+    //   alert('this works. inputs is: ' + inputs)
+    // })
+
+    $('.quantity-add').on('click', function() {
+      $(this).closest('.quantity-wrapper').find('input').val(function(i, v) {
+        return ++v;
+      });
+    });
+
+    $('.quantity-subtract').on('click', function() {
+      $(this).closest('.quantity-wrapper').find('input').val(function(i, v) {
+        return --v;
+      });
+    });
+
 
 
 })(jQuery);

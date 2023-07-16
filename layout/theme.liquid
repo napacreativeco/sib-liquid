@@ -163,14 +163,21 @@
             fetch('/cart/update.js')
             .then((response) => response.json())
             .then((cart) => {
-              // Log results
-              console.log(cart)
               // Add query to parameter to open cart
-              window.location = window.location.href + "?cartmodal=1";
+              if ( window.location.href.includes('?cartmodal=1') ) {
+                window.location.reload();
+              } else {
+                window.location = window.location.href + "?cartmodal=1";
+              }
+              document.querySelector('.logo > a').style.display = 'block';
             });
 
             // Update Cart Count
             document.querySelector('.cart-counter').text('{{ cart.item_count }}');
+
+            // Update Subtotal (not sure if needed, leaving in place for now)
+            document.querySelector('.subtotal-wrapper > .right > span').text('{{ cart.item_count }}');
+
           }
         });
 
@@ -181,7 +188,11 @@
         fetch('/cart/update.js')
         .then((response) => response.json())
         .then((cart) => {
-          window.location = window.location.href + "?cartmodal=1";
+          if ( window.location.href.includes('?cartmodal=1') ) {
+            window.location.reload();
+          } else {
+            window.location = window.location.href + "?cartmodal=1";
+          }
         });
       }
 
