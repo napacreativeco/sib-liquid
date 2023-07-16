@@ -58,9 +58,9 @@
       {
         "type": "checkbox",
         "id": "marquee_visible",
-        "label": "Hide Marquee",
+        "label": "Show Marquee",
         "default": true,
-        "info": "Check the box if you would like to hide the marquee"
+        "info": "Check the box if you would like to show the marquee"
       }
     ]
   },
