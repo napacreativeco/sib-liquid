@@ -84,7 +84,7 @@
         "id": "contact_form_success",
         "default": "understood, <br />we will be in touch.",
         "label": "Success Message",
-        "info": "The message that shows on a successful submission"
+        "info": "The message that shows on a successful submission. To create a New Line, use the '\n' symbol"
       }
     ]
   },

@@ -42,7 +42,7 @@
         <div class="contact-form-success">
 
           <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
-            {{ settings.contact_form_success | escape | default: 'understood, <br />we will be in touch.' }}
+            {{ settings.contact_form_success | default: 'understood, \n we will be in touch.' | newline_to_br }}
           </h2>
 
           <div class="back-button">
