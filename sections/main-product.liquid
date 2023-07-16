@@ -6,40 +6,13 @@
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
 
-  <section
-  id="MainProduct-{{ section.id }}"
-  class="section-{{ section.id }}-padding"
-  data-section="{{ section.id }}">
-
+  <section id="MainProduct-{{ section.id }}" class="section-{{ section.id }}-padding" data-section="{{ section.id }}">
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
-  {% if section.settings.image_zoom == 'hover' %}
-    <script
-      id="EnableZoomOnHover-main"
-      src="{{ 'magnify.js' | asset_url }}"
-      defer="defer"></script>
-  {% endif %}
   {%- if request.design_mode -%}
     <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
-  {%- endif -%}
-
-  {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
-  {%- if first_3d_model -%}
-    {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
-    <link
-      id="ModelViewerStyle"
-      rel="stylesheet"
-      href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css"
-      media="print"
-      onload="this.media='all'">
-    <link
-      id="ModelViewerOverride"
-      rel="stylesheet"
-      href="{{ 'component-model-viewer-ui.css' | asset_url }}"
-      media="print"
-      onload="this.media='all'">
   {%- endif -%}
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
@@ -48,6 +21,7 @@
     <div class="single-product-wrapper">
 
       <div class="left-side">
+
         <div class="swiper">
           <div class="swiper-wrapper">
             {% for image in product.media %}
@@ -64,14 +38,13 @@
           </div>
 
         </div>
+
       </div>
 
       <div class="right-side">
-
-
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
-        <div class="product-title">
+        <div class="product-title desktop">
           <h1>{{ product.vendor }} / {{ product.title }}</h1>
         </div>
 
@@ -88,37 +61,34 @@
 
               {% render block %}
 
-
               {%- when 'variant_picker' -%}
-              <div class="size-holder">
-                {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
-              </div>
+                <div class="size-holder">
+                  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+                </div>
 
               {%- when 'buy_buttons' -%}
-              <div class="button-holder">
-                {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
-              </div>
+                <div class="button-holder">
+                  {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+                </div>
 
             {%- endcase -%}
           {%- endfor -%}
         </div>
 
-
-
-        <div class="single-product--ajax-cart-messages" data-ajax-cart-messages="form"></div>
+        <div class="product-title mobile">
+          <h1>{{ product.vendor }} / {{ product.title }}</h1>
+        </div>
 
         <div class="product-description">
           <span class="description-title">{{ 'about' | escape }}</span>
           <p>{{ product.description }}</p>
         </div>
 
-
         <div class="size-chart">
-
           <details>
             <summary>
               <div class="size-chart-title">
-                <h3>size chart</h3>
+                <h3>{{ settings.size_chart_title | default: 'size chart' }}</h3>
               </div>
             </summary>
 
@@ -200,6 +170,9 @@
     </div>
   </div>
 
+  {% comment %}
+  Swiper
+  {% endcomment %}
   <script>
     const swiper = new Swiper('.swiper', {
       direction: 'horizontal',
@@ -212,35 +185,10 @@
   </script>
 
   {% comment %}
-  {% render 'product-media-modal' variant_images: variant_images %}
-
-  {% assign popups = section.blocks | where: 'type', 'popup' %}
-  {%- for block in popups -%}
-  <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
-  <div role="dialog" aria-label="{{ block.settings.text }}" aria-modal="true" class="product-popup-modal__content" tabindex="-1">
-  <button id="ModalClose-{{ block.id }}" type="button" class="product-popup-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">
-  {% render 'icon-close' %}
-  </button>
-  <div class="product-popup-modal__content-info">
-  <h1 class="h2">{{ block.settings.page.title }}</h1>
-  {{ block.settings.page.content }}
-  </div>
-  </div>
-  </modal-dialog>
-  {%- endfor -%}
-
-  {%- if product.media.size > 0 -%}
-  <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
-  {%- endif -%}
-
-  {%- if first_3d_model -%}
-  <script type="application/json" id="ProductJSON-{{ product.id }}">
-  {{ product.media | where: 'media_type', 'model' | json }}
-  </script>
-  <script src="{{ 'product-model.js' | asset_url }}" defer></script>
-  {%- endif -%}
-  {% endcomment %}<script>
+  Swiper
+  {% endcomment %}
+  <script>
+    /* This is a shopify script */
     document.addEventListener('DOMContentLoaded', function() {
       function isIE() {
         const ua = window.navigator.userAgent;
@@ -252,9 +200,6 @@
 
       if (! isIE()) 
         return;
-      
-
-
 
       const hiddenInput = document.querySelector('#    {{ product_form_id }} input[name="id"]');
       const noScriptInputWrapper = document.createElement('div');
@@ -276,74 +221,95 @@
     endif
   -%}
 
+  {% comment %}
+  SEO
+  {% endcomment %}
   <script type="application/ld+json">
+  {
+  "@context": "http://schema.org/",
+                    "@type": "Product",
+                    "name": {{ product.title | json }},
+  "url": {{ request.origin | append: product.url | json }},
+  {% if seo_media -%}
+    "image": [
+    {{ seo_media | image_url: width: 1920 | prepend: "https:" | json }}
+    ],
+  {%- endif %}
+  "description": {{ product.description | strip_html | json }},
+  {% if product.selected_or_first_available_variant.sku != blank -%}
+    "sku": {{ product.selected_or_first_available_variant.sku | json }},
+  {%- endif %}
+  "brand": {
+  "@type": "Brand",
+                      "name": {{ product.vendor | json }}
+  },
+  "offers": [
+  {%- for variant in product.variants -%}
     {
-    "@context": "http://schema.org/",
-                      "@type": "Product",
-                      "name": {{ product.title | json }},
-    "url": {{ request.origin | append: product.url | json }},
-    {% if seo_media -%}
-      "image": [
-      {{ seo_media | image_url: width: 1920 | prepend: "https:" | json }}
-      ],
-    {%- endif %}
-    "description": {{ product.description | strip_html | json }},
-    {% if product.selected_or_first_available_variant.sku != blank -%}
-      "sku": {{ product.selected_or_first_available_variant.sku | json }},
-    {%- endif %}
-    "brand": {
-    "@type": "Brand",
-                        "name": {{ product.vendor | json }}
-    },
-    "offers": [
-    {%- for variant in product.variants -%}
-      {
-      "@type" : "Offer",
-      {%- if variant.sku != blank -%}
-        "sku": {{ variant.sku | json }},
-      {%- endif -%}
-      {%- if variant.barcode.size == 12 -%}
-        "gtin12": {{ variant.barcode }},
-      {%- endif -%}
-      {%- if variant.barcode.size == 13 -%}
-        "gtin13": {{ variant.barcode }},
-      {%- endif -%}
-      {%- if variant.barcode.size == 14 -%}
-        "gtin14": {{ variant.barcode }},
-      {%- endif -%}
-      "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
-      "price" : {{ variant.price | divided_by: 100.00 | json }},
-      "priceCurrency" : {{ cart.currency.iso_code | json }},
-      "url" : {{ request.origin | append: variant.url | json }}
-      }{% unless forloop.last %},{% endunless %}
-    {%- endfor -%}
-    ]
-    }
+    "@type" : "Offer",
+    {%- if variant.sku != blank -%}
+      "sku": {{ variant.sku | json }},
+    {%- endif -%}
+    {%- if variant.barcode.size == 12 -%}
+      "gtin12": {{ variant.barcode }},
+    {%- endif -%}
+    {%- if variant.barcode.size == 13 -%}
+      "gtin13": {{ variant.barcode }},
+    {%- endif -%}
+    {%- if variant.barcode.size == 14 -%}
+      "gtin14": {{ variant.barcode }},
+    {%- endif -%}
+    "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+    "price" : {{ variant.price | divided_by: 100.00 | json }},
+    "priceCurrency" : {{ cart.currency.iso_code | json }},
+    "url" : {{ request.origin | append: variant.url | json }}
+    }{% unless forloop.last %},{% endunless %}
+  {%- endfor -%}
+  ]
+  }
   </script>
+
 </section>
 
+{% comment %}
+Add To Cart Function
+{% endcomment %}
 <script type="module">
   //------------------------------------------
   // This Works
-          //------------------------------------------
-          import { subscribeToCartAjaxRequests, subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart.js" | asset_url }}';
+  //------------------------------------------
+  import { subscribeToCartAjaxRequests, subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart.js" | asset_url }}';
+
   subscribeToCartAjaxRequests(( requestState, subscribeToResult ) => {
-            if ( requestState.requestType === 'add' ) {
-              subscribeToResult( requestState => {
-                if ( requestState.responseData?.ok ) {
-                  let productName = requestState.responseData.body.title;
-                  if ( requestState.responseData.body.items?.length === 1 ) {
-                    productName = requestState.responseData.body.items[0].title;
-                  }
-                  // alert(`${ productName ? '«' + productName + '» is' : 'Products are' } successfully added`);
-        
-                  document.querySelector('.cart-counter').text('{{ cart.item_count }}');
-  // document.querySelector('.cart-messages').text(productName+'has been added to the cart');
-                  window.location.reload(true);
-                }
-              });
-            }
-          });</script>
+  
+    if ( requestState.requestType === 'add' ) {
+
+      subscribeToResult( requestState => {
+        if ( requestState.responseData?.ok ) {
+          let productName = requestState.responseData.body.title;
+
+          if ( requestState.responseData.body.items?.length === 1 ) {
+            productName = requestState.responseData.body.items[0].title;
+          }
+
+          // UPDATE CART
+          fetch('/cart/update.js')
+          .then((response) => response.json())
+          .then((cart) => {
+            // Log results
+            console.log(cart)
+            // Add query to parameter to open cart
+            window.location = window.location.href + "?cartmodal=1";
+          });
+
+          // Update Cart Count
+          document.querySelector('.cart-counter').text('{{ cart.item_count }}');
+        }
+      });
+
+    }
+  });
+</script>
 
 {% schema %}
   {

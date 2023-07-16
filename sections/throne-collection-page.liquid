@@ -8,32 +8,7 @@ Collection Page
 
     {% render 'throne-grid-changer' %}
 
-    <div class="pagination">
-      {% for link in linklists.shop-menu.links %}
-        {% if link.title == collection.title %}
-
-          {% if forloop.index < 10 %}
-            0{{ forloop.index }}
-          {% else %}
-            {{ forloop.index }}
-          {% endif %}
-
-        {% endif %}
-      {% endfor %}
-      {% if collection.handle == 'all' %}
-        01
-      {% endif %}
-      &nbsp;&ndash;&nbsp;
-      {% if template.name == 'index' %}
-        <a href="/collections/all" title="Shop All">all</a>
-      {% elsif collection %}
-        {% if collection.title == 'Products' %}
-          {{ 'All' | escape }}
-        {% else %}
-          {{ collection.title }}
-        {% endif %}
-      {% endif %}
-    </div>
+    {% render 'throne-collection-pagination' %}
 
     <ul class="products grid">
       {% if collection.products.size > 0 %}

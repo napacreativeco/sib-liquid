@@ -18,12 +18,6 @@
             {% for link in linklists.shop-menu.links %}
               <li class="{% if link.active or parent_link_active %} active{% endif %}{% if forloop.first %} first{% elsif forloop.last %} last{% endif %}">
                 <a href="{{ link.url }}">
-                  {% if forloop.index < 10 %}
-                    0{{ forloop.index }}
-                  {% else %}
-                    {{ forloop.index }}
-                  {% endif %}
-                  &ndash;
                   {{ link.title }}
                 </a>
               </li>

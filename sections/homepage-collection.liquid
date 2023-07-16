@@ -1,24 +1,10 @@
 <section class="shop-component page-component">
-
-
   <div class="shop-component-wrapper" data-layout="grid">
+
     {% render 'throne-grid-changer' %}
+    {% render 'throne-collection-pagination' %}
 
-    <div class="pagination">
-      <a href="{{ }}" title="Page 01">01</a>
-      &nbsp;&ndash;&nbsp;
-      {% if template.name == 'index' %}
-        <a href="/collections/all" title="Shop All">all</a>
-      {% elsif collection %}
-        {% if collection.title == 'Products' %}
-          {{ 'All' | escape }}
-        {% else %}
-          {{ collection.title }}
-        {% endif %}
-      {% endif %}
-    </div>
-
-    <ul class="products grid">
+    <ul class="products-grid grid">
       {%- for product in section.settings.collection.products limit: 16 -%}
         <li class="item">
           <div class="item-wrapper">
@@ -38,9 +24,10 @@
             <div class="product-data">
               {% if product.compare_at_price > product.price %}
                 <span class="sale-indicator">
-                  sale
+                  {{ 'sale' | escape }}
                 </span>
               {% endif %}
+              
               <div class="product-data-wrapper">
 
                 <div class="vendor">
@@ -69,7 +56,7 @@
       {%- endfor -%}
     </ul>
 
-    <ul class="products list">
+    <ul class="products-grid list">
       {%- for product in section.settings.collection.products limit: 16 -%}
 
         <li>
@@ -167,12 +154,66 @@
       {% endfor %}
     </ul>
 
+    <div class="products-grid dual">
+      <ul class="dual-wrapper">
+        {%- for product in section.settings.collection.products limit: 16 -%}
+          <li class="item">
+            <div class="item-wrapper">
+
+              {% comment %} IMAGE {% endcomment %}
+              <div class="product-image">
+                {% for image in product.media limit: 1 %}
+                  <div class="image">
+                    <a href="{{ product.url }}" title="{{ product.title }}">
+                      <img src="{{ image | image_url: width: 500 }}" alt="{{ product.title }}" />
+                    </a>
+                  </div>
+                {% endfor %}
+              </div>
+
+              {% comment %} DATA {% endcomment %}
+              <div class="product-data">
+                {% if product.compare_at_price > product.price %}
+                  <span class="sale-indicator">
+                    {{ 'sale' | escape }}
+                  </span>
+                {% endif %}
+                
+                <div class="product-data-wrapper">
+
+                  <div class="vendor">
+                    <a href="{{ product.url }}" title="{{ product.title }}">
+                      <span>{{ product.vendor }}</span>
+                    </a>
+                  </div>
+
+                  <div class="name">
+                    <a href="{{ product.url }}" title="{{ product.title }}">
+                      <h3>{{ product.title }}</h3>
+                    </a>
+                  </div>
+
+                  <div class="price">
+                    <a href="{{ product.url }}" title="{{ product.title }}">
+                      <span class="price-text">{{ product.price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+
   </div>
 </section>
 
 
 <script>
-  console.log({{ shop.metaobjects.fabric_colors.values | json }});
+  // console.log({{ shop.metaobjects.fabric_colors.values | json }});
 </script>
 
 {% schema %}

@@ -1,0 +1,19 @@
+<div class="pagination">
+    {% if template.name == 'index' %}
+
+      <a href="/collections/all" title="Shop All">
+        00 &ndash; all
+      </a>
+      
+    {% elsif collection %}
+
+      {% for link in linklists.shop-menu.links %}
+        {% if link.title contains collection.handle %}
+          <a href="{{ collection.url }}" title="{{ collection.title }}">
+            {{ link.title }}
+          </a>
+        {% endif %}
+      {% endfor %}
+
+    {% endif %}
+</div>

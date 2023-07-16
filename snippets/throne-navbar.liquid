@@ -5,7 +5,7 @@
         <img src="{{ 'logo.svg' | asset_url }}" alt="Siberia">
       </a>
     </div>
-    <div class="hamburger">
+    <div class="hamburger" data-ajax-cart-toggle-class-button="js-my-cart-open">
       <img src="{{ 'cart.gif' | asset_url }}" alt="Menu">
       <span class="cart-counter">
         {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}

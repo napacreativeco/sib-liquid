@@ -14,14 +14,30 @@
   {%- if block.settings.picker_type == 'button' -%}
     
     <variant-radios id="variant-radios-{{ section.id }}" class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {% if update_url == false %} data-update-url="false"{% endif %} {{ block.shopify_attributes }}>
+      
       {%- for option in product.options_with_values -%}
         <fieldset class="js product-form__input">
-
   
-            <span class="variant-selector-title">
-              {{ option.name }} {% render 'icon-caret' %}
-            </span>
+          <span class="variant-selector-title">
+            {{ option.name }} 
 
+            {% if option.name == 'Size' %}
+              <span class="selected-size-variant">
+                {{ '(' | escape }}{{ product.first_available_variant.option1 }}{{ ')' | escape }}
+              </span>
+            {% endif %}
+
+            {% if option.name == 'Color' %}
+              <span class="selected-color-variant">
+                {{ '(' | escape }}{{ product.first_available_variant.option2 }}{{ ')' | escape }}
+              </span>
+            {% endif %}
+
+            <span class="selected-variant {{ option.id }}"></span>
+
+            {% render 'icon-caret' %}
+
+          </span>
 
           <div class="variant-selector-box">
             {% render 'product-variant-options', product: product, option: option, block: block %}
@@ -31,6 +47,7 @@
       {%- endfor -%}
 
       <script type="application/json">{{ product.variants | json }}</script>
+
     </variant-radios>
 
   {%- else -%}
@@ -46,13 +63,13 @@
             <select id="Option-{{ section.id }}-{{ forloop.index0 }}" class="select__select" name="options[{{ option.name | escape }}]" form="{{ product_form_id }}">
               {% render 'product-variant-options', product: product, option: option, block: block %}
             </select>
+            
             {% render 'icon-caret' %}
           </div>
         </div>
       {%- endfor -%}
 
       <script type="application/json">{{ product.variants | json }}</script>
-
     </variant-selects>
 
   {%- endif -%}

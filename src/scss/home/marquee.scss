@@ -1,7 +1,7 @@
 .marquee-holder {
     background: var(--light-blue);
-    position: fixed;
-    z-index: 9999999999;
+    position: absolute;
+    z-index: 4;
     right: 0;
     bottom: 0;
     left: 0;

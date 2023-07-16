@@ -32,12 +32,21 @@
             text-transform: lowercase;
         }
 
-        ul.products.grid {
+        .sale-indicator {
+            color: var(--red);
+            font-style: italic;
+            font-size: var(--10px);
+        }
+
+        /*
+            Grid View
+        */
+        .products-grid.grid {
             width: 100%;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-gap: 20px;
-            animation: popUp 0.3s ease-in-out;
+            animation: popUp 0.4s ease-in-out;
 
             li.item {
                 img {
@@ -83,7 +92,74 @@
 
         }
 
-        ul.products.list {
+        /*
+            Dual View
+        */ 
+        .products-grid.dual {
+            display: none;
+            width: 100%;
+            animation: popUp 0.4s ease-in-out;
+
+            .dual-wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 20px;
+                flex-wrap: wrap;
+                
+                li.item {
+                    width: calc(50% - 20px);
+
+                    img {
+                        max-width: 100%;
+                    }
+        
+                    a {
+                        text-decoration: none;
+                    }
+    
+                    a:hover {
+                        text-decoration: underline;
+                    }
+    
+                    .product-data {
+    
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-start;
+                        gap: 8px;
+        
+                        .vendor {
+                            span {
+                                font-family: var(--mingliu);
+                                font-size: var(--12px);
+                            }
+                        }
+                        .name {
+                            h3 {
+                                margin: 4px 0 4px 0;
+                                font-family: var(--mingliu);
+                                font-size: var(--12px);
+                            }
+                        }
+                        .price {
+                            a {
+                                font-size: var(--12px);
+                            }
+                        }
+    
+                    }
+                }
+
+            }
+        }
+
+        /*
+            List View
+        */
+        .products-grid.list {
+            display: none;
             animation: popUp 0.4s ease-in-out;
 
             li > .list-item-wrapper {
@@ -146,25 +222,26 @@
             }
         }
 
-        .sale-indicator {
-            color: var(--red);
-            font-style: italic;
-            font-size: var(--10px);
-        }
-
     }
 
     /* 
         Switching between list and grid
     */
-    .shop-component-wrapper[data-layout="grid"] {
-        ul.products.grid { display: grid; }
-        ul.products.list { display: none;}
-    }
-    .shop-component-wrapper[data-layout="list"] {
-        ul.products.grid { display: none; }
-        ul.products.list { display: grid;}
-    }
+    // .shop-component-wrapper[data-layout="grid"] {
+    //     ul.products.grid { display: grid; }
+    //     ul.products.dual { display: none; }
+    //     ul.products.list { display: none; }
+    // }
+    // .shop-component-wrapper[data-layout="list"] {
+    //     ul.products.grid { display: none; }
+    //     ul.products.dual { display: none; }
+    //     ul.products.list { display: grid; }
+    // }
+    // .shop-component-wrapper[data-layout="dual"] {
+    //     ul.products.grid { display: none; }
+    //     ul.products.list { display: none; }
+    //     ul.products.dual { display: grid; }
+    // }
 
 }
 
@@ -185,12 +262,12 @@
                 top: -3px;
             }
 
-            ul.products.grid {
+            ul.products-grid.grid {
                 grid-template-columns: repeat(2, 1fr);
                 padding: 20px;
             }
 
-            ul.products.list {
+            ul.products-grid.list {
                 font-size: 14px;
                 padding: 20px;
 

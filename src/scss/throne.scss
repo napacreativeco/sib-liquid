@@ -102,6 +102,7 @@ a {
   color: inherit;
 }
 
+/* Animations */
 @keyframes popUp {
   0% { transform: translateY(100%); }
   100% { transform: translateY(0px); }
@@ -112,6 +113,16 @@ a {
   100% { transform: translateY(0%); opacity: 1; }
 }
 
+@keyframes fadeEmOut {
+  0% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+.js-ajax-cart-request-in-progress {
+  // animation: fadeEmOut 1s ease-in-out forwards;
+}
+
+/* Parts */
 @import './navbar.scss';
 @import './404.scss';
 @import './footer-menu.scss';

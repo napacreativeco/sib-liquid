@@ -152,7 +152,11 @@
 
     $('.variant-selector-box > input').on('change', function() {
       $('.variant-selector-box').hide();
+      // $('.selected-variant').text($(this).val());
+      $('.selected-size-variant').text( '(' + $('input[name="Size"]:checked').val() + ')' );
+      $('.selected-color-variant').text( '(' + $('input[name="Color"]:checked').val() + ')' );
     });
+
 
     /* 
     ------------------------
@@ -161,20 +165,46 @@
     */
     $('.crosshair').on('click', function() {
 
-      var grid = $('ul.products.grid');
-      var list = $('ul.products.list');
+      var wrapper = $('.shop-component-wrapper');
 
-      if ( $(grid).css('display') === 'grid') {
-        $('ul.products').hide();
-        $(list).css('display', 'grid');
+      if ( $(wrapper).attr('data-layout') === 'grid') {
 
         $('.crosshair-icon > img').css('transform', 'rotate(90deg)');
-      } else {
-        $('ul.products').hide();
-        $(grid).css('display', 'grid');
+        $(wrapper).attr('data-layout', 'list');
+        $('.products-grid.grid').css('display', 'none');
+        $('.products-grid.dual').css('display', 'none');
+        $('.products-grid.list').css('display', 'grid');
+        
+      } else if ( $(wrapper).attr('data-layout') === 'list') {
 
-        $('.crosshair-icon > img').css('transform', 'rotate(0deg)');
+        $('.crosshair-icon > img').css('transform', 'rotate(180deg)');
+        $(wrapper).attr('data-layout', 'dual');
+        $('.products-grid.grid').css('display', 'none');
+        $('.products-grid.dual').css('display', 'block');
+        $('.products-grid.list').css('display', 'none');
+
+      } else if ( $(wrapper).attr('data-layout') === 'dual') {
+
+        $('.crosshair-icon > img').css('transform', 'rotate(270deg)');
+        $(wrapper).attr('data-layout', 'grid');
+        $('.products-grid.grid').css('display', 'grid');
+        $('.products-grid.dual').css('display', 'none');
+        $('.products-grid.list').css('display', 'none');
+
       }
+
+      //  WORKS: 
+      // if ( $(grid).css('display') === 'grid') {
+      //   $('ul.products').hide();
+      //   $(list).css('display', 'grid');
+
+      //   $('.crosshair-icon > img').css('transform', 'rotate(90deg)');
+      // } else {
+      //   $('ul.products').hide();
+      //   $(grid).css('display', 'grid');
+
+      //   $('.crosshair-icon > img').css('transform', 'rotate(0deg)');
+      // }
 
     });
 

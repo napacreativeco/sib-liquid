@@ -47,6 +47,32 @@
         "id": "marquee_speed",
         "label": "Marquee Speed",
         "info": "Set the speed for the Marquee (0 - 100)"
+      },
+      {
+        "type": "text",
+        "id": "marquee_content",
+        "label": "Marquee Content",
+        "default": "our fabric is our honor let the last",
+        "info": "Set the content for the Marquee"
+      },
+      {
+        "type": "checkbox",
+        "id": "marquee_visible",
+        "label": "Hide Marquee",
+        "default": true,
+        "info": "Check the box if you would like to hide the marquee"
+      }
+    ]
+  },
+  {
+    "name": "Size Chart",
+    "settings": [
+      {
+        "type": "text",
+        "id": "size_chart_title",
+        "default": "size chart",
+        "label": "Label",
+        "info": "The label that opens the Size Chart on a Product Page"
       }
     ]
   },
