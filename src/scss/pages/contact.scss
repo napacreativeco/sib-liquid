@@ -1,6 +1,7 @@
 .contact-page {
 
     .contact-page-wrapper {
+        animation: slideDown  0.3s ease-in-out forwards;
         padding: 140px 0 80px 0;
         width: 100%;
         max-width: var(--thin);
@@ -23,6 +24,13 @@
         .field {
             display: flex;
             align-items: center;
+        }
+
+        h2.form-status {
+            font-size: var(--14px);
+            svg {
+                display: none;
+            }
         }
 
         label {
