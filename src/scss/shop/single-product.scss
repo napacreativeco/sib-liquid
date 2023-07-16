@@ -70,7 +70,6 @@
 
             }
 
-
             .size-holder {
                 position: relative;
                 overflow: hidden;
@@ -154,7 +153,6 @@
 
             }
 
-
             .button-holder {
                 border-left: var(--border-blk);
                 border-right: 10px;
@@ -194,7 +192,7 @@
 
                     button:hover {
                         background: var(--black);
-                        color: var(--white);
+                        color: var(--red);
                     }
 
                     button[aria-disabled="true"] {

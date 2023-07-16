@@ -310,11 +310,9 @@
 
                       <div class="actions">
                         <div class="delete">
-                          <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-                            <button type="button" class="button button--tertiary cart-remove-button" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
-                              {{ 'delete' | escape }}
-                            </button>
-                          </cart-remove-button>
+                          <a data-ajax-cart-request-button href="{{ item.url_to_remove }}" rel="{{ item.id }}">
+                            {{ 'delete' | escape }}
+                          </a>
                         </div>
                       </div>
 

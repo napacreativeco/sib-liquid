@@ -13,7 +13,7 @@
     Draggables
     ------------------------
     */
-    const mediaQuery = window.matchMedia('(max-width: 767px)')
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
 
     if (mediaQuery.matches) {
       gsap.registerPlugin(Draggable);
@@ -65,11 +65,20 @@
                 display: 'none'
             });
 
+            gsap.to('.logo > a', {
+              display: 'none'
+            });
+
         } else {
             
             gsap.to('.cart-overlay', {
                 display: 'flex'
             });
+
+            gsap.to('.logo > a', {
+                display: 'block'
+            });
+
         }
 
     });
@@ -221,6 +230,14 @@
       pinSpacing: false,
       pinType: 'transform'
     });
+
+
+    /* 
+    ------------------------
+    Cart Delete Items
+    ------------------------
+    */
+
 
 })(jQuery);
 

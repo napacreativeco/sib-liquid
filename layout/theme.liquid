@@ -104,6 +104,9 @@
       import '{{ "liquid-ajax-cart.js" | asset_url }}';
     </script>
     
+    {% comment %}
+      Parallax
+    {% endcomment %}
     <script>
         // Hero Parallax
         var image = document.getElementsByClassName('floating-media');
@@ -113,15 +116,14 @@
         });    
     </script>
 
+    {% comment %}
+      Show Cart by Query Param
+    {% endcomment %}
     <script>
-      /*
-        Reload page when adding to cart
-      */
+      /* Reload page when adding to cart */
       (function($) {
         $(document).ready(function() {
-
           if (window.location.href.indexOf("?cartmodal=1") > -1) {
-
             if ($('.cart-overlay').is(':visible')) {
 
                 gsap.to('.cart-overlay', {
@@ -134,12 +136,57 @@
                     display: 'flex'
                 });
             }
-
           }
-
         });
       })(jQuery);
     </script>
+
+  {% comment %}
+    Cart Functions
+  {% endcomment %}
+  <script type="module">
+    import { subscribeToCartAjaxRequests, subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart.js" | asset_url }}';
+
+    subscribeToCartAjaxRequests(( requestState, subscribeToResult ) => {
+  
+      if ( requestState.requestType === 'add' ) {
+
+        subscribeToResult( requestState => {
+          if ( requestState.responseData?.ok ) {
+            let productName = requestState.responseData.body.title;
+
+            if ( requestState.responseData.body.items?.length === 1 ) {
+              productName = requestState.responseData.body.items[0].title;
+            }
+
+            // UPDATE CART
+            fetch('/cart/update.js')
+            .then((response) => response.json())
+            .then((cart) => {
+              // Log results
+              console.log(cart)
+              // Add query to parameter to open cart
+              window.location = window.location.href + "?cartmodal=1";
+            });
+
+            // Update Cart Count
+            document.querySelector('.cart-counter').text('{{ cart.item_count }}');
+          }
+        });
+
+      }
+
+      if ( requestState.requestType === 'change' ) {
+        // UPDATE CART
+        fetch('/cart/update.js')
+        .then((response) => response.json())
+        .then((cart) => {
+          window.location = window.location.href + "?cartmodal=1";
+        });
+      }
+
+    });
+</script>
 
     <script>
       /*

@@ -6,6 +6,10 @@
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
 
+  <style>
+    .logo > a { display: block; }
+  </style>
+
   <section id="MainProduct-{{ section.id }}" class="section-{{ section.id }}-padding" data-section="{{ section.id }}">
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -185,7 +189,7 @@
   </script>
 
   {% comment %}
-  Swiper
+  Shopify Script
   {% endcomment %}
   <script>
     /* This is a shopify script */
@@ -274,42 +278,7 @@
 {% comment %}
 Add To Cart Function
 {% endcomment %}
-<script type="module">
-  //------------------------------------------
-  // This Works
-  //------------------------------------------
-  import { subscribeToCartAjaxRequests, subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart.js" | asset_url }}';
 
-  subscribeToCartAjaxRequests(( requestState, subscribeToResult ) => {
-  
-    if ( requestState.requestType === 'add' ) {
-
-      subscribeToResult( requestState => {
-        if ( requestState.responseData?.ok ) {
-          let productName = requestState.responseData.body.title;
-
-          if ( requestState.responseData.body.items?.length === 1 ) {
-            productName = requestState.responseData.body.items[0].title;
-          }
-
-          // UPDATE CART
-          fetch('/cart/update.js')
-          .then((response) => response.json())
-          .then((cart) => {
-            // Log results
-            console.log(cart)
-            // Add query to parameter to open cart
-            window.location = window.location.href + "?cartmodal=1";
-          });
-
-          // Update Cart Count
-          document.querySelector('.cart-counter').text('{{ cart.item_count }}');
-        }
-      });
-
-    }
-  });
-</script>
 
 {% schema %}
   {
