@@ -77,6 +77,18 @@
     ]
   },
   {
+    "name": "Contact Form",
+    "settings": [
+      {
+        "type": "text",
+        "id": "contact_form_success",
+        "default": "understood, <br />we will be in touch.",
+        "label": "Success Message",
+        "info": "The message that shows on a successful submission"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.colors.name",
     "settings": [
       {

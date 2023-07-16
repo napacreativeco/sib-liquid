@@ -34,10 +34,23 @@
       ERRORS
       {% endcomment %}
       {%- if form.posted_successfully? -%}
-        <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
-          {{ 'templates.contact.form.post_success' | t }}
-        </h2>
+        <style>
+          .contact-form-fields { display: none;}
+        </style>
+        <div class="contact-form-success">
+
+          <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+            {{ settings.contact_form_success | escape | default: 'understood, <br />we will be in touch.' }}
+          </h2>
+
+          <div class="back-button">
+            <a href="{{ shop.url }}" title="Back To Shop">{{ 'Back To Shop' | escape }}</a>
+          </div>
+
+        </div>
+
       {%- elsif form.errors -%}
+
         <div class="form__message">
           <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
             {{ 'templates.contact.form.error_heading' | t }}
