@@ -18,7 +18,7 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient isolate">
+<div class="gradient isolate">
   <div class="page-width{% if section.settings.heading == blank %} no-heading{% endif %} section-{{ section.id }}-padding">
     <h2 class="collage-wrapper-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       {{ section.settings.heading }}
@@ -194,7 +194,7 @@
                 </modal-opener>
                 <modal-dialog
                   id="PopupModal-{{ block.id }}"
-                  class="modal-video media-modal color-{{ settings.color_schemes | first }}"
+                  class="modal-video media-modal"
                 >
                   <div
                     class="modal-video__content"
@@ -327,13 +327,6 @@
       "default": "product-card-wrapper",
       "info": "t:sections.collage.settings.card_styles.info",
       "label": "t:sections.collage.settings.card_styles.label"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "info": "t:sections.all.colors.has_cards_info",
-      "default": "background-1"
     },
     {
       "type": "header",
