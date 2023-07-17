@@ -1,7 +1,7 @@
 {
     "sections": {
       "main": {
-        "type": "about-page",
+        "type": "throne-about-page",
         "settings": {}
       }
     },

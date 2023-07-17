@@ -1,8 +1,9 @@
-<section class="about-component page">
+<section class="about-component page {% if template.name == 'index' %} page-component {% endif %}">
   <div class="about-wrapper">
 
     <div class="left">
 
+    testo
       <div class="about-title">
         <h2>{{ section.settings.about_page_title }}</h2>
       </div>
@@ -34,7 +35,7 @@
 {
   "name": "About Page",
   "tag": "section",
-  "class": "about-page-section",
+  "class": "section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -63,8 +64,14 @@
     },
     {
       "type": "textarea",
-      "id": "about_page_body",
-      "label": "Body Text",
+      "id": "about_page_body_top",
+      "label": "Body Text (Upper)",
+      "default": "siberia hills is an idea created in the himalayas during soviet union era by daf of siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops"
+    },
+    {
+      "type": "textarea",
+      "id": "about_page_body_bottom",
+      "label": "Body Text (Lower)",
       "default": "siberia hills is an idea created in the himalayas during soviet union era by daf of siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops"
     }
   ],
