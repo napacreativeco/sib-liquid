@@ -1,9 +1,10 @@
 <section class="about-component page {% if template.name == 'index' %} page-component {% endif %}">
-  <div class="about-wrapper">
+  
+  {% comment %} DESKTOP {% endcomment %}
+  <div class="about-wrapper desktop">
 
     <div class="left">
 
-    testo
       <div class="about-title">
         <h2>{{ section.settings.about_page_title }}</h2>
       </div>
@@ -13,7 +14,7 @@
       </div>
   
       <div class="content">
-        <p>{{ section.settings.about_page_body }}</p>
+        <p>{{ section.settings.about_page_body_ }}</p>
       </div>
 
     </div>
@@ -26,6 +27,41 @@
         {{ section.settings.about_page_question_mark.value }}
         <img src="{{ section.settings.about_page_question_mark | image_url }}" alt="" />
       </div>
+    </div>
+
+  </div>
+
+  {% comment %} MOBILE {% endcomment %}
+  <div class="about-wrapper mobile">
+
+    <div class="left">
+      <div class="about-title">
+        <h2>{{ section.settings.about_page_title }}</h2>
+      </div>
+
+      <div class="tagline">
+        <span>{{ section.settings.about_page_tagline }}</span>
+      </div>
+
+      <div class="content content-top">
+        <p>{{ section.settings.about_page_body_top }}</p>
+      </div>
+
+    </div>
+
+    <div class="right">
+      <div class="featured-image">
+        <img src="{{ section.settings.about_page_featured_image | image_url }}" alt="" />
+      </div>
+      <div class="question-mark">
+        {{ section.settings.about_page_question_mark.value }}
+        <img src="{{ section.settings.about_page_question_mark | image_url }}" alt="" />
+      </div>
+    </div>
+
+
+    <div class="content content-bottom">
+      <p>{{ section.settings.about_page_body_bottom }}</p>
     </div>
 
   </div>

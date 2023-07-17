@@ -158,43 +158,25 @@
                 .variants.size {
                     text-align: center;
                 }
-                .color-swatch {
-                    width: 20px;
-                    height: 20px;
-                    display: block;
-                    border: var(--border-blk);
-                }
 
-                .edit {
-                    button {
-                        border: 0;
-                        outline: 0;
-                        background: transparent;
-                        border-radius: 0;
-                        padding: 0;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-family: inherit;
-                        text-decoration: underline;
+                .color-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                    gap: 10px;
+                    flex-wrap: wrap;
+
+                    .color-swatch {
+                        width: 20px;
+                        height: 20px;
+                        display: block;
+                        border: var(--border-blk);
                     }
                 }
 
                 .delete {
-                    button {
-                        border: 0;
-                        outline: 0;
-                        background: transparent;
-                        border-radius: 0;
-                        padding: 0;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-family: inherit;
-                        text-decoration: underline;
-                    }
+                    text-align: right;
                 }
-
 
             }
 
