@@ -85,6 +85,17 @@
     ]
   },
   {
+    "name": "404",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "fourohfour_image",
+        "label": "Image",
+        "info": "The main image on the 404 page"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.colors.name",
     "settings": [
       {
