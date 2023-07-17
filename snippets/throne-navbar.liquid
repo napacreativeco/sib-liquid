@@ -2,7 +2,11 @@
   <div class="navbar-wrapper">
     <div class="logo">
       <a href="{{ '/' | escape }}" title="Home">
-        <img src="{{ 'logo.svg' | asset_url }}" alt="Siberia">
+        {% if site.settings.navbar_logo %}
+          <img src="{{ site.settings.navbar_logo | image_url: width: 700 }}" alt="Siberia">
+        {% else %}
+          <img src="{{ 'logo.svg' | asset_url }}" alt="Siberia">
+        {% endif %}
       </a>
     </div>
     <div class="hamburger" data-ajax-cart-toggle-class-button="js-my-cart-open">

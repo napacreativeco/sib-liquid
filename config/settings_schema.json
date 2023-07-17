@@ -34,6 +34,17 @@
     ]
   },
   {
+    "name": "Navbar",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "navbar_logo",
+        "label": "Image",
+        "info": "The main logo image."
+      }
+    ]
+  },
+  {
     "name": "Marquee",
     "settings": [
       {
