@@ -10,7 +10,11 @@
       </a>
     </div>
     <div class="hamburger" data-ajax-cart-toggle-class-button="js-my-cart-open">
-      <img src="{{ 'cart.gif' | asset_url }}" alt="Menu">
+      {% if site.settings.cart_icon == empty %}
+        <img src="{{ 'cart.gif' | asset_url }}" alt="{{ 'Menu' | escape }}">
+      {% else %}
+        <img src="{{ settings.cart_icon | image_url: width: 100 }}" alt="{{ 'Menu' | escape }}">
+      {% endif %}
       <span class="cart-counter">
         {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}
       </span>
