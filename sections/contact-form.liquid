@@ -17,13 +17,6 @@
 <div class="contact-page">
   <div class="contact-page-wrapper">
 
-    {%- liquid
-      assign contact_form_class = 'isolate'
-      if settings.animations_reveal_on_scroll
-        assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
-      endif
-    -%}
-
       <div class="contact-form-title">
         <h1>contact</h1>
       </div>
@@ -89,8 +82,7 @@
             <small class="contact__field-error" id="ContactForm-email-error">
               <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
               <span class="form__message">
-                {%- render 'icon-error' -%}
-                {{- form.errors.translated_fields.email | capitalize }}
+                {{- form.errors.translated_fields.email | downcase }}
                 {{ form.errors.messages.email -}}
               </span>
             </small>
