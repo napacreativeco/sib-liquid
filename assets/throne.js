@@ -4,6 +4,16 @@
     
     $(document).on('ready', function() {
         console.log('document ready');
+
+        if ( window.location.href.includes('?cartmodal=1') ) {
+          $('.logo a').css('display', 'block');
+        } 
+
+        if ( window.location.href != '/' ) {
+          $('.logo a').css('display', 'block');
+        } 
+
+
     });
 
     /* ============================================= */
@@ -63,10 +73,6 @@
 
             gsap.to('.cart-overlay', {
                 display: 'none'
-            });
-
-            gsap.to('.logo > a', {
-              display: 'none'
             });
 
         } else {
