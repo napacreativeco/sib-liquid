@@ -20,13 +20,11 @@
       "main-password-header": {
         "type": "main-password-header",
         "settings": {
-          "color_scheme": "background-1"
         }
       },
       "main-password-footer": {
         "type": "main-password-footer",
         "settings": {
-          "color_scheme": "background-1"
         }
       },
       "homepage-about": {
