@@ -1,12 +1,12 @@
 {
-    "sections": {
-      "main": {
-        "type": "throne-about-page",
-        "settings": {}
+  "sections": {
+    "main": {
+      "type": "throne-about-page",
+      "settings": {
       }
-    },
-    "order": [
-      "main"
-    ]
-  }
-  
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
