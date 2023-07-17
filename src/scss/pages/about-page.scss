@@ -4,15 +4,21 @@
     align-items: center;
 }
 
-
-
 .about-component {
     width: 100%;
     max-width: 100%;
     display: flex;
     justify-content: center;
 
+    .about-wrapper.desktop {
+        display: grid;
+    }
+    .about-wrapper.mobile {
+        display: none;
+    }
+
     .about-wrapper {
+        animation: slideDown  0.3s ease-in-out forwards;
         display: grid;
         grid-template-columns: 50% 1fr;
         align-items: center;
@@ -71,8 +77,13 @@
 
     .about-component {
 
-        .about-wrapper {
+        .about-wrapper.desktop {
+            display: none;
+        }
+        .about-wrapper.mobile {
             display: flex;
+        }
+        .about-wrapper {
             flex-direction: column;
             padding: 80px 20px 0 20px;
 

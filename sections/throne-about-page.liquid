@@ -1,4 +1,4 @@
-<section class="about-component page {% if template.name == 'index' %} page-component {% endif %}">
+<section class="about-component page {% if template.name == 'index' %} page-component{% endif %}">
   
   {% comment %} DESKTOP {% endcomment %}
   <div class="about-wrapper desktop">
@@ -14,7 +14,8 @@
       </div>
   
       <div class="content">
-        <p>{{ section.settings.about_page_body_ }}</p>
+        <p>{{ section.settings.about_page_body_top }}</p>
+        <p>{{ section.settings.about_page_body_bottom }}</p>
       </div>
 
     </div>
