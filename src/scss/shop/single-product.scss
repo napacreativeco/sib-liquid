@@ -204,6 +204,10 @@
                 }
             }
 
+            form[data-type="add-to-cart-form"]::after {
+                display: none !important;
+            }
+
         }
 
         .single-product--ajax-cart-messages {

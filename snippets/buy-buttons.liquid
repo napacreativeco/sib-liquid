@@ -27,9 +27,11 @@
 
     <product-form class="product-form" data-hide-errors="{{ gift_card_recipient_feature_active }}">
 
+      {% comment %}
       <div class="product-form__error-message-wrapper" role="alert" hidden>
         <span class="product-form__error-message"></span>
       </div>
+      {% endcomment %}
 
       {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
 

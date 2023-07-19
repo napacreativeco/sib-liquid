@@ -2,7 +2,7 @@
   <div class="navbar-wrapper">
     <div class="logo">
       <a href="{{ '/' | escape }}" title="Home">
-        {% if site.settings.navbar_logo == empty %}
+        {% if settings.navbar_logo == empty %}
           <img src="{{ 'logo.svg' | asset_url }}" alt="Siberia">          
         {% else %}
           <img src="{{ settings.navbar_logo | image_url: width: 500 }}" alt="Siberia">
@@ -10,8 +10,8 @@
       </a>
     </div>
     <div class="hamburger" data-ajax-cart-toggle-class-button="js-my-cart-open">
-      {% if site.settings.cart_icon == empty %}
-        <img src="{{ 'cart.gif' | asset_url }}" alt="{{ 'Menu' | escape }}">
+      {% if settings.cart_icon == empty %}
+        <img src="{{ 'cart.png' | asset_url }}" alt="{{ 'Menu' | escape }}">
       {% else %}
         <img src="{{ settings.cart_icon | image_url: width: 100 }}" alt="{{ 'Menu' | escape }}">
       {% endif %}
