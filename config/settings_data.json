@@ -1,6 +1,7 @@
 {
   "current": {
     "navbar_logo": "shopify:\/\/shop_images\/Logo.svg",
+    "cart_icon": "shopify:\/\/shop_images\/CART2.png",
     "marquee_visible": true,
     "fourohfour_image": "shopify:\/\/shop_images\/Question_Mark.H03.2k_1_dfe5d3df-3dc2-412a-8648-b93c0323d918.png",
     "badge_position": "bottom left",
@@ -25,16 +26,6 @@
       "main-password-footer": {
         "type": "main-password-footer",
         "settings": {
-        }
-      },
-      "homepage-about": {
-        "type": "homepage-about",
-        "settings": {
-          "about_featured_image": "shopify:\/\/shop_images\/striped-outfit_d846098a-f9aa-4e55-8ace-6ee37dee53f2.png",
-          "about_question_mark": "shopify:\/\/shop_images\/Question_Mark.H03.2k_1.png",
-          "about_title": "about",
-          "about_tagline": "based on a true story",
-          "about_body": "siberia hills is an idea created in the himalayas during soviet union era by daf of siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops"
         }
       }
     },
