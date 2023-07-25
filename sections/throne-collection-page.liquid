@@ -51,7 +51,7 @@ Collection Page
 
                   <div class="price">
                     <a href="{{ product.url }}" title="{{ product.title }}">
-                      <span>{{ product.price | money_without_trailing_zeros }}</span>
+                      <span class="price-text">{{ product.price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
                     </a>
                   </div>
 
@@ -102,8 +102,8 @@ Collection Page
               </div>
 
               <div class="price">
-                <a href="{{ product.url }}" title="Price">
-                  <span>{{ product.price | money_without_trailing_zeros }}</span>
+                <a href="{{ product.url }}" title="{{ product.title }}">
+                  <span class="price-text">{{ product.price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
                 </a>
               </div>
 

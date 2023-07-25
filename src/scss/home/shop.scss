@@ -3,7 +3,7 @@
     max-width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 60px;
+    padding-top: 80px;
     padding-bottom: 80px;
 
     .sale-indicator > span {
@@ -255,6 +255,7 @@
     }
 
     .shop-component {
+
         .shop-component-wrapper {
 
             .pagination {
@@ -264,7 +265,6 @@
 
             ul.products-grid.grid {
                 grid-template-columns: repeat(2, 1fr);
-                padding: 20px;
             }
 
             ul.products-grid.list {
@@ -290,6 +290,11 @@
                     }
                 }
 
+            }
+
+            ul.products-grid.dual {
+                grid-template-columns: 1fr;
+                padding: 20px;
             }
 
         }

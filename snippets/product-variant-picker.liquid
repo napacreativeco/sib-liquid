@@ -87,7 +87,7 @@
           <option {% if variant == product.selected_or_first_available_variant %} selected="selected"{% endif %} {% if variant.available == false %} disabled{% endif %} value="{{ variant.id }}">
             {%- liquid
               echo variant.title
-              echo variant.price | money | strip_html | prepend: ' - '
+              echo variant.price | money | remove: '$' | strip_html | prepend: ' - '
               if variant.available == false
                 echo 'products.product.sold_out' | t | prepend: ' - '
               endif
