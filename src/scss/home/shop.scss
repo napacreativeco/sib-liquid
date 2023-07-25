@@ -264,6 +264,7 @@
             }
 
             ul.products-grid.grid {
+                padding: 0 var(--side-padding);
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -292,9 +293,18 @@
 
             }
 
-            ul.products-grid.dual {
-                grid-template-columns: 1fr;
-                padding: 20px;
+            .products-grid.dual {
+
+                .dual-wrapper {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    padding: 20px;
+
+                    li.item {
+                        width: 100%;
+                    }
+                }
+                
             }
 
         }
