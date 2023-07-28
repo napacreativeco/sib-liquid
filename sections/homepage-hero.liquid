@@ -23,7 +23,14 @@
 
       <ul>
         <li>
+          {% comment %}
           <span class="scroll-to-link hero-link" data-component="shop-component">
+            {{ 'Shop' | escape }}
+          </span>
+          {% endcomment %}
+          <span
+            class="hero-link"
+            onclick="window.location='/collections/all';">
             {{ 'Shop' | escape }}
           </span>
         </li>

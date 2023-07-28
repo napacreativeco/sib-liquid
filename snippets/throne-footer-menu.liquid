@@ -25,18 +25,28 @@
           </ul>
         </div>
         <div class="bottom">
+          <ul>
+            {% for link in linklists.shop-footer.links %}
+              <li class="{% if link.active or parent_link_active %} active{% endif %}{% if forloop.first %} first{% elsif forloop.last %} last{% endif %}">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+
+          {% comment %}
           <div class="terms-link">
             <a href="/pages/terms" title="Terms">Terms</a>
           </div>
           <div class="policy-link">
             <a href="/pages/policy" title="Policy / Questions">Policy / Questions</a>
           </div>
+          {% endcomment %}
         </div>
       </div>
     </div>
     <div class="plus">
-      <span class="filter-menu-text">menu</span>
       <div class="icon">
+        <span class="text">menu</span>
         <img src="{{ 'cross.svg' | asset_url }}" alt="Filters" />
       </div>
     </div>

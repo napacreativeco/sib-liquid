@@ -95,16 +95,16 @@
     ------------------------
     */
     $('.plus').on('click', function() {
-      $('.filter-menu-text').hide();
       
         if ( $('.filter-menu').hasClass('filter-opened') ) {
             $('.filter-menu').removeClass('filter-opened');
-            gsap.fromTo(".filter-menu", {x: '0vw'}, {x: '100vw', duration: 0.2});
+            //gsap.fromTo(".filter-menu", {x: 'calc(0vw - 12px)'}, {x: '100vw', duration: 0.2});
         } else {
-
             $('.filter-menu').addClass('filter-opened');
-            gsap.fromTo(".filter-menu", {x: '100vw' }, {x: '0vw', duration: 0.2});
+            //gsap.fromTo(".filter-menu", {x: '100vw' }, {x: 'calc(0vw - 12px)', duration: 0.2});
         }
+
+
 
     });
 

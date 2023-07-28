@@ -30,7 +30,8 @@
             z-index: 99;
             pointer-events: all;
             max-width: 25vw;
-            transform: translateX(1000px);
+            transform: translateX(2000px);
+            transition: all 0.5s ease-in-out;
 
             .top {
                 border-bottom: var(--border-blk);
@@ -110,11 +111,14 @@
             .bottom {
                 width: 100%;
                 border-top: var(--border-blk);
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                gap: 20px;
                 padding: 16px;
+
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: 20px;
+                }
                 
                 a {
                     font-size: var(--12px);
@@ -127,27 +131,38 @@
                 }
             }
         }
+
+        .filter-menu.filter-opened {
+            transform: translateX(-12px);
+        }
         
         .plus {
             pointer-events: all;
             cursor: pointer;
             text-align: center;
 
-            .filter-menu-text {
-                font-family: var(--mingliu);
-                font-size: var(--14px);
-                text-align: center;
-                display: block;
-                margin: 0 0 8px 0;
-            }
-
             .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .text {
+                    position: absolute;
+                    font-family: var(--mingliu);
+                    font-size: var(--14px);
+                    color: #7E7E7E;
+                    text-align: center;
+                    display: block;
+                    margin: 0 0 5px 0;
+                    z-index: 9;
+                }
 
                 img {
                     width: 54px;
                 }
             }
         }
+
     }
 
 }
@@ -170,6 +185,6 @@
     }
 
     .footer-menu .footer-menu-wrapper .plus {
-        padding-right: 20px;
+        padding-right: var(--side-padding);
     }
 }
