@@ -108,40 +108,105 @@
 
     });
 
+    // Theme Color
+    $(document).ready(function() {
+      $('meta[name="theme-color"]').attr('content', '#000000');
+    });
+  
+    // ----------------------
+    // Plus Menu
+    // -----------------------
+    function hidePlus() {
+      document.querySelector('.plus').style.display = 'none';
+    }
+    function showPlus() {
+      document.querySelector('.plus').style.display = 'block';
+    }
+  
+    // ----------------------
+    // Logo
+    // -----------------------
+    function hideLogo() {
+      const mediaQuery = window.matchMedia('(max-width: 767px)');
+      if (! mediaQuery.matches) {
+        document.querySelector('.logo a').style.display = 'none';
+      }
+      
+    }
+    function showLogo() {
+      document.querySelector('.logo a').style.display = 'block';
+    }
+      
+  
+    // Scroll Function
+    window.addEventListener("scroll", () => {
+
+      // Theme Bar
+      if (window.scrollY == 0) {
+        $('meta[name="theme-color"]').attr('content', '#000000');
+      }
+
+      if (window.scrollY > 100) { 
+
+        $('meta[name="theme-color"]').attr('content', '#ffffff');
+
+        showPlus();
+        showLogo();
+
+      } else { 
+
+        // hidePlus();
+        // hideLogo();
+      }
+
+    });
+
     /* 
     ------------------------
     Hero Links
     ------------------------
     */
     $('.scroll-to-link').on('click', function(e) {
-        e.preventDefault();
+      e.preventDefault();
 
-        var sect = $(this).attr('data-component');
+      var sect = $(this).attr('data-component');
 
-        // Hide All Components
-        $('.page-component').css("display", "none");
+      // Hide All Components
+      $('.page-component').css("display", "none");
 
-        // Then, show the proper Component
-        setTimeout(function() {
-          $('.'+sect).css({
-              'display': 'flex'
-          });
-        }, 100);
-
-        // Scroll to Component
-        gsap.to(window, { 
-          duration: 0.7,
-          delay: 0.1,
-          scrollTo: window.innerHeight,
-          ease: 'ease-in-out',
-          onComplete: function() {
-            $('.homepage-hero').hide();
-          }
-
+      // Then, show the proper Component
+      setTimeout(function() {
+        $('.'+sect).css({
+            'display': 'flex'
         });
+      }, 100);
 
-        console.log($(this).attr('data-title'));
-    });
+      // Scroll to Component
+      gsap.to(window, { 
+        duration: 0.7,
+        delay: 0.1,
+        scrollTo: window.innerHeight,
+        ease: 'ease-in-out',
+        onStart: function() {
+
+          gsap.to('.hero-section', {
+            y: '-100vh',
+            onComplete: function() {
+              gsap.to('.hero-section', {
+                display: 'none'
+              });
+            }
+          });
+
+          $('meta[name="theme-color"]').attr('content', '#ffffff');
+          showPlus();
+          showLogo();
+        }
+
+      });
+
+      console.log($(this).attr('data-title'));
+  });
           
     /* 
     ------------------------

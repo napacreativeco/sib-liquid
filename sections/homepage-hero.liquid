@@ -116,67 +116,6 @@
   
 </section>
 
-<script>
-  (function($) {
-
-    // Theme Color
-    $(document).ready(function() {
-      $('meta[name="theme-color"]').attr('content', '#000000');
-    });
-
-    // ----------------------
-    // Plus Menu
-    // -----------------------
-    function hidePlus() {
-      document.querySelector('.plus').style.display = 'none';
-    }
-    function showPlus() {
-      document.querySelector('.plus').style.display = 'block';
-    }
-
-    // ----------------------
-    // Logo
-    // -----------------------
-    function hideLogo() {
-      const mediaQuery = window.matchMedia('(max-width: 767px)');
-      if (! mediaQuery.matches) {
-        document.querySelector('.logo a').style.display = 'none';
-      }
-      
-    }
-    function showLogo() {
-      document.querySelector('.logo a').style.display = 'block';
-    }
-    
-
-    // Scroll Function
-    window.addEventListener("scroll", () => {
-
-      // Theme Bar
-      if (window.scrollY == 0) {
-        $('meta[name="theme-color"]').attr('content', '#000000');
-      }
-
-      if (window.scrollY > 100) { 
-
-        $('meta[name="theme-color"]').attr('content', '#ffffff');
-
-        showPlus();
-        showLogo();
-
-      } else { 
-
-        // hidePlus();
-        // hideLogo();
-      }
-
-    });
-
-
-
-  })(jQuery);
-</script>
-
 <script src="{{ 'gsap-draggable.min.js' | asset_url }}"></script>
 <script>
   function hidePlus() {
@@ -231,7 +170,7 @@
   {
     "name": "Hero",
     "tag": "section",
-    "class": "section",
+    "class": "section hero-section",
     "disabled_on": {
       "groups": ["header", "footer"]
     },
