@@ -108,9 +108,10 @@
 
                 .quantity-wrapper {
                     display: grid;
-                    grid-template-columns: 1fr 2fr 1fr;
+                    grid-template-columns: 2fr 1fr 2fr 1fr;
                     grid-gap: 10px;
                     align-items: center;
+                    font-family: var(--mingliu);
 
                     input:focus {
                         outline: 0;
@@ -119,14 +120,18 @@
                     
                     a {
                         text-decoration: none;
+                        font-family: var(--mingliu);
+                        color: var(--black);
                     }
 
                     button {
-                        font-family: inherit;
-                        color: blue;
+                        font-family: var(--mingliu);
+                        color: var(--black);
                     }
 
                     input[type="number"] {
+                        font-family: var(--mingliu);
+                        color: var(--black);
                         max-width: 1.6rem;
                         text-align: center;
                         border: 0px !important;

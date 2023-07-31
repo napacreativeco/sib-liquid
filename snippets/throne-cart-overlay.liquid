@@ -87,6 +87,8 @@
                       <div class="quantity" role="cell">
                         <div class="quantity-wrapper">
 
+                        <span>{{ 'quantity: ' | escape }}</span>
+
                           <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}" > 
                             {{ '-' | escape }}
                           </a>
@@ -243,6 +245,8 @@
 
                         <div class="quantity" role="cell">
                           <div class="quantity-wrapper">
+
+                          <span>{{ 'quantity: ' | escape }}</span>
 
                             <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}" > 
                               {{ '-' | escape }}
