@@ -23,16 +23,16 @@
 
       <ul>
         <li>
-          {% comment %}
           <span class="scroll-to-link hero-link" data-component="shop-component">
             {{ 'Shop' | escape }}
           </span>
-          {% endcomment %}
+          {% comment %}
           <span
             class="hero-link"
             onclick="window.location='/collections/all';">
             {{ 'Shop' | escape }}
           </span>
+          {% endcomment %}
         </li>
         <li>
           <span class="scroll-to-link hero-link" data-component="about-component">
@@ -166,8 +166,8 @@
 
       } else { 
 
-        hidePlus();
-        hideLogo();
+        // hidePlus();
+        // hideLogo();
       }
 
     });

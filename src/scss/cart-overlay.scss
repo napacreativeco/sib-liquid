@@ -315,6 +315,7 @@ form.js-ajax-cart-form-in-progress:after {
 
         ul.cart-items {
             font-size: var(--12px);
+            gap: 20px;
             
             .image {
                 img {
@@ -329,6 +330,9 @@ form.js-ajax-cart-form-in-progress:after {
                 font-size: var(--16px);
             }
         }
+    }
+    .cart-overlay .cart-overlay-wrapper ul.cart-items li.cart-item {
+        margin: 0 0 20px 0
     }
     .cart-overlay .cart-overlay-wrapper ul.cart-items li.cart-item .cart-item-wrapper {
         display: grid;

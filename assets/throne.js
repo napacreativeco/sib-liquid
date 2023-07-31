@@ -129,7 +129,16 @@
         }, 100);
 
         // Scroll to Component
-        gsap.to(window, { duration: 0.7, delay: 0.1, scrollTo: window.innerHeight, ease: 'ease-in-out' });
+        gsap.to(window, { 
+          duration: 0.7,
+          delay: 0.1,
+          scrollTo: window.innerHeight,
+          ease: 'ease-in-out',
+          onComplete: function() {
+            $('.homepage-hero').hide();
+          }
+
+        });
 
         console.log($(this).attr('data-title'));
     });

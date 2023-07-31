@@ -187,9 +187,10 @@
                         border-radius: 0px !important;
                         cursor: pointer;
                         padding: 10px;
-                        font-family: inherit;
+                        font-family: var(--mingliu) !important;
                         text-transform: uppercase;
                         white-space: nowrap;
+                        font-weight: normal !important;
                     }
 
                     button:hover {
