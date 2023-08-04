@@ -16,12 +16,28 @@
 
 
 
-
-
 <section class="page">
-  <div class="page-wrapper">
-      {{ page.content }}
-    </div>
+
+  {% if page.handle == 'privacy' %}
+    <div class="page-wrapper privacy-page">
+        <header>
+          <div class="page-title">
+            <h1>{{ page.title }}</h1>
+          </div>
+          <div class="easter-egg">
+            <span>{{ 'safety first' | escape  }}</span>
+          </div>
+        </header>
+        <div class="page-content">
+          {{ page.content }}
+        </div>
+      </div>
+  {% else %}
+    <div class="page-wrapper default-page">
+        {{ page.content }}
+      </div>
+  {% endif %}
+
 </section>
 
 

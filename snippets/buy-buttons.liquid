@@ -51,6 +51,9 @@
           <button id="ProductSubmitButton-{{ section_id }}" type="submit" name="add" class="product-form__submit {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}" {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %} disabled{% endif %}>
             <span>
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                <style>
+                  .sold-out-indicator { display: inline-block; }
+                </style>
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}

@@ -939,6 +939,16 @@ class VariantSelects extends HTMLElement {
   updateURL() {
     if (!this.currentVariant || this.dataset.updateUrl === 'false') return;
     window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
+    // THRONE
+    if (this.currentVariant.available) { 
+      console.log('available');
+      var indicator = document.querySelector('.sold-out-indicator');
+      document.querySelector('.sold-out-indicator').innerHTML = '';
+    } else {
+      console.log('sold out');
+      document.querySelector('.sold-out-indicator').innerHTML = 'sold out';
+    }
+    // END THRONE
   }
 
   updateShareUrl() {
