@@ -48,7 +48,8 @@
                 }
             }
 
-            .sold-out-indicator {
+            .sold-out-indicator,
+            .sold-out-indicator--mobile {
                 font-size: var(--10px);
                 font-style: italic;
                 background: #D2D2D2;
@@ -57,7 +58,8 @@
                 position: relative;
                 top: -4px;
             }
-            .sold-out-indicator:empty {
+            .sold-out-indicator:empty,
+            .sold-out-indicator--mobile:empty {
                 padding: 0px;
             }
 

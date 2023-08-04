@@ -944,9 +944,11 @@ class VariantSelects extends HTMLElement {
       console.log('available');
       var indicator = document.querySelector('.sold-out-indicator');
       document.querySelector('.sold-out-indicator').innerHTML = '';
+      document.querySelector('.sold-out-indicator--mobile').innerHTML = '';
     } else {
       console.log('sold out');
       document.querySelector('.sold-out-indicator').innerHTML = 'sold out';
+      document.querySelector('.sold-out-indicator--mobile').innerHTML = 'sold out';
     }
     // END THRONE
   }
