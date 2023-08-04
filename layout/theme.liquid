@@ -150,6 +150,19 @@
   
       if ( requestState.requestType === 'add' ) {
 
+        // UPDATE CART
+        fetch('/cart/update.js')
+        .then((response) => response.json())
+        .then((cart) => {
+          // Add query to parameter to open cart
+          if ( window.location.href.includes('?cartmodal=1') ) {
+            window.location.reload();
+          } else {
+            window.location = window.location.href + "?cartmodal=1";
+          }
+          document.querySelector('.logo > a').style.display = 'block';
+        });
+
         subscribeToResult( requestState => {
           if ( requestState.responseData?.ok ) {
             let productName = requestState.responseData.body.title;
@@ -157,19 +170,6 @@
             if ( requestState.responseData.body.items?.length === 1 ) {
               productName = requestState.responseData.body.items[0].title;
             }
-
-            // UPDATE CART
-            fetch('/cart/update.js')
-            .then((response) => response.json())
-            .then((cart) => {
-              // Add query to parameter to open cart
-              if ( window.location.href.includes('?cartmodal=1') ) {
-                window.location.reload();
-              } else {
-                window.location = window.location.href + "?cartmodal=1";
-              }
-              document.querySelector('.logo > a').style.display = 'block';
-            });
 
             // Update Cart Count
             document.querySelector('.cart-counter').text('{{ cart.item_count }}');
