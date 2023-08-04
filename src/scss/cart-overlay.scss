@@ -292,6 +292,11 @@ form.js-ajax-cart-form-in-progress:after {
     .cart-overlay .cart-items-holder.desktop {
         display: none;
     }
+
+    .cart-overlay {
+        padding-top: 80px;
+    }
+    
     .cart-overlay .cart-items-holder.mobile {
         display: flex;
 
@@ -307,6 +312,7 @@ form.js-ajax-cart-form-in-progress:after {
             flex-direction: row;
             gap: 10px;
             align-items: flex-end;
+            justify-content: flex-end;
         }
 
 
@@ -331,13 +337,14 @@ form.js-ajax-cart-form-in-progress:after {
             }
         }
     }
+    /* Cart Item */
     .cart-overlay .cart-overlay-wrapper ul.cart-items li.cart-item {
         margin: 0 0 20px 0
     }
     .cart-overlay .cart-overlay-wrapper ul.cart-items li.cart-item .cart-item-wrapper {
         display: grid;
-        grid-template-columns: 2fr 2fr 1fr;
-        grid-gap: 20px;
+        grid-template-columns: 2fr 4fr 1fr;
+        grid-gap: 0px;
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
@@ -347,11 +354,42 @@ form.js-ajax-cart-form-in-progress:after {
         }
     }
 
+    /* Color */
+    .cart-overlay .cart-overlay-wrapper ul.cart-items li.cart-item .color-wrapper {
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    /* Quantity */
+    .cart-overlay .cart-overlay-wrapper ul.cart-items li.cart-item .quantity-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+    .cart-overlay .cart-overlay-wrapper ul.cart-items li.cart-item .quantity-wrapper input[type=number] {
+        max-width: 1rem;
+    }
+
     .cart-overlay .cart {
         padding: 0 12px;
     }
     .cart-overlay .cart-header {
         padding: 0 12px;
+    }
+
+    /* Checkout Buttons */
+    .cart-overlay .cart-overlay-wrapper .buttons {
+        padding: 20px 0;
+        border-bottom: var(--border-blk);
+    }
+    .cart-overlay .cart-overlay-wrapper .buttons .checkout-button {
+        padding: 10px 30px;
+        width: 60%;
+        text-align: center;
+    }
+
+    /* Credit Cards */
+    .cart-overlay .cart-overlay-wrapper ul.credit-cards-list {
+        margin-top: 30px;
     }
 
     .cart-items.desktop {

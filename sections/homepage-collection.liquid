@@ -42,11 +42,13 @@
                   </a>
                 </div>
 
+                {% comment %}
                 <div class="price">
                   <a href="{{ product.url }}" title="{{ product.title }}">
                     <span class="price-text">{{ product.price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
                   </a>
                 </div>
+                {% endcomment %}
 
               </div>
             </div>
@@ -86,12 +88,13 @@
               </div>
             </div>
 
-
+            {% comment %}
             <div class="price">
               <a href="{{ product.url }}" title="Price">
                 <span>{{ product.price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
               </a>
             </div>
+            {% endcomment %}
 
             <div class="indicator-holder">
               {% if product.compare_at_price > product.price %}
@@ -193,11 +196,13 @@
                     </a>
                   </div>
 
+                  {% comment %}
                   <div class="price">
                     <a href="{{ product.url }}" title="{{ product.title }}">
                       <span class="price-text">{{ product.price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
                     </a>
                   </div>
+                  {% endcomment %}
 
                 </div>
               </div>

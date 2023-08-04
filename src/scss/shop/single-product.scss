@@ -54,7 +54,7 @@
 
         .actions-header {
             display: grid;
-            grid-template-columns: 1fr 4fr 2fr;
+            grid-template-columns: 1fr 4fr 4fr;
             border: var(--border-blk);
             font-size: var(--12px) !important;
             font-family: var(--mingliu);
@@ -186,7 +186,7 @@
                         border: 0px;
                         border-radius: 0px !important;
                         cursor: pointer;
-                        padding: 10px;
+                        padding: 10px 20px;
                         font-family: var(--mingliu) !important;
                         text-transform: uppercase;
                         white-space: nowrap;

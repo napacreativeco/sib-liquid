@@ -178,13 +178,13 @@
         $('.'+sect).css({
             'display': 'flex'
         });
-      }, 100);
+      }, 500);
 
       // Scroll to Component
       gsap.to(window, { 
-        duration: 0.7,
-        delay: 0.1,
-        // scrollTo: window.innerHeight,
+        duration: 0.6,
+        delay: 0,
+        scrollTo: window.innerHeight,
         ease: 'ease-in-out',
         onStart: function() {
 
