@@ -180,16 +180,43 @@
         });
       }, 500);
 
-      // Scroll to Component
-      gsap.to(window, { 
-        duration: 0.6,
-        delay: 0,
-        scrollTo: window.innerHeight,
-        ease: 'ease-in-out',
-        onStart: function() {
+      // Scroll to Component (PERFECT)
+      // gsap.to(window, { 
+      //   duration: 0.6,
+      //   delay: 0,
+      //   scrollTo: window.innerHeight,
+      //   ease: 'ease-in-out',
+      //   onStart: function() {
 
-          gsap.to('.hero-section', {
-            y: '-100vh',
+      //     gsap.to('.hero-section', {
+      //       y: '-100vh',
+      //       onComplete: function() {
+      //         gsap.to('.hero-section', {
+      //           display: 'none'
+      //         });
+      //       }
+      //     });
+
+      //     $('meta[name="theme-color"]').attr('content', '#ffffff');
+      //     showPlus();
+      //     showLogo();
+      //   }
+
+      gsap.to('.hero-section', {
+        y: '-100vh',
+        duration: 0.7,
+        onComplete: function() {
+
+          gsap.to(window, { 
+            duration: 0.6,
+            delay: 0,
+            scrollTo: window.innerHeight,
+            ease: 'ease-in-out',
+            onStart: function() {
+              $('meta[name="theme-color"]').attr('content', '#ffffff');
+              showPlus();
+              showLogo();
+            },
             onComplete: function() {
               gsap.to('.hero-section', {
                 display: 'none'
@@ -197,12 +224,10 @@
             }
           });
 
-          $('meta[name="theme-color"]').attr('content', '#ffffff');
-          showPlus();
-          showLogo();
-        }
 
+        }
       });
+
 
       console.log($(this).attr('data-title'));
     });
