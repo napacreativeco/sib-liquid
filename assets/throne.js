@@ -203,7 +203,7 @@
       //   }
 
       gsap.to('.hero-section', {
-        //y: '-100vh',
+        y: '-100vh',
         height: '0px',
         duration: 0.7,
         css: {
