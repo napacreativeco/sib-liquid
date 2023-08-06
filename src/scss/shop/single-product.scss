@@ -95,6 +95,7 @@
                 white-space: nowrap;
                 align-items: center;
                 padding: 0 10px;
+                font-size: var(--12px)!important;
 
             }
 
@@ -171,6 +172,7 @@
                         justify-content: center;
                         padding: 10px;
                         cursor: pointer;
+                        font-size: var(--12px)!important;
                         animation: popUp 0.26s ease-in-out;
                     }
 
@@ -214,6 +216,7 @@
                         cursor: pointer;
                         padding: 10px 20px;
                         font-family: var(--mingliu) !important;
+                        font-size: var(--12px)!important;
                         text-transform: uppercase;
                         white-space: nowrap;
                         font-weight: normal !important;
