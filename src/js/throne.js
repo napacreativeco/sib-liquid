@@ -206,6 +206,9 @@
         //y: '-100vh',
         height: '0px',
         duration: 0.7,
+        css: {
+          overflow: 'hidden'
+        },
         onComplete: function() {
 
           gsap.to(window, { 
@@ -215,9 +218,9 @@
             ease: 'ease-in-out',
             onStart: function() {
 
-              gsap.to('.hero-section', {
-                display: 'none',
-              });
+              // gsap.to('.hero-section', {
+              //   display: 'none',
+              // });
 
               $('meta[name="theme-color"]').attr('content', '#ffffff');
               showPlus();
