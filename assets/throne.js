@@ -203,7 +203,8 @@
       //   }
 
       gsap.to('.hero-section', {
-        y: '-100vh',
+        //y: '-100vh',
+        height: '0px',
         duration: 0.7,
         onComplete: function() {
 
@@ -217,7 +218,7 @@
               gsap.to('.hero-section', {
                 display: 'none',
               });
-              
+
               $('meta[name="theme-color"]').attr('content', '#ffffff');
               showPlus();
               showLogo();
