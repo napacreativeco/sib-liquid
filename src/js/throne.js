@@ -219,7 +219,12 @@
             },
             onComplete: function() {
               gsap.to('.hero-section', {
-                display: 'none'
+                display: 'none',
+                onComplete: function() {
+                  gsap.to(window, {
+                    scrollTo: 0
+                  })
+                }
               });
             }
           });
