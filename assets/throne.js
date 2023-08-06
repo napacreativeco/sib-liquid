@@ -213,20 +213,17 @@
             scrollTo: window.innerHeight,
             ease: 'ease-in-out',
             onStart: function() {
+
+              gsap.to('.hero-section', {
+                display: 'none',
+              });
+              
               $('meta[name="theme-color"]').attr('content', '#ffffff');
               showPlus();
               showLogo();
             },
             onComplete: function() {
-              gsap.to('.hero-section', {
-                display: 'none',
-                onComplete: function() {
-                  // gsap.to(window, {
-                  //   scrollTo: 0,
-                  //   duration: 0.1
-                  // })
-                }
-              });
+
             }
           });
 
