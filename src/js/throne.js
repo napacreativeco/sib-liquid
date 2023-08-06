@@ -207,6 +207,7 @@
         height: '0px',
         duration: 0.7,
         css: {
+          height: '0px',
           overflow: 'hidden'
         },
         onComplete: function() {
