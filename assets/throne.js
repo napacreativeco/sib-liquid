@@ -211,7 +211,7 @@
           gsap.to(window, { 
             duration: 0.6,
             delay: 0,
-            scrollTo: window.innerHeight,
+            // scrollTo: window.innerHeight,
             ease: 'ease-in-out',
             onStart: function() {
 
