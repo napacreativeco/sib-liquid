@@ -221,10 +221,10 @@
               gsap.to('.hero-section', {
                 display: 'none',
                 onComplete: function() {
-                  gsap.to(window, {
-                    scrollTo: 0,
-                    duration: 0.1
-                  })
+                  // gsap.to(window, {
+                  //   scrollTo: 0,
+                  //   duration: 0.1
+                  // })
                 }
               });
             }
