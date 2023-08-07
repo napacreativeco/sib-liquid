@@ -326,7 +326,16 @@
         </div>
       </div>
 
-
+      <div class="empty-cart">
+        <div class="title">
+          <span>{{ 'Your cart is empty' | escape }}</span>
+        </div>
+        <div class="action">
+          <a href="/collections/all" title="{{ 'Continue shopping' | escape }}">
+            {{ 'Continue shopping' | escape }}
+          </a>
+        </div>
+      </div>
 
     {% render 'credit-cards' %}
 
