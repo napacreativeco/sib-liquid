@@ -286,7 +286,8 @@
         display: flex;
         justify-content: center;
         padding: 40px 0 80px 0;
-        margin-top: 60px;
+        margin: 60px auto 0px auto;
+        max-width: var(--thin);
         border-top: var(--border-blk);
 
         a {
