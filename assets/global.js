@@ -939,6 +939,12 @@ class VariantSelects extends HTMLElement {
   updateURL() {
     if (!this.currentVariant || this.dataset.updateUrl === 'false') return;
     window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
+
+    // THRONE
+      document.querySelector('.price-holder').innerHTML = this.currentVariant.price / 100 + ' usd';
+      console.log(this.currentVariant)
+    // END THRONE
+
     // THRONE
     if (this.currentVariant.available) { 
       console.log('available');

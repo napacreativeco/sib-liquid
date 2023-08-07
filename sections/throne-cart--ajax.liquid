@@ -2,42 +2,14 @@
 
 <div class="cart-overlay my-floating-cart" data-displayed="true">
 
-  <style>
-    .my-floating-cart { display: none; }
-
-    /* Show the floating cart if the 'js-my-cart-open' CSS class exists */
-    .js-my-cart-open .my-floating-cart { display: block; }
-  </style>
-
   <div class="cart-header">
     <div class="cart-name">
       <h1>{{ 'Cart' | escape }}</h1>
     </div>
   </div>
 
-  <div class="cart-overlay-wrapper" data-ajax-cart-section>
-    {%- if cart == empty -%}
+  <div class="cart-overlay-wrapper">
 
-      <div class="empty-cart">
-        <div class="cart-drawer__warnings center">
-          <div class="cart-drawer__empty-content">
-            <h2 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h2>
-
-            <div class="continue-shopping">
-              <a href="{{ routes.all_products_collection_url }}">
-                {{ 'general.continue_shopping' | t }}
-              </a>
-            </div>
-
-            {%- if shop.customer_accounts_enabled and customer == null -%}
-              <p class="cart__login-title h3">{{ 'sections.cart.login.title' | t }}</p>
-              <p class="cart__login-paragraph">{{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}</p>
-            {%- endif -%}
-          </div>
-        </div>
-      </div>
-
-    {%- else -%}
 
       {% comment %}
       ----------------------
@@ -45,7 +17,7 @@
       ----------------------
       {% endcomment %}
       <div class="cart">
-        <cart-drawer-items class="cart-items-holder desktop {% if cart == empty %}is-empty{% endif %}" data-ajax-cart-section> 
+        <cart-drawer-items class="cart-items-holder desktop {% if cart == empty %}is-empty{% endif %}"> 
 
           <form id="add-to-cart-form" action="{{ routes.cart_url }}" method="post">
 
@@ -87,24 +59,23 @@
                         Quantity
                       {% endcomment %}
                       <div class="quantity" role="cell">
+                        <span class="label">quantity: </span>
                         <div class="quantity-wrapper">
 
-                        <a data-ajax-cart-request-button
-                        href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | minus: 1 }}" > 
-                        Minus one 
-                      </a>
+                            <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | minus: 1 }}" > 
+                                {{ '-' | escape }} 
+                            </a>
+                
+                            <!-- data-ajax-cart-quantity-input ajaxifies the line item quantity input -->
+                            <input data-ajax-cart-quantity-input="{{ item_index }}"
+                                name="updates[]" 
+                                value="{{ item.quantity }}" 
+                                type="number" />
             
-                      <!-- data-ajax-cart-quantity-input ajaxifies the line item quantity input -->
-                      <input data-ajax-cart-quantity-input="{{ item_index }}"
-                        name="updates[]" 
-                        value="{{ item.quantity }}" 
-                        type="number" />
-            
-                      <!-- data-ajax-cart-request-button ajaxifies the "Plus one" button -->
-                      <a data-ajax-cart-request-button 
-                        href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | plus: 1 }}"> 
-                        Plus one 
-                      </a>
+                            <!-- data-ajax-cart-request-button ajaxifies the "Plus one" button -->
+                            <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | plus: 1 }}"> 
+                                {{ '+' | escape }}
+                            </a>
 
                         </div>
                       </div>
@@ -134,6 +105,7 @@
                       {% comment %} 
                         Color
                       {% endcomment %}
+                      {% comment %}
                       <div class="variants color">
                         <div class="color-wrapper">
                           <span class="color-swatch" style="background: {{ item.variant.metafields.custom.display_color.value }}">
@@ -141,6 +113,7 @@
                           </span>
                         </div>
                       </div>
+                      {% endcomment %}
 
                       <div class="delete">
                         <a data-ajax-cart-request-button href="{{ item.url_to_remove }}" rel="{{ item.id }}">
@@ -313,12 +286,13 @@
         <div class="subtotal">
           <div class="subtotal-wrapper">
             <div class="left">
-              <span>{{ 'Subtotal' | escape }}</span>
+                <span>{{ 'Subtotal' | escape }}</span>
             </div>
             <div class="right">
-              <span>{{ cart.total_price | money_without_trailing_zeros | remove: '$' }}
-                <span>{{ shop.currency }}</span>
+                <span class="subtotal-price">
+                    {{ cart.total_price | money_without_trailing_zeros | remove: '$' }}
                 </span>
+                <span>{{ shop.currency }}</span>
             </div>
           </div>
         </div>
@@ -347,12 +321,12 @@
             name="checkout"
             form="CartDrawer-Form"
             style="text-transform: uppercase !important;">
-            CHECKOUT ({{ cart.item_count }})
+            CHECKOUT {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}
           </a>
         </div>
       </div>
 
-    {%- endif -%}
+
 
     {% render 'credit-cards' %}
 
@@ -386,3 +360,5 @@
     });
   });
 </script>
+
+

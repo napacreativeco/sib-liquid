@@ -30,6 +30,7 @@
         max-width: var(--thin);
         padding-bottom: 40px;
         text-transform: uppercase;
+        margin: 0 auto;
 
         img {
             width: 160px;
@@ -42,11 +43,11 @@
 
         width: 100%;
         max-width: var(--thin);
+        margin: 0 auto;
 
         form#add-to-cart-form {
             padding: 0 0 20px 0;
             width: 100%;
-            
         }
 
         /* Empty Cart */
@@ -85,7 +86,7 @@
             li.cart-item {
                 .cart-item-wrapper {
                     display: grid;
-                    grid-template-columns: 1fr 4fr 1fr 1fr 1fr 1fr;
+                    grid-template-columns: 1fr 6fr 1fr 1fr 1fr;
                     grid-gap: 20px;
                     align-items: center;
                 }
@@ -104,13 +105,18 @@
 
                 .quantity {
                     width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    font-family: var(--mingliu);
+                    gap: 5px;
                 }
 
                 .quantity-wrapper {
                     display: grid;
                     grid-template-columns: 2fr 1fr 2fr 1fr;
-                    grid-gap: 10px;
+                    grid-gap: 0px;
                     align-items: center;
+                    justify-content: space-around;
                     font-family: var(--mingliu);
 
                     input:focus {
@@ -264,24 +270,30 @@
 }
 
 // 
-form.js-ajax-cart-form-in-progress [type="submit"] {
-  opacity: .7;  
-}
+// form.js-ajax-cart-form-in-progress [type="submit"] {
+//   opacity: .7;  
+// }
 
 /* Show a loading indicator */
-form.js-ajax-cart-form-in-progress:after { 
-  content: 'Adding to cart…';
-  display: block; 
-}
+// form.js-ajax-cart-form-in-progress:after { 
+//   content: 'Adding to cart…';
+//   display: block; 
+// }
 
-.my-cart__items { 
+
+  /* Ajax Details */
+  .cart-item { 
     opacity: 1;
     transition: opacity .2s;
   }
    
   /* Make the area with controls visually disabled */
-  body.js-ajax-cart-request-in-progress .my-cart__items {
-    opacity: .7;
+  body.js-ajax-cart-request-in-progress .cart-item {
+    opacity: .3;
+  }
+
+  .js-my-cart-open .cart-overlay {
+    display: block;
   }
 
   /*

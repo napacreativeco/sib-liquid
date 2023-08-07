@@ -70,12 +70,13 @@
         }
         
         button[disabled="disabled"] {
-            color: #D2D2D2 !important;
-            background: var(--white) !important;
+            // color: #D2D2D2 !important;
+            color: var(--black);
+            background: var(--white);
         }
         button[disabled="disabled"]:hover {
-            color: #D2D2D2 !important;
-            background: var(--white) !important;
+            color: #D2D2D2;
+            background: var(--white);
         }
 
         /*

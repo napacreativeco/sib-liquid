@@ -69,23 +69,23 @@
     */
     $('.hamburger').on('click', function() {
 
-        if ($('.cart-overlay').is(':visible')) {
+        // if ($('.cart-overlay').is(':visible')) {
 
-            gsap.to('.cart-overlay', {
-                display: 'none'
-            });
+        //     gsap.to('.cart-overlay', {
+        //         display: 'none'
+        //     });
 
-        } else {
+        // } else {
             
-            gsap.to('.cart-overlay', {
-                display: 'flex'
-            });
+        //     gsap.to('.cart-overlay', {
+        //         display: 'flex'
+        //     });
 
-            gsap.to('.logo > a', {
-                display: 'block'
-            });
+        //     gsap.to('.logo > a', {
+        //         display: 'block'
+        //     });
 
-        }
+        // }
 
     });
     
