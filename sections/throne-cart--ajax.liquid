@@ -193,7 +193,7 @@
 
                                 {% when 'Size' %}
                                   <span class="product-option">
-                                    {{ option.value }}
+                                    {{ 'size: ' | escape }} {{ option.value }}
                                   </span>
 
                               {% endcase %}

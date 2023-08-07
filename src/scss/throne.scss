@@ -133,7 +133,6 @@ a {
 @import './navbar.scss';
 @import './404.scss';
 @import './footer-menu.scss';
-@import './cart-overlay.scss';
 
 @import './home/hero.scss';
 @import './home/shop.scss';
@@ -149,6 +148,9 @@ a {
 @import './pages/contact.scss';
 @import './pages/about-page.scss';
 @import './pages/privacy.scss';
+
+@import './cart/cart--overlay.scss';
+@import './cart/cart--empty.scss';
 
 .page-component {
   display: none;
