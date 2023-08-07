@@ -184,6 +184,11 @@
                         </a>
                       </div>
 
+                      <div class="product-price">
+                          <span class="price">{{ item.final_line_price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
+                        </a>
+                      </div>
+
                       <div class="variants size">
                         {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != null -%}
 

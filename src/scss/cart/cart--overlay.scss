@@ -324,15 +324,24 @@
                     display: grid;
                     grid-template-columns: 2fr 4fr 1fr;
                     grid-gap: 0px;
-                    -webkit-box-align: center;
-                    -ms-flex-align: center;
-                    align-items: center;
+                    align-items: flex-start;
             
                     .image {
                         img {
                             max-width: 20vw;
                             height: auto;
                         }
+                    }
+
+                    .data {
+                        justify-content: space-between;
+                        .product-title {
+                            font-size: var(--14px);
+                        }
+                    }
+
+                    .product-price {
+                        font-family: var(--mingliu);
                     }
 
                     .size {
