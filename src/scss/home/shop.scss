@@ -6,6 +6,11 @@
     padding-top: 80px;
     padding-bottom: 80px;
 
+    // .no-products {
+    //     padding-top: 6px;
+    //     padding-left: var(--side-padding);
+    // }
+
     .indicator {
         background: var(--black);
         color: var(--red);
@@ -292,7 +297,7 @@
                 .dual-wrapper {
                     display: grid;
                     grid-template-columns: 1fr;
-                    padding: 20px;
+                    padding: 0 12px;
 
                     li.item {
                         width: 100%;

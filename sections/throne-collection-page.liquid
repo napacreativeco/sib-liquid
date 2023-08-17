@@ -9,8 +9,9 @@ Collection Page
     {% render 'throne-grid-changer' %}
 
     {% render 'throne-collection-pagination' %}
+    <script>console.log({{ section.settings.collection.products.size }})</script>
 
-    <ul class="products-grid grid">
+<ul class="products-grid grid" {% if collection.products.size > 0 %} {% else %}style="grid-template-columns: 1fr;"{% endif %}>
       {% if collection.products.size > 0 %}
 
         {%- for product in collection.products -%}
@@ -18,9 +19,7 @@ Collection Page
         {%- endfor -%}
 
       {% else %}
-
         {% render 'no-products' %}
-
       {% endif %}
     </ul>
 
@@ -32,17 +31,21 @@ Collection Page
         {% endfor %}
 
       {% else %}
-
         {% render 'no-products' %}
-
       {% endif %}
     </ul>
 
     <div class="products-grid dual">
       <ul class="dual-wrapper">
-        {%- for product in collection.products -%}
-          {% render 'throne--card-dual-view', product: product %}
-        {%- endfor -%}
+        {% if collection.products.size > 0 %}
+
+          {%- for product in collection.products -%}
+            {% render 'throne--card-dual-view', product: product %}
+          {%- endfor -%}
+
+        {% else %}
+          {% render 'no-products' %}
+        {% endif %}
       </ul>
     </div>
 
