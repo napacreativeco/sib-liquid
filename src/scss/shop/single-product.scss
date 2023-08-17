@@ -90,7 +90,6 @@
             font-family: var(--mingliu);
             text-transform: lowercase !important;
 
-
             .price-holder {
                 border-right: var(--border-blk);
                 display: flex;
@@ -227,7 +226,7 @@
                     }
 
                     button:hover {
-                        background: var(--black);
+                        background: #000;
                         color: var(--red);
                     }
 
@@ -285,7 +284,7 @@
 */
 @media screen and (max-width: 767px) {
     .single-product {
-        padding: 120px 0 0 0;
+        padding: 80px 0 0 0;
         
         .main-page {
             padding: 0;
@@ -294,8 +293,10 @@
         .single-product-wrapper {
             display: flex;
             flex-direction: column;
+            gap: 0px;
 
             .actions-header {
+                margin-top: 12px;
                 width: 100%;
                 border-left: 0px;
                 border-right: 0px;
@@ -325,12 +326,12 @@
                     padding: 0 10px;
                 }
                 .size-chart {
-                    padding: 0 10px;
+                    padding: 10px 10px 0px 10px;
 
                     summary {
                         text-align: right;
                         h3{
-                            font-family: var(--mingliu);
+                            font-weight:bold;
                         }
                     }
                 }
@@ -342,8 +343,10 @@
                     padding: 40px 10px 100px 10px;
 
                     a {
-                        font-family: var(--mingliu);
                         text-align: center;
+                    }
+                    a.next-product {
+                        font-weight: bold;
                     }
                 }
             }

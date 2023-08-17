@@ -15,7 +15,7 @@
 :root {
   --mingliu: 'MingLiU';
   --siberia-blue: #B6FFFE;
-  --black: #00241D;
+  --black: #000000;
   --dark-grey: #555555;
   --white: #ffffff;
   --red: #FF0000;
@@ -36,6 +36,7 @@
   --16px: 1.143rem;
   --14px: 1rem;
   --12px: 0.857rem;
+  --11px: 0.688;
   --10px: 0.714rem;
 }
 
@@ -63,11 +64,13 @@ body,
 html,
 div {
   text-transform: lowercase;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
   font-family: 'Times New Roman', serif;
-  font-weight: 400;
+  font-weight: lighter;
   letter-spacing: 0px;
   font-size: 14px;
   line-height: 1;

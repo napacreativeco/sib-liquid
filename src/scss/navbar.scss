@@ -1,3 +1,18 @@
+.classic-logo {
+    display: block;
+}
+.logo-italic {
+    display: none;
+}
+
+.js-my-cart-open .classic-logo {
+    display: none;
+}
+.js-my-cart-open .logo-italic {
+    display: block;
+}
+
+
 .throne--navbar {
     width: 100%;
     max-width: 100%;
@@ -5,7 +20,7 @@
     top: 0;
     right: 0;
     left: 0;
-    z-index: 999999;
+    z-index: 8;
     display: flex;
     justify-content: center;
 
@@ -24,13 +39,13 @@
                 width: 100%;
                 max-width: 120px;
             }
+        
         }
 
         .hamburger {
             padding-right: 0px;
             cursor: pointer;
-            position: relative;
-    
+            z-index: 999;
             img {
                 max-width: 60px;
             }
@@ -72,6 +87,9 @@
             }
 
             .hamburger {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
                 padding-right: 12px;
 
                 span.cart-counter {
@@ -82,3 +100,4 @@
     }
 
 }
+

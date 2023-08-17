@@ -1,0 +1,38 @@
+<li class="item">
+    <div class="item-wrapper">
+
+      {% comment %} IMAGE {% endcomment %}
+      <div class="product-image">
+        {% for image in product.media limit: 1 %}
+          <div class="image">
+            <a href="{{ product.url }}" title="{{ product.title }}">
+              <img src="{{ image | image_url: width: 400 }}" alt="{{ product.title }}" />
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% comment %} DATA {% endcomment %}
+      <div class="product-data">
+
+        {% render 'indicators', data: product %}
+        
+        <div class="product-data-wrapper">
+
+          <div class="name">
+            <a href="{{ product.url }}" title="{{ product.title }}">
+              <h3>{{ product.title }}</h3>
+            </a>
+          </div>
+
+          <div class="short-description">
+            <a href="{{ product.url }}" title="{{ product.title }}">
+              <span>{{ product.metafields.product.short_description.value }}</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </li>

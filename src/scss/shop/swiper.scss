@@ -3,11 +3,13 @@
 
     .swiper-pagination {
         position: relative;
-        padding: 14px 0 0 0;
+        padding: 18px 0 0 0;
 
         .swiper-pagination-bullet {
             background: #D2D2D2;
             opacity: 1;
+            width: 4px;
+            height: 4px;
         }
 
         .swiper-pagination-bullet-active {

@@ -1,0 +1,10 @@
+{% if data.metafields.product.new_product == true %}
+<span class="new-indicator indicator">
+  new
+</span>
+{% endif %}
+{% if data.compare_at_price > data.price %}
+<span class="sale-indicator indicator">
+  sale
+</span>
+{% endif %}

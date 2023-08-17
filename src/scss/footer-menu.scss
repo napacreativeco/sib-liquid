@@ -43,7 +43,7 @@
                     justify-content: flex-start;
                     overflow: hidden;
                     gap: 0px;
-                    padding: 16px 0;
+                    padding: 12px 10px;
 
                     li {
                         padding: 6px;
@@ -92,7 +92,7 @@
                         a {
                             text-decoration: none;
                             text-transform: lowercase;
-                            font-size: var(--28px);
+                            font-size: var(--36px);
                         }
                         @media screen and (max-width: 767px) {
                             a {
@@ -118,7 +118,7 @@
             .bottom {
                 width: 100%;
                 border-top: var(--border-blk);
-                padding: 16px;
+                padding: 12px;
 
                 ul {
                     display: flex;
@@ -128,7 +128,7 @@
                 }
                 
                 a {
-                    font-size: var(--12px);
+                    font-size: var(--11px);
                     text-decoration: none;
                     text-transform: lowercase;
                 }
@@ -156,8 +156,8 @@
                 .text {
                     position: absolute;
                     font-family: var(--mingliu);
-                    font-size: var(--12px);
-                    color: #7E7E7E;
+                    font-size: var(--11px);
+                    color: #292929;
                     text-align: center;
                     display: block;
                     margin: 0 0 5px 0;
@@ -178,27 +178,35 @@
 
 @media screen and (max-width: 767px) {
 
-    .footer-menu .footer-menu-wrapper .filter-menu {
-        max-width: 86vw;
-        margin-right: 0px;
-        margin-bottom: 10px;
-    }
+    .footer-menu {
 
-    .footer-menu .footer-menu-wrapper .filter-menu.filter-opened {
-        -webkit-transform: translateX(-12px);
-        transform: translateX(-12px);
-    }
+        .footer-menu-wrapper {
 
-    .footer-menu .footer-menu-wrapper .filter-menu .top  {
-        // padding: 0 20px;
-        ul {
-            justify-content: flex-start;
-            overflow-x: scroll;
-            max-width: 100%;
+            .filter-menu {
+                max-width: 86vw;
+                margin-right: 0px;
+                margin-bottom: 10px;
+
+                .top  {
+                    // padding: 0 20px;
+                    ul {
+                        justify-content: flex-start;
+                        overflow-x: scroll;
+                        max-width: 100%;
+                    }
+                }
+            }
+
+            .plus {
+                padding-right: var(--side-padding);
+            }
+            
+            .filter-menu.filter-opened {
+                -webkit-transform: translateX(0px);
+                transform: translateX(0px);
+            }
         }
     }
 
-    .footer-menu .footer-menu-wrapper .plus {
-        padding-right: var(--side-padding);
-    }
+
 }

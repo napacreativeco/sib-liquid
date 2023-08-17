@@ -15,10 +15,8 @@
 {%- endstyle -%}
 
 
-
-<section class="page">
-
   {% if page.handle == 'privacy' %}
+  
     <div class="page-wrapper privacy-page">
         <header>
           <div class="page-title">
@@ -32,13 +30,14 @@
           {{ page.content }}
         </div>
       </div>
+
   {% else %}
     <div class="page-wrapper default-page">
         {{ page.content }}
       </div>
   {% endif %}
 
-</section>
+
 
 
 
@@ -46,7 +45,7 @@
 {
   "name": "t:sections.main-page.name",
   "tag": "section",
-  "class": "section",
+  "class": "section page",
   "settings": [
     {
       "type": "header",

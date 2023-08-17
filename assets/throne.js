@@ -3,20 +3,21 @@
     /* ============================================= */
     
     $(document).on('ready', function() {
-        console.log('document ready');
 
         if ( window.location.href.includes('?cartmodal=1') ) {
           $('.logo a').css('display', 'block');
         } 
 
-        if ( window.location.href != '/' ) {
-          $('.logo a').css('display', 'block');
-        } 
+        if ( window.location.href == '/' ) {
+          $('.default-logo').css('display', 'none');
+        } else {
+          $('.default-logo').css('display', 'block');
+          
+        }
 
-
+        // Theme Color
+        $('meta[name="theme-color"]').attr('content', '#000000');
     });
-
-    /* ============================================= */
 
     /* 
     ------------------------
@@ -61,33 +62,6 @@
     }
     
     /* ============================================= */
-
-    /* 
-    ------------------------
-    Cart Overlay
-    ------------------------
-    */
-    $('.hamburger').on('click', function() {
-
-        // if ($('.cart-overlay').is(':visible')) {
-
-        //     gsap.to('.cart-overlay', {
-        //         display: 'none'
-        //     });
-
-        // } else {
-            
-        //     gsap.to('.cart-overlay', {
-        //         display: 'flex'
-        //     });
-
-        //     gsap.to('.logo > a', {
-        //         display: 'block'
-        //     });
-
-        // }
-
-    });
     
     /* 
     ------------------------
@@ -101,15 +75,10 @@
             //gsap.fromTo(".filter-menu", {x: 'calc(0vw - 12px)'}, {x: '100vw', duration: 0.2});
         } else {
             $('.filter-menu').addClass('filter-opened');
-            $('.menu-text').css('display', 'none');
+            // $('.menu-text').css('display', 'none');
             //gsap.fromTo(".filter-menu", {x: '100vw' }, {x: 'calc(0vw - 12px)', duration: 0.2});
         }
 
-    });
-
-    // Theme Color
-    $(document).ready(function() {
-      $('meta[name="theme-color"]').attr('content', '#000000');
     });
   
     // ----------------------
@@ -135,8 +104,14 @@
     function showLogo() {
       document.querySelector('.logo a').style.display = 'block';
     }
+    function unpinHamburger() {
+      $('.hamburger').css({
+        position: 'relative',
+        top: '0',
+        right: '0'
+      }).fadeIn('fast');
+    }
       
-  
     // Scroll Function
     window.addEventListener("scroll", () => {
 
@@ -173,34 +148,14 @@
       // Hide All Components
       $('.page-component').css("display", "none");
 
+      $('.hamburger').fadeOut('fast');
+
       // Then, show the proper Component
       setTimeout(function() {
         $('.'+sect).css({
             'display': 'flex'
         });
       }, 500);
-
-      // Scroll to Component (PERFECT)
-      // gsap.to(window, { 
-      //   duration: 0.6,
-      //   delay: 0,
-      //   scrollTo: window.innerHeight,
-      //   ease: 'ease-in-out',
-      //   onStart: function() {
-
-      //     gsap.to('.hero-section', {
-      //       y: '-100vh',
-      //       onComplete: function() {
-      //         gsap.to('.hero-section', {
-      //           display: 'none'
-      //         });
-      //       }
-      //     });
-
-      //     $('meta[name="theme-color"]').attr('content', '#ffffff');
-      //     showPlus();
-      //     showLogo();
-      //   }
 
       gsap.to('.hero-section', {
         y: '-100vh',
@@ -211,7 +166,6 @@
           gsap.to(window, { 
             duration: 0.6,
             delay: 0,
-            // scrollTo: window.innerHeight,
             ease: 'ease-in-out',
             onStart: function() {
 
@@ -226,6 +180,7 @@
               $('meta[name="theme-color"]').attr('content', '#ffffff');
               showPlus();
               showLogo();
+              unpinHamburger();
             },
             onComplete: function() {
 
@@ -247,8 +202,21 @@
     */
     $('.newsletter-opener').on('click', function() {
         gsap.to(".shopify-section:has(.newsletter-modal)", {
-          display: "flex",
+          display: "flex"
         });
+
+        $(document).on('click', function(e) {
+          e.preventDefault();
+          if (e.target.matches('.newsletter-modal') || e.target.matches('input')) {
+            
+          } else {
+            $('.shopify-section:has(.newsletter-modal)').css('display', 'none');
+          }
+          
+          
+          
+        });
+
     });
 
     $('.newsletter-close').on('click', function() {
@@ -349,11 +317,6 @@
     Cart Increment Items
     ------------------------
     */
-    // $('.cart-quantity-controllers').on('click', function() {
-    //   var inputs = $(this).find('.cart-quantity-input').attr('value');
-    //   alert('this works. inputs is: ' + inputs)
-    // })
-
     $('.quantity-add').on('click', function() {
       $(this).closest('.quantity-wrapper').find('input').val(function(i, v) {
         return ++v;

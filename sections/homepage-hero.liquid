@@ -1,18 +1,40 @@
 <section class="homepage-hero" onmousemove="coordinate(event)">
+  {% style %}
+    .hero-background {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: auto;
+      object-fit: cover;
+      object-position: center center;
+    }
 
-  <style>
-    .homepage-hero {
-      background: url('{{ section.settings.hero_background_desktop | image_url }}');
-      background-size: cover;
-      background-position: center center;
+    .hero-background--desktop {
+      display: block;
+      height: 100%;
+      min-width: 100%;
+    }
+    .hero-background--mobile {
+      display: none;
+      min-height: 100%;
+      width: 100%;
     }
 
     @media screen and (max-width: 767px) {
-      .homepage-hero {
-        background: url('{{ section.settings.hero_background_mobile | image_url: width: 400 }}');
-      }  
+      .hero-background--desktop {
+        display: none;
+      }
+      .hero-background--mobile {
+        display: block;
+      }
     }
-  </style>
+  {% endstyle %}
+
+  <img class="hero-background--desktop hero-background" src="{{ section.settings.hero_background_desktop | image_url: width: 1200 }}" rel="preload" />
+  <img class="hero-background--mobile hero-background" src="{{ section.settings.hero_background_mobile | image_url: width: 600 }}" rel="preload" />
 
   <div id="hero-wrapper" class="hero-wrapper">
     <div class="left">

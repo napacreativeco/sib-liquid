@@ -14,54 +14,7 @@ Collection Page
       {% if collection.products.size > 0 %}
 
         {%- for product in collection.products -%}
-          <li class="item">
-            <div class="item-wrapper">
-
-              {% comment %} IMAGE {% endcomment %}
-              <div class="product-image">
-                {% for image in product.media limit: 1 %}
-                  <div class="image">
-                    <a href="{{ product.url }}" title="{{ product.title }}">
-                      <img src="{{ image | image_url: width: 700 }}" alt="{{ product.title }}" />
-                    </a>
-                  </div>
-                {% endfor %}
-              </div>
-
-              {% comment %} DATA {% endcomment %}
-              <div class="product-data">
-                {% if product.compare_at_price > product.price %}
-                  <span class="sale-indicator">
-                    sale
-                  </span>
-                {% endif %}
-                <div class="product-data-wrapper">
-
-                  <div class="vendor">
-                    <a href="{{ product.url }}" title="{{ product.title }}">
-                      <span>{{ product.vendor }}</span>
-                    </a>
-                  </div>
-
-                  <div class="name">
-                    <a href="{{ product.url }}" title="{{ product.title }}">
-                      <h3>{{ product.title }}</h3>
-                    </a>
-                  </div>
-
-                  {% comment %}
-                  <div class="price">
-                    <a href="{{ product.url }}" title="{{ product.title }}">
-                      <span class="price-text">{{ product.price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
-                    </a>
-                  </div>
-                  {% endcomment %}
-
-                </div>
-              </div>
-
-            </div>
-          </li>
+          {% render 'throne--card-grid-view', product: product %}
         {%- endfor -%}
 
       {% else %}
@@ -75,71 +28,7 @@ Collection Page
       {% if collection.products.size > 0 %}
 
         {%- for product in collection.products -%}
-
-          <li>
-            <div class="list-item-wrapper">
-
-              <div class="product-image">
-                {% for image in product.media limit: 1 %}
-                  <div class="image">
-                    <a href="{{ product.url }}" title="{{ product.title }}">
-                      <img src="{{ image | image_url: width: 700 }}" alt="{{ product.title }}" />
-                    </a>
-                  </div>
-                {% endfor %}
-              </div>
-
-              <div class="titles">
-                <div class="vendor">
-                  <a href="{{ product.url }}" title="{{ product.title }}">
-                    <span>{{ product.vendor }}</span>
-                  </a>
-                </div>
-
-                <div class="name">
-                  <a href="{{ product.url }}" title="{{ product.title }}">
-                    <h3>{{ product.title }}</h3>
-                  </a>
-                </div>
-              </div>
-
-              {% comment %}
-              <div class="price">
-                <a href="{{ product.url }}" title="{{ product.title }}">
-                  <span class="price-text">{{ product.price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
-                </a>
-              </div>
-              {% endcomment %}
-
-              <div class="indicator-holder">
-                {% if product.compare_at_price > product.price %}
-                  <span class="sale-indicator">
-                    sale
-                  </span>
-                {% endif %}
-              </div>
-
-              <div class="colors">
-                <div class="color-wrapper">
-
-                    {%- for option in product.options_with_values -%}
-
-                      {% case option.name %}
-
-                      {% when 'Color' %}
-                        {% for value in option.values %}
-                          <div class="color-swatch" style="background-color: {{ product.variants[forloop.index0].metafields.custom.display_color.value | uniq }}"> &nbsp;</div>
-                      {% endfor %}
-
-                    {% endcase %}
-
-                  {%- endfor -%}
-
-                </div>
-              </div>
-
-            </div>
-          </li>
+          {% render 'throne--card-list-view', product: product %}
         {% endfor %}
 
       {% else %}
@@ -152,55 +41,7 @@ Collection Page
     <div class="products-grid dual">
       <ul class="dual-wrapper">
         {%- for product in collection.products -%}
-          <li class="item">
-            <div class="item-wrapper">
-
-              {% comment %} IMAGE {% endcomment %}
-              <div class="product-image">
-                {% for image in product.media limit: 1 %}
-                  <div class="image">
-                    <a href="{{ product.url }}" title="{{ product.title }}">
-                      <img src="{{ image | image_url: width: 500 }}" alt="{{ product.title }}" />
-                    </a>
-                  </div>
-                {% endfor %}
-              </div>
-
-              {% comment %} DATA {% endcomment %}
-              <div class="product-data">
-                {% if product.compare_at_price > product.price %}
-                  <span class="sale-indicator">
-                    {{ 'sale' | escape }}
-                  </span>
-                {% endif %}
-                
-                <div class="product-data-wrapper">
-
-                  <div class="vendor">
-                    <a href="{{ product.url }}" title="{{ product.title }}">
-                      <span>{{ product.vendor }}</span>
-                    </a>
-                  </div>
-
-                  <div class="name">
-                    <a href="{{ product.url }}" title="{{ product.title }}">
-                      <h3>{{ product.title }}</h3>
-                    </a>
-                  </div>
-
-                  {% comment %}
-                  <div class="price">
-                    <a href="{{ product.url }}" title="{{ product.title }}">
-                      <span class="price-text">{{ product.price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
-                    </a>
-                  </div>
-                  {% endcomment %}
-
-                </div>
-              </div>
-
-            </div>
-          </li>
+          {% render 'throne--card-dual-view', product: product %}
         {%- endfor -%}
       </ul>
     </div>

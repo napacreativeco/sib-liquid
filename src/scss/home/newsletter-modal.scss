@@ -39,25 +39,23 @@
         border-bottom: var(--border-blk);
 
         .action-title {
-        }
-        .newsletter-close {
-          cursor: pointer;
-          position: absolute;
-          right: 10px;
-          top: 4px;
-          color: var(--black);
+          font-family: var(--mingliu);
         }
 
       }
 
       .newsletter-body {
-        padding: 10px;
+        padding: 10px 10px 20px 10px;
 
         .warning {
           text-align: center;
           width: 100%;
           font-size: var(--16px);
-          padding: 20px 40px 10px 40px;
+          padding: 20px 40px 20px 40px;
+
+          span {
+            text-transform: uppercase !important;
+          }
         }
 
       }
@@ -67,47 +65,51 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 0 0 14px 0;
 
         form {
           width: 100%;
+
+          input {
+            display: block;
+            background: var(--white);
+            color: var(--black);
+            border: 1px solid var(--black);
+            border-radius: 0px !important;
+            // margin: 10px auto;
+          }
+    
+          input::placeholder {
+            color: var(--black);
+          }
+    
+          input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            font-size: var(--12px);
+            border-radius: 0px !important;
+            font-family: inherit;
+            color: var(--black);
+          }
+    
+          input[type="submit"] {
+            margin: 14px auto 0 auto;
+            display: block;
+            padding: 10px 40px;
+            font-size: var(--14px);
+            font-family: var(--mingliu);
+            text-transform: lowercase;
+            border-radius: 0px !important;
+            cursor: pointer;
+          }
+    
+          input[type="submit"]:hover {
+            background: var(--black);
+            color: var(--red);
+          }
+
         }
 
-      }
-
-      input {
-        display: block;
-        background: var(--white);
-        color: var(--black);
-        border: 1px solid var(--black);
-        border-radius: 0px !important;
-        margin: 10px auto;
-      }
-
-      input::placeholder {
-        color: var(--black);
-      }
-
-      input[type="email"] {
-        width: 100%;
-        padding: 4px;
-        font-size: var(--14px);
-        border-radius: 0px !important;
-        font-family: inherit;
-        color: var(--black);
-      }
-
-      input[type="submit"] {
-        padding: 4px 14px;
-        font-size: var(--14px);
-        font-family: inherit;
-        text-transform: uppercase;
-        border-radius: 0px !important;
-        cursor: pointer;
-      }
-
-      input[type="submit"]:hover {
-        background: var(--black);
-        color: var(--red);
       }
 
     }
@@ -118,15 +120,30 @@
 
 
 @media screen and (max-width: 767px) {
-  .newsletter-modal {
+  .shopify-section:has(.newsletter-modal) {
+    position: fixed;
+    float: left;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+  
+    .newsletter-modal {
+  
+      .newsletter-wrapper {
+        max-width: 100%;
 
-    .newsletter-wrapper {
-
-      input {
-        font-size: var(--14px);
+        .warning {
+          font-size: var(--12px);
+        }
       }
-
     }
-
   }
 }

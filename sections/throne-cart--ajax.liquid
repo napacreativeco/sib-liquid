@@ -2,10 +2,29 @@
 
 <div class="cart-overlay my-floating-cart" data-displayed="true">
 
-  <div class="cart-header">
-    <div class="cart-name">
-      <h1>{{ 'Cart' | escape }}</h1>
+  <div class="cart-nav">
+
+    <div>
+      {% render 'logo-italic' %}
     </div>
+
+    <div class="cart-hamburger" data-ajax-cart-toggle-class-button="js-my-cart-open | remove">
+      {% if settings.cart_icon == empty %}
+        <img src="{{ 'cart.png' | asset_url }}" alt="{{ 'Menu' | escape }}">
+      {% else %}
+        <img src="{{ settings.cart_icon | image_url: width: 60 }}" alt="{{ 'Menu' | escape }}">
+      {% endif %}
+    </div>
+
+  </div>
+
+  <div class="cart-header">
+    <div>
+      <h1>cart</h1>
+    </div>
+    <span id="cart-counter" class="cart-counter">
+      {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}
+    </span>
   </div>
 
   <div class="cart-overlay-wrapper">
@@ -47,11 +66,21 @@
                     {% endcomment %}
                     <div class="product-title">
                       <a href="{{ item.url }}">
-                        <span class="vendor">{{ item.product.vendor }}</span>
                         <span class="product">{{- item.product.title | escape -}}</span>
                       </a>
                     </div>
+
+                    {% comment %} 
+                      Short Description
+                    {% endcomment %}
+                    <div class="product-title">
+                      <a href="{{ item.url }}">
+                        <span class="short-description">{{ item.product.metafields.product.short_description }}</span>
+                      </a>
+                    </div>
+
                     {% assign item_index = forloop.index %}
+                    
                     {% comment %} 
                       Quantity
                     {% endcomment %}
@@ -179,13 +208,8 @@
 
                       <div class="product-title">
                         <a href="{{ item.url }}">
-                          <span class="vendor">{{ item.product.vendor }}</span>
-                          <span class="product">{{- item.product.title | escape -}}</span>
-                        </a>
-                      </div>
-
-                      <div class="product-price">
-                          <span class="price">{{ item.final_line_price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
+                          <span class="product">{{- item.product.title | escape -}}</span>{{ ' / ' | escape }}
+                          <span class="short-description">{{ item.product.metafields.product.short_description }}</span>
                         </a>
                       </div>
 
@@ -208,20 +232,6 @@
                         {%- endif -%}
                       </div>
 
-                    {% comment %} 
-                      Color
-                    {% endcomment %}
-                    {% comment %}
-                    <div class="variants color">
-                      <div class="color-wrapper">
-                        <span>Color: </span>
-                        <span class="color-swatch" style="background: {{ item.variant.metafields.custom.display_color.value }}">
-                          &nbsp;
-                        </span>
-                      </div>
-                    </div>
-                    {% endcomment %}
-
                       <div class="quantity" role="cell">
                         <div class="quantity-wrapper">
 
@@ -243,6 +253,10 @@
                           </a>
 
                         </div>
+                      </div>
+
+                      <div class="product-price">
+                        <span class="price">{{ item.final_line_price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
                       </div>
 
                     </div>

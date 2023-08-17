@@ -67,37 +67,42 @@
       <div class="contact-form-fields grouped-fields">
 
         <div class="field-holder half-width">
-          <input class="" autocomplete="name" type="text" id="ContactForm-name" name="contact[{{ 'templates.contact.form.name' | t }}]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" placeholder="{{ 'templates.contact.form.name' | t }}">
-          <label class="" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
+          <input autocomplete="given-name" type="text" id="ContactForm-first-name" name="contact[first_name]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" placeholder="{{ 'Siberia' | escape }}">
+          <label for="ContactForm-name">{{ 'Siberia' | escape }}</label>
         </div>
 
         <div class="field-holder half-width">
-          <input autocomplete="email"  type="email" id="ContactForm-email" class="" name="contact[email]" spellcheck="false" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" aria-required="true" {% if form.errors contains 'email' %} aria-invalid="true" aria-describedby="ContactForm-email-error"{% endif %} placeholder="{{ 'templates.contact.form.email' | t }}">
-          <label class="" for="ContactForm-email">
-            {{- 'templates.contact.form.email' | t }}
-            <span aria-hidden="true">*</span>
-          </label>
-
-          {%- if form.errors contains 'email' -%}
-            <small class="contact__field-error" id="ContactForm-email-error">
-              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-              <span class="form__message">
-                {{- form.errors.translated_fields.email | downcase }}
-                {{ form.errors.messages.email -}}
-              </span>
-            </small>
-          {%- endif -%}
+          <input autocomplete="family-name" type="text" id="ContactForm-last-name" name="contact[last_name]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" placeholder="{{ 'Enjoyer' | escape }}">
+          <label for="ContactForm-name">{{ 'Enjoyer' | escape }}</label>
         </div>
+      </div>
+
+      <div class="field-holder">
+        <input autocomplete="email"  type="email" id="ContactForm-email" class="" name="contact[email]" spellcheck="false" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" aria-required="true" {% if form.errors contains 'email' %} aria-invalid="true" aria-describedby="ContactForm-email-error"{% endif %} placeholder="{{ 'siberialover2@kmu.gov.ua' | escape }}">
+        <label class="" for="ContactForm-email">
+          {{- 'siberialover2@kmu.gov.ua' | escape }}
+          <span aria-hidden="true">*</span>
+        </label>
+
+        {%- if form.errors contains 'email' -%}
+          <small class="contact__field-error" id="ContactForm-email-error">
+            <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+            <span class="form__message">
+              {{- form.errors.translated_fields.email | downcase }}
+              {{ form.errors.messages.email -}}
+            </span>
+          </small>
+        {%- endif -%}
       </div>
 
       <div class="field-holder">
         <div class="request-type">
           <label for="request-type">What is this regarding?</label>
+          <span class="select-arrow">{% render 'icon--select-arrow' %}</span>
           <select id="request-type" name="contact[request_type]">
-            <option>Returns</option>
-            <option>Shipping</option>
-            <option>Custom order</option>
-            <option>Other</option>
+            <option>online order status requests</option>
+            <option>shipping concern</option>
+            <option>general inquiry</option>
           </select>
         </div>
       </div>

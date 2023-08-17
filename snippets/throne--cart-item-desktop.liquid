@@ -1,0 +1,100 @@
+<li id="item-{{ item.index | plus: 1 }}" class="cart-item" role="row">
+    <div class="cart-item-wrapper">
+
+      {% comment %} 
+        Image
+      {% endcomment %}
+      <div class="image">
+        {% if item.image %}
+          {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
+          <a href="{{ item.url }}" class="cart-item__link" tabindex="-1" aria-hidden="true"></a>
+          <img
+            class="cart-item__image"
+            src="{{ item.image | image_url: width: 300 }}"
+            alt="{{ item.image.alt | escape }}"
+            loading="lazy"
+            width="150"
+            height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}" />
+        {% endif %}
+      </div>
+
+      {% comment %} 
+        Product Title
+      {% endcomment %}
+      <div class="product-title">
+        <a href="{{ item.url }}">
+          <span class="vendor">{{ item.product.vendor }}</span>
+          <span class="product">{{- item.product.title | escape -}}</span>
+        </a>
+      </div>
+      {% assign item_index = forloop.index %}
+      {% comment %} 
+        Quantity
+      {% endcomment %}
+      <div class="quantity" role="cell">
+        <span class="label">quantity: </span>
+        <div class="quantity-wrapper">
+
+            <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | minus: 1 }}" > 
+                {{ '-' | escape }} 
+            </a>
+
+            <!-- data-ajax-cart-quantity-input ajaxifies the line item quantity input -->
+            <input data-ajax-cart-quantity-input="{{ item_index }}"
+                name="updates[]" 
+                value="{{ item.quantity }}" 
+                type="number" />
+
+            <!-- data-ajax-cart-request-button ajaxifies the "Plus one" button -->
+            <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | plus: 1 }}"> 
+                {{ '+' | escape }}
+            </a>
+
+        </div>
+      </div>
+
+      {% comment %} 
+        Size
+      {% endcomment %}
+      <div class="variants size">
+        {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != null -%}
+
+          {%- if item.product.has_only_default_variant == false -%}
+            {%- for option in item.options_with_values -%}
+              {% case option.name %}
+
+                {% when 'Size' %}
+                  <span class="product-option">
+                    {{ option.value }}
+                  </span>
+
+              {% endcase %}
+            {%- endfor -%}
+          {%- endif -%}
+
+        {%- endif -%}
+      </div>
+
+      {% comment %} 
+        Color
+      {% endcomment %}
+      {% comment %}
+      <div class="variants color">
+        <div class="color-wrapper">
+          <span class="color-swatch" style="background: {{ item.variant.metafields.custom.display_color.value }}">
+            &nbsp;
+          </span>
+        </div>
+      </div>
+      {% endcomment %}
+
+      <div class="delete">
+        <a data-ajax-cart-request-button href="{{ item.url_to_remove }}" rel="{{ item.id }}">
+          {{ 'delete' | escape }}
+        </a>
+      </div>
+
+    </div>
+
+    <div class="cart-overlay--ajax-cart-messages" data-ajax-cart-messages="{{ item.key }}"></div>
+  </li>

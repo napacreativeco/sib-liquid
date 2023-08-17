@@ -1,0 +1,47 @@
+
+<li>
+    <div class="list-item-wrapper">
+
+      <div class="product-image">
+        {% for image in product.media limit: 1 %}
+          <div class="image">
+            <a href="{{ product.url }}" title="{{ product.title }}">
+              <img src="{{ image | image_url: width: 200 }}" alt="{{ product.title }}" />
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="product-title mobile">
+        <a href="{{ product.url }}" title="{{ product.title }}">
+          <h3>{{ product.title }}</h3>
+        </a>
+        <a href="{{ product.url }}" title="{{ product.title }}">
+          <span>{{ product.metafields.product.short_description.value }}</span>
+        </a>
+      </div>
+
+      <div class="product-title desktop">
+        <a href="{{ product.url }}" title="{{ product.title }}">
+          <h3>{{ product.title }}</h3>
+        </a>
+      </div>
+
+      <div class="short-description desktop">
+        <a href="{{ product.url }}" title="{{ product.title }}">
+          <span>{{ product.metafields.product.short_description.value }}</span>
+        </a>
+      </div>
+
+      <div class="price">
+        <a href="{{ product.url }}" title="Price">
+          <span>{{ product.price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
+        </a>
+      </div>
+
+      <div class="indicator-holder">
+        {% render 'indicators', data: product %}
+      </div>
+
+    </div>
+  </li>

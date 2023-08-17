@@ -40,6 +40,7 @@
     margin-left: -12px;
     margin-right: -12px;
     height: 100dvh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,7 +99,7 @@
             }
 
             .hero-link {
-                font-size: var(--16px);
+                font-size: var(--12px);
                 cursor: pointer;
                 text-transform: lowercase;
             }
@@ -193,12 +194,14 @@
         position: absolute;
         bottom: 7vh;
         right: 40px;
+        z-index: 4;
         text-transform: lowercase;
         display: flex;
         flex-direction: row;
         gap: 12px;
         a {
             text-decoration: none;
+            font-size: var(--12px);
         }
         a:hover {
             text-decoration: underline;

@@ -1,18 +1,68 @@
-{% for block in section.blocks %}
-    {{ block.settings.policy_title }}
-{% endfor %}
+<div class="policies-wrapper">
+
+    <div class="policies-sidebar">
+        <ul>
+            {% for block in section.blocks %}
+            <li class="policy-link {% if forloop.first %}active{% endif %}"  data-item="{{ block.settings.policy_title | handleize }}">
+                    {{ block.settings.policy_title }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="policies-content-holder">
+        {% for block in section.blocks %}
+
+        <div {% if forloop.first %} style="display: block" {% endif %} class="policy-content" id="{{ block.settings.policy_title | handleize }}">
+              <p class="content-title">{{ block.settings.policy_title }}</p>
+              {{ block.settings.policy_text }}
+            </div>
+
+        {% endfor %}
+    </div>
+
+</div>
+
+<script>
+
+  
+  $('.policy-link').on('click', function() {
+    var selected = $(this).data('item');
+    var thiz = $(this);
+    $('.policy-content').css('display', 'none');
+    $('.policy-link').removeClass('active');
+    
+    setTimeout(function() {
+        $(thiz).addClass('active');
+        $('#'+selected).css('display', 'block');
+    }, 10)
+    
+
+  });
+
+
+if ( window.location.hash == '#faq' ) {
+  console.log('faq hash');
+  $(window).scrollTop(0);
+  setTimeout(function() {
+    $('[data-item="faq"]').trigger('click');
+  }, 500)
+  
+}
+</script>
+
 
 {% schema %}
     {
-      "name": "Slideshow",
+      "name": "Policies Page",
       "tag": "section",
-      "class": "slideshow",
+      "class": "policies-page",
       "limit": 1,
       "settings": [
         {
           "type": "text",
           "id": "title",
-          "label": "Slideshow"
+          "label": "Policies Page"
         }
       ],
       "max_blocks": 10,
