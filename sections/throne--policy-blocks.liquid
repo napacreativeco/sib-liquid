@@ -1,3 +1,7 @@
+{% for block in section.blocks %}
+    {{ block.settings.policy_title }}
+{% endfor %}
+
 {% schema %}
     {
       "name": "Slideshow",
@@ -23,7 +27,7 @@
                "label": "Title"
              },
              {
-               "type": "textarea",
+               "type": "richtext",
                "id": "policy_text",
                "label": "Text"
              }
