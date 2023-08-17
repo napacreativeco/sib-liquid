@@ -20,8 +20,8 @@
         "64ce9430-2c17-44f3-b20d-cdb07ac004c7": {
           "type": "accordion",
           "settings": {
-            "policy_title": "",
-            "policy_text": ""
+            "policy_title": "return policy",
+            "policy_text": "<p>return policy text<\/p>"
           }
         }
       },
