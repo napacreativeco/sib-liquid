@@ -23,12 +23,20 @@
             "policy_title": "return policy",
             "policy_text": "<p>return policy text<\/p>"
           }
+        },
+        "28b31eb6-0374-4b12-ae19-2f5af26e6232": {
+          "type": "accordion",
+          "settings": {
+            "policy_title": "faq",
+            "policy_text": "<p>this is the faq content<\/p>"
+          }
         }
       },
       "block_order": [
         "30927d54-89a2-4d05-8d82-546ac4272e07",
         "a368db4b-9e4b-489d-8ddb-b1c73af2f139",
-        "64ce9430-2c17-44f3-b20d-cdb07ac004c7"
+        "64ce9430-2c17-44f3-b20d-cdb07ac004c7",
+        "28b31eb6-0374-4b12-ae19-2f5af26e6232"
       ],
       "settings": {
         "title": ""
