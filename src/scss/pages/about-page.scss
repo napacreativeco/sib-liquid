@@ -76,6 +76,7 @@
 @media screen and (max-width: 767px) {
 
     .about-component {
+        justify-content: flex-start;
 
         .about-wrapper.desktop {
             display: none;
@@ -83,13 +84,26 @@
         .about-wrapper.mobile {
             display: flex;
         }
+
         .about-wrapper {
             flex-direction: column;
             padding: 80px 20px 0 20px;
+            width: 93%;
 
             .left {
+                line-height: 1.1;
                 font-size: var(--12px);
             }
+            .right {
+                margin: 20px 0;
+            }
+            .content {
+                line-height: 1.1;
+                font-size: var(--12px);
+            }
+
+
+
             .right {
                 display: flex;
                 flex-direction: row;
@@ -103,7 +117,7 @@
                     right: -4%;
             
                     img {
-                        width: 240px;
+                        width: 300px;
                         max-width: 100%;
                     }
                 }
