@@ -1,0 +1,15 @@
+{
+    "sections": {
+      "main": {
+        "type": "throne--policy-blocks",
+        "settings": {
+          "padding_top": 28,
+          "padding_bottom": 28
+        }
+      }
+    },
+    "order": [
+      "main"
+    ]
+  }
+  

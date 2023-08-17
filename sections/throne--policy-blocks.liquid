@@ -1,0 +1,51 @@
+{% schema %}
+    {
+      "name": "Slideshow",
+      "tag": "section",
+      "class": "slideshow",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Slideshow"
+        }
+      ],
+      "max_blocks": 10,
+      "blocks": [
+         {
+           "name": "Policy Block",
+           "type": "accordion",
+           "settings": [
+             {
+               "type": "text",
+               "id": "policy_title",
+               "label": "Title"
+             },
+             {
+               "type": "textarea",
+               "id": "policy_text",
+               "label": "Text"
+             }
+           ]
+         }
+      ],
+      "presets": [
+        {
+          "name": "Policy Blocks",
+          "settings": {
+            "title": "Policy Blocks"
+          },
+          "blocks": [
+            {
+              "type": "accordion"
+            }
+          ]
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}
+    
