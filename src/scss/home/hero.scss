@@ -296,14 +296,14 @@
                 #top-left {
                     top: 90px;
                     left: 10%;
-                    max-width: 170px;
+                    max-width: 120px;
                     //animation-delay: 300;
                     animation: topLeftRounder 6s linear infinite;
                 }
 
                 #top-right {
                     top: 120px;
-                    max-width: 170px;
+                    max-width: 120px;
                     right: 20px;
                     //animation-delay: 300;
                     animation: topRightRounder 6s linear infinite;
@@ -312,7 +312,7 @@
                 #bottom-left {
                     bottom: -40%;
                     left: 20%;
-                    max-width: 140px;
+                    max-width: 80px;
                     //animation-delay: 300;
                     animation: bottomLeftRounder 7s infinite linear;
                     z-index: 2;
@@ -321,11 +321,13 @@
                 #bottom-right {
                     bottom: -60%;
                     right: 10%;
+                    max-width: 70px;
                     //animation-delay: 300;
                     animation: bottomRightRounder 6s infinite linear;
                 }
 
                 #cloud {
+                    max-width: 450px;
                     //animation-delay: 300;
                     animation: cloudRounder 9s infinite linear;
                 }
