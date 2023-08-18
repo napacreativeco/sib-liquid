@@ -15,9 +15,7 @@ const minify = require('gulp-minify');
 function buildStyles() {
     return gulp.src('./src/scss/throne.scss')
         .pipe(sass().on('error',sass.logError))
-        .pipe(autoprefixer({
-            overrideBrowserslist: ["last 2 versions"]
-        }))
+        .pipe(autoprefixer('last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'Firefox 14', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(cleanCSS({ debug: true },(details) => {
             console.log(`${details.name}: ${details.stats.originalSize}`);
             console.log(`${details.name}: ${details.stats.minifiedSize}`);
