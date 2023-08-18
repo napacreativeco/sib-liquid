@@ -92,7 +92,7 @@
                         a {
                             text-decoration: none;
                             text-transform: lowercase;
-                            font-size: var(--36px);
+                            font-size: var(--38px);
                         }
                         @media screen and (max-width: 767px) {
                             a {
@@ -128,7 +128,7 @@
                 }
                 
                 a {
-                    font-size: var(--11px);
+                    font-size: var(--12px);
                     text-decoration: none;
                     text-transform: lowercase;
                 }
@@ -165,7 +165,7 @@
                 }
 
                 img {
-                    width: 64px;
+                    width: 70px;
                 }
             }
         }
@@ -199,6 +199,9 @@
 
             .plus {
                 padding-right: var(--side-padding);
+                img {
+                    width: 64px;
+                }
             }
             
             .filter-menu.filter-opened {
