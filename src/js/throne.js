@@ -34,7 +34,7 @@
     const mediaQuery = window.matchMedia('(max-width: 767px)');
 
     if (mediaQuery.matches) {
-      gsap.registerPlugin(Draggable);
+      // gsap.registerPlugin(Draggable);
 
       Draggable.create("#top-left", {
         type:"x,y",

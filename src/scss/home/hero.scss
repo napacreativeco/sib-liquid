@@ -256,7 +256,7 @@
 
 
             .left {
-                height: 50%;
+                height: 50vh;
                 display: flex;
                 align-items: flex-end;
                 padding: 0 0 5.4vh 20px;
@@ -279,7 +279,7 @@
 
             .right {
                 position: relative;
-                height: 50%;
+                height: 50vh;
 
                 .cloud-holder {
                     top: 70%;
@@ -296,14 +296,14 @@
                 #top-left {
                     top: 90px;
                     left: 10%;
-                    width: 170px;
+                    max-width: 170px;
                     //animation-delay: 300;
                     animation: topLeftRounder 6s linear infinite;
                 }
 
                 #top-right {
                     top: 120px;
-                    width: 170px;
+                    max-width: 170px;
                     right: 20px;
                     //animation-delay: 300;
                     animation: topRightRounder 6s linear infinite;
@@ -312,7 +312,7 @@
                 #bottom-left {
                     bottom: -40%;
                     left: 20%;
-                    width: 140px;
+                    max-width: 140px;
                     //animation-delay: 300;
                     animation: bottomLeftRounder 7s infinite linear;
                     z-index: 2;
