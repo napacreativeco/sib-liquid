@@ -1,7 +1,6 @@
 (function ($) {
 
     /* ============================================= */
-    
     $(document).on('ready', function() {
 
         if ( window.location.href.includes('?cartmodal=1') ) {
@@ -18,6 +17,14 @@
         // Theme Color
         $('meta[name="theme-color"]').attr('content', '#000000');
     });
+
+    function changeTheme() {
+      if ( window.location.pathname == '/' ) {
+        $('meta[name="theme-color"]').attr('content', '#000000');
+      }
+    }
+    changeTheme();
+
 
     /* 
     ------------------------
