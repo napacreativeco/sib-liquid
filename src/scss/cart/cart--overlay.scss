@@ -377,10 +377,17 @@
                             .quantity-wrapper {
                                 display: flex;
                                 flex-direction: row;
-                                gap: 6px;
+                                gap: 4px;
                                 font-family: var(--times);
+
+                                span {
+                                    margin: 0 4px 0 0;
+                                }
+
                                 input[type=number] {
                                     max-width: 1rem;
+                                    padding: 0;
+                                    line-height: 0;
                                 }
                             }
 
