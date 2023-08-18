@@ -99,7 +99,9 @@
             font-size: var(--14px);
             font-family: var(--mingliu);
             text-transform: lowercase;
-            border-radius: 0px !important;
+            -webkit-border-radius: 0% !important;
+            -moz-border-radius: 0% !important;
+            border-radius: 0% !important;
             cursor: pointer;
           }
     
