@@ -368,7 +368,7 @@
                             display: flex;
                             flex-direction: column;
                             justify-content: space-between;
-                            gap: 2px;
+                            gap: 10px;
 
                             .product-title {
                                 font-size: var(--14px);
@@ -377,7 +377,8 @@
                             .quantity-wrapper {
                                 display: flex;
                                 flex-direction: row;
-                                gap: 10px;
+                                gap: 6px;
+                                font-family: var(--times);
                                 input[type=number] {
                                     max-width: 1rem;
                                 }
@@ -385,13 +386,13 @@
 
                             .size {
                                 text-align: left;
-                                font-family: var(--mingliu);
+                                font-family: var(--times);
                                 gap: 5px;
                             }
 
                             .product-price {
-                                margin-top: 20px;
-                                font-family: var(--mingliu);
+                                margin-top: 12px;
+                                font-family: var(--times);
                             }
                         }
 
