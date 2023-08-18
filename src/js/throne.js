@@ -38,30 +38,35 @@
 
       Draggable.create("#top-left", {
         type:"x,y",
+        scale: 1,
         bounds: document.getElementById("hero-wrapper"),
         inertia: true
       });
 
       Draggable.create("#top-right", {
         type:"x,y",
+        scale: 1,
         bounds: document.getElementById("hero-wrapper"),
         inertia: true
       });
 
       Draggable.create("#bottom-left", {
         type:"x,y",
+        scale: 1,
         bounds: document.getElementById("hero-wrapper"),
         inertia: true
       });
 
       Draggable.create("#bottom-right", {
         type:"x,y",
+        scale: 1,
         bounds: document.getElementById("hero-wrapper"),
         inertia: true
       });
 
       Draggable.create("#cloud", {
         type:"x,y",
+        scale: 1,
         bounds: document.getElementById("hero-wrapper"),
         inertia: true
       });
