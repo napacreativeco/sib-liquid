@@ -38,18 +38,16 @@
 
       Draggable.create("#top-left", {
         type:"x,y",
-        scale: 1,
         force3D: false,
         bounds: document.getElementById("hero-wrapper"),
-        inertia: true
+        inertia: false
       });
 
       Draggable.create("#top-right", {
         type:"x,y",
-        scale: 1,
         force3D: false,
         bounds: document.getElementById("hero-wrapper"),
-        inertia: true
+        inertia: false
       });
 
       Draggable.create("#bottom-left", {
@@ -57,7 +55,7 @@
         scale: 1,
         force3D: false,
         bounds: document.getElementById("hero-wrapper"),
-        inertia: true
+        inertia: false
       });
 
       Draggable.create("#bottom-right", {
@@ -65,7 +63,7 @@
         scale: 1,
         force3D: false,
         bounds: document.getElementById("hero-wrapper"),
-        inertia: true
+        inertia: false
       });
 
       Draggable.create("#cloud", {
