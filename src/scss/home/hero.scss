@@ -296,14 +296,14 @@
                 #top-left {
                     top: 90px;
                     left: 10%;
-                    max-width: 170px;
+                    width: 170px;
                     //animation-delay: 300;
                     animation: topLeftRounder 6s linear infinite;
                 }
 
                 #top-right {
                     top: 120px;
-                    max-width: 170px;
+                    width: 170px;
                     right: 20px;
                     //animation-delay: 300;
                     animation: topRightRounder 6s linear infinite;
@@ -312,7 +312,7 @@
                 #bottom-left {
                     bottom: -40%;
                     left: 20%;
-                    max-width: 140px;
+                    width: 140px;
                     //animation-delay: 300;
                     animation: bottomLeftRounder 7s infinite linear;
                     z-index: 2;
