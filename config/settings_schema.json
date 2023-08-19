@@ -24,14 +24,18 @@
       {
         "type": "image_picker",
         "id": "navbar_logo",
-        "label": "Logo",
-        "info": "The main logo image."
+        "label": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "navbar_logo_alt",
+        "label": "Alternate Logo",
+        "info": "The logo that shows up on the Cart."
       },
       {
         "type": "image_picker",
         "id": "cart_icon",
-        "label": "Cart Icon",
-        "info": "The cart gif image"
+        "label": "Cart Icon"
       }
     ]
   },

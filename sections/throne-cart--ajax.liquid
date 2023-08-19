@@ -5,7 +5,11 @@
   <div class="cart-nav">
 
     <div>
-      {% render 'logo-italic' %}
+      {% if settings.navbar_logo_alt == empty %}
+        {% render 'logo-italic' %}
+      {% else %}
+        <img src="{{ settings.navbar_logo_alt | image_url: width: 122 }}" alt="{{ shop.name }}" />
+      {% endif %}
     </div>
 
     <div class="cart-hamburger" data-ajax-cart-toggle-class-button="js-my-cart-open | remove">
