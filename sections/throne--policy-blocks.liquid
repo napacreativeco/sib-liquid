@@ -24,31 +24,28 @@
 </div>
 
 <script>
-
-  
   $('.policy-link').on('click', function() {
     var selected = $(this).data('item');
+    var selectedHash = '#'+selected;
     var thiz = $(this);
     $('.policy-content').css('display', 'none');
     $('.policy-link').removeClass('active');
     
     setTimeout(function() {
         $(thiz).addClass('active');
-        $('#'+selected).css('display', 'block');
-    }, 10)
-    
-
+        $(selectedHash).css('display', 'block');
+    }, 10);
   });
 
+  if ( window.location.hash ) {
+      $(window).scrollTop(0);
 
-if ( window.location.hash == '#faq' ) {
-  console.log('faq hash');
-  $(window).scrollTop(0);
-  setTimeout(function() {
-    $('[data-item="faq"]').trigger('click');
-  }, 500)
-  
-}
+      var hash = window.location.hash;
+      var sliced = hash.slice(1);
+      setTimeout(function() {
+        $('[data-item="'+ sliced +'"]').trigger('click');
+      }, 300); 
+  }
 </script>
 
 
