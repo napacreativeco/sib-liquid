@@ -196,7 +196,7 @@
       curIndex = 0,
       indexIsDirty = false,
       center = config.center,
-      pixelsPerSecond = (config.speed || 1) * 20,
+      pixelsPerSecond = (config.speed || 1) * {{ settings.marquee_speed | default: '20' }},
       snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
       timeOffset = 0,
       container = center === true ? items[0].parentNode : gsap.utils.toArray(center)[0] || items[0].parentNode,

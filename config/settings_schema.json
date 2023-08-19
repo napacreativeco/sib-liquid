@@ -48,19 +48,21 @@
         "type": "color",
         "id": "marquee_background_color",
         "label": "Marquee Color",
+        "default": "#B6FFFE",
         "info": "Set the background color for the Marquee"
       },
       {
         "type": "color",
         "id": "marquee_text_color",
         "label": "Marquee Color",
+        "default": "#000000",
         "info": "Set the text color for the Marquee"
       },
       {
         "type": "number",
         "id": "marquee_speed",
         "label": "Marquee Speed",
-        "info": "Set the speed for the Marquee (0 - 100). Default: 20"
+        "info": "Set the speed for the Marquee. Default: 20"
       },
       {
         "type": "text",
