@@ -62,6 +62,7 @@
         "type": "number",
         "id": "marquee_speed",
         "label": "Marquee Speed",
+        "default": 20,
         "info": "Set the speed for the Marquee. Default: 20"
       },
       {
