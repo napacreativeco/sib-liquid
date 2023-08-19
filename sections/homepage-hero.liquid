@@ -60,9 +60,9 @@
 
       <div class="hero-logo">
         {% if section.settings.hero_logo_large %}
-          <img style="width: {{ section.settings.hero_logo_width | default: '' }}px;" src="{{ section.settings.hero_logo_large | image_url: section.settings.hero_logo_width }}" alt="{{ shop.name }}" />
+          <img id="user-hero-logo" style="width: {{ section.settings.hero_logo_width | default: '' }}px;" src="{{ section.settings.hero_logo_large | image_url: section.settings.hero_logo_width }}" alt="{{ shop.name }}" />
         {% else %}
-          <img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" />
+          <img id="default-hero-logo" src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" />
         {% endif %}
       </div>
 
