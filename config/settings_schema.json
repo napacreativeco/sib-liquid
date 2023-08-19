@@ -47,14 +47,14 @@
       {
         "type": "color",
         "id": "marquee_background_color",
-        "label": "Marquee Color",
+        "label": "Background Color",
         "default": "#B6FFFE",
         "info": "Set the background color for the Marquee"
       },
       {
         "type": "color",
         "id": "marquee_text_color",
-        "label": "Marquee Color",
+        "label": "Text Color",
         "default": "#000000",
         "info": "Set the text color for the Marquee"
       },
