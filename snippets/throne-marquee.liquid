@@ -1,9 +1,9 @@
 {% style %}
   .marquee-holder {
-    background-color: {{ settings.marquee_background_color }};
+    background-color: {{ settings.marquee_background_color | default: '#B6FFFE' }};
   }
   .marquee-holder .box {
-    color: {{ settings.marquee_text_color }};
+    color: {{ settings.marquee_text_color | default: '#000000' }};
   }
 {% endstyle %}
 
