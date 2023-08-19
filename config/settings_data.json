@@ -1,6 +1,7 @@
 {
   "current": {
     "navbar_logo": "shopify:\/\/shop_images\/Logo.svg",
+    "navbar_logo_alt": "shopify:\/\/shop_images\/SIBERIA.svg",
     "cart_icon": "shopify:\/\/shop_images\/CART2.png",
     "marquee_visible": true,
     "fourohfour_image": "shopify:\/\/shop_images\/Question_Mark.H03.2k_1_dfe5d3df-3dc2-412a-8648-b93c0323d918.png",
@@ -25,6 +26,11 @@
       },
       "main-password-footer": {
         "type": "main-password-footer",
+        "settings": {
+        }
+      },
+      "throne-cart--ajax": {
+        "type": "throne-cart--ajax",
         "settings": {
         }
       }
@@ -71,13 +77,11 @@
         "main-password-header": {
           "type": "main-password-header",
           "settings": {
-            "color_scheme": "background-1"
           }
         },
         "main-password-footer": {
           "type": "main-password-footer",
           "settings": {
-            "color_scheme": "background-1"
           }
         }
       }
