@@ -39,16 +39,28 @@
     "name": "Marquee",
     "settings": [
       {
+        "type": "checkbox",
+        "id": "marquee_visible",
+        "label": "Show Marquee",
+        "default": true
+      },
+      {
         "type": "color",
-        "id": "marquee_color",
+        "id": "marquee_background_color",
         "label": "Marquee Color",
-        "info": "Set the color for the Marquee"
+        "info": "Set the background color for the Marquee"
+      },
+      {
+        "type": "color",
+        "id": "marquee_text_color",
+        "label": "Marquee Color",
+        "info": "Set the text color for the Marquee"
       },
       {
         "type": "number",
         "id": "marquee_speed",
         "label": "Marquee Speed",
-        "info": "Set the speed for the Marquee (0 - 100)"
+        "info": "Set the speed for the Marquee (0 - 100). Default: 20"
       },
       {
         "type": "text",
@@ -56,13 +68,6 @@
         "label": "Marquee Content",
         "default": "our fabric is our honor let the last",
         "info": "Set the content for the Marquee"
-      },
-      {
-        "type": "checkbox",
-        "id": "marquee_visible",
-        "label": "Show Marquee",
-        "default": true,
-        "info": "Check the box if you would like to show the marquee"
       }
     ]
   },
