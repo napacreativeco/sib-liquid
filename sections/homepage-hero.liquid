@@ -23,15 +23,6 @@
       width: 100%;
     }
 
-    .hero-logo {
-        display: block;
-        margin-bottom: 140px;
-
-        img {   
-            width: {{ section.settings.hero_logo_size_desktop | default: '300' }}px;
-            max-width: 100%;
-        }
-    }
 
     @media screen and (max-width: 767px) {
       .hero-background--desktop {
@@ -39,15 +30,6 @@
       }
       .hero-background--mobile {
         display: block;
-      }
-      .hero-logo {
-        display: block;
-        margin-bottom: 140px;
-
-        img {   
-            width: {{ section.settings.hero_logo_size_mobile | default: '200' }}px;
-            max-width: 100%;
-        }
       }
     }
   {% endstyle %}
@@ -227,18 +209,6 @@
         "id": "hero_logo_large",
         "label": "Large Logo",
         "info": "The large logo presented on the Hero, above the links."
-      },
-      {
-        "type": "number",
-        "id": "hero_logo_size_desktop",
-        "label": "Logo Size (Desktop)",
-        "default": 300
-      },
-      {
-        "type": "number",
-        "id": "hero_logo_size_mobile",
-        "label": "Logo Size (Mobile)",
-        "default": 220
       },
       {
         "type": "image_picker",
