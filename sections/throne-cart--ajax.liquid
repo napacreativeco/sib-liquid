@@ -5,18 +5,18 @@
   <div class="cart-nav">
 
     <div>
-      {% if settings.navbar_logo_alt == empty %}
-        {% render 'logo-italic' %}
+      {% if settings.navbar_logo_alt %}
+        <img id="user-logo-alt" src="{{ settings.navbar_logo_alt | image_url: width: 122 }}" alt="{{ shop.name }}" />
       {% else %}
-        <img src="{{ settings.navbar_logo_alt | image_url: width: 122 }}" alt="{{ shop.name }}" />
+        {% render 'logo-italic' %}
       {% endif %}
     </div>
 
     <div class="cart-hamburger" data-ajax-cart-toggle-class-button="js-my-cart-open | remove">
-      {% if settings.cart_icon == empty %}
-        <img src="{{ 'cart.png' | asset_url }}" alt="{{ 'Menu' | escape }}">
+      {% if settings.cart_icon %}
+        <img id="user-icon-cart" src="{{ settings.cart_icon | image_url: width: 60 }}" alt="{{ 'Cart' | escape }}">
       {% else %}
-        <img src="{{ settings.cart_icon | image_url: width: 60 }}" alt="{{ 'Menu' | escape }}">
+        <img id="default-icon-cart" src="{{ 'cart.png' | asset_url }}" alt="{{ 'Cart' | escape }}">
       {% endif %}
     </div>
 

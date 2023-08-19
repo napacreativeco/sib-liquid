@@ -23,12 +23,31 @@
       width: 100%;
     }
 
+    .hero-logo {
+        display: block;
+        margin-bottom: 140px;
+
+        img {   
+            width: {{ section.settings.hero_logo_size_desktop | default: '300' }}px;
+            max-width: 100%;
+        }
+    }
+
     @media screen and (max-width: 767px) {
       .hero-background--desktop {
         display: none;
       }
       .hero-background--mobile {
         display: block;
+      }
+      .hero-logo {
+        display: block;
+        margin-bottom: 140px;
+
+        img {   
+            width: {{ section.settings.hero_logo_size_mobile | default: '200' }}px;
+            max-width: 100%;
+        }
       }
     }
   {% endstyle %}
@@ -40,7 +59,11 @@
     <div class="left">
 
       <div class="hero-logo">
-        <img src="{{ 'logo.svg' | asset_url }}" alt="Siberia" />
+        {% if section.settings.hero_logo_large %}
+          <img style="width: {{ section.settings.hero_logo_width | default: '' }}px;" src="{{ section.settings.hero_logo_large | image_url: section.settings.hero_logo_width }}" alt="{{ shop.name }}" />
+        {% else %}
+          <img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" />
+        {% endif %}
       </div>
 
       <ul>
@@ -199,6 +222,24 @@
       "groups": ["header", "footer"]
     },
     "settings": [
+      {
+        "type": "image_picker",
+        "id": "hero_logo_large",
+        "label": "Large Logo",
+        "info": "The large logo presented on the Hero, above the links."
+      },
+      {
+        "type": "number",
+        "id": "hero_logo_size_desktop",
+        "label": "Logo Size (Desktop)",
+        "default": 300
+      },
+      {
+        "type": "number",
+        "id": "hero_logo_size_mobile",
+        "label": "Logo Size (Mobile)",
+        "default": 220
+      },
       {
         "type": "image_picker",
         "id": "hero_background_desktop",

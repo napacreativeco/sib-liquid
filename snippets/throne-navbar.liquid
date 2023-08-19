@@ -2,10 +2,10 @@
   <div class="navbar-wrapper">
     <div class="logo">
       <a href="{{ '/' | escape }}" title="Home">
-        {% if settings.navbar_logo == empty %}
-          <img class="default-logo" src="{{ 'logo.svg' | asset_url }}" alt="Siberia">          
+        {% if settings.navbar_logo %}
+          <img id="user-logo" src="{{ settings.navbar_logo | image_url: width: 500 }}" alt="{{ shop.name }}" />        
         {% else %}
-          <img class="classic-logo" src="{{ settings.navbar_logo | image_url: width: 500 }}" alt="Siberia">
+          <img id="default-logo" src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" /> 
         {% endif %}
       </a>
     </div>
@@ -19,14 +19,15 @@
         }
       {% endstyle %}
       <div class="hamburger" data-ajax-cart-toggle-class-button="js-my-cart-open | add">
-        {% if settings.cart_icon == empty %}
-          <img src="{{ 'cart.png' | asset_url }}" alt="{{ 'Menu' | escape }}">
+        {% if settings.cart_icon %}
+          <img id="user-icon-cart" src="{{ settings.cart_icon | image_url: width: 100 }}" alt="{{ 'Cart' | escape }}">
         {% else %}
-          <img src="{{ settings.cart_icon | image_url: width: 100 }}" alt="{{ 'Menu' | escape }}">
+          <img id="default-icon-cart" src="{{ 'cart.png' | asset_url }}" alt="{{ 'Cart' | escape }}">         
         {% endif %}
-          <span id="cart-counter" class="cart-counter">
-            {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}
-          </span>
+
+        <span id="cart-counter" class="cart-counter">
+          {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}
+        </span>
       </div>
     {% else %}
       {% style %}
@@ -37,14 +38,15 @@
         }
       {% endstyle %}
       <div class="hamburger" data-ajax-cart-toggle-class-button="js-my-cart-open | add">
-        {% if settings.cart_icon == empty %}
-          <img src="{{ 'cart.png' | asset_url }}" alt="{{ 'Menu' | escape }}">
+        {% if settings.cart_icon %}
+          <img src="{{ settings.cart_icon | image_url: width: 100 }}" alt="{{ 'Cart' | escape }}" />
         {% else %}
-          <img src="{{ settings.cart_icon | image_url: width: 100 }}" alt="{{ 'Menu' | escape }}">
+          <img src="{{ 'cart.png' | asset_url }}" alt="{{ 'Cart' | escape }}" />
         {% endif %}
-          <span id="cart-counter" class="cart-counter">
-            {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}
-          </span>
+        
+        <span id="cart-counter" class="cart-counter">
+          {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}
+        </span>
       </div>
     {% endif %}
   </div>

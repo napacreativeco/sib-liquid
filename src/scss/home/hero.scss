@@ -77,16 +77,6 @@
         .left {
             padding-left: var(--side-padding);
 
-            .hero-logo {
-                display: block;
-                margin-bottom: 140px;
-
-                img {   
-                    width: 300px;
-                    max-width: 100%;
-                }
-            }
-
             ul {
                 display: flex;
                 flex-direction: column;
@@ -271,7 +261,7 @@
                     margin-bottom: 80px;
                     display: none;
                     img {   
-                        width: 220px;
+                        // width: 220px;
                         max-width: 100%;
                     }
                 }
