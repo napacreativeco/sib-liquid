@@ -87,6 +87,18 @@
         }
 
     });
+    $('.pagination-link').on('click', function() {
+      
+        if ( $('.filter-menu').hasClass('filter-opened') ) {
+            $('.filter-menu').removeClass('filter-opened');
+            //gsap.fromTo(".filter-menu", {x: 'calc(0vw - 12px)'}, {x: '100vw', duration: 0.2});
+        } else {
+            $('.filter-menu').addClass('filter-opened');
+            //$('.menu-text').css('display', 'none');
+            //gsap.fromTo(".filter-menu", {x: '100vw' }, {x: 'calc(0vw - 12px)', duration: 0.2});
+        }
+
+    });
   
     // ----------------------
     // Plus Menu
@@ -335,8 +347,6 @@
         return --v;
       });
     });
-
-
 
 })(jQuery);
 

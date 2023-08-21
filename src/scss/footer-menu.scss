@@ -29,7 +29,8 @@
             position: relative;
             z-index: 99;
             pointer-events: all;
-            max-width: 34vw;
+            width: 100%;
+            max-width: 28vw;
             transform: translateX(2000px);
             transition: all 0.5s ease-in-out;
 
@@ -40,7 +41,7 @@
                 ul {
                     display: flex;
                     flex-direction: row;
-                    justify-content: flex-start;
+                    justify-content: space-between;
                     overflow: hidden;
                     gap: 0px;
                     padding: 12px 10px;
@@ -92,8 +93,9 @@
                         a {
                             text-decoration: none;
                             text-transform: lowercase;
-                            font-size: var(--38px);
+                            font-size: var(--32px);
                         }
+                        
                         @media screen and (max-width: 767px) {
                             a {
                                 text-decoration: none;
@@ -205,8 +207,8 @@
             }
             
             .filter-menu.filter-opened {
-                -webkit-transform: translateX(0px);
-                transform: translateX(0px);
+                -webkit-transform: translateX(-12px);
+                transform: translateX(-12px);
             }
         }
     }

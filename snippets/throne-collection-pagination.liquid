@@ -1,17 +1,17 @@
 <div class="pagination">
     {% if template.name == 'index' %}
 
-      <a href="/collections/all" title="Shop All">
+      <span class="pagination-link index">
         00 &ndash; all
-      </a>
+      </span>
       
     {% elsif collection %}
 
       {% for link in linklists.shop-menu.links %}
         {% if link.title contains collection.handle %}
-          <a href="{{ collection.url }}" title="{{ collection.title }}">
+          <span class="pagination-link archive">
             {{ link.title }}
-          </a>
+          </span>
         {% endif %}
       {% endfor %}
 
