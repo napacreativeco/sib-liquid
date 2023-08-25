@@ -12,6 +12,7 @@
 
     .about-wrapper.desktop {
         display: grid;
+        padding-top: 80px;
     }
     .about-wrapper.mobile {
         display: none;
@@ -83,6 +84,7 @@
         }
         .about-wrapper.mobile {
             display: flex;
+            align-items: flex-start;
         }
 
         .about-wrapper {
