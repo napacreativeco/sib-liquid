@@ -3,12 +3,8 @@
     "hero": {
       "type": "homepage-hero",
       "settings": {
-        "hero_logo_large": "shopify:\/\/shop_images\/Logo.svg",
         "hero_background_desktop": "shopify:\/\/shop_images\/BG_WIDE.png",
         "hero_background_mobile": "shopify:\/\/shop_images\/BG_MOBILE.png",
-        "hero_cloud": "shopify:\/\/shop_images\/ezgif.com-optimize.gif",
-        "hero_top_left": "shopify:\/\/shop_images\/siberia_1--small.gif",
-        "hero_top_right": "shopify:\/\/shop_images\/siberia_2--smaller.gif",
         "hero_bottom_left": "shopify:\/\/shop_images\/BOTTOMLEFT_IMAGE.png",
         "hero_bottom_right": "shopify:\/\/shop_images\/BOTTOMRIGHT_IMAGE.png"
       }
@@ -16,7 +12,7 @@
     "home_collection": {
       "type": "homepage-collection",
       "settings": {
-        "collection": "frontpage"
+        "collection": "september-2023"
       }
     },
     "newsletter": {
@@ -27,8 +23,6 @@
     "1dee74b3-beca-468d-9a39-ac9548f61c64": {
       "type": "throne-about-page",
       "settings": {
-        "about_page_featured_image": "shopify:\/\/shop_images\/striped-outfit_d846098a-f9aa-4e55-8ace-6ee37dee53f2.png",
-        "about_page_question_mark": "shopify:\/\/shop_images\/question-mark.png",
         "about_page_title": "about",
         "about_page_tagline": "based on a true story",
         "about_page_body_top": "siberia hills is an idea created in the himalayas during soviet union era by daf of siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops siberia hills is an idea created in the himalayas during soviet union era by daf siberia III, six hundred thousand troops",
