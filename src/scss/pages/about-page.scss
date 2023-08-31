@@ -22,7 +22,7 @@
         animation: slideDown  0.3s ease-in-out forwards;
         display: grid;
         grid-template-columns: 50% 1fr;
-        align-items: center;
+        align-items: flex-start;
         width: 100%;
         max-width: var(--thin);
     }
