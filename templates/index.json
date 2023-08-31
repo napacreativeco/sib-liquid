@@ -3,10 +3,12 @@
     "hero": {
       "type": "homepage-hero",
       "settings": {
+        "hero_logo_large": "shopify:\/\/shop_images\/logo.svg",
         "hero_background_desktop": "shopify:\/\/shop_images\/BG_WIDE.png",
         "hero_background_mobile": "shopify:\/\/shop_images\/BG_MOBILE.png",
-        "hero_cloud": "shopify:\/\/shop_images\/siberia_cloud_variant_loop_02_preview.gif",
+        "hero_cloud": "shopify:\/\/shop_images\/ezgif.com-optimize.gif",
         "hero_top_left": "shopify:\/\/shop_images\/topleft_video.gif",
+        "hero_top_right": "shopify:\/\/shop_images\/siberia_2--smaller.gif",
         "hero_bottom_left": "shopify:\/\/shop_images\/BOTTOMLEFT_IMAGE.png",
         "hero_bottom_right": "shopify:\/\/shop_images\/BOTTOMRIGHT_IMAGE.png"
       }
@@ -25,6 +27,7 @@
     "1dee74b3-beca-468d-9a39-ac9548f61c64": {
       "type": "throne-about-page",
       "settings": {
+        "about_page_featured_image": "shopify:\/\/shop_images\/striped-outfit.png",
         "about_page_question_mark": "shopify:\/\/shop_images\/Question_Mark.H03.2k_1.png",
         "about_page_title": "about",
         "about_page_tagline": "based on a true story",
