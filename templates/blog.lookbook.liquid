@@ -29,7 +29,7 @@
                             {% for entry in post.metafields.lookbook.entries.value %}
                                 <div class="swiper-slide">
 
-                                    <div class="image" style="background: url('{{ entry.image  | image_url: width: 1000 }}'); background-size: cover; background-position: center center;">
+                                    <div class="image" style="background: url('{{ entry.image | image_url: width: 1000 }}'); background-size: cover; background-position: center center;">
                                         &nbsp;
                                     </div>
                                     <div class="caption">
