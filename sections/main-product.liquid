@@ -56,7 +56,7 @@
 
           <div class="price-holder">
             {% if product.selected_or_first_available_variant != blank %}
-              {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros | remove: '$' }} <span>{{ shop.currency }}</span>
+              {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros | remove: '$' }}
             {% else %}
               {{ product.price | money_without_trailing_zeros | remove: '$' }} <span>{{ shop.currency }}</span>
             {% endif %}
