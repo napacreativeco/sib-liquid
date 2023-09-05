@@ -155,6 +155,10 @@
                         width: 10px;
                         height: 10px;
                     }
+
+                    .selected-size-variant {
+                        white-space: nowrap;
+                    }
                 }
                 .variant-selector-title:hover {
                     text-decoration: underline;
