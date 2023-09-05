@@ -1,48 +1,47 @@
+<div class="shop-component-wrapper" data-layout="grid">
 
-  <div class="shop-component-wrapper" data-layout="grid">
+  {%- liquid
+      render 'throne-grid-changer';
+      render 'throne-collection-pagination';
+  -%}
 
-    {%- liquid
-        render 'throne-grid-changer';
-        render 'throne-collection-pagination';
-    -%}
+  {% if section.settings.collection.products == blank %}
+    {% render 'no-products' %}
+  {% endif %}
 
-    {% if section.settings.collection.products == blank %}
-      {% render 'no-products' %}
+  <ul class="products-grid grid">
+    {% if section.settings.collection.products.size > 0 %}
+
+      {%- for product in section.settings.collection.products limit: 16 -%}
+          {% render 'throne--card-grid-view', product: product %}
+      {%- endfor -%}
+
     {% endif %}
+  </ul>
 
-    <ul class="products-grid grid">
-      {% if section.settings.collection.products.size > 0 %}
+  <ul class="products-grid list">
+    {% if section.settings.collection.products.size > 0 %}
 
-        {%- for product in section.settings.collection.products limit: 16 -%}
-            {% render 'throne--card-grid-view', product: product %}
-        {%- endfor -%}
+      {%- for product in section.settings.collection.products limit: 16 -%}
+          {% render 'throne--card-list-view', product: product %}
+      {% endfor %}
 
-      {% endif %}
-    </ul>
+    {% endif %}
+  </ul>
 
-    <ul class="products-grid list">
-      {% if section.settings.collection.products.size > 0 %}
+  <div class="products-grid dual">
+      <ul class="dual-wrapper">
+        {% if section.settings.collection.products.size > 0 %}
 
-        {%- for product in section.settings.collection.products limit: 16 -%}
-            {% render 'throne--card-list-view', product: product %}
-        {% endfor %}
-
-      {% endif %}
-    </ul>
-
-    <div class="products-grid dual">
-        <ul class="dual-wrapper">
-          {% if section.settings.collection.products.size > 0 %}
-
-            {%- for product in section.settings.collection.products limit: 16 -%}
-                {% render 'throne--card-dual-view', product: product %}
-            {%- endfor -%}
-    
-          {% endif %}
-        </ul>
-    </div>
-
+          {%- for product in section.settings.collection.products limit: 16 -%}
+              {% render 'throne--card-dual-view', product: product %}
+          {%- endfor -%}
+  
+        {% endif %}
+      </ul>
   </div>
+
+</div>
 
 {% schema %}
   {

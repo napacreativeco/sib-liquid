@@ -7,12 +7,12 @@
           $('.logo a').css('display', 'block');
         } 
 
-        if ( window.location.href == '/' ) {
-          $('.default-logo').css('display', 'none');
-        } else {
-          $('.default-logo').css('display', 'block');
-          
-        }
+        // if ( window.location.path == '/' ) {
+        //   $('.default-logo').css('display', 'none');
+        //   console.log('home')
+        // } else {
+        //   $('.default-logo').css('display', 'block');
+        // }
 
         // Theme Color
         $('meta[name="theme-color"]').attr('content', '#000000');
@@ -202,7 +202,7 @@
               unpinHamburger();
             },
             onComplete: function() {
-
+              $('#user-logo').css('display', 'block');
             }
           });
 

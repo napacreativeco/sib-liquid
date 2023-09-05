@@ -52,12 +52,15 @@
 
   
             li.item {
-                img {
-                    max-width: 100%;
+                .image {
+                    width: 100%;
+                    aspect-ratio: 1/1;
                 }
+
     
                 a {
                     text-decoration: none;
+                    display: block;
                 }
 
                 a:hover {
@@ -113,12 +116,14 @@
                 li.item {
                     width: calc(50% - 20px);
 
-                    img {
-                        max-width: 100%;
+                    .image {
+                        width: 100%;
+                        aspect-ratio: 1/1;
                     }
         
                     a {
                         text-decoration: none;
+                        display: block;
                     }
     
                     a:hover {
@@ -171,6 +176,7 @@
             h3 {
                 font-family: var(--mingliu);
             }
+
             .list-item-wrapper {
                 display: grid;
                 grid-template-columns: 1.5fr 2fr 2fr 1fr 1fr;
@@ -187,13 +193,18 @@
                     display: none;
                 }
 
-                a { text-decoration: none; }
+                a { 
+                    text-decoration: none;
+                    display: block;
+                }
 
                 a:hover { text-decoration: underline; }
 
-                .image img {
+                .image {
                     width: 60px;
                     max-width: 100%;
+                    aspect-ratio: 1/1;
+                    margin: 10px 0;
                 }
 
                 .name {

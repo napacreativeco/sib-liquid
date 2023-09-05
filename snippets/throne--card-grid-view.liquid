@@ -2,15 +2,11 @@
     <div class="item-wrapper">
 
       {% comment %} IMAGE {% endcomment %}
-      <div class="product-image">
-        {% for image in product.media limit: 1 %}
-          <div class="image">
-            <a href="{{ product.url }}" title="{{ product.title }}">
-              <img src="{{ image | image_url: width: 400 }}" alt="{{ product.title }}" />
-            </a>
-          </div>
-        {% endfor %}
-      </div>
+      {% for image in product.media limit: 1 %}
+        <div class="image" onclick="window.location='{{ product.url }}';'" style="background: url('{{ image | image_url: width: 400 }}'); background-size: cover; background-position: center center;">
+        </div>
+      {% endfor %}
+ 
 
       {% comment %} DATA {% endcomment %}
       <div class="product-data">
