@@ -70,15 +70,13 @@
         selected="selected"
       {% endif %}
     >
-        {% if forloop.first %}
-          {{ product.first_available_variant }}
-        {% else %}
+
           {% if option_disabled -%}
             {{- 'products.product.value_unavailable' | t: option_value: value -}}
           {%- else -%}
             {{- value -}}
           {%- endif %}
-        {% endif %}
+      
     </option>
   {%- endif -%}
 {%- endfor -%}
