@@ -3,7 +3,7 @@
 
       {% comment %} IMAGE {% endcomment %}
       {% for image in product.media limit: 1 %}
-        <div class="image" onclick="window.location='{{ product.url }}';'" style="background: url('{{ image | image_url: width: 400 }}'); background-size: cover; background-position: center center;">
+        <div class="image" onclick="window.location='{{ product.url }}';" style="background: url('{{ image | image_url: width: 400 }}'); background-size: cover; background-position: center center;">
         </div>
       {% endfor %}
  

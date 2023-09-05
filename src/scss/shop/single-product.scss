@@ -6,6 +6,10 @@
     justify-content: center;
     flex-direction: column;
 
+    span.hidden {
+        display: block !important;
+    }
+
     .single-product-wrapper {
         display: grid;
         grid-template-columns: 46% 1fr;
