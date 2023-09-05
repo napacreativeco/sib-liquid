@@ -55,10 +55,10 @@
         <div class="actions-header">
 
           <div class="price-holder">
-            {% if product.selected_or_first_available_variant %}
+            {% if product.selected_or_first_available_variant != blank %}
               {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros | remove: '$' }} <span>{{ shop.currency }}</span>
             {% else %}
-              {{ product.price }}
+              {{ product.price | money_without_trailing_zeros | remove: '$' }} <span>{{ shop.currency }}</span>
             {% endif %}
           </div>
 
