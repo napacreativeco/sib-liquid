@@ -21,18 +21,9 @@
           <span class="variant-selector-title">
             {{ option.name }} 
 
-            {% if option.name == 'Size' %}
-              <span class="selected-size-variant">
-                {{ '(' | escape }}{{ product.first_available_variant.option1 }}{{ ')' | escape }}
-              </span>
-            {% endif %}
-
-            {% if option.name == 'Color' %}
-              <span class="selected-color-variant">
-                {{ '(' | escape }}{{ product.first_available_variant.option2 }}{{ ')' | escape }}
-              </span>
-            {% endif %}
-
+            <span class="selected-size-variant">
+              {{ '(' | escape }}{{ option.selected_value }}{{ ')' | escape }}
+            </span>
             <span class="selected-variant {{ option.id }}"></span>
 
             {% render 'icon-caret' %}
