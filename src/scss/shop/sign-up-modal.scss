@@ -1,0 +1,86 @@
+.sign-up-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+    z-index: 9;
+
+    .modal-wrapper {
+        background: var(--white);
+        color: var(--black);    
+        max-width: 420px;
+        border: var(--border-blk);
+
+        .title-bar {
+            border-bottom: var(--border-blk);
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-family: var(--mingliu);
+        }
+
+        .warning {
+          text-align: center;
+          width: 100%;
+          font-size: var(--16px);
+          padding: 20px 40px 20px 40px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+
+            input {
+                display: block;
+                background: var(--white);
+                color: var(--black);
+                border: 1px solid var(--black);
+                border-radius: 0px !important;
+                width: 370px;
+                // margin: 10px auto;
+              }
+        
+              input::placeholder {
+                color: var(--black);
+              }
+        
+              input[type="email"],
+              select {
+                width: 370px;
+                padding: 10px;
+                font-size: var(--12px);
+                border-radius: 0px !important;
+                font-family: inherit;
+                color: var(--black);
+              }
+        
+              input[type="submit"] {
+                margin: 14px auto 0 auto;
+                display: block;
+                padding: 10px 40px;
+                font-size: var(--14px);
+                font-family: var(--mingliu);
+                text-transform: lowercase;
+                -webkit-border-radius: 0% !important;
+                -moz-border-radius: 0% !important;
+                border-radius: 0% !important;
+                cursor: pointer;
+              }
+        
+              input[type="submit"]:hover {
+                background: var(--black);
+                color: var(--red);
+              }
+        }
+    }
+}

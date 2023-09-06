@@ -231,19 +231,55 @@
           } else {
             $('.shopify-section:has(.newsletter-modal)').css('display', 'none');
           }
-          
-          
-          
         });
 
     });
 
-    $('.newsletter-close').on('click', function() {
-      gsap.to(".shopify-section:has(.newsletter-modal)", {
-        display: "none",
+
+    /* 
+    ------------------------
+    Sign Up Popup
+    ------------------------
+    */
+    var openPreorderModal = function() {
+
+      gsap.to(".sign-up-modal", {
+        display: "flex"
       });
-    });
+
+      $(document).on('click', function(e) {
+        e.preventDefault();
+        if (e.target.matches('.modal-wrapper') || e.target.matches('input') || e.target.matches('select')) {
+          
+        } else {
+          $('.sign-up-modal').css('display', 'none');
+        }
+      });
+
+    }
+
+    $('.preorder-indicator').on('click', openPreorderModal);
+    $('.preorder-button').on('click', openPreorderModal);
       
+
+    /* 
+    ------------------------
+    Fade To White
+    ------------------------
+    */
+    $('.logo > a').on('click', function(e) {
+      e.preventDefault();
+
+      gsap.to('.fade-to-white', {
+        opacity: 1,
+        display: 'block',
+        duration: 0.6,
+        onComplete: function() {
+          window.location = '/';
+        }
+      });
+
+    });
 
     /* 
     ------------------------

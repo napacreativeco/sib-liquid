@@ -1,0 +1,26 @@
+<div class="sign-up-modal">
+    <div class="modal-wrapper">
+
+        <div class="title-bar">
+            {{ 'sign up' | escape }}
+        </div>
+
+        <div class="warning">
+            <span>
+                {{ settings.newsletter_warning | default: 'WARNING: SEVERE NECESSITY, \n IMMEDIATE ACTION REQUIRED' | newline_to_br }}
+            </span>
+        </div>
+
+        <div class="form">
+            <input type="email" placeholder="your email" />
+            <select>
+                <option selected>select a size</option>
+                {% for variant in data.variants %}
+                    <option>{{ variant.title }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Submit" />
+        </div>
+
+    </div>
+</div>

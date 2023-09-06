@@ -11,13 +11,37 @@
         cursor: pointer;
     }
 
+    /* Indicators */
+    .indicator-holder {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
     .indicator {
         background: var(--black);
         color: var(--red);
         font-style: italic;
         padding: 4px;
         font-size: var(--10px);
-        display: inline-block;
+        display: inline;
+        white-space: nowrap;
+        align-self: flex-start;
+        // position: absolute;
+        // left: -30px;
+        // top: -2px;
+    }
+    .new-indicator {
+        background: var(--black);
+        color: var(--white);
+    }
+    .preorder-indicator {
+        background: #0029FF;
+        color: var(--white);
+    }
+    .soldout-indicator {
+        background: #B3B3B3;
+        color: var(--white);
     }
 
 
@@ -70,13 +94,9 @@
                 .product-data {
                     margin-top: 14px;
                     position: relative;
-
-                    .indicator {
-                        background: var(--white);
-                        position: absolute;
-                        left: -30px;
-                        top: -2px;
-                    }
+                    display: flex;
+                    flex-direction: row;
+                    gap: 3px;
 
                     .name {
                         h3 {
@@ -133,13 +153,9 @@
                     .product-data {
                         margin-top: 40px;
                         position: relative;
-
-                        .indicator {
-                            background: var(--white);
-                            position: absolute;
-                            left: -30px;
-                            top: -2px;
-                        }
+                        display: flex;
+                        flex-direction: row;
+                        gap: 4px;
         
                         .short-description {
                             span {
@@ -217,12 +233,6 @@
 
                 .price {
                     text-align: center;
-                }
-
-                .indicator-holder {
-                    display: flex;
-                    justify-content: flex-end;
-                    align-items: center;
                 }
 
             }

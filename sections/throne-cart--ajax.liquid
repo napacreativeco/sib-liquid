@@ -6,7 +6,9 @@
 
     <div>
       {% if settings.navbar_logo_alt %}
-        <img id="user-logo-alt" src="{{ settings.navbar_logo_alt | image_url: width: 122 }}" alt="{{ shop.name }}" />
+        <a href="{{ '/collections/all' | escape }}" title="{{ shop.name }}">
+          <img id="user-logo-alt" src="{{ settings.navbar_logo_alt | image_url: width: 122 }}" alt="{{ shop.name }}" />
+        </a>
       {% else %}
         {% render 'logo-italic' %}
       {% endif %}
@@ -24,7 +26,7 @@
 
   <div class="cart-header">
     <div>
-      <h1>cart</h1>
+      <h1>{{ 'cart' | escape }}</h1>
     </div>
     <span id="cart-counter" class="cart-counter">
       {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}
@@ -145,6 +147,10 @@
                     </div>
                     {% endcomment %}
 
+                    <div class="product-price">
+                      <span class="price">{{ item.final_line_price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
+                    </div>
+
                     <div class="delete">
                       <a data-ajax-cart-request-button href="{{ item.url_to_remove }}" rel="{{ item.id }}">
                         {{ 'delete' | escape }}
@@ -153,26 +159,12 @@
 
                   </div>
 
-                  <div class="cart-overlay--ajax-cart-messages" data-ajax-cart-messages="{{ item.key }}"></div>
                 </li>
               {% endif %}
           
             {%- endfor -%}
           </ul>
 
-          <div class="accessibility">
-            <p id="CartDrawer-LiveRegionText" class="visually-hidden" role="status"></p>
-            <p id="CartDrawer-LineItemStatus" class="visually-hidden" aria-hidden="true" role="status">
-              {{ 'accessibility.loading' | t }}
-            </p>
-          </div>
-
-          <!-- Container for errors -->
-          <div class="ajax-messages">
-            <div data-ajax-cart-messages="{{ item.key }}"></div>
-          </div>
-
-          <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
       </cart-drawer-items>
 
@@ -275,7 +267,6 @@
 
                   </div>
 
-                  <div data-ajax-cart-messages="{{ item.key }}"></div>
                 </li>
                 
               {%- endfor -%}
@@ -326,6 +317,7 @@
         BUTTONS
       {% endcomment %}
       <div class="buttons" {{ block.shopify_attributes }}>
+        {% comment %}  
         <noscript>
           <button
             type="submit"
@@ -334,18 +326,22 @@
             {{ 'sections.cart.update' | t }}
           </button>
         </noscript>
+        {% endcomment %}
+        <a
+          href="{{ '/collections/all' | escape }}"
+          type="submit"
+          name="checkout"
+          form="CartDrawer-Form">
+          {{ 'Continue Shopping' | escape }}
+        </a>
 
-        {% comment %} <button type="submit" class="checkout-button" name="checkout" form="CartDrawer-Form"  {% if cart == empty %} disabled{% endif %}>
-        CHECKOUT ({{ cart.item_count }})
-        </button> {% endcomment %}
         <a
           href="/checkout"
           type="submit"
           class="checkout-button"
           name="checkout"
-          form="CartDrawer-Form"
-          style="text-transform: uppercase !important;">
-          CHECKOUT {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}
+          form="CartDrawer-Form">
+          {{ 'Checkout' | escape }} {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}
         </a>
       </div>
     </div>

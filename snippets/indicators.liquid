@@ -1,10 +1,20 @@
 {% if data.metafields.product.new_product == true %}
-<span class="new-indicator indicator">
-  new
-</span>
+  <span class="new-indicator indicator">
+    {{ 'new' | escape }}
+  </span>
 {% endif %}
 {% if data.compare_at_price > data.price %}
-<span class="sale-indicator indicator">
-  sale
-</span>
+  <span class="sale-indicator indicator">
+    {{ 'sale' | escape }}
+  </span>
+{% endif %}
+{% if data.metafields.product.preorder == true %}
+  <span class="preorder-indicator indicator">
+    {{ 'sign up' | escape }}
+  </span>
+{% endif %}
+{% if data.available == false %}
+  <span class="soldout-indicator indicator">
+    {{ 'sold out' | escape }}
+  </span>
 {% endif %}

@@ -83,6 +83,8 @@
     <main id="MainContent" class="page-container content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
+
+    {% render 'throne--fade-to-white' %}
     
     <script src="{{ 'gsap.min.js' | asset_url }}"></script>
     <script src="{{ 'gsap-scrollTo.min.js' | asset_url }}"></script>

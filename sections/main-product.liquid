@@ -60,6 +60,12 @@
               {% else %}
                 <span class="sold-out-indicator">{{ 'Sold Out' | escape }}</span>
               {% endif %}
+
+              {% if product.metafields.product.preorder == true %}
+                <span class="preorder-indicator indicator">
+                  {{ 'sign up' | escape }}
+                </span>
+              {% endif %}
             </span>
           </h1>
         </div>
@@ -82,12 +88,18 @@
 
               {%- when 'variant_picker' -%}
                 <div class="size-holder">
-                  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+                  {% if product.metafields.product.preorder != true %}
+                    {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+                  {% endif %}
                 </div>
 
               {%- when 'buy_buttons' -%}
                 <div class="button-holder">
-                  {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+                  {% if product.metafields.product.preorder == true %}
+                    <span class="preorder-button" style="text-transform: lowercase;">{{ 'sign up' | escape }}</span>
+                  {% else %}
+                    {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+                  {% endif %}
                 </div>
 
             {%- endcase -%}
@@ -129,6 +141,8 @@
 
     </div>
   </div>
+
+  {% render 'throne--sign-up-modal' data: product %}
 
   {% comment %}
   Swiper
@@ -365,13 +379,5 @@
     var v = value;
     console.log('key: ' + key);
     console.log('value: ' + value);
-    
-
-    
-  
-    
   });
-
-
-  
 </script>

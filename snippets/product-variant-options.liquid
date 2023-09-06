@@ -70,13 +70,11 @@
         selected="selected"
       {% endif %}
     >
-
-          {% if option_disabled -%}
-            {{- 'products.product.value_unavailable' | t: option_value: value -}}
-          {%- else -%}
-            {{- value -}}
-          {%- endif %}
-      
+      {% if option_disabled -%}
+        {{- 'products.product.value_unavailable' | t: option_value: value -}}
+      {%- else -%}
+        {{- value -}}
+      {%- endif %}
     </option>
   {%- endif -%}
 {%- endfor -%}

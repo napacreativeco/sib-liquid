@@ -90,7 +90,7 @@
             li.cart-item {
                 .cart-item-wrapper {
                     display: grid;
-                    grid-template-columns: 1fr 2fr 2fr 1fr 0.5fr 1fr;
+                    grid-template-columns: 1fr 2fr 2fr 1fr 0.5fr 1fr auto;
                     grid-gap: 20px;
                     align-items: center;
                 }
@@ -190,6 +190,10 @@
                     }
                 }
 
+                .product-price {
+                    text-align: center;
+                }
+
                 .delete {
                     text-align: right;
                 }
@@ -224,24 +228,32 @@
 
 
         .buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 40px 0 80px 0;
-            font-family:'Times New Roman', Times, serif;
+            padding: 20px 0px;
+            margin: 0 0 40px 0;
+            max-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: var(--border-blk);
+            gap: 10px;
 
-            .checkout-button {
-                background: transparent;
-                color: var(--black);
+            a {
+                width: 100%;
+                padding: 10px 0px;
+                text-align: center;
+                text-transform: lowercase !important;
+                font-family: var(--mingliu);
+                white-space: nowrap;
                 border: var(--border-blk);
-                padding: 10px 40px;
                 text-decoration: none;
             }
-
-            .checkout-button:hover {
+            a:hover {
                 background: var(--black);
                 color: var(--red);
+            }
+
+            .checkout-button {
+                background: var(--black);
+                color: var(--white);
             }
 
             .update-cart {
@@ -400,6 +412,7 @@
                             .product-price {
                                 margin-top: 12px;
                                 font-family: var(--times);
+                                text-align: left;
                             }
                         }
 
@@ -418,14 +431,20 @@
             }
 
             .buttons {
-                padding: 20px 0;
-                
-                .checkout-button {
-                    padding: 10px 30px;
-                    width: 60%;
+                padding: 20px 20px;
+                max-width: 100%;
+                display: grid;
+                grid-template-columns: 50% 50%;
+                border-bottom: var(--border-blk);
+                gap: 10px;
+
+                a {
+                    width: 100%;
+                    padding: 10px 0px;
                     text-align: center;
+                    text-transform: lowercase !important;
                     font-family: var(--mingliu);
-                    text-transform: lowercase;
+                    white-space: nowrap;
                 }
             }
     
