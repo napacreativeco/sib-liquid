@@ -56,7 +56,7 @@
         }
 
         th:empty {
-            width: 0px !important;
+            display: none;
         }
 
         td {
@@ -67,7 +67,7 @@
         }
         
         td:empty {
-            width: 0px;
+            display: none;
         }
 
         th.legend,
