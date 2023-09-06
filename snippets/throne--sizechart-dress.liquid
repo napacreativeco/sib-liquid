@@ -5,7 +5,9 @@
       <th>{{ 'S' | escape }}</th>
       <th>{{ 'M' | escape }}</th>
       <th>{{ 'L' | escape }}</th>
-      <th>{{ 'XL' | escape }}</th>
+      {% if product.metafields.sizechart.size_chart_dress.value.bust_xl != blank or product.metafields.sizechart.size_chart_dress.value.waist_xl != blank or product.metafields.sizechart.size_chart_dress.value.hips_xl != blank%}
+        <th>{{ 'XL' | escape }}</th>
+      {% endif %}
     </thead>
     <tbody>
       {% if product.metafields.sizechart.size_chart_dress.value.bust_s != blank %}
