@@ -104,18 +104,22 @@
         </div>
 
         <div class="size-chart">
-
-          <details>
-            <summary>{{ settings.size_chart_title | default: "Size Chart" }}</summary>
-          
             {% if product.metafields.sizechart.size_chart_dress != blank %}
-              {% render 'throne--sizechart-dress' %}
+              <details>
+                <summary>{{ settings.size_chart_title | default: "Size Chart" }}</summary>
+                {% render 'throne--sizechart-dress' %}
+              </details>
             {% elsif product.metafields.sizechart.size_chart_pants != blank %}
-              {% render 'throne--sizechart-pants' %}
+              <details>
+                <summary>{{ settings.size_chart_title | default: "Size Chart" }}</summary>
+                {% render 'throne--sizechart-pants' %}
+              </details>
             {% elsif product.metafields.sizechart.size_chart_tops != blank %}
-              {% render 'throne--sizechart-tops' %}
+              <details>
+                <summary>{{ settings.size_chart_title | default: "Size Chart" }}</summary>
+                {% render 'throne--sizechart-tops' %}
+              </details>
             {% endif %}
-          </details>
         </div>
        
 
