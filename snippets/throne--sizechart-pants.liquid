@@ -1,31 +1,61 @@
 <table class="size-chart-table size-chart-bottoms">
     <thead>
       <th class="label">{{ 'Label:' | escape }}</th>
-      <th>{{ 'S' | escape }}</th>
-      <th>{{ 'M' | escape }}</th>
-      <th>{{ 'L' | escape }}</th>
-      <th>{{ 'XL' | escape }}</th>
-      <th>{{ 'XXL' | escape }}</th>
+      {% if product.metafields.sizechart.size_chart_bottoms.value.width_s != blank or product.metafields.sizechart.size_chart_bottoms.value.length_s != blank %}
+        <th>{{ 'S' | escape }}</th>
+      {% endif %}
+      {% if product.metafields.sizechart.size_chart_bottoms.value.width_m != blank or product.metafields.sizechart.size_chart_bottoms.value.length_m != blank %}
+        <th>{{ 'M' | escape }}</th>
+      {% endif %}
+      {% if product.metafields.sizechart.size_chart_bottoms.value.width_l != blank or product.metafields.sizechart.size_chart_bottoms.value.length_l != blank %}
+        <th>{{ 'L' | escape }}</th>
+      {% endif %}
+      {% if product.metafields.sizechart.size_chart_bottoms.value.width_xl != blank or product.metafields.sizechart.size_chart_bottoms.value.length_xl != blank %}
+        <th>{{ 'XL' | escape }}</th>
+      {% endif %}
+      {% if product.metafields.sizechart.size_chart_bottoms.value.width_xl != blank or product.metafields.sizechart.size_chart_bottoms.value.length_xl != blank %}
+        <th>{{ 'XXL' | escape }}</th>
+      {% endif %}
     </thead>
     <tbody>
-      {% if product.metafields.sizechart.size_chart_bottoms.value.width_s != blank %}
+      {% if product.metafields.sizechart.size_chart_bottoms.value.width_s != blank or product.metafields.sizechart.size_chart_bottoms.value.width_m != blank or product.metafields.sizechart.size_chart_bottoms.value.width_l != blank or product.metafields.sizechart.size_chart_bottoms.value.width_xl != blank or product.metafields.sizechart.size_chart_bottoms.value.width_xxl != blank %}
         <tr id="width">
           <td class="label">{{ 'Width:' | escape }}</td>
-          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_s }}</td>
-          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_m }}</td>
-          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_l }}</td>
-          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_xl }}</td>
-          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_xxl }}</td>
+          {% if product.metafields.sizechart.size_chart_bottoms.value.width_s != blank %}
+            <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_s }}</td>
+          {% endif %}
+          {% if product.metafields.sizechart.size_chart_bottoms.value.width_m != blank %}
+            <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_m }}</td>
+          {% endif %}
+          {% if product.metafields.sizechart.size_chart_bottoms.value.width_l != blank %}
+            <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_l }}</td>
+          {% endif %}
+          {% if product.metafields.sizechart.size_chart_bottoms.value.width_xl != blank %}
+            <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_xl }}</td>
+          {% endif %}
+          {% if product.metafields.sizechart.size_chart_bottoms.value.width_xxl != blank %}
+            <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_xxl }}</td>
+          {% endif %}
         </tr>
       {% endif %}
-      {% if product.metafields.sizechart.size_chart_bottoms.value.length_s != blank %}
+      {% if product.metafields.sizechart.size_chart_bottoms.value.length_s != blank or product.metafields.sizechart.size_chart_bottoms.value.length_m != blank or product.metafields.sizechart.size_chart_bottoms.value.length_l != blank or product.metafields.sizechart.size_chart_bottoms.value.length_xl != blank or product.metafields.sizechart.size_chart_bottoms.value.length_xxl != blank %}
         <tr id="length">
           <td class="label">{{ 'Length:' | escape }}</td>
-          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_s }}</td>
-          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_m }}</td>
-          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_l }}</td>
-          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_xl }}</td>
-          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_xxl }}</td>
+          {% if product.metafields.sizechart.size_chart_bottoms.value.length_s != blank %}
+            <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_s }}</td>
+          {% endif %}
+          {% if product.metafields.sizechart.size_chart_bottoms.value.length_m != blank %}
+            <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_m }}</td>
+          {% endif %}
+          {% if product.metafields.sizechart.size_chart_bottoms.value.length_l != blank %}
+            <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_l }}</td>
+          {% endif %}
+          {% if product.metafields.sizechart.size_chart_bottoms.value.length_xl != blank %}
+            <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_xl }}</td>
+          {% endif %}
+          {% if product.metafields.sizechart.size_chart_bottoms.value.length_xxl != blank %}
+            <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_xxl }}</td>
+          {% endif %}
         </tr>
       {% endif %}
     </tbody>
