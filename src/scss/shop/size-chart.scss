@@ -56,7 +56,7 @@
         }
 
         th:empty {
-            width: 0px;
+            width: 0px !important;
         }
 
         td {
