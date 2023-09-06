@@ -2,7 +2,7 @@
     <div class="item-wrapper">
 
       {% for image in product.media limit: 1 %}
-        <div class="image" style="background: url('{{ image | image_url: width: 200 }}'); background-size: cover; background-position: center center;" onclick="window.location='{{ product.url }}';">
+        <div class="image" style="background: url('{{ image | image_url: width: 800 }}'); background-size: cover; background-position: center center;" onclick="window.location='{{ product.url }}';">
         </div>
       {% endfor %}
  

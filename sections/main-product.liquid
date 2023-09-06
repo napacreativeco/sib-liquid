@@ -54,7 +54,13 @@
             {% if product.metafields.product.short_description != blank %}
               {{ product.metafields.product.short_description | prepend: ' / ' }}
             {% endif %} 
-            <span class="sold-out-indicator">{{ 'sold out' | escape }}</span>
+            
+              {% if product.selected_or_first_available_variant.inventory_quantity > 0 %}
+                <span class="sold-out-indicator"></span>
+              {% else %}
+                <span class="sold-out-indicator">{{ 'Sold Out' | escape }}</span>
+              {% endif %}
+            </span>
           </h1>
         </div>
 
@@ -62,7 +68,7 @@
 
           <div class="price-holder">
             {% if product.selected_or_first_available_variant != blank %}
-              {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros | remove: '$' }}
+              {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros | remove: '$' }} <span>{{ shop.currency }}</span>
             {% else %}
               {{ product.price | money_without_trailing_zeros | remove: '$' }} <span>{{ shop.currency }}</span>
             {% endif %}
@@ -98,82 +104,22 @@
         </div>
 
         <div class="size-chart">
-          <details>
-            <summary>
-              <div class="size-chart-title">
-                <h3>{{ settings.size_chart_title | default: 'size chart' }}</h3>
-              </div>
-            </summary>
 
-            <div class="content">
-              <table class="size-chart-table">
-                <thead>
-                  <tr>
-                    <th class="legend">label:</th>
-                    {% for option in product.options_with_values %}
+          {% assign chart = product.metafields.custom.attach_a_size_chart %}
 
-                      {% case option.name %}
-                        {% when 'Size' %}
+          <script>
+            console.log('{{ product.metafields.custom.attach_a_size_chart.value | json }}');
+          </script>
+          
+          {{ product.metafields.custom.attach_a_size_chart }}
 
-                        {% for value in option.values %}
-                          <th>{{ value }}</th>
-                        {% endfor %}
-                      {% endcase %}
-                    {% endfor %}
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="legend">chest:</td>
-                    {% for size in shop.metaobjects.size_chart.values %}
-                      <td>{{ size.s_chest }}</td>
-                    {% endfor %}
-                    {% for size in shop.metaobjects.size_chart.values %}
-                      <td>{{ size.m_chest }}</td>
-                    {% endfor %}
-                    {% for size in shop.metaobjects.size_chart.values %}
-                      <td>{{ size.l_chest }}</td>
-                    {% endfor %}
-                    {% for size in shop.metaobjects.size_chart.values %}
-                      <td>{{ size.xl_chest }}</td>
-                    {% endfor %}
-                  </tr>
-                  <tr>
-                    <td class="legend">waist:</td>
-                    {% for size in shop.metaobjects.size_chart.values %}
-                      <td>{{ size.s_waist }}</td>
-                    {% endfor %}
-                    {% for size in shop.metaobjects.size_chart.values %}
-                      <td>{{ size.m_waist }}</td>
-                    {% endfor %}
-                    {% for size in shop.metaobjects.size_chart.values %}
-                      <td>{{ size.l_waist }}</td>
-                    {% endfor %}
-                    {% for size in shop.metaobjects.size_chart.values %}
-                      <td>{{ size.xl_waist }}</td>
-                    {% endfor %}
-                  </tr>
-                  <tr>
-                    <td class="legend">shoulder:</td>
-                    {% for size in shop.metaobjects.size_chart.values %}
-                      <td>{{ size.s_shoulder }}</td>
-                    {% endfor %}
-                    {% for size in shop.metaobjects.size_chart.values %}
-                      <td>{{ size.m_shoulder }}</td>
-                    {% endfor %}
-                    {% for size in shop.metaobjects.size_chart.values %}
-                      <td>{{ size.l_shoulder }}</td>
-                    {% endfor %}
-                    {% for size in shop.metaobjects.size_chart.values %}
-                      <td>{{ size.xl_shoulder }}</td>
-                    {% endfor %}
-                  </tr>
-                </tbody>
+          {{ shop.metaobjects.size_chart }}
 
-              </table>
-            </div>
+          
 
-          </details>
+          {% if product.type == 'Top' %}
+            {% render 'throne--sizechart-tops' %}
+          {% endif %}
         </div>
 
         {% render 'throne-product-pagination' %}
