@@ -1,0 +1,32 @@
+<table class="size-chart-table size-chart-bottoms">
+    <thead>
+      <th class="label">{{ 'Label:' | escape }}</th>
+      <th>{{ 'S' | escape }}</th>
+      <th>{{ 'M' | escape }}</th>
+      <th>{{ 'L' | escape }}</th>
+      <th>{{ 'XL' | escape }}</th>
+      <th>{{ 'XXL' | escape }}</th>
+    </thead>
+    <tbody>
+      {% if product.metafields.sizechart.size_chart_bottoms.value.width_s != blank %}
+        <tr id="width">
+          <td class="label">{{ 'Width:' | escape }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_s }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_m }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_l }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_xl }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.width_xxl }}</td>
+        </tr>
+      {% endif %}
+      {% if product.metafields.sizechart.size_chart_bottoms.value.length_s != blank %}
+        <tr id="length">
+          <td class="label">{{ 'Length:' | escape }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_s }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_m }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_l }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_xl }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_bottoms.value.length_xxl }}</td>
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>

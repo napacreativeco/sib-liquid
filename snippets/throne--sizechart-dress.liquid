@@ -1,0 +1,42 @@
+<table class="size-chart-table size-chart-dress">
+    <thead>
+      <th class="label">{{ 'Label:' | escape }}</th>
+      <th>{{ 'XS' | escape }}</th>
+      <th>{{ 'S' | escape }}</th>
+      <th>{{ 'M' | escape }}</th>
+      <th>{{ 'L' | escape }}</th>
+      <th>{{ 'XL' | escape }}</th>
+    </thead>
+    <tbody>
+      {% if product.metafields.sizechart.size_chart_dress.value.bust_s != blank %}
+        <tr id="bust">
+          <td class="label">{{ 'Bust:' | escape }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.bust_xs }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.bust_s }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.bust_m }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.bust_l }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.bust_xl }}</td>
+        </tr>
+      {% endif %}
+      {% if product.metafields.sizechart.size_chart_dress.value.waist_s != blank %}
+        <tr id="waist">
+          <td class="label">{{ 'Waist:' | escape }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_xs }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_s }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_m }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_l }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_xl }}</td>
+        </tr>
+      {% endif %}
+      {% if product.metafields.sizechart.size_chart_dress.value.hips_s != blank %}
+        <tr id="hips">
+          <td class="label">{{ 'Hips:' | escape }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_xs }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_s }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_m }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_l }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_xl }}</td>
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>

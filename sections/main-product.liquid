@@ -105,22 +105,19 @@
 
         <div class="size-chart">
 
-          {% assign chart = product.metafields.custom.attach_a_size_chart %}
-
-          <script>
-            console.log('{{ product.metafields.custom.attach_a_size_chart.value | json }}');
-          </script>
+          <details>
+            <summary>{{ settings.size_chart_title | default: "Size Chart" }}</summary>
           
-          {{ product.metafields.custom.attach_a_size_chart }}
-
-          {{ shop.metaobjects.size_chart }}
-
-          
-
-          {% if product.type == 'Top' %}
-            {% render 'throne--sizechart-tops' %}
-          {% endif %}
+            {% if product.metafields.sizechart.size_chart_dress != blank %}
+              {% render 'throne--sizechart-dress' %}
+            {% elsif product.metafields.sizechart.size_chart_pants != blank %}
+              {% render 'throne--sizechart-pants' %}
+            {% elsif product.metafields.sizechart.size_chart_tops != blank %}
+              {% render 'throne--sizechart-tops' %}
+            {% endif %}
+          </details>
         </div>
+       
 
         {% render 'throne-product-pagination' %}
 
@@ -351,3 +348,26 @@
     ]
   }
 {% endschema %}
+
+
+
+
+
+
+<script>
+  var vals = JSON.parse('{{ product.metafields.sizechart.size_chart_dress.value | json }}', (key, value) => {
+
+    var k = key;
+    var v = value;
+    console.log('key: ' + key);
+    console.log('value: ' + value);
+    
+
+    
+  
+    
+  });
+
+
+  
+</script>

@@ -330,19 +330,12 @@
 
                 }
 
+                /* Description */
                 .product-description {
                     padding: 0 10px;
                 }
-                .size-chart {
-                    padding: 10px 10px 0px 10px;
 
-                    summary {
-                        text-align: right;
-                        h3{
-                            font-weight:bold;
-                        }
-                    }
-                }
+                /* Pagination */
                 .product-pagination {
                     display: flex;
                     flex-direction: column-reverse;
