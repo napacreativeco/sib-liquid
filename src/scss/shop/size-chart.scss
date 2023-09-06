@@ -50,8 +50,13 @@
             font-weight: normal;
             width: 1.8rem;
         }
+
         th:first-of-type {
             text-transform: lowercase;
+        }
+
+        th:empty {
+            width: 0px;
         }
 
         td {
@@ -59,6 +64,10 @@
             font-size: 14px;
             width: 1.8rem;
             vertical-align: middle;
+        }
+        
+        td:empty {
+            width: 0px;
         }
 
         th.legend,
