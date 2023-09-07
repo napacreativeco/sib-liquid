@@ -45,7 +45,7 @@
     }
 
     .no-products {
-        padding-left: var(--side-padding);
+        padding-left: 0px;
     }
 
 
@@ -256,6 +256,10 @@
     }
 
     .shop-component {
+
+        .no-products {
+            padding-left: var(--side-padding);
+        }
 
         .shop-component-wrapper {
 
