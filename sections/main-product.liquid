@@ -55,18 +55,7 @@
               {{ product.metafields.product.short_description | prepend: ' / ' }}
             {% endif %} 
             
-              {% if product.selected_or_first_available_variant.inventory_quantity > 0 %}
-                <span class="sold-out-indicator"></span>
-              {% else %}
-                <span class="sold-out-indicator">{{ 'Sold Out' | escape }}</span>
-              {% endif %}
-
-              {% if product.metafields.product.preorder == true %}
-                <span class="preorder-indicator indicator">
-                  {{ 'sign up' | escape }}
-                </span>
-              {% endif %}
-            </span>
+            {% render 'indicators' data: product %}
           </h1>
         </div>
 
@@ -113,17 +102,7 @@
         <div class="product-title mobile">
           <h1>{{ product.title }} {% if product.metafields.product.short_description != blank %}{{ product.metafields.product.short_description | prepend: ' / ' }}{% endif %} <span class="sold-out-indicator--mobile"></span></h1>
           
-          {% if product.selected_or_first_available_variant.inventory_quantity > 0 %}
-            <span class="sold-out-indicator"></span>
-          {% else %}
-            <span class="sold-out-indicator">{{ 'Sold Out' | escape }}</span>
-          {% endif %}
-
-          {% if product.metafields.product.preorder == true %}
-            <span class="preorder-indicator indicator">
-              {{ 'sign up' | escape }}
-            </span>
-          {% endif %}
+          {% render 'indicators' data: product %}
         </div>
 
         <div class="product-description">
