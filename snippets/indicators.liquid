@@ -14,7 +14,8 @@
   </span>
 {% endif %}
 {% if data.available == false %}
-  {% if data.metafields.product.preorder != true %}
+  {% if data.metafields.product.preorder == true %}
+  {% else %}
     <span class="soldout-indicator indicator">
       {{ 'sold out' | escape }}
     </span>
