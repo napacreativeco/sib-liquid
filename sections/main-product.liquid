@@ -74,9 +74,13 @@
 
           <div class="price-holder">
             {% if product.selected_or_first_available_variant != blank %}
-              {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros | remove: '$' }} <span>{{ shop.currency }}</span>
+              <span class="variant-price">
+                {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros | remove: '$' }} <span>{{ shop.currency }}</span>
+              </span>
             {% else %}
-              {{ product.price | money_without_trailing_zeros | remove: '$' }} <span>{{ shop.currency }}</span>
+              <span class="regular-price">
+                {{ product.price | money_without_trailing_zeros | remove: '$' }} <span>{{ shop.currency }}</span>
+              </span>
             {% endif %}
           </div>
 
