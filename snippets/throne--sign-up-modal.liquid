@@ -14,7 +14,7 @@
         <div class="form">
             <input type="email" placeholder="your email" />
             <select>
-                <option selected>select a size</option>
+                <option selected>{{ 'select a size' | escape }}</option>
                 {% for variant in data.variants %}
                     <option>{{ variant.title }}</option>
                 {% endfor %}
