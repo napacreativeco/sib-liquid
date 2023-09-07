@@ -57,6 +57,7 @@
               input[type="email"],
               select {
                 width: 370px;
+                max-width: 100%;
                 padding: 10px;
                 font-size: var(--12px);
                 border-radius: 0px !important;
