@@ -121,7 +121,7 @@
                 <summary>{{ settings.size_chart_title | default: "Size Chart" }}</summary>
                 {% render 'throne--sizechart-dress' %}
               </details>
-            {% elsif product.metafields.sizechart.size_chart_pants != blank %}
+            {% elsif product.metafields.sizechart.size_chart_bottoms != blank %}
               <details>
                 <summary>{{ settings.size_chart_title | default: "Size Chart" }}</summary>
                 {% render 'throne--sizechart-pants' %}
