@@ -4,9 +4,11 @@
   </span>
 {% endif %}
 {% if data.compare_at_price > data.price %}
-  <span class="sale-indicator indicator">
-    {{ 'sale' | escape }}
-  </span>
+  {% if data.available == true %}
+    <span class="sale-indicator indicator">
+      {{ 'sale' | escape }}
+    </span>
+  {% endif %}
 {% endif %}
 {% if data.metafields.product.preorder == true %}
   <span class="preorder-indicator indicator">

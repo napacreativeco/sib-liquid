@@ -84,3 +84,13 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+  .sign-up-modal {
+
+    .modal-wrapper {
+      max-width: 96%;
+      margin: 0 auto;
+    }
+  }
+}
