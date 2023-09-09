@@ -138,7 +138,7 @@
 
           {% for collect in product.collections %}
 
-            {{ collect.title }}
+            {{ collect.title | append: ', ' }}
             {% case collect.handle %}
   
               {% when 'all' %}
