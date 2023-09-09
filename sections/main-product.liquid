@@ -154,7 +154,11 @@
                         {% assign next = forloop.index0 | plus: 1 %}
                       {% endif %}
                       
-                      <a class="next-product" href="{{ arr[next] }}" title="Next">next</a>
+                      {% if forloop.index >= forloop.length %}
+                      last
+                      {% else %}
+                        <a class="next-product" href="{{ arr[next] }}" title="Next">next</a>
+                      {% endif %}
                       
                     {% endif %}
                     </li>
