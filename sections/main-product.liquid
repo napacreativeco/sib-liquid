@@ -137,6 +137,8 @@
           </a>
 
           {% for collect in product.collections %}
+
+            {{ collect.handle }}
             {% case collect.handle %}
   
               {% when 'all' %}
