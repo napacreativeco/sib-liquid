@@ -1,5 +1,5 @@
 <div class="product-pagination">
-    <a class="back-to-all" href="{{ '/collections/all' | escape}}" title="Back to all">
+    <a class="back-to-all" href="{{ '/collections/all' | escape }}" title="Back to all">
     {{ 'BACK TO ALL' | escape }}
     </a>
     {%- liquid
@@ -16,10 +16,10 @@
             assign prev = forloop.index | minus: 2
             assign next = forloop.index
             if prev >= 0
-            assign previous_product = collections[collectionList].products[prev].handle
+                assign previous_product = collections[collectionList].products[prev].handle
             endif
             if last >= next
-            assign next_product = collections[collectionList].products[next].handle
+                assign next_product = collections[collectionList].products[next].handle
             endif
             break
         endif
@@ -27,6 +27,10 @@
     endif
     -%}
     {%- if next_product -%}
+        <a class="next-product" href="{{ next_product }}">
+            {{ 'NEXT' | escape }}
+        </a>
+    {%- else -%}
         <a class="next-product" href="{{ next_product }}">
             {{ 'NEXT' | escape }}
         </a>

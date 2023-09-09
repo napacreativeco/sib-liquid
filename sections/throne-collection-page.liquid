@@ -1,17 +1,10 @@
-{% comment %} 
-
-Collection Page
-
-{% endcomment %}
 <section class="shop-component">
   <div class="shop-component-wrapper" data-layout="grid">
 
     {% render 'throne-grid-changer' %}
-
     {% render 'throne-collection-pagination' %}
-    <script>console.log({{ section.settings.collection.products.size }})</script>
 
-<ul class="products-grid grid" {% if collection.products.size > 0 %} {% else %}style="grid-template-columns: 1fr;"{% endif %}>
+    <ul class="products-grid grid" {% if collection.products.size > 0 %} {% else %}style="grid-template-columns: 1fr;"{% endif %}>
       {% if collection.products.size > 0 %}
 
         {%- for product in collection.products -%}
