@@ -297,8 +297,10 @@
     $('.variant-selector-box > input').on('change', function() {
       $('.variant-selector-box').hide();
       // $('.selected-variant').text($(this).val());
-      $('.selected-size-variant').text( '(' + $('input[name="Size"]:checked').val() + ')' );
-      $('.selected-color-variant').text( '(' + $('input[name="Color"]:checked').val() + ')' );
+      $('.selected-size-variant').text( $('input[name="Size"]:checked').val() );
+      $('.option-name').hide();
+      $('.option-value').show();
+      //$('.selected-color-variant').text( '(' + $('input[name="Color"]:checked').val() + ')' );
     });
 
 

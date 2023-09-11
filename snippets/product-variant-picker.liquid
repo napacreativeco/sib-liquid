@@ -19,17 +19,19 @@
         <fieldset class="js product-form__input">
   
           <span class="variant-selector-title">
-            {{ option.name }} 
+            <span class="option-name">
+              {{ option.name }} 
+            </span>
 
-            <span class="selected-size-variant">
+            <span class="selected-size-variant option-value">
               {{ option.selected_value }}
             </span>
             <span class="selected-variant {{ option.id }}"></span>
 
             {% render 'icon-caret' %}
-
           </span>
 
+          {% comment %} Selector Box {% endcomment %}
           <div class="variant-selector-box">
             {% render 'product-variant-options', product: product, option: option, block: block %}
           </div>
