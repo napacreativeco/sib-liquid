@@ -32,15 +32,9 @@
 
       <div class="price">
         <a href="{{ product.url }}" title="Price">
-          {% if product.selected_or_first_available_variant != blank %}
-            <span class="variant-price">
-              {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros | remove: '$' }}
-            </span>
-          {% else %}
             <span class="regular-price">
               {{ product.price | money_without_trailing_zeros | remove: '$' }} <span>{{ shop.currency }}</span>
             </span>
-          {% endif %}
         </a>
       </div>
 
