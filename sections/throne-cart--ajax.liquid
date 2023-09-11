@@ -148,7 +148,9 @@
                     {% endcomment %}
 
                     <div class="product-price">
-                      <span class="price">{{ item.final_line_price | money_without_trailing_zeros | remove: '$' }} {{ shop.currency }}</span>
+                      {% for var in item.variants limit: 1 %}
+                        {{ var.price | money_without_trailing_zeros | remove: '$' }}
+                      {% endfor %}
                     </div>
 
                     <div class="delete">
