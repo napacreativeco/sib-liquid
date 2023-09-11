@@ -237,6 +237,10 @@
 
                 .price {
                     text-align: center;
+                    
+                    span.hidden {
+                        display: block !important;
+                    }
                 }
 
             }
