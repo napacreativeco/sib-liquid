@@ -33,7 +33,9 @@
       <div class="price">
         <a href="{{ product.url }}" title="Price">
             <span class="regular-price">
-              {{ product.price | money_without_trailing_zeros | remove: '$' }} <span>{{ shop.currency }}</span>
+              {% for var in product.variants limit: 1 %}
+                {{ var.price | money_without_trailing_zeros | remove: '$' }} <span>{{ shop.currency }}</span>
+              {% endfor %}
             </span>
         </a>
       </div>
