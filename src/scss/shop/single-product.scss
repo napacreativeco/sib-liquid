@@ -53,8 +53,8 @@
             }
 
             /* Indicators */
-            .sold-out-indicator,
-            .sold-out-indicator--mobile {
+            .indicator,
+            .indicator {
                 font-size: var(--10px);
                 font-style: italic;
                 background: #D2D2D2;
@@ -63,8 +63,8 @@
                 position: relative;
                 top: -4px;
             }
-            .sold-out-indicator:empty,
-            .sold-out-indicator--mobile:empty {
+            .indicator:empty,
+            .indicator:empty {
                 padding: 0px;
             }
 
