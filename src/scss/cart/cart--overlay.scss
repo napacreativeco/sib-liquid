@@ -413,6 +413,10 @@
                                 margin-top: 12px;
                                 font-family: var(--times);
                                 text-align: left;
+
+                                span.hidden {
+                                    display: block !important;
+                                }
                             }
                         }
 
