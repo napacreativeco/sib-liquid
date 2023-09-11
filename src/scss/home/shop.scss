@@ -237,7 +237,7 @@
 
                 .price {
                     text-align: center;
-                    
+
                     span.hidden {
                         display: block !important;
                     }
@@ -315,10 +315,6 @@
                     .titles {
                         grid-template-columns: 1fr;
                         grid-gap: 0px;
-                    }
-
-                    .price  {
-                        display: none;
                     }
 
                     .indicator-holder {
