@@ -134,23 +134,8 @@
                       {%- endif -%}
                     </div>
 
-                    {% comment %} 
-                      Color
-                    {% endcomment %}
-                    {% comment %}
-                    <div class="variants color">
-                      <div class="color-wrapper">
-                        <span class="color-swatch" style="background: {{ item.variant.metafields.custom.display_color.value }}">
-                          &nbsp;
-                        </span>
-                      </div>
-                    </div>
-                    {% endcomment %}
-
                     <div class="product-price">
-                      {% for var in item.variants limit: 1 %}
-                        {{ var.price | money_without_trailing_zeros | remove: '$' }}
-                      {% endfor %}
+                      {{ item.final_line_price | money_without_trailing_zeros | remove: '$' }}
                     </div>
 
                     <div class="delete">
@@ -254,9 +239,7 @@
                       </div>
 
                       <div class="product-price">
-                        {% for var in item.variants limit: 1 %}
-                          {{ var.price | money_without_trailing_zeros | remove: '$' }}
-                        {% endfor %}
+                        {{ item.final_line_price | money_without_trailing_zeros | remove: '$' }}
                       </div>
 
                     </div>
