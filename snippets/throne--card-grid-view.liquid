@@ -11,7 +11,9 @@
       {% comment %} DATA {% endcomment %}
       <div class="product-data">
 
-        {% render 'indicators', data: product %}
+        <div class="indicator-holder">
+          {% render 'indicators', data: product %}
+        </div>
         
         <div class="product-data-wrapper">
 

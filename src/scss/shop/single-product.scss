@@ -55,7 +55,7 @@
             /* Indicators */
             .indicator,
             .indicator {
-                font-size: var(--10px);
+                font-size: var(--8px);
                 font-style: italic;
                 background: #D2D2D2;
                 color: var(--white);
@@ -86,6 +86,14 @@
             
         }
         
+        button[aria-disabled="true"] {
+            cursor: pointer;
+            pointer-events: auto;
+        }
+        button[aria-disabled="true"]:hover {
+            background: var(--black);
+            color: var(--red);
+        }   
         button[disabled="disabled"] {
             // color: #D2D2D2 !important;
             color: var(--black);
@@ -125,7 +133,7 @@
                 text-transform: lowercase;
 
                 label {
-                    text-transform: uppercase;
+                    text-transform: lowercase;
                 }
 
                 .option-value {

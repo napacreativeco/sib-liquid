@@ -949,8 +949,8 @@ class VariantSelects extends HTMLElement {
     if (this.currentVariant.available) { 
       console.log('available');
       var indicator = document.querySelector('.sold-out-indicator');
-      document.querySelector('.sold-out-indicator').innerHTML = '';
-      document.querySelector('.sold-out-indicator--mobile').innerHTML = '';
+      //document.querySelector('.sold-out-indicator').innerHTML = ' ';
+      //document.querySelector('.sold-out-indicator--mobile').innerHTML = ' ';
     } else {
       console.log('sold out');
       document.querySelector('.sold-out-indicator').innerHTML = 'sold out';

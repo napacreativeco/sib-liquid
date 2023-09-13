@@ -70,15 +70,6 @@
     {% render 'throne-navbar' %}
     {% render 'throne-footer-menu' %}
     {% section 'throne-cart--ajax' %}
-    {% comment %}
-      {% render 'throne-cart-overlay' %}
-    {% endcomment %}
-    
-    {% comment %}
-    {%- if settings.cart_type == 'drawer' -%}
-      {%- render 'cart-drawer' -%}
-    {%- endif -%}
-    {% endcomment %}
 
     <main id="MainContent" class="page-container content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}

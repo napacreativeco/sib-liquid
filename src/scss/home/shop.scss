@@ -16,14 +16,16 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        gap: 3px;
+        margin-top: 3px;
     }
 
     .indicator {
         background: var(--black);
         color: var(--red);
         font-style: italic;
-        padding: 4px;
-        font-size: var(--10px);
+        padding: 3px;
+        font-size: var(--8px);
         display: inline;
         white-space: nowrap;
         align-self: flex-start;
@@ -102,17 +104,23 @@
                     flex-direction: row;
                     gap: 3px;
 
+                    .indicator-holder {
+
+                    }
+
                     .name {
                         h3 {
-                            margin: 4px 0 4px 0;
+                            margin: 0px;
                             font-family: var(--mingliu);
-                            font-size: var(--12px);
+                            font-size: var(--11px);
+                            line-height: 1.5;
                         }
                     }
+
                     .short-description {
                         span {
                             // font-family: var(--mingliu);
-                            font-size: var(--12px);
+                            font-size: var(--11px);
                         }
                     }
 

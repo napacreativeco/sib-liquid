@@ -20,11 +20,11 @@
   
           <span class="variant-selector-title">
             <span class="option-name">
-              {{ option.name }} 
+              {{ option.name | downcase }} 
             </span>
 
             <span class="selected-size-variant option-value">
-              {{ option.selected_value }}
+              {{ option.selected_value | downcase }}
             </span>
             <span class="selected-variant {{ option.id }}"></span>
 

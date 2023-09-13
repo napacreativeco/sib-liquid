@@ -101,7 +101,6 @@
 
         <div class="product-title mobile">
           <h1>{{ product.title }} {% if product.metafields.product.short_description != blank %}{{ product.metafields.product.short_description | prepend: ' / ' }}{% endif %} <span class="sold-out-indicator--mobile"></span></h1>
-          
           {% render 'indicators' data: product %}
         </div>
 

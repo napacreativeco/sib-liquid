@@ -89,11 +89,12 @@
                         border-bottom: var(--border-blk);
                         padding: 20px;
                         counter-increment: filters;
+                        height: calc(50vh / 5 + 1px);
 
                         a {
                             text-decoration: none;
                             text-transform: lowercase;
-                            font-size: var(--32px);
+                            font-size: var(--24px);
                         }
                         
                         @media screen and (max-width: 767px) {
