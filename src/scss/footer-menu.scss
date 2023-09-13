@@ -90,6 +90,8 @@
                         padding: 20px;
                         counter-increment: filters;
                         height: calc(50vh / 5 + 1px);
+                        display: flex;
+                        align-items: center;
 
                         a {
                             text-decoration: none;
