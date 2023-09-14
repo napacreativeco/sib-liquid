@@ -5,39 +5,29 @@
       render 'throne-collection-pagination';
   -%}
 
-  {% if section.settings.collection.products == blank %}
+  {% if settings.featured_collection.products == blank %}
+
     {% render 'no-products' %}
+
   {% endif %}
 
-  <ul class="products-grid grid">
-    {% if section.settings.collection.products.size > 0 %}
-
-      {%- for product in section.settings.collection.products limit: 16 -%}
-          {% render 'throne--card-grid-view', product: product %}
-      {%- endfor -%}
-
-    {% endif %}
+  <ul class="products-grid grid" data-collection="{{ settings.featured_collection.title }}">
+    {% for product in settings.featured_collection.products %}
+      {% render 'throne--card-grid-view', product: product %}
+    {% endfor %}
   </ul>
 
   <ul class="products-grid list">
-    {% if section.settings.collection.products.size > 0 %}
-
-      {%- for product in section.settings.collection.products limit: 16 -%}
+      {% for product in settings.featured_collection.products %}
           {% render 'throne--card-list-view', product: product %}
       {% endfor %}
-
-    {% endif %}
   </ul>
 
   <div class="products-grid dual">
       <ul class="dual-wrapper">
-        {% if section.settings.collection.products.size > 0 %}
-
-          {%- for product in section.settings.collection.products limit: 16 -%}
-              {% render 'throne--card-dual-view', product: product %}
-          {%- endfor -%}
-  
-        {% endif %}
+        {% for product in settings.featured_collection.products %}
+            {% render 'throne--card-dual-view', product: product %}
+        {% endfor %}
       </ul>
   </div>
 

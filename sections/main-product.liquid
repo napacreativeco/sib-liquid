@@ -130,8 +130,8 @@
       
         <div class="product-pagination new">
 
-          <a class="back-to-all" href="{{ '/collections/all' | escape }}" title="Back to all">
-            {{ 'BACK TO ALL' | escape }}
+          <a href="{{ settings.featured_collection.url }}" title="{{ 'Back to all' | escape }}">
+            {{ 'Back to all' | escape | downcase }}
           </a>
 
           {% for collect in product.collections %}
