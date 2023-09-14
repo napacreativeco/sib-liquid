@@ -34,6 +34,14 @@
         text-transform: lowercase;
         margin: 0 auto;
 
+        .cart-logo {
+            
+            img {
+                min-width: 149px;
+                max-width: 160px;
+            }
+        }
+
         .cart-hamburger {
             padding-right: 0px;
             cursor: pointer;
