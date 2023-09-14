@@ -112,18 +112,23 @@
         <div class="size-chart">
             {% if product.metafields.sizechart.size_chart_dress != blank %}
               <details>
-                <summary>{{ settings.size_chart_title | default: "Size Chart" }}</summary>
+                <summary>{{ settings.size_chart_title | default: "size chart" | downcase }}</summary>
                 {% render 'throne--sizechart-dress' %}
               </details>
             {% elsif product.metafields.sizechart.size_chart_bottoms != blank %}
               <details>
-                <summary>{{ settings.size_chart_title | default: "Size Chart" }}</summary>
+                <summary>{{ settings.size_chart_title | default: "size chart" | downcase }}</summary>
                 {% render 'throne--sizechart-pants' %}
               </details>
             {% elsif product.metafields.sizechart.size_chart_tops != blank %}
               <details>
-                <summary>{{ settings.size_chart_title | default: "Size Chart" }}</summary>
+                <summary>{{ settings.size_chart_title | default: "size chart" | downcase }}</summary>
                 {% render 'throne--sizechart-tops' %}
+              </details>
+            {% elsif product.metafields.sizechart.size_chart_boots != blank %}
+              <details>
+                <summary>{{ settings.size_chart_title | default: "size chart" | downcase }}</summary>
+                {% render 'throne--sizechart-boots' %}
               </details>
             {% endif %}
         </div>
