@@ -79,6 +79,17 @@
     ]
   },
   {
+    "name": "Featured Collection",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "featured_collection",
+        "label": "Choose collection to Feature",
+        "info": "The collection that will show up on the Homepage"
+      }
+    ]
+  },
+  {
     "name": "Newsletter Popup",
     "settings": [
       {
