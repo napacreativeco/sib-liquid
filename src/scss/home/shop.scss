@@ -35,7 +35,7 @@
     }
     .new-indicator {
         background: var(--black);
-        color: var(--white);
+        color: var(--red);
     }
     .preorder-indicator {
         background: #0029FF;
@@ -100,12 +100,10 @@
                 .product-data {
                     margin-top: 14px;
                     position: relative;
-                    display: flex;
-                    flex-direction: row;
-                    gap: 3px;
 
                     .indicator-holder {
-
+                        position: absolute;
+                        right: calc(100% + 3px);
                     }
 
                     .name {
@@ -282,7 +280,7 @@
 
             /* Grid */
             ul.products-grid.grid {
-                padding: 0 var(--side-padding);
+                padding: 0 35px;
                 grid-template-columns: repeat(2, 1fr);
             }
 

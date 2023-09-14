@@ -315,11 +315,11 @@
         </noscript>
         {% endcomment %}
         <a
-          href="{{ '/collections/all' | escape }}"
+          href="{{ settings.featured_collection.url | default: '/collections/all' }}"
           type="submit"
           name="checkout"
           form="CartDrawer-Form">
-          {{ 'Continue Shopping' | escape | downcase }}
+          {{ 'continue shopping' | escape | downcase }}
         </a>
 
         <a
@@ -328,23 +328,23 @@
           class="checkout-button"
           name="checkout"
           form="CartDrawer-Form">
-          {{ 'Checkout' | escape | downcase }} {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}
+          {{ 'checkout' | escape | downcase }} {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}
         </a>
       </div>
     </div>
 
     <div class="empty-cart">
       <div class="title">
-        <span>{{ 'Your cart is empty' | escape | downcase }}</span>
+        <span>{{ 'your cart is empty' | escape | downcase }}</span>
       </div>
       <div class="action">
-        <a href="/collections/all" title="{{ 'Continue shopping' | escape }}">
-          {{ 'Continue shopping' | escape | downcase }}
+        <a href="{{ settings.featured_collection.url | default: '/collections/all' }}" title="{{ 'Continue shopping' | escape }}">
+          {{ 'continue shopping' | escape | downcase }}
         </a>
       </div>
     </div>
 
-    {% render 'credit-cards' %}
+    {% comment %} {% render 'credit-cards' %} {% endcomment %}
 
     <div class="cart-disclaimer">
       <p>{{ 'For further details please consult the ' | escape | downcase }}<a href="/pages/privacy-policy#return-policy" title="Return Policy">{{ 'Return Policy' | escape | downcase }}</a>
