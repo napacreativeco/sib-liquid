@@ -3,17 +3,6 @@
     /* ============================================= */
     $(document).on('ready', function() {
 
-        if ( window.location.href.includes('?cartmodal=1') ) {
-          $('.logo a').css('display', 'block');
-        } 
-
-        // if ( window.location.path == '/' ) {
-        //   $('.default-logo').css('display', 'none');
-        //   console.log('home')
-        // } else {
-        //   $('.default-logo').css('display', 'block');
-        // }
-
         // Theme Color
         $('meta[name="theme-color"]').attr('content', '#000000');
     });
@@ -33,40 +22,36 @@
     */
     const mediaQuery = window.matchMedia('(max-width: 767px)');
 
-    if (mediaQuery.matches) {
-      // gsap.registerPlugin(Draggable);
+    Draggable.create("#top-left", {
+      type:"x,y",
+      bounds: document.getElementById("hero-wrapper"),
+      inertia: true
+    });
 
-      Draggable.create("#top-left", {
-        type:"x,y",
-        bounds: document.getElementById("hero-wrapper"),
-        inertia: true
-      });
+    Draggable.create("#top-right", {
+      type:"x,y",
+      bounds: document.getElementById("hero-wrapper"),
+      inertia: true
+    });
 
-      Draggable.create("#top-right", {
-        type:"x,y",
-        bounds: document.getElementById("hero-wrapper"),
-        inertia: true
-      });
+    Draggable.create("#bottom-left", {
+      type:"x,y",
+      bounds: document.getElementById("hero-wrapper"),
+      inertia: true
+    });
 
-      Draggable.create("#bottom-left", {
-        type:"x,y",
-        bounds: document.getElementById("hero-wrapper"),
-        inertia: true
-      });
+    Draggable.create("#bottom-right", {
+      type:"x,y",
+      bounds: document.getElementById("hero-wrapper"),
+      inertia: true
+    });
 
-      Draggable.create("#bottom-right", {
-        type:"x,y",
-        bounds: document.getElementById("hero-wrapper"),
-        inertia: true
-      });
+    Draggable.create("#cloud", {
+      type:"x,y",
+      bounds: document.getElementById("hero-wrapper"),
+      inertia: true
+    });
 
-      Draggable.create("#cloud", {
-        type:"x,y",
-        bounds: document.getElementById("hero-wrapper"),
-        inertia: true
-      });
-
-    }
     
     /* ============================================= */
     
@@ -79,11 +64,8 @@
       
         if ( $('.filter-menu').hasClass('filter-opened') ) {
             $('.filter-menu').removeClass('filter-opened');
-            //gsap.fromTo(".filter-menu", {x: 'calc(0vw - 12px)'}, {x: '100vw', duration: 0.2});
         } else {
             $('.filter-menu').addClass('filter-opened');
-            //$('.menu-text').css('display', 'none');
-            //gsap.fromTo(".filter-menu", {x: '100vw' }, {x: 'calc(0vw - 12px)', duration: 0.2});
         }
 
     });
@@ -91,11 +73,8 @@
       
         if ( $('.filter-menu').hasClass('filter-opened') ) {
             $('.filter-menu').removeClass('filter-opened');
-            //gsap.fromTo(".filter-menu", {x: 'calc(0vw - 12px)'}, {x: '100vw', duration: 0.2});
         } else {
             $('.filter-menu').addClass('filter-opened');
-            //$('.menu-text').css('display', 'none');
-            //gsap.fromTo(".filter-menu", {x: '100vw' }, {x: 'calc(0vw - 12px)', duration: 0.2});
         }
 
     });
@@ -113,16 +92,17 @@
     // ----------------------
     // Logo
     // -----------------------
-    function hideLogo() {
-      const mediaQuery = window.matchMedia('(max-width: 767px)');
-      if (! mediaQuery.matches) {
-        document.querySelector('.logo a').style.display = 'none';
-      }
-      
-    }
+    // function hideLogo() {
+    //   const mediaQuery = window.matchMedia('(max-width: 767px)');
+    //   if (! mediaQuery.matches) {
+    //     document.querySelector('.logo').style.display = 'none';
+    //   }
+    // }
+
     function showLogo() {
-      document.querySelector('.logo a').style.display = 'block';
+      document.querySelector('.logo').style.display = 'block';
     }
+
     function unpinHamburger() {
       $('.hamburger').css({
         position: 'relative',

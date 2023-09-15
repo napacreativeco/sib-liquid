@@ -1,0 +1,32 @@
+<script>
+    function coordinate(event) {
+        var x = event.clientX;
+        var y = event.clientY;
+  
+        // document.getElementById("X").value=x;
+        // document.getElementById("Y").value=y;
+  
+        var timesPerSecond = 5;
+        var wait = false;
+  
+        var topLeft = document.getElementById("top-left");
+        var topRight = document.getElementById("top-right");
+        var bottomLeft = document.getElementById("bottom-left");
+        var bottomRight = document.getElementById("bottom-right");
+        var cloud = document.getElementById("cloud");
+  
+  
+        if (! wait) {
+          topRight.style.transform = 'translate(' + x / 40 + 'px, ' + y / 36 + 'px)';
+          topLeft.style.transform = 'translate(' + (- x / 40) + 'px, ' + (- y / 38) + 'px)';
+          bottomRight.style.transform = 'translate(' + x / 52 + 'px, ' + y / 52 + 'px)';
+          bottomLeft.style.transform = 'translate(' + (- x / 62) + 'px, ' + (- y / 62) + 'px)';
+          cloud.style.transform = 'translate(' + (- x / 82) + 'px, ' + (- y / 82) + 'px)';
+          wait = true;
+          setTimeout(function() {
+            wait = false;
+          }, 1000 / timesPerSecond);
+        }
+  
+      }
+</script>
