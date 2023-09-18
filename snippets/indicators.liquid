@@ -11,9 +11,16 @@
   {% endif %}
 {% endif %}
 {% if data.metafields.product.preorder == true %}
-  <span class="preorder-indicator indicator">
-    {{ 'sign up' | escape }}
-  </span>
+
+  {% if data.metafields.product.new_product == true %}
+    <span class="new-indicator indicator">
+      {{ 'new' | escape }}
+    </span>
+  {% else %}
+    <span class="preorder-indicator indicator">
+      {{ 'sign up' | escape }}
+    </span>
+  {% endif %}
 {% endif %}
 {% if data.available == false %}
   {% if data.metafields.product.preorder == true %}
