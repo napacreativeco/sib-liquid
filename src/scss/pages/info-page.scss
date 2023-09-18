@@ -43,3 +43,12 @@
         
     }
 }
+
+@media screen and (max-width: 767px) {
+    .info-page {
+        .info-wrapper {
+            grid-template-columns: 1fr;
+            left: 0;
+        }
+    }
+}
