@@ -96,8 +96,8 @@
     
           button {
             margin: 14px auto 0 auto;
-            display: inline-block;
-            width: auto;
+            display: inline-block !important;
+            width: auto !important;
             padding: 10px 40px;
             font-size: var(--14px);
             font-family: var(--mingliu);
