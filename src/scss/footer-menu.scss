@@ -30,13 +30,17 @@
             z-index: 99;
             pointer-events: all;
             width: 100%;
-            max-width: 28vw;
+            max-width: 371px;
+            height: 496px;
             transform: translateX(2000px);
             transition: all 0.5s ease-in-out;
 
             .top {
                 border-bottom: var(--border-blk);
                 width: 100%;
+                height: 57px;
+                display: flex;
+                align-items: center;
 
                 ul {
                     display: flex;
@@ -45,6 +49,7 @@
                     overflow: hidden;
                     gap: 0px;
                     padding: 12px 10px;
+                    width: 100%;
 
                     li {
                         padding: 6px;
@@ -73,7 +78,7 @@
             .filters {
                 width: 100%;
                 overflow-y: scroll;
-                max-height: 44vh;
+                height: 390px;
                 -ms-overflow-style: none;  /* IE and Edge */
                 scrollbar-width: none;  /* Firefox */
 
@@ -89,7 +94,7 @@
                         border-bottom: var(--border-blk);
                         padding: 16px;
                         counter-increment: filters;
-                        height: calc(50vh / 5 + 1px);
+                        height: calc(390px / 5 + 1px);
                         display: flex;
                         align-items: center;
 
@@ -123,13 +128,17 @@
             .bottom {
                 width: 100%;
                 border-top: var(--border-blk);
-                padding: 12px;
+                padding: 0 12px;
+                height: 48px;
+                display: flex;
+                align-items: center;
 
                 ul {
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
                     gap: 20px;
+                    width: 100%;
                 }
                 
                 a {
@@ -188,17 +197,22 @@
         .footer-menu-wrapper {
 
             .filter-menu {
-                max-width: 86vw;
+                max-width: 82vw;
                 margin-right: 0px;
                 margin-bottom: 10px;
 
                 .top  {
-                    // padding: 0 20px;
+                    height: 60px;
+
                     ul {
                         justify-content: space-between;
                         overflow-x: scroll;
                         max-width: 100%;
                     }
+                }
+
+                .bottom {
+                    height: 49px;
                 }
             }
 
