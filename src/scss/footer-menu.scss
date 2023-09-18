@@ -30,15 +30,15 @@
             z-index: 99;
             pointer-events: all;
             width: 100%;
-            max-width: 371px;
-            height: 496px;
+            max-width: 299px;
+            height: 405px;
             transform: translateX(2000px);
             transition: all 0.5s ease-in-out;
 
             .top {
                 border-bottom: var(--border-blk);
                 width: 100%;
-                height: 57px;
+                height: 47px;
                 display: flex;
                 align-items: center;
 
@@ -78,7 +78,7 @@
             .filters {
                 width: 100%;
                 overflow-y: scroll;
-                height: 390px;
+                height: 316px;
                 -ms-overflow-style: none;  /* IE and Edge */
                 scrollbar-width: none;  /* Firefox */
 
@@ -94,7 +94,7 @@
                         border-bottom: var(--border-blk);
                         padding: 16px;
                         counter-increment: filters;
-                        height: calc(390px / 5 + 1px);
+                        height: calc(316px / 5 + 1px);
                         display: flex;
                         align-items: center;
 
@@ -129,7 +129,7 @@
                 width: 100%;
                 border-top: var(--border-blk);
                 padding: 0 12px;
-                height: 48px;
+                height: 39px;
                 display: flex;
                 align-items: center;
 
@@ -200,9 +200,10 @@
                 max-width: 82vw;
                 margin-right: 0px;
                 margin-bottom: 10px;
-
+                height: auto;
+                
                 .top  {
-                    height: 60px;
+                    height: 50px;
 
                     ul {
                         justify-content: space-between;
