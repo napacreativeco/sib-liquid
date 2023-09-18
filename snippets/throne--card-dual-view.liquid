@@ -11,16 +11,18 @@
 
         {% render 'indicators', data: product %}
         
-        <div class="name">
-          <a href="{{ product.url }}" title="{{ product.title }}">
-            <h3>{{ product.title }}</h3>
-          </a>
-        </div>
-
-        <div class="short-description">
-          <a href="{{ product.url }}" title="{{ product.title }}">
-            <span>{{ product.metafields.product.short_description.value }}</span>
-          </a>
+        <div class="data">
+          <div class="name">
+            <a href="{{ product.url }}" title="{{ product.title }}">
+              <h3>{{ product.title }}</h3>
+            </a>
+          </div>
+  
+          <div class="short-description">
+            <a href="{{ product.url }}" title="{{ product.title }}">
+              <span>{{ product.metafields.product.short_description.value }}</span>
+            </a>
+          </div>
         </div>
 
       </div>

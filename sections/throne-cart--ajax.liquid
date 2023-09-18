@@ -318,7 +318,8 @@
           href="{{ settings.featured_collection.url | default: '/collections/all' }}"
           type="submit"
           name="checkout"
-          form="CartDrawer-Form">
+          form="CartDrawer-Form"
+          class="ming">
           {{ 'continue shopping' | escape | downcase }}
         </a>
 
@@ -338,7 +339,7 @@
         <span>{{ 'your cart is empty' | escape | downcase }}</span>
       </div>
       <div class="action">
-        <a href="{{ settings.featured_collection.url | default: '/collections/all' }}" title="{{ 'Continue shopping' | escape }}">
+        <a class="ming" href="{{ settings.featured_collection.url | default: '/collections/all' }}" title="{{ 'Continue shopping' | escape }}">
           {{ 'continue shopping' | escape | downcase }}
         </a>
       </div>
