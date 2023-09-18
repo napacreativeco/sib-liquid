@@ -206,7 +206,7 @@
 
         $(document).on('click', function(e) {
           e.preventDefault();
-          if (e.target.matches('.newsletter-modal') || e.target.matches('input')) {
+          if (e.target.matches('.newsletter-modal') || e.target.matches('input') || e.target.matches('button')) {
             
           } else {
             $('.shopify-section:has(.newsletter-modal)').css('display', 'none');
