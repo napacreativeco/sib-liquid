@@ -1,11 +1,21 @@
 <div class="info-page">
     <div class="info-wrapper">
         <aside class="sidebar">
-            {% for link in linklists.main-menu.links %}
-                
-            {% endfor %}
+            <ul>
+                {% for link in linklists.info-menu.links %}
+                    <li>
+                        <a href="{{ link.url }}" {% if request.path contains link.url %}class="active"{% endif %}>
+                            {{ link.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
         </aside>
-        {{ page.title }}
-        {{ page.content }}
+
+        <div class="page-content">
+            {{ page.title }}
+            {{ page.content }}
+        </div>
     </div>
 </div>
+

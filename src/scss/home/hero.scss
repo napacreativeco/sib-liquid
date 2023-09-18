@@ -263,12 +263,13 @@
             grid-template-rows: 1fr 1fr;
 
             .left {
-                height: 50vh;
+                height: 85svh;
                 display: flex;
                 align-items: flex-end;
-                padding: 0 0 5.4vh 20px;
+                padding: 0 0 0 20px;
                 position: absolute;
                 z-index: 99;
+                
                 .hero-link {
                     font-size: 16px;
                     cursor: pointer;
