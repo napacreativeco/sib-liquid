@@ -55,13 +55,14 @@
             /* Indicators */
             .indicator,
             .indicator {
-                font-size: var(--8px);
+                font-size: 10px;
                 font-style: italic;
                 background: #D2D2D2;
                 color: var(--white);
                 padding: 4px;
                 position: relative;
                 top: -4px;
+                white-space: nowrap;
             }
             .indicator:empty,
             .indicator:empty {
