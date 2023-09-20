@@ -28,6 +28,10 @@
       background: var(--white);
       border: 1px solid var(--black);
 
+      p {
+        text-transform: uppercase !important;
+      }
+
       .action-bar {
         background: var(--white);
         color: var(--black);
