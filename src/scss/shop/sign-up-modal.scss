@@ -23,6 +23,27 @@
       border: var(--border-blk) !important;
     }
 
+    input[type="submit"],
+    button {
+      margin: 14px auto 0 auto;
+      display: block;
+      padding: 10px 0px;
+      width: 100%;
+      font-size: var(--14px);
+      font-family: var(--mingliu);
+      text-transform: lowercase;
+      -webkit-border-radius: 0% !important;
+      -moz-border-radius: 0% !important;
+      border-radius: 0% !important;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    button:hover {
+      background: var(--black);
+      color: var(--red);
+    }
+
     .modal-wrapper {
         background: var(--white);
         color: var(--black);    
@@ -77,26 +98,7 @@
                 color: var(--black);
               }
         
-              input[type="submit"],
-              button {
-                margin: 14px auto 0 auto;
-                display: block;
-                padding: 10px 0px;
-                width: 100%;
-                font-size: var(--14px);
-                font-family: var(--mingliu);
-                text-transform: lowercase;
-                -webkit-border-radius: 0% !important;
-                -moz-border-radius: 0% !important;
-                border-radius: 0% !important;
-                cursor: pointer;
-              }
-        
-              input[type="submit"]:hover,
-              button:hover {
-                background: var(--black);
-                color: var(--red);
-              }
+
         }
     }
 }
