@@ -20,6 +20,8 @@
 
   .newsletter-modal {
 
+    svg { display: none !important; }
+
     .newsletter-wrapper {
       max-width: 420px;
       background: var(--white);
