@@ -21,6 +21,8 @@
     width: 100%;
     min-height: 100vh;
     overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
     
     .cart-nav {
         display: flex;
@@ -94,6 +96,8 @@
             max-height: 60vh;
             overflow-y: scroll;
             font-size: 16px;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
 
             li.cart-item {
                 .cart-item-wrapper {
@@ -113,6 +117,7 @@
                 .product-title a {
                     text-decoration: none;
                     font-family: var(--mingliu);
+                    font-size: 14px;
                 }
 
                 .quantity {
@@ -121,6 +126,7 @@
                     flex-direction: row;
                     font-family: var(--mingliu);
                     gap: 5px;
+                    font-size: 14px;
                 }
 
                 .quantity-wrapper {
@@ -140,15 +146,18 @@
                         text-decoration: none;
                         font-family: var(--mingliu);
                         color: var(--black);
+                        font-size: 14px;
                     }
 
                     button {
                         font-family: var(--mingliu);
                         color: var(--black);
+                        font-size: 14px;
                     }
 
                     input[type="number"] {
                         font-family: var(--mingliu);
+                        font-size: 14px;
                         color: var(--black);
                         max-width: 1.6rem;
                         text-align: center;
@@ -172,6 +181,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    font-size: 14px;
 
                     svg {
                         width: 12px;
@@ -181,25 +191,12 @@
                 .variants.size {
                     text-align: right;
                     font-family: var(--mingliu);
-                }
-
-                .color-wrapper {
-                    display: flex;
-                    justify-content: center;
-                    flex-direction: row;
-                    gap: 10px;
-                    flex-wrap: wrap;
-
-                    .color-swatch {
-                        width: 20px;
-                        height: 20px;
-                        display: block;
-                        border: var(--border-blk);
-                    }
+                    font-size: 14px;
                 }
 
                 .product-price {
                     text-align: center;
+                    font-size: 14px;
                     
                     span.hidden {
                         display: block !important;
@@ -208,10 +205,15 @@
 
                 .delete {
                     text-align: right;
+                    font-size: 14px;
                 }
 
             }
 
+        }
+
+        ul.cart-items::-webkit-scrollbar {
+            display: none;
         }
 
         /* Subtotal */
@@ -220,6 +222,7 @@
             border-bottom: var(--border-blk);
             padding: 20px 0;
             font-family: var(--mingliu);
+            font-size: 14px;
 
             .subtotal-wrapper {
                 display: flex;
@@ -291,6 +294,10 @@
         a { text-decoration: underline; }
     }
 
+}
+
+.cart-overlay::-webkit-scrollbar {
+    display: none;
 }
 
 // 
