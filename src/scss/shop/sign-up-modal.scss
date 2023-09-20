@@ -13,6 +13,10 @@
     backdrop-filter: blur(2px);
     z-index: 9;
 
+    p {
+      text-transform: uppercase !important;
+    }
+
     input[type="email"] {
       position: relative !important;
       border: var(--border-blk) !important;
@@ -89,8 +93,8 @@
             gap: 10px;
             padding: 20px;
 
-            p:first-of-type {
-              text-transform: uppercase !important;
+            p {
+              text-transform: lowercase !important;
             }
 
             // input {
