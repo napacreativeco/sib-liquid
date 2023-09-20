@@ -50,9 +50,9 @@
 
         <div class="product-title desktop">
           <h1>
-            {{ product.title }} 
+            {{ product.title | downcase }} 
             {% if product.metafields.product.short_description != blank %}
-              {{ product.metafields.product.short_description | prepend: ' / ' }}
+              {{ product.metafields.product.short_description | prepend: ' / ' | downcase }}
             {% endif %} 
             
             {% render 'indicators' data: product %}
@@ -89,7 +89,7 @@
               {%- when 'buy_buttons' -%}
                 <div class="button-holder">
                   {% if product.metafields.product.preorder == true %}
-                    <span class="preorder-button" style="text-transform: lowercase;">{{ 'sign up' | escape }}</span>
+                    <span class="preorder-button" style="text-transform: lowercase;">{{ 'sign up' | escape | downcase }}</span>
                   {% else %}
                     {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
                   {% endif %}
@@ -136,7 +136,7 @@
         <div class="product-pagination new">
 
           <a href="{{ settings.featured_collection.url }}" title="{{ 'Back to all' | escape }}">
-            {{ 'Back to all' | escape | downcase }}
+            {{ 'back to all' | escape | downcase }}
           </a>
 
           {% for collect in product.collections %}
