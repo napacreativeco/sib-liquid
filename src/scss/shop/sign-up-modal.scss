@@ -44,7 +44,7 @@
       color: var(--red);
     }
 
-    div:has(input[type="email"]) {
+    div:has(input[type="email"]) > div {
       border: var(--border-blk);
     }
 
