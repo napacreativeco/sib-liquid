@@ -230,7 +230,7 @@
 
       $(document).on('click', function(e) {
         // e.preventDefault();
-        if (e.target.matches('.modal-wrapper') || e.target.matches('input') || e.target.matches('select') || e.target.matches('button')) {
+        if (e.target.matches('.modal-wrapper') || e.target.matches('input') || e.target.matches('select') || e.target.matches('button') || e.target.matches('.modal-wrapper')) {
           
         } else {
           $('.sign-up-modal').css('display', 'none');
