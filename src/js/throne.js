@@ -229,7 +229,7 @@
 
       $(document).on('click', function(e) {
         e.preventDefault();
-        if (e.target.matches('.modal-wrapper') || e.target.matches('input') || e.target.matches('select') || e.target.matches('button')) {
+        if (e.target.matches('.modal-wrapper') || e.target.matches('input') || e.target.matches('select') || e.target.matches('form')) {
           
         } else {
           $('.sign-up-modal').css('display', 'none');
