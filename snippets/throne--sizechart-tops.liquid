@@ -1,6 +1,6 @@
 <table class="size-chart-table size-chart-tops">
     <thead>
-      <th class="label">{{ 'size:' | escape }}</th>
+      <th class="label">{{ 'size:' | escape | downcase }}</th>
       {% if product.metafields.sizechart.size_chart_tops.value.chest_s != blank
             or product.metafields.sizechart.size_chart_tops.value.length_s != blank %}
         <th>{{ 'S' | escape }}</th>
@@ -29,7 +29,7 @@
             or product.metafields.sizechart.size_chart_tops.value.chest_xl != blank
             or product.metafields.sizechart.size_chart_tops.value.chest_xxl != blank %}
         <tr id="chest">
-          <td class="label">{{ 'chest:' | escape }}</td>
+          <td class="label">{{ 'chest:' | escape | downcase }}</td>
           {% if product.metafields.sizechart.size_chart_tops.value.chest_s != blank %}
             <td>{{ product.metafields.sizechart.size_chart_tops.value.chest_s }}</td>
           {% endif %}
@@ -53,7 +53,7 @@
             or product.metafields.sizechart.size_chart_tops.value.length_xl != blank
             or product.metafields.sizechart.size_chart_tops.value.length_xxl != blank %}
         <tr id="length">
-          <td class="label">{{ 'Length:' | escape }}</td>
+          <td class="label">{{ 'length:' | escape | downcase }}</td>
           {% if product.metafields.sizechart.size_chart_tops.value.length_s != blank %}
             <td>{{ product.metafields.sizechart.size_chart_tops.value.length_s }}</td>
           {% endif %}

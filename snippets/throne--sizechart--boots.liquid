@@ -36,7 +36,7 @@
             or product.metafields.sizechart.size_chart_boots.value.boot-45 != blank
             or product.metafields.sizechart.size_chart_boots.value.boot-46 != blank %}
         <tr id="width">
-          <td class="label">{{ 'Width:' | escape }}</td>
+          <td class="label">{{ 'width:' | escape | downcase }}</td>
             {% if product.metafields.sizechart.size_chart_boots.value.boot-39 != blank %}
                 <td>{{ product.metafields.sizechart.size_chart_boots.value.boot-39 }}</td>
             {% endif %}
