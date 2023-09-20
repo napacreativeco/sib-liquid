@@ -18,6 +18,11 @@
       border: var(--border-blk) !important;
     }
 
+    div[role="combobox"] {
+      border-radius: 0px !important;
+      border: var(--border-blk) !important;
+    }
+
     .modal-wrapper {
         background: var(--white);
         color: var(--black);    
