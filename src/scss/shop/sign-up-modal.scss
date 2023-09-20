@@ -77,7 +77,8 @@
                 color: var(--black);
               }
         
-              input[type="submit"] {
+              input[type="submit"],
+              button {
                 margin: 14px auto 0 auto;
                 display: block;
                 padding: 10px 0px;
@@ -91,7 +92,8 @@
                 cursor: pointer;
               }
         
-              input[type="submit"]:hover {
+              input[type="submit"]:hover,
+              button:hover {
                 background: var(--black);
                 color: var(--red);
               }
