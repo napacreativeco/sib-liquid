@@ -83,6 +83,10 @@ body {
   touch-action: pan-y;
 }
 
+input[type="email"] {
+  border-radius: 0px !important;
+}
+
 main.page-container {
   position: relative;
   width: 100%;
