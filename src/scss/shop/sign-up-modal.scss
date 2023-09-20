@@ -75,27 +75,19 @@
             font-family: var(--mingliu);
         }
 
-        .warning {
-          text-align: center;
-          width: 100%;
-          font-size: var(--16px);
-          padding: 20px 40px 20px 40px;
-          text-transform: uppercase !important;
-        }
+        // .warning {
+        //   text-align: center;
+        //   width: 100%;
+        //   font-size: var(--16px);
+        //   padding: 20px 40px 20px 40px;
+        //   text-transform: uppercase !important;
+        // }
 
         .form {
             display: flex;
             flex-direction: column;
             gap: 10px;
             padding: 20px;
-
-            p:first-of-type {
-              text-transform: uppercase !important;
-            }
-
-            p {
-              text-transform: lowercase !important;
-            }
 
             // input {
             //     display: block;
