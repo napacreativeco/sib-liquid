@@ -44,9 +44,9 @@
       color: var(--red);
     }
 
-    div:has(input[type="email"]) > div {
-      border: var(--border-blk);
-    }
+    // div:has(input[type="email"]) > div {
+    //   border: var(--border-blk);
+    // }
 
     .modal-wrapper {
         background: var(--white);
