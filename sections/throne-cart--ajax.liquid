@@ -5,12 +5,20 @@
   <div class="cart-nav">
 
     <div class="cart-logo">
+      {% for collection in collections %}
+        {% case collection.handle %}
+          {% when settings.featured_collection %}
+            {% assign collection_url = collection.url %}
+        {% endcase %}
+      {% endfor %}
       {% if settings.navbar_logo_alt %}
-        <a href="{{ '/collections/all' | escape }}" title="{{ shop.name }}">
+        <a class="user-logo" href="{{ collection_url | default: '/collections/all' }}" title="{{ shop.name }}">
           <img id="user-logo-alt" src="{{ settings.navbar_logo_alt | image_url: width: 122 }}" alt="{{ shop.name }}" />
         </a>
       {% else %}
-        {% render 'logo-italic' %}
+        <a class="default-logo" href="{{ collection_url | default: '/collections/all' }}" title="{{ shop.name }}">
+          {% render 'logo-italic' %}
+        </a>
       {% endif %}
     </div>
 
