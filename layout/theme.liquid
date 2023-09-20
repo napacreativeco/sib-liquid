@@ -389,6 +389,10 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-
+    <style>
+      input[type="email"] {
+        border-radius: 0px !important;
+      }
+    </style>
   </body>
 </html>
