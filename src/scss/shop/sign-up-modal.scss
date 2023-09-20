@@ -75,10 +75,6 @@
             font-family: var(--mingliu);
         }
 
-        p:first-of-type {
-          text-transform: uppercase !important;
-        }
-
         .warning {
           text-align: center;
           width: 100%;
@@ -92,6 +88,10 @@
             flex-direction: column;
             gap: 10px;
             padding: 20px;
+
+            p:first-of-type {
+              text-transform: uppercase !important;
+            }
 
             // input {
             //     display: block;
