@@ -91,32 +91,32 @@
             color: var(--black);
           }
     
-          input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            font-size: var(--12px);
-            border-radius: 0px !important;
-            font-family: inherit;
-            color: var(--black);
-            border: 1px solid var(--black) !important;
-          }
+          // input[type="email"] {
+          //   width: 100%;
+          //   padding: 10px;
+          //   font-size: var(--12px);
+          //   border-radius: 0px !important;
+          //   font-family: inherit;
+          //   color: var(--black);
+          //   border: 1px solid var(--black) !important;
+          // }
     
-          button {
-            margin: 14px auto 0 auto !important;
-            display: inline-block !important;
-            width: auto !important;
-            padding: 10px 40px;
-            font-size: var(--14px);
-            font-family: var(--mingliu);
-            text-transform: lowercase;
-            -webkit-border-radius: 0% !important;
-            -moz-border-radius: 0% !important;
-            border-radius: 0% !important;
-            border: 1px solid var(--black) !important;
-            border-width: 1px !important;
-            padding: 6px 14px !important;
-            cursor: pointer;
-          }
+          // button {
+          //   margin: 14px auto 0 auto !important;
+          //   display: inline-block !important;
+          //   width: auto !important;
+          //   padding: 10px 40px;
+          //   font-size: var(--14px);
+          //   font-family: var(--mingliu);
+          //   text-transform: lowercase;
+          //   -webkit-border-radius: 0% !important;
+          //   -moz-border-radius: 0% !important;
+          //   border-radius: 0% !important;
+          //   border: 1px solid var(--black) !important;
+          //   border-width: 1px !important;
+          //   padding: 6px 14px !important;
+          //   cursor: pointer;
+          // }
     
           button:hover {
             background: var(--black);
