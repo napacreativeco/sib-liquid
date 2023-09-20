@@ -230,11 +230,16 @@
 
       $(document).on('click', function(e) {
         // e.preventDefault();
-        if (e.target.matches('.modal-wrapper') || e.target.matches('input') || e.target.matches('select') || e.target.matches('button') || e.target.matches('.modal-wrapper')) {
+        // if (e.target.matches('.modal-wrapper') || e.target.matches('input') || e.target.matches('select') || e.target.matches('button') || e.target.matches('.modal-wrapper')) {
           
-        } else {
+        // } else {
+        //   $('.sign-up-modal').css('display', 'none');
+        // }
+
+        if (e.target.matches('.modal-wrapper') || e.target.matches('.action-bar')) {
           $('.sign-up-modal').css('display', 'none');
         }
+
       });
 
     }
