@@ -10,11 +10,14 @@
         </div>
 
         <div class="newsletter-body">
+
+            {% comment %}  
             <div class="warning">
                 <span>
                     {{ settings.newsletter_warning | default: 'WARNING: SEVERE NECESSITY, \n IMMEDIATE ACTION REQUIRED' | newline_to_br }}
                 </span>
             </div>
+            {% endcomment %}
 
             <div class="newsletter-form">
                 <div id="omnisend-embedded-v2-65035bc445b1952a5b614157"></div>
