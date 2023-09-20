@@ -13,18 +13,18 @@
     backdrop-filter: blur(2px);
     z-index: 9;
 
-    input {
+    input[type="email"] {
       position: relative;
       //border-radius: 0px !important;
     }
     input[type="email"]::before {
       content: '';
-      border: var(--border-blk) !important;
+      border: var(--border-blk);
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      top: 1px;
+      right: 1px;
+      bottom: 1px;
+      left: 1px;
       z-index: 9;
     }
 
