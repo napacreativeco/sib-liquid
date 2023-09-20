@@ -5,6 +5,8 @@
 
         // Theme Color
         $('meta[name="theme-color"]').attr('content', '#000000');
+
+        $('.omnisend-mobile-container').find('style').remove();
     });
 
     function changeTheme() {
