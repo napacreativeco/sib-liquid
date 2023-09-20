@@ -339,16 +339,21 @@
         <span>{{ 'your cart is empty' | escape | downcase }}</span>
       </div>
       <div class="action">
-        <a class="ming" href="{{ settings.featured_collection.url | default: '/collections/all' }}" title="{{ 'Continue shopping' | escape }}">
-          {{ 'continue shopping' | escape | downcase }}
-        </a>
+        {% for collection in collections %}
+          {% case collection.handle %}
+            {% when settings.featured_collection %}
+              <a class="ming" href="{{ collection.url | default: '/collections/all' }}" title="{{ 'Continue shopping' | escape }}">
+                {{ 'continue shopping' | escape | downcase }}
+              </a>
+          {% endcase %}
+        {% endfor %}
       </div>
     </div>
 
     {% comment %} {% render 'credit-cards' %} {% endcomment %}
 
     <div class="cart-disclaimer">
-      <p>{{ 'For further details please consult the ' | escape | downcase }}<a href="/pages/privacy-policy#return-policy" title="Return Policy">{{ 'Return Policy' | escape | downcase }}</a>
+      <p>{{ 'For further details please consult the ' | escape | downcase }}<a href="/pages/return-policy" title="Return Policy">{{ 'Return Policy' | escape | downcase }}</a>
       </p>
     </div>
 
