@@ -44,6 +44,10 @@
       color: var(--red);
     }
 
+    div:has(input[type="email"]) {
+      border: var(--border-blk);
+    }
+
     .modal-wrapper {
         background: var(--white);
         color: var(--black);    
