@@ -68,7 +68,11 @@
             .indicator:empty {
                 padding: 0px;
             }
-
+            
+            .new-indicator {
+                background: var(--black);
+                color: var(--red);
+            }
             .preorder-indicator {
                 font-size: var(--10px);
                 font-style: italic;
