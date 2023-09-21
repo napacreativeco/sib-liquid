@@ -234,6 +234,50 @@
 /*
 ----------------------------------------------------------------
 */
+@media screen and (max-width: 900px) {
+
+    .homepage-hero {
+        .hero-wrapper {
+
+            .right {
+                #top-left {
+                    top: 20vh;
+                    left: 10%;
+                    max-width: 170px;
+                    //animation-delay: 300;
+                }
+            
+                #top-right {
+                    top: -12vh;
+                    max-width: 170px;
+                    right: 5vw;
+                    //animation-delay: 300;
+                    
+                }
+            
+                #bottom-left {
+                    bottom: -17vh;
+                    left: -3vw;
+                    max-width: 140px;
+                    //animation-delay: 300;
+                    z-index: 2;
+                }
+            
+                #bottom-right {
+                    bottom: -22vh;
+                    right: 10%;
+                    //animation-delay: 300;
+                }
+            
+                #cloud {
+                    z-index: 99;
+                    //animation-delay: 300;
+                }
+            }
+        }
+    }
+
+}
 @media screen and (max-width: 767px) {
     
     .logo {
