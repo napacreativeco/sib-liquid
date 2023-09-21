@@ -80,7 +80,7 @@
                     {% endcomment %}
                     <div class="product-title">
                       <a href="{{ item.url }}">
-                        <span class="product">{{- item.product.title | escape -}}</span>
+                        <span class="product">{{ item.product.title | downcase |escape }}</span>
                       </a>
                     </div>
 
@@ -89,7 +89,7 @@
                     {% endcomment %}
                     <div class="product-title">
                       <a href="{{ item.url }}">
-                        <span class="short-description">{{ item.product.metafields.product.short_description }}</span>
+                        <span class="short-description">{{ item.product.metafields.product.short_description | downcase }}</span>
                       </a>
                     </div>
 
@@ -132,7 +132,7 @@
 
                               {% when 'Size' %}
                                 <span class="product-option">
-                                  {{ option.value }}
+                                  {{ option.value | downcase }}
                                 </span>
 
                             {% endcase %}
