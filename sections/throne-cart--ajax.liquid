@@ -297,13 +297,13 @@
       <div class="subtotal">
         <div class="subtotal-wrapper">
           <div class="left">
-              <span>{{ 'Subtotal' | escape }}</span>
+              <span>{{ 'subtotal' | downcase | escape }}</span>
           </div>
           <div class="right">
               <span class="subtotal-price">
-                  {{ cart.total_price | money_without_trailing_zeros | remove: '$' }}
+                  {{ cart.total_price | money_without_trailing_zeros | remove: '$' | downcase }}
               </span>
-              <span>{{ shop.currency }}</span>
+              <span>{{ shop.currency | downcase }}</span>
           </div>
         </div>
       </div>
