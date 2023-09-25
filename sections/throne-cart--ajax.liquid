@@ -247,7 +247,7 @@
                       </div>
 
                       <div class="product-price">
-                        {{ item.final_line_price | money_without_trailing_zeros | remove: '$' }}
+                        {{ item.final_line_price | money_without_trailing_zeros | remove: '$' | downcase }}
                       </div>
 
                     </div>
