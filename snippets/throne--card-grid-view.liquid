@@ -10,10 +10,6 @@
 
       {% comment %} DATA {% endcomment %}
       <div class="product-data">
-
-        <div class="indicator-holder">
-          {% render 'indicators', data: product %}
-        </div>
         
         <div class="product-data-wrapper">
 
@@ -29,6 +25,10 @@
             </a>
           </div>
 
+          <div class="indicator-holder">
+            {% render 'indicators', data: product %}
+          </div>
+          
         </div>
       </div>
 
