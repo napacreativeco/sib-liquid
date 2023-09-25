@@ -228,13 +228,8 @@
         display: "flex"
       });
 
+      // Close modal
       $(document).on('click', function(e) {
-        // e.preventDefault();
-        // if (e.target.matches('.modal-wrapper') || e.target.matches('input') || e.target.matches('select') || e.target.matches('button') || e.target.matches('.modal-wrapper')) {
-          
-        // } else {
-        //   $('.sign-up-modal').css('display', 'none');
-        // }
 
         if (e.target.matches('.modal-wrapper') || e.target.matches('.action-bar')) {
           $('.sign-up-modal').css('display', 'none');
@@ -244,8 +239,25 @@
 
     }
 
+    var openSoldoutModal = function() {
+
+      gsap.to(".soldout-modal", {
+        display: "flex"
+      });
+
+      // Close modal
+      $(document).on('click', function(e) {
+
+        if (e.target.matches('.modal-wrapper') || e.target.matches('.action-bar')) {
+          $('.soldout-modal').css('display', 'none');
+        }
+
+      });
+    }
+
     $('.preorder-indicator').on('click', openPreorderModal);
-    $('.preorder-button').on('click', openPreorderModal);
+    $('.preorder-button.with-popup').on('click', openPreorderModal);
+    $('.preorder-button.with-popup.soldout-signup').on('click', openSoldoutModal);
       
 
     /* 

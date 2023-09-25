@@ -89,9 +89,21 @@
               {%- when 'buy_buttons' -%}
                 <div class="button-holder">
                   {% if product.metafields.product.preorder == true %}
-                    <span class="preorder-button" style="text-transform: lowercase;">{{ 'sign up' | escape | downcase }}</span>
+
+                      <span class="preorder-button with-popup" style="text-transform: lowercase;">{{ 'sign up' | escape | downcase }}</span>
+
+                  {%  elsif product.metafields.product.preorder == false and product.metafields.product.sold_out_signup == true %}
+
+                    <span class="preorder-button with-popup soldout-signup" style="text-transform: lowercase;">{{ 'sold out' | escape | downcase }}</span>
+
+                  {%  elsif product.metafields.product.preorder == false and product.metafields.product.sold_out_signup == false %}
+
+                    <span class="preorder-button" style="text-transform: lowercase;">{{ 'sold out' | escape | downcase }}</span>
+
                   {% else %}
+
                     {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+                  
                   {% endif %}
                 </div>
 
@@ -180,6 +192,7 @@
   </div>
 
   {% render 'throne--sign-up-modal' data: product %}
+  {% render 'throne--soldout-modal' data: product %}
 
   {% comment %}
   Swiper

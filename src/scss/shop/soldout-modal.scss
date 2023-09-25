@@ -1,0 +1,130 @@
+.soldout-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+    z-index: 9;
+
+    input[type="email"] {
+      position: relative !important;
+      border: var(--border-blk) !important;
+      //border-radius: 0px !important;
+    }
+
+    input[type="email"]::before {
+      content: '';
+      border: var(--border-blk);
+      position: absolute !important;
+      top: 1px !important;
+      right: 1px !important;
+      bottom: 1px !important;
+      left: 1px !important;
+      z-index: 9 !important;
+    }
+
+    [role="combobox"] {
+      border-radius: 0px !important;
+      border: var(--border-blk) !important;
+    }
+
+    input[type="submit"],
+    button {
+      margin: 14px auto 0 auto;
+      display: block;
+      padding: 10px 0px;
+      width: 100%;
+      font-size: var(--14px);
+      font-family: var(--mingliu);
+      text-transform: lowercase;
+      -webkit-border-radius: 0% !important;
+      -moz-border-radius: 0% !important;
+      border-radius: 0% !important;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    button:hover {
+      background: var(--black);
+      color: var(--red);
+    }
+
+    // div:has(input[type="email"]) > div {
+    //   border: var(--border-blk);
+    // }
+
+    .modal-wrapper {
+        background: var(--white);
+        color: var(--black);    
+        max-width: 98%;
+        width: 404px;
+        border: var(--border-blk);
+
+        .title-bar {
+            border-bottom: var(--border-blk);
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-family: var(--mingliu);
+        }
+
+        // .warning {
+        //   text-align: center;
+        //   width: 100%;
+        //   font-size: var(--16px);
+        //   padding: 20px 40px 20px 40px;
+        //   text-transform: uppercase !important;
+        // }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+
+            // input {
+            //     display: block;
+            //     background: var(--white);
+            //     color: var(--black);
+            //     border: 1px solid var(--black);
+            //     border-radius: 0px !important;
+            //     width: 370px;
+            //     // margin: 10px auto;
+            //   }
+        
+            //   input::placeholder {
+            //     color: var(--black);
+            //   }
+        
+            //   input[type="email"],
+            //   select {
+            //     width: 370px;
+            //     max-width: 100%;
+            //     padding: 10px;
+            //     font-size: var(--12px);
+            //     border-radius: 0px !important;
+            //     font-family: inherit;
+            //     color: var(--black);
+            //   }
+        
+
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+  .soldout-modal {
+
+    .modal-wrapper {
+      max-width: 96%;
+      margin: 0 auto;
+    }
+  }
+}
