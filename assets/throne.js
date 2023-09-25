@@ -257,7 +257,7 @@
 
     $('.preorder-indicator').on('click', openPreorderModal);
     $('.preorder-button.with-popup').on('click', openPreorderModal);
-    $('.preorder-button.with-popup.soldout-signup').on('click', openSoldoutModal);
+    $('.preorder-button.soldout-signup').on('click', openSoldoutModal);
       
 
     /* 
