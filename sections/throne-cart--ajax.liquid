@@ -199,8 +199,8 @@
 
                       <div class="product-title">
                         <a href="{{ item.url }}">
-                          <span class="product">{{- item.product.title | escape -}}</span>{{ ' / ' | escape }}
-                          <span class="short-description">{{ item.product.metafields.product.short_description }}</span>
+                          <span class="product">{{ item.product.title | downcase | escape }}</span>{{ ' / ' | escape }}
+                          <span class="short-description">{{ item.product.metafields.product.short_description | downcase }}</span>
                         </a>
                       </div>
 
@@ -213,7 +213,7 @@
 
                                 {% when 'Size' %}
                                   <span class="product-option">
-                                    {{ 'size: ' | escape }} {{ option.value }}
+                                    {{ 'size: ' | escape | downcase }} {{ option.value | downcase }}
                                   </span>
 
                               {% endcase %}
@@ -226,7 +226,7 @@
                       <div class="quantity" role="cell">
                         <div class="quantity-wrapper">
 
-                          <span>{{ 'quantity: ' | escape }}</span>
+                          <span>{{ 'quantity: ' | downcase | escape }}</span>
 
                           <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | minus: 1 }}" > 
                               {{ '-' | escape }} 
@@ -255,7 +255,7 @@
                     <div class="actions">
                       <div class="delete">
                         <a data-ajax-cart-request-button href="{{ item.url_to_remove }}" rel="{{ item.id }}">
-                          {{ 'delete' | escape }}
+                          {{ 'delete' | downcase | escape }}
                         </a>
                       </div>
                     </div>
