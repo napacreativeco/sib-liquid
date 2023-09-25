@@ -92,13 +92,9 @@
 
                       <span class="preorder-button with-popup" style="text-transform: lowercase;">{{ 'sign up' | escape | downcase }}</span>
 
-                  {%  elsif product.metafields.product.preorder == false and product.metafields.product.sold_out_signup == true %}
+                  {%  elsif product.metafields.product.sold_out_signup == true %}
 
                     <span class="preorder-button soldout-signup" style="text-transform: lowercase;">{{ 'sold out' | escape | downcase }}</span>
-
-                  {%  elsif product.metafields.product.preorder == false and product.metafields.product.sold_out_signup == false %}
-
-                    <span class="preorder-button" style="text-transform: lowercase;">{{ 'sold out' | escape | downcase }}</span>
 
                   {% else %}
 
