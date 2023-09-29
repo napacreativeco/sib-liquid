@@ -1,5 +1,7 @@
 asset container
 
+{{ section.settings.plain_image }}
+
 {% schema %}
     {
       "name": "Asset Container",
@@ -7,9 +9,9 @@ asset container
       "class": "asset-container",
       "settings": [
         {
-          "type": "text",
-          "id": "header",
-          "label": "Header"
+            "type": "image_picker",
+            "id": "plain_image",
+            "label": "Image"
         }
       ]
     }
