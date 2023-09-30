@@ -8,7 +8,7 @@
         display: none !important;
     }
 </style>
-<model-viewer id="first" disable-zoom src="{{ section.settings.glb_file | defaukt: 'https://cdn.shopify.com/s/files/1/2315/8873/files/statue.glb?v=1696033230' }}" touch-action="pan-y" interaction-prompt-threshold="0" interaction-prompt="none" shadow-intensity="1" camera-controls="" ar-status="not-presenting">
+<model-viewer id="first" disable-zoom src="{{ section.settings.glb_file | default: 'https://cdn.shopify.com/s/files/1/2315/8873/files/statue.glb?v=1696033230' }}" touch-action="pan-y" interaction-prompt-threshold="0" interaction-prompt="none" shadow-intensity="1" camera-controls="" ar-status="not-presenting">
 </model-viewer>
 
 {{ section.settings.plain_image }}
