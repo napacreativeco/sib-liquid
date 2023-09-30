@@ -40,6 +40,12 @@
         "type": "throne-collection-page",
         "settings": {
         }
+      },
+      "asset-container": {
+        "type": "asset-container",
+        "settings": {
+          "glb_file": "https:\/\/cdn.shopify.com\/s\/files\/1\/2315\/8873\/files\/statue.glb?v=1696033230"
+        }
       }
     },
     "content_for_index": [
