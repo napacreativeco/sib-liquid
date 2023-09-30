@@ -1,10 +1,13 @@
 <div class="contact-update">
-  <div class="title">
-    <h1>{{ 'contact' | downcase }}</h1>
+  <div class="header">
+    <div class="title">
+      <h1>{{ 'contact' | downcase }}</h1>
+    </div>
+    <div class="content">
+      {{ page.content }}
+    </div>
   </div>
-  <div class="content">
-    {{ page.content }}
-  </div>
+
   {% section 'asset-container' %}
 </div>
 
