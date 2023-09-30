@@ -1,60 +1,39 @@
 <div class="blog-container lookbook-blog">
     <div class="lookbook-blog-wrapper">
 
+
+        {% comment %} Selector {% endcomment %}
+        <div class="selector-holder">
+            <select class="resizeselect collection-selector">
+                {%- for post in blog.articles -%}
+                    <option value="{{ post.id }}">{{ post.title }}</option>
+                {% endfor %}
+            </select>
+            <div class="icon">
+                {% render 'icon-caret' %}
+            </div>
+        </div>
+        
         <section class="blog-post-collection">
 
-            {% comment %} Selector {% endcomment %}
-            <div class="selector-holder">
-                <select class="resizeselect collection-selector">
-                    {%- for post in blog.articles -%}
-                        <option value="{{ post.id }}">{{ post.title }}</option>
-                    {% endfor %}
-                </select>
-                <div class="icon">
-                    {% render 'icon-caret' %}
-                </div>
-            </div>
+
 
             {%- for post in blog.articles -%}
-                <article class="article-component" style="margin: 0 0 80px 0;" id="{{ post.id }}">
-                    <div class="swiper-{{ forloop.index }} swiper">
-
-                        <div class="swiper-header">
-                            <span class="swiper-button-prev slider-nav-link">{{ '<' | escape }}</span>
-                            <div class="swiper-pagination"></div>
-                            <span class="swiper-button-next slider-nav-link">{{ '>' | escape }}</span>
-                        </div>
+                <article class="article-component" id="{{ post.id }}">
                     
-                        <div class="swiper-wrapper">
-                            {% for entry in post.metafields.lookbook.entries.value %}
-                                <div class="swiper-slide">
-                                    <style>
-                                        .lookbook-slide-img {
-                                            background: url('{{ entry.image | image_url: width: 2200 }}'); 
-                                            background-size: cover; 
-                                            background-position: center center;
-                                        }
-                                        @media screen and (max-width: 767px) {
-                                            .lookbook-slide-img {
-                                                background: url('{{ entry.image_mobile | image_url: width: 2200 }}'); 
-                                                background-size: cover; 
-                                                background-position: center center;
-                                            }
-                                        }
-                                    </style>
-                                    <div class="image lookbook-slide-img">
-                                        &nbsp;
-                                    </div>
-                                    <div class="caption">
-                                        <div class="caption-wrapper">
-                                            {{ entry.caption | metafield_tag }}
-                                        </div>
-                                    </div>
+                    {% for entry in post.metafields.lookbook.entries.value %}
+                        <div class="lookbook-item">
+                            <div class="image lookbook-slide-img">
+                                <img src="{{ entry.image | image_url: width: 2200 }}" alt="" />
+                            </div>
+                            <div class="caption">
+                                <div class="caption-wrapper">
+                                    {{ entry.caption | metafield_tag }}
                                 </div>
-                            {% endfor %}
+                            </div>
                         </div>
+                    {% endfor %}            
 
-                    </div>
                 </article>
             {% endfor %}
 
@@ -63,28 +42,36 @@
     </div>
 </div>
 
+{% comment %}  
 <script type="module">
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
+    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
 
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
-        clickable: true
-    },
-    
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    }
-});
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        freeMode: {
+            enabled: true,
+            sticky: false,
+        },
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+            clickable: true
+        },
+        
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
+    });
 </script>
+{% endcomment %}
 
 <script>
     (function($) {
@@ -93,7 +80,7 @@ const swiper = new Swiper('.swiper', {
             console.log('selected value: ' + selectedValue);
 
             $('.article-component').css('display', 'none');
-            $('#'+selectedValue).css('display', 'block');
+            $('#'+selectedValue).css('display', 'flex');
             
         });
 

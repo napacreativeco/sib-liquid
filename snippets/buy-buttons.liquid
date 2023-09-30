@@ -42,8 +42,8 @@
             endif
           -%}
 
-      <button id="ProductSubmitButton-{{ section_id }}" type="submit" name="add" class="product-form__submit" {%- if product.selected_or_first_available_variant.available == false %}disabled="disabled"{% endif %}>
-            <span>
+          <button id="ProductSubmitButton-{{ section_id }}" type="submit" name="add" class="product-form__submit" {%- if product.selected_or_first_available_variant.available == false %}disabled="disabled"{% endif %}>
+            <span class="buttons-not-added">
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 <style>
                   .sold-out-indicator { display: inline-block; }
@@ -52,6 +52,9 @@
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}
+            </span>
+            <span class="buttons-added">
+              {{ 'in cart' | downcase }}
             </span>
           </button>
 

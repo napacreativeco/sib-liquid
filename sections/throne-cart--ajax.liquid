@@ -283,11 +283,11 @@
             </p>
           </div>
 
-          <div class="ajax-messages">
+          {% comment %} <div class="ajax-messages">
             <div data-ajax-cart-messages="{{ item.key }}"></div>
-          </div>
+          </div> {% endcomment %}
 
-          <div id="CartDrawer-CartErrors" role="alert"></div>
+          {% comment %} <div id="CartDrawer-CartErrors" role="alert"></div> {% endcomment %}
         </form>
       </div>
 
@@ -358,10 +358,11 @@
       </div>
     </div>
 
-    {% comment %} {% render 'credit-cards' %} {% endcomment %}
+    {% render 'credit-cards' %}
 
     <div class="cart-disclaimer">
-      <p>{{ 'For further details please consult the ' | escape | downcase }}<a href="/pages/return-policy" title="Return Policy">{{ 'Return Policy' | escape | downcase }}</a>
+      <p>
+        {{ 'For further details please consult the ' | escape | downcase }}<a href="/pages/return-policy" title="Return Policy">{{ 'Return Policy' | escape | downcase }}</a>
       </p>
     </div>
 

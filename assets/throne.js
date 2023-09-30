@@ -3,8 +3,8 @@
     /* ============================================= */
     $(document).on('ready', function() {
 
-        // Theme Color
-        $('meta[name="theme-color"]').attr('content', '#000000');
+      // Theme Color
+      $('meta[name="theme-color"]').attr('content', '#000000');
 
     });
 
@@ -62,22 +62,19 @@
     ------------------------
     */
     $('.plus').on('click', function() {
-      
-        if ( $('.filter-menu').hasClass('filter-opened') ) {
-            $('.filter-menu').removeClass('filter-opened');
-        } else {
-            $('.filter-menu').addClass('filter-opened');
-        }
-
+      if ( $('.filter-menu').hasClass('filter-opened') ) {
+          $('.filter-menu').removeClass('filter-opened');
+      } else {
+          $('.filter-menu').addClass('filter-opened');
+      }
     });
-    $('.pagination-link').on('click', function() {
-      
-        if ( $('.filter-menu').hasClass('filter-opened') ) {
-            $('.filter-menu').removeClass('filter-opened');
-        } else {
-            $('.filter-menu').addClass('filter-opened');
-        }
 
+    $('.pagination-link').on('click', function() {  
+      if ( $('.filter-menu').hasClass('filter-opened') ) {
+          $('.filter-menu').removeClass('filter-opened');
+      } else {
+          $('.filter-menu').addClass('filter-opened');
+      }
     });
   
     // ----------------------
@@ -205,15 +202,19 @@
           display: "flex"
         });
 
-        $(document).on('click', function(e) {
-          // e.preventDefault();
-          if (e.target.matches('.newsletter-modal') || e.target.matches('input') || e.target.matches('button')) {
+        // $(document).on('click', function(e) {
+        //   // e.preventDefault();
+        //   if (e.target.matches('.newsletter-modal') || e.target.matches('input') || e.target.matches('button')) {
             
-          } else {
-            $('.shopify-section:has(.newsletter-modal)').css('display', 'none');
-          }
-        });
+        //   } else {
+        //     $('.shopify-section:has(.newsletter-modal)').css('display', 'none');
+        //   }
+        // });
 
+    });
+
+    $('.close-newsletter').on('click', function() {
+      $('.shopify-section:has(.newsletter-modal)').css('display', 'none');
     });
 
 
@@ -230,11 +231,9 @@
 
       // Close modal
       $(document).on('click', function(e) {
-
         if (e.target.matches('.modal-wrapper') || e.target.matches('.action-bar')) {
           $('.sign-up-modal').css('display', 'none');
         }
-
       });
 
     }

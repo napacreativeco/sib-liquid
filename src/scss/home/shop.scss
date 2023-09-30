@@ -32,11 +32,11 @@
     }
     .new-indicator {
         background: var(--black);
-        color: var(--red);
+        color: var(--white);
     }
     .preorder-indicator {
-        background: #0029FF;
-        color: var(--white);
+        background: var(--white);
+        color: var(--red);
     }
     .soldout-indicator {
         background: #B3B3B3;
@@ -74,7 +74,7 @@
             width: 100%;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-gap: 60px 40px;
+            grid-gap: 40px 40px;
             animation: popUp 0.4s ease-in-out;
 
   
@@ -105,9 +105,9 @@
                     justify-content: flex-start;
 
                     .indicator-holder {
-                        //position: absolute;
-                        //right: calc(100% + 3px);
-                        top: -3px;
+                        position: absolute;
+                        right: calc(100% + 3px);
+                        top: 2px;
                     }
 
                     .name {
@@ -116,7 +116,7 @@
                         h3 {
                             margin: 0px;
                             font-family: var(--mingliu);
-                            font-size: 12px;
+                            font-size: 14px;
                             line-height: 1.3;
                         }
                     }
@@ -124,7 +124,7 @@
                     .short-description {
                         span {
                             // font-family: var(--mingliu);
-                            font-size: 12px;
+                            font-size: 14px;
                             color: #555555;
                         }
                     }
@@ -304,15 +304,16 @@
 
             /* Grid */
             ul.products-grid.grid {
-                padding: 0 35px;
+                padding: 0 15px;
                 grid-template-columns: repeat(2, 1fr);
 
                 li.item {
                     .product-data {
-                        // .indicator-holder {
-                        //     position: absolute;
-                        //     right: calc(100% + 1px);
-                        // }    
+                        .indicator-holder {
+                            position: relative;
+                            left: 0;
+                            top: 4px;
+                        }    
                     }
                 }
             }
@@ -373,6 +374,14 @@
 
                     li.item {
                         width: 100%;
+
+                        .product-data {
+                            display: block;
+
+                            .indicator {
+                                top: 6px;
+                            }
+                        }
                     }
                 }
                 

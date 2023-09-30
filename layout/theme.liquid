@@ -89,9 +89,16 @@
       {{ cart | json }}
     </script>
     
+    {% comment %}  
     <script type="application/json" data-ajax-cart-configuration>
       {
         "addToCartCssClass": "js-my-cart-open"
+      }
+    </script>
+    {% endcomment %}
+    <script type="application/json" data-ajax-cart-configuration>
+      {
+        "addToCartCssClass": "added-to-cart"
       }
     </script>
 
@@ -143,12 +150,6 @@
         }
 
       });
-    </script>
-
-    <script type="application/json" data-ajax-cart-configuration>
-      {
-        "addToCartCssClass": "js-my-cart-open"
-      }
     </script>
 
     <script>

@@ -1,0 +1,63 @@
+.contact-update {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+
+    .title {
+        display: block;
+        width: 100%;
+        text-align: left;
+        max-width: var(--thin);
+    }
+
+    .content {
+        display: block;
+        width: 100%;
+        text-align: right;
+        max-width: var(--thin);
+
+        p {
+            margin: 0;
+        }
+    }
+
+    model-viewer {
+        display: block;
+        position: relative;
+        contain: strict;
+        width: 60vw;
+        height: 60vh;
+        position: absolute;
+        /* top: 0; */
+        left: 0;
+        bottom: 30px;
+    }
+
+    model-viewer::part(default-progress-bar) {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .contact-update {
+        .title {
+            padding: 0 var(--side-padding);
+        }
+        .content {
+            padding: 0 var(--side-padding);
+        }
+        model-viewer {
+            display: block;
+            position: relative;
+            contain: strict;
+            width: 80vw;
+            height: 60vh;
+            position: absolute;
+            /* top: 0; */
+            left: 0;
+            bottom: 30px;
+        }
+    }
+}

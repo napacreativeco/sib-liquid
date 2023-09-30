@@ -30,7 +30,8 @@
             z-index: 99;
             pointer-events: all;
             width: 100%;
-            max-width: 299px;
+            //max-width: 299px;
+            max-width: 50%;
             height: 405px;
             transform: translateX(2000px);
             transition: all 0.5s ease-in-out;
@@ -66,6 +67,14 @@
                             color: var(--red);
                         }
 
+                    }
+
+                    li.active {
+
+                        a {
+                            background: #000000;
+                            color: var(--red);
+                        }
                     }
 
                 }

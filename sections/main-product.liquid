@@ -117,7 +117,20 @@
           <p>{{ product.description }}</p>
         </div>
 
-        <div class="size-chart">
+        <div class="details-panel">
+          <div class="technical-details">
+            {% if product.metafields.product.technical_details != blank %}
+              <details>
+                <summary>{{ settings.technical_details_title | default: "technical details" | downcase }}</summary>
+                <ul>
+                  {% for detail in product.metafields.product.technical_details.value %}
+                    <li>{{ detail }}</li>
+                  {% endfor %}
+                </ul>
+              </details>
+            {% endif %}
+          </div>
+          <div class="size-chart">
             {% if product.metafields.sizechart.size_chart_dress != blank %}
               <details>
                 <summary>{{ settings.size_chart_title | default: "size chart" | downcase }}</summary>
@@ -139,7 +152,9 @@
                 {% render 'throne--sizechart-boots' %}
               </details>
             {% endif %}
+          </div>
         </div>
+
       
         <div class="product-pagination new">
 

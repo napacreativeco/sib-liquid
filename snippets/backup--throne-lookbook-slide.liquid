@@ -1,0 +1,25 @@
+<div class="swiper-{{ forloop.index }} swiper">
+
+{% comment %}  {% endcomment %}
+    <div class="swiper-header">
+        <span class="swiper-button-prev slider-nav-link">{{ '<' | escape }}</span>
+        <div class="swiper-pagination"></div>
+        <span class="swiper-button-next slider-nav-link">{{ '>' | escape }}</span>
+    </div>
+
+    <div class="swiper-wrapper">
+        {% for entry in post.metafields.lookbook.entries.value %}
+            <div class="swiper-slide">
+                <div class="image lookbook-slide-img">
+                    <img style="max-width: 100%" src="{{ entry.image | image_url: width: 2200 }}" alt="" />
+                </div>
+                <div class="caption">
+                    <div class="caption-wrapper">
+                        {{ entry.caption | metafield_tag }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
