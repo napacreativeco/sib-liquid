@@ -98,6 +98,7 @@
             font-size: 16px;
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none;  /* Firefox */
+            text-transform: lowercase;
 
             li.cart-item {
                 .cart-item-wrapper {
@@ -198,6 +199,7 @@
                 .product-price {
                     text-align: center;
                     font-size: 14px;
+                    text-transform: lowercase;
                     
                     span.hidden {
                         display: block !important;

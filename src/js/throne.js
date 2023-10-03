@@ -220,44 +220,41 @@
 
     /* 
     ------------------------
-    Sign Up Popup
+    Popups
     ------------------------
     */
     var openPreorderModal = function() {
-
       gsap.to(".sign-up-modal", {
         display: "flex"
       });
-
-      // Close modal
-      $(document).on('click', function(e) {
-        if (e.target.matches('.modal-wrapper') || e.target.matches('.action-bar')) {
-          $('.sign-up-modal').css('display', 'none');
-        }
-      });
-
     }
 
     var openSoldoutModal = function() {
-
       gsap.to(".soldout-modal", {
         display: "flex"
       });
-
-      // Close modal
-      $(document).on('click', function(e) {
-
-        if (e.target.matches('.modal-wrapper') || e.target.matches('.action-bar')) {
-          $('.soldout-modal').css('display', 'none');
-        }
-
-      });
     }
+
+    $('.close-signup').on('click', function() {
+      $('.sign-up-modal').css('display', 'none');
+    });
+
+    $('.close-soldout').on('click', function() {
+      $('.soldout-modal').css('display', 'none');
+    });
+
 
     $('.preorder-indicator').on('click', openPreorderModal);
     $('.preorder-button.with-popup').on('click', openPreorderModal);
     $('.preorder-button.soldout-signup').on('click', openSoldoutModal);
-      
+    $('.soldout-signup').on('click', openSoldoutModal);
+
+    // When Product Sucessfull Added To Cart
+    // reload page on click
+    $('.buttons-added').on('click', function(e) {
+      e.preventDefault();
+      window.location = window.location;
+    });
 
     /* 
     ------------------------

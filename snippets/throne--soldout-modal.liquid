@@ -2,7 +2,12 @@
     <div class="modal-wrapper">
 
         <div class="title-bar action-bar">
-            {{ 'sign up' | escape | downcase }}
+            <span class="close-soldout">
+                {{ 'x' | escape }}
+            </span>
+            <span>
+                {{ 'sign up' | escape | downcase }}
+            </span>
         </div>
         
         <div class="form">

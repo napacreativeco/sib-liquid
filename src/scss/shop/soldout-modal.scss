@@ -68,11 +68,21 @@
         border: var(--border-blk);
 
         .title-bar {
+          position: relative;
             border-bottom: var(--border-blk);
             width: 100%;
             padding: 10px;
             text-align: center;
             font-family: var(--mingliu);
+
+            .close-soldout {
+              cursor: pointer;
+              position: absolute;
+              left: 15px;
+              color: #C5C5C5;
+              top: 50%;
+              transform: translateY(-62%);
+            }
         }
 
         // .warning {

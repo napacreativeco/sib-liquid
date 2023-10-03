@@ -48,15 +48,23 @@
                 <style>
                   .sold-out-indicator { display: inline-block; }
                 </style>
-                {{ 'products.product.sold_out' | t }}
+                {{ 'sold out' | downcase }}
               {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
+                {{ 'add to cart' | downcase }}
               {%- endif -%}
             </span>
-            <span class="buttons-added">
-              {{ 'in cart' | downcase }}
-            </span>
+
           </button>
+
+          
+            <span class="buttons-soldout soldout-signup">
+              {{ 'sold out' | downcase }}
+            </span>
+          
+
+          <span class="buttons-added">
+            {{ 'in cart' | downcase }}
+          </span>
 
         </div>
         

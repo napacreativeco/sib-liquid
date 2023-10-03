@@ -37,6 +37,7 @@
     .preorder-indicator {
         background: var(--white);
         color: var(--red);
+        padding-left: 0px;
     }
     .soldout-indicator {
         background: #B3B3B3;
@@ -107,7 +108,7 @@
                     .indicator-holder {
                         position: absolute;
                         right: calc(100% + 3px);
-                        top: 0px;
+                        top: -2px;
                     }
 
                     .name {
@@ -116,7 +117,7 @@
                         h3 {
                             margin: 0px;
                             font-family: var(--mingliu);
-                            font-size: 14px;
+                            font-size: 12px;
                             line-height: 1.3;
                         }
                     }
@@ -124,7 +125,7 @@
                     .short-description {
                         span {
                             // font-family: var(--mingliu);
-                            font-size: 14px;
+                            font-size: 12px;
                             color: #555555;
                         }
                     }
@@ -380,9 +381,12 @@
                         width: 100%;
 
                         .product-data {
-                            display: block;
+                            display: flex;
+                            flex-direction: column;
 
                             .indicator {
+                                position: relative;
+                                right: 0;
                                 top: 6px;
                             }
                         }

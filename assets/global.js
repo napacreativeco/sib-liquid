@@ -881,6 +881,9 @@ class SlideshowComponent extends SliderComponent {
 
 customElements.define('slideshow-component', SlideshowComponent);
 
+/* 
+-----------------------------------------------------------------------------
+*/
 class VariantSelects extends HTMLElement {
   constructor() {
     super();
@@ -894,6 +897,17 @@ class VariantSelects extends HTMLElement {
     this.updatePickupAvailability();
     this.removeErrorMessage();
     this.updateVariantStatuses();
+
+
+    // throne
+    if (this.currentVariant.available) { 
+      console.log('its available');
+      
+    } else {
+      //jQuery('.buttons-not-added').text('sold out');
+      jQuery('.buttons-soldout').css('display', 'block');
+    }
+    // end
 
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
@@ -941,8 +955,8 @@ class VariantSelects extends HTMLElement {
     window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
 
     // THRONE
-      document.querySelector('.price-holder').innerHTML = this.currentVariant.price / 100 + ' usd';
-      console.log(this.currentVariant)
+    document.querySelector('.price-holder').innerHTML = this.currentVariant.price / 100 + ' usd';
+      //console.log(this.currentVariant)
     // END THRONE
 
     // THRONE
@@ -951,10 +965,12 @@ class VariantSelects extends HTMLElement {
       var indicator = document.querySelector('.sold-out-indicator');
       //document.querySelector('.sold-out-indicator').innerHTML = ' ';
       //document.querySelector('.sold-out-indicator--mobile').innerHTML = ' ';
+      jQuery('.buttons-soldout').css('display', 'none');
     } else {
       console.log('sold out');
       document.querySelector('.sold-out-indicator').innerHTML = 'sold out';
       document.querySelector('.sold-out-indicator--mobile').innerHTML = 'sold out';
+      //document.querySelector('.buttons-not-added').style.display = 'none';
     }
     // END THRONE
   }
