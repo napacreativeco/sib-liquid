@@ -190,9 +190,15 @@
 
         <div class="product-pagination">
           <div class="back-to-all">
-            <a class="back_to_all" href="/collections/all">
-              {{ 'back to all' | downcase }}
-            </a>
+            {% if collection %}
+              <a class="back_to_all" href="">
+                {{ 'back to all' | downcase }}
+              </a>
+            {% else %}
+              <a href="{{ settings.featured_collection.url }}">
+                {{ 'back to all' | downcase }}
+              </a> 
+            {% endif %}
           </div>
 
           <div class="next">
