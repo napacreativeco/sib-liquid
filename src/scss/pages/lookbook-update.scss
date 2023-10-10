@@ -37,7 +37,8 @@
                     //transform: translateY(-16px);
                     
                     select {
-                        text-transform: lowercase;   
+                        text-transform: lowercase; 
+                        background-color: var(--white) !important;  
                     }
         
                     option {
