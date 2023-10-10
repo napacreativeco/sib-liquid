@@ -31,21 +31,7 @@
                         <div class="swiper-wrapper">
                             {% for entry in post.metafields.lookbook.entries.value %}
                                 <div class="swiper-slide">
-                                    <style>
-                                        .lookbook-slide-img {
-                                            background: url('{{ entry.image | image_url: width: 2200 }}'); 
-                                            background-size: cover; 
-                                            background-position: center center;
-                                        }
-                                        @media screen and (max-width: 767px) {
-                                            .lookbook-slide-img {
-                                                background: url('{{ entry.image_mobile | image_url: width: 2200 }}'); 
-                                                background-size: cover; 
-                                                background-position: center center;
-                                            }
-                                        }
-                                    </style>
-                                    <div class="image lookbook-slide-img">
+                                    <div style="background: url('{{ entry.image | image_url: width: 2200 }}'); background-size: cover; background-position: center center;" class="image lookbook-slide-img">
                                         &nbsp;
                                     </div>
                                     <div class="caption">
