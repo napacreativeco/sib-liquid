@@ -143,23 +143,9 @@
         .lookbook-blog-wrapper {
             padding: 40px 10px 20px 10px;
 
-            .lookbook-header {
-                padding: 0 0 0 var(--side-padding);
-            }
-
-            .swiper {
-                .swiper-wrapper {
-    
-                    .swiper-slide {
-                        
-                        .image {
-                            aspect-ratio: 3/5;
-                        }
-    
-                    }
-    
-                }
-            }
+            // .lookbook-header {
+            //     padding: 0 0 0 var(--side-padding);
+            // }
         }   
 
     }
