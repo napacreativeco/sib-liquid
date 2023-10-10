@@ -27,9 +27,10 @@
     "1dee74b3-beca-468d-9a39-ac9548f61c64": {
       "type": "throne-about-page",
       "settings": {
+        "about_page_featured_image": "shopify:\/\/shop_images\/sib.jpg",
         "about_page_title": "about",
         "about_page_tagline": "",
-        "about_page_body_top": "Before SIBERIA, who was I? <br><br>\nAfter SIBERIA, who am I?  <br><br>\nRespect SIBERIA, and SIBERIA will respect you.  <br><br>\nUnderstand SIBERIA, and SIBERIA will understand you.  <br><br>\nThere are mirrors all around SIBERIA.  <br><br>\nStrive to see and understand SIBERIA.  <br><br>\nStrive to have the heart of SIBERIA.  <br><br>\nStop doing bad things, only do good.  <br><br>\nDo whatever you can to help SIBERIA.  <br><br>\nIn these ways you help yourself.  <br><br>\nHelp SIBERIA, and you help the world.  <br>",
+        "about_page_body_top": "",
         "about_page_body_bottom": ""
       }
     }
