@@ -2,44 +2,71 @@
 <li>
     <div class="list-item-wrapper">
 
-
       {% for image in product.media limit: 1 %}
-        <div class="image" style="background: url('{{ image | image_url: width: 200 }}'); background-size: cover; background-position: center center;" onclick="window.location='{{ product.url }}';">
+        <div class="image" style="background: url('{{ image | image_url: width: 200 }}'); background-size: cover; background-position: center center;" onclick="window.location='{{ collection.url }}{{ product.url }}';">
         </div>
       {% endfor %}
  
-
       <div class="product-title mobile">
-        <a href="{{ product.url }}" title="{{ product.title }}">
+        <a href="{{ collection.url }}{{ product.url }}" title="{{ product.title }}">
           <h3>{{ product.title }}</h3>
         </a>
-        <a href="{{ product.url }}" title="{{ product.title }}">
+        <a href="{{ collection.url }}{{ product.url }}" title="{{ product.title }}">
           <span>{{ product.metafields.product.short_description.value }}</span>
         </a>
       </div>
 
       <div class="product-title desktop">
-        <a href="{{ product.url }}" title="{{ product.title }}">
+        <a href="{{ collection.url }}{{ product.url }}" title="{{ product.title }}">
           <h3>{{ product.title }}</h3>
         </a>
       </div>
 
       <div class="short-description desktop">
-        <a href="{{ product.url }}" title="{{ product.title }}">
+        <a href="{{ collection.url }}{{ product.url }}" title="{{ product.title }}">
           <span>{{ product.metafields.product.short_description.value }}</span>
         </a>
       </div>
 
       <div class="price">
-        <a href="{{ product.url }}" title="Price">
+        {% comment %} TAGS {% endcomment %}
+        {% if product.metafields.product.new_product == true %}
+          <span class="new-indicator indicator">
+            {{ 'new' | escape }}
+          </span>
+        {% endif %}
+        
+        {% if product.compare_at_price > product.price %}
+          {% if product.available == true %}
+            <span class="sale-indicator indicator">
+              {{ 'sale' | escape }}
+            </span>
+          {% endif %}
+        {% endif %}
+        
+        {% if product.metafields.product.preorder == true %}
+          {% if product.metafields.product.new_product == true %}
+          {% else %}
+            <span class="preorder-indicator indicator">
+              {{ 'sign up' | escape }}
+            </span>
+          {% endif %}
+        {% endif %}
+        
+        {% if product.available == false %}
+          {% if product.metafields.product.preorder == true %}
+          {% else %}
+            <span class="soldout-indicator indicator">
+              {{ 'sold out' | escape }}
+            </span>
+          {% endif %}
+        {% endif %}
+        {% comment %} PRICE {% endcomment %}
+        <a href="{{ collection.url }}{{ product.url }}" title="Price">
           {% for var in product.variants limit: 1 %}
             {{ var.price | money_without_trailing_zeros | remove: '$' }}
           {% endfor %}
         </a>
-      </div>
-
-      <div class="indicator-holder">
-        {% render 'indicators', data: product %}
       </div>
 
     </div>

@@ -67,6 +67,11 @@
                             color: var(--red);
                         }
 
+                        a.active {
+                            background: var(--black);
+                            color: var(--red);
+                        }
+
                     }
 
                     li.active {
@@ -101,7 +106,7 @@
                     li {
                         width: 100%;
                         border-bottom: var(--border-blk);
-                        padding: 16px;
+                        padding: 0px;
                         counter-increment: filters;
                         height: calc(316px / 5 + 1px);
                         display: flex;
@@ -111,6 +116,16 @@
                             text-decoration: none;
                             text-transform: lowercase;
                             font-size: 24px;
+                            display: flex;
+                            width: 100%;
+                            height: 100%;
+                            padding: 16px;
+                            align-items: center;
+                        }
+
+                        a.active {
+                            background: var(--black);
+                            color: var(--red);
                         }
                         
                         @media screen and (max-width: 767px) {
@@ -239,6 +254,5 @@
             }
         }
     }
-
 
 }

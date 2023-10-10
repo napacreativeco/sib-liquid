@@ -31,7 +31,10 @@
 
     <script src="{{ 'jquery.min.js' | asset_url }}"></script>
     <script src="{{ "liquid-ajax-cart.js" | asset_url }}"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
 
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
@@ -96,6 +99,7 @@
       }
     </script>
     {% endcomment %}
+
     <script type="application/json" data-ajax-cart-configuration>
       {
         "addToCartCssClass": "added-to-cart"
@@ -118,6 +122,9 @@
         });    
     </script>
 
+    {% comment %}
+      Cart State
+    {% endcomment %}
     <script type="module">
       /*
       =====================================
@@ -127,7 +134,7 @@
       import { getCartState, subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart.js" | asset_url }}'
 
       const initialState = getCartState();
-      console.log('Initial state: ', initialState);
+      //console.log('Initial state: ', initialState);
 
       /* Cart Counter Init */
       if (initialState.cart.item_count == 0) {
@@ -152,6 +159,9 @@
       });
     </script>
 
+    {% comment %}
+      Marquee
+    {% endcomment %}
     <script>
       /*
       =====================================
@@ -390,10 +400,63 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    
     <style>
       input[type="email"] {
         border-radius: 0px !important;
       }
     </style>
+
+    {% comment %}
+      Plus Menu
+    {% endcomment %}
+    <script>
+      /*
+        Plus Menu
+        'Top Bar' Active states
+      */
+      var template = '{{ template.name }}';
+      //console.log('template name: ' + template);
+
+      jQuery('.top-link').each(function(data, i) {
+        var text = jQuery(this).text();
+        //console.log('text: ' + text);
+
+        // Adds active to to proper page
+        if ( text.includes(template) ) {
+          jQuery(this).addClass('active');
+        }
+
+        // Index activates Shop
+        if ( template == 'index' && text == 'Shop') {
+          jQuery(this).addClass('active');
+        }
+
+        // Collection activates Shop
+        if ( template == 'collection' && text == 'Shop') {
+          jQuery(this).addClass('active');
+        }
+      });
+
+      /*
+        Plus Menu
+        'Filters' Active states
+      */
+      jQuery('.filter-link').each(function(data, i) {
+        var text = jQuery(this).text();
+      });
+
+      //var currentPage = document.location.pathname;
+    </script>
+
+    {% comment %}
+      Pagination
+    {% endcomment %}
+    <script>
+      var current = new URL(window.location);
+      $('.back_to_all').attr('href', current.pathname.split('/products/')[0]);
+    </script>
+
+
   </body>
 </html>

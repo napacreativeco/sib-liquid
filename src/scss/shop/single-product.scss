@@ -209,7 +209,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        padding: 10px;
+                        padding: 10px 0px;
                         cursor: pointer;
                         font-size: var(--12px)!important;
                         animation: popUp 0.26s ease-in-out;
@@ -254,6 +254,11 @@
                         border-radius: 0px !important;
                     }
 
+                    // disable until variant selected
+                    button[data-state="disabled"] {
+                        pointer-events: none;
+                        cursor: not-allowed;
+                    }
 
                     button[aria-disabled="true"] {
                         color: var(--black);
@@ -269,7 +274,7 @@
                         background: var(--white);
                         color: var(--black);
                         cursor: pointer;
-                        padding: 10px 20px;
+                        padding: 10px 10px;
                         font-family: var(--mingliu) !important;
                         font-size: var(--12px)!important;
                         text-transform: lowercase;

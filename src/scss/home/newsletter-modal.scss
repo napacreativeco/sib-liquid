@@ -65,6 +65,7 @@
 
 
   .newsletter-modal {
+    transform: translateY(-50%);
 
     svg { display: none !important; }
 
@@ -136,9 +137,11 @@
 
 }
 
-
-
+/*
+-------------------------------------------------------------
+*/
 @media screen and (max-width: 767px) {
+
   .shopify-section:has(.newsletter-modal) {
     position: fixed;
     float: left;
@@ -148,7 +151,7 @@
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
     display: none;
     align-items: center;
     justify-content: center;
@@ -156,6 +159,7 @@
   
     .newsletter-modal {
       width: 95%;
+      transform: translateY(-100%);
   
       .newsletter-wrapper {
         max-width: 100%;

@@ -90,6 +90,18 @@
     ]
   },
   {
+    "name": "Shop",
+    "settings": [
+      {
+        "type": "text",
+        "id": "no_products_text",
+        "label": "No Products",
+        "info": "The text that shows when there are no products in the collection",
+        "default": "not yet, but soon"
+      }
+    ]
+  },
+  {
     "name": "Newsletter Popup",
     "settings": [
       {

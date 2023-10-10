@@ -154,47 +154,54 @@
             {% endif %}
           </div>
         </div>
+        
+        {% comment %} 
+          snippet: https://community.shopify.com/c/shopify-design/dawn-theme-how-to-add-quot-view-next-product-quot-button-on/m-p/1465302#M386003
+        {% endcomment %}
+        {%- liquid
+          assign previous_product = collection.previous_product
+          assign next_product = collection.next_product
 
-      
-        <div class="product-pagination new">
+          if previous_product or next_product
 
-          <a href="{{ settings.featured_collection.url }}" title="{{ 'Back to all' | escape }}">
-            {{ 'back to all' | escape | downcase }}
-          </a>
+          else
 
-          {% for collect in product.collections %}
+            assign collectionList = product.collections[0].handle
+              assign previous_product = nil
+              assign next_product = nil
+              assign last = collections[collectionList].products_count
 
-            {% case collect.title %}
-  
-              {% when 'all' %}
-                {% assign arr = collect.products | map: 'url' %}
-                <ul>
-                  {% for prod in collect.products %}
-                    <li>
-                    {% assign next = '' %}
-                    {% if product.title == prod.title %}
-                      {% assign plusOne = forloop.index0 | plus: 1 %}
-                      {% if plusOne > forloop.length %}
-                        {% assign next = 0 %}
-                      {% else %}
-                        {% assign next = forloop.index0 | plus: 1 %}
-                      {% endif %}
-                      
-                      {% if forloop.index >= forloop.length %}
-                      last
-                      {% else %}
-                        <a class="next-product" href="{{ arr[next] }}" title="Next">
-                          {{ 'next' | escape | downcase }}</a>
-                      {% endif %}
-                      
-                    {% endif %}
-                    </li>
-  
-                  {% endfor %}
-                </ul>
-            {% endcase %}
-          {% endfor %}
+              for p in collections[collectionList].products
+                if p.handle == product.handle
+                    assign prev = forloop.index | minus: 2
+                      assign next = forloop.index
+                      if prev >= 0
+                        assign previous_product = collections[collectionList].products[prev].handle
+                      endif
+                      if last >= next
+                        assign next_product = collections[collectionList].products[next].handle
+                      endif
+                      break
+                  endif
+              endfor
 
+          endif
+        -%} 
+
+        <div class="product-pagination">
+          <div class="back-to-all">
+            <a class="back_to_all" href="">
+              {{ 'back to all' | downcase }}
+            </a>
+          </div>
+
+          <div class="next">
+            {%- if next_product -%}
+              <a class="next-prev-icon next-icon" href="{{ next_product }}">
+                  {{ 'next' | downcase }}
+              </a>
+            {%- endif -%}
+          </div>
         </div>
 
       </div>

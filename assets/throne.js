@@ -71,9 +71,9 @@
 
     $('.pagination-link').on('click', function() {  
       if ( $('.filter-menu').hasClass('filter-opened') ) {
-          $('.filter-menu').removeClass('filter-opened');
+        $('.filter-menu').removeClass('filter-opened');
       } else {
-          $('.filter-menu').addClass('filter-opened');
+        $('.filter-menu').addClass('filter-opened');
       }
     });
   

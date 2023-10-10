@@ -28,6 +28,10 @@
       {% else %}
         <img id="default-icon-cart" src="{{ 'cart.png' | asset_url }}" alt="{{ 'Cart' | escape }}">
       {% endif %}
+
+      <span id="cart-counter" class="cart-counter">
+        {{ '(' | escape }}<span data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>{{ ')' | escape }}
+      </span>
     </div>
 
   </div>
@@ -106,13 +110,15 @@
                               {{ '-' | escape }} 
                           </a>
               
-                          <!-- data-ajax-cart-quantity-input ajaxifies the line item quantity input -->
+                          {% comment %}  
                           <input data-ajax-cart-quantity-input="{{ item_index }}"
                               name="updates[]" 
                               value="{{ item.quantity }}" 
+                              disabled="true"
                               type="number" />
-          
-                          <!-- data-ajax-cart-request-button ajaxifies the "Plus one" button -->
+                          {% endcomment %}
+                          <span data-ajax-cart-quantity-input="{{ item_index }}" style="padding: 0 6px;">{{ item.quantity }}</span>
+                          
                           <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | plus: 1 }}"> 
                               {{ '+' | escape }}
                           </a>
@@ -232,13 +238,15 @@
                               {{ '-' | escape }} 
                           </a>
               
-                          <!-- data-ajax-cart-quantity-input ajaxifies the line item quantity input -->
+                          {% comment %}
                           <input data-ajax-cart-quantity-input="{{ item_index }}"
                               name="updates[]" 
                               value="{{ item.quantity }}" 
+                              disabled
                               type="number" />
-          
-                          <!-- data-ajax-cart-request-button ajaxifies the "Plus one" button -->
+                          {% endcomment %}
+                          <span data-ajax-cart-quantity-input="{{ item_index }}" style="padding: 0 2px;">{{ item.quantity }}</span>
+
                           <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | plus: 1 }}"> 
                               {{ '+' | escape }}
                           </a>

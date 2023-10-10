@@ -1,20 +1,18 @@
 .info-page {
-    padding: 60px var(--side-padding) 40px var(--side-padding);
+    padding: 60px 0 40px 0;
     display: flex;
     justify-content: center;
+    max-width: var(--thin);
+    margin: 0 auto; 
 
     .info-wrapper {
-        max-width: var(--thin);
-        display: grid;
-        grid-template-columns: 100px 1fr;
-        grid-gap: 0px;
         width: 100%;
         position: relative;
-        left: -100px;
 
         .sidebar {
-            position: relative;
+            position: absolute;
             width: 110px;
+            left: -120px;
     
             ul {
                 display: flex;
@@ -23,6 +21,8 @@
     
                 a {
                     text-decoration: none;
+                    font-size: 16px;
+                    text-transform: lowercase;
                 }
 
                 a.active {
@@ -33,11 +33,14 @@
         }
 
         .page-content {
-            h1 {
-                margin: 0 0 10px 0;
-            }
+            width: 100%;
+
             p {
-                line-height: 1.2;
+                font-size: 12px;
+                line-height: 1.4;
+                text-transform: lowercase;
+                display: block;
+                margin: 0 0 10px 0;
             }
         }
         
@@ -47,8 +50,16 @@
 @media screen and (max-width: 767px) {
     .info-page {
         .info-wrapper {
+            padding: 10px var(--side-padding);
             grid-template-columns: 1fr;
+            grid-gap: 30px;
             left: 0;
+
+            .sidebar {
+                position: relative;
+                left: 0;
+                margin-bottom: 20px;
+            }
         }
     }
 }

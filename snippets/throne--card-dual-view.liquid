@@ -2,7 +2,7 @@
     <div class="item-wrapper">
 
       {% for image in product.media limit: 1 %}
-        <div class="image" style="background: url('{{ image | image_url: width: 800 }}'); background-size: cover; background-position: center center;" onclick="window.location='{{ product.url }}';">
+        <div class="image" style="background: url('{{ image | image_url: width: 800 }}'); background-size: cover; background-position: center center;" onclick="window.location='{{ collection.url }}{{ product.url }}';">
         </div>
       {% endfor %}
  
@@ -11,13 +11,13 @@
         
         <div class="data">
           <div class="name">
-            <a href="{{ product.url }}" title="{{ product.title }}">
+            <a href="{{ collection.url }}{{ product.url }}" title="{{ product.title }}">
               <h3>{{ product.title }}</h3>
             </a>
           </div>
   
           <div class="short-description">
-            <a href="{{ product.url }}" title="{{ product.title }}">
+            <a href="{{ collection.url }}{{ product.url }}" title="{{ product.title }}">
               <span>{{ product.metafields.product.short_description.value }}</span>
             </a>
           </div>
