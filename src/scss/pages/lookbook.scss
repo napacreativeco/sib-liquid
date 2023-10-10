@@ -124,15 +124,19 @@
             .swiper-wrapper {
 
                 .swiper-slide {
-                    width: 100%;
+                    width: auto;
                     max-width: 100%;
                     height: auto;
                     display: flex;
                     flex-direction: column;
                     
                     .image {
-                        aspect-ratio: 16/13;
+                        //aspect-ratio: 16/13;
                         cursor: grab;
+                        img {
+                            height: 60vh;
+                            width: 100%;
+                        }
                     }
 
                     .image:active {

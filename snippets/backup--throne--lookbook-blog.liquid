@@ -5,7 +5,6 @@
 
             {% comment %} Selector {% endcomment %}
             <div class="lookbook-header">
-
                 <div class="selector-holder">
                     <select class="resizeselect collection-selector">
                         {%- for post in blog.articles -%}
@@ -16,28 +15,34 @@
                         {% render 'icon-caret' %}
                     </div>
                 </div>
-
-                <div class="counter"></div>
             </div>
 
 
             {%- for post in blog.articles -%}
                 <article class="article-component" style="margin: 0 0 80px 0;" id="{{ post.id }}">
-                    
-                    {% for entry in post.metafields.lookbook.entries.value %}
-                        {% assign amount = forloop.length %}
-                        <div class="slide" id="{{ entry.handle }}">
-                            <span class="count" data-total="{{ forloop.length }}" data-count="{{ amount }}"></span>
-                            <img src="{{ entry.image | image_url: width: 2200 }}" />
-                            
-                            <div class="caption">
-                                <div class="caption-wrapper">
-                                    {{ entry.caption | metafield_tag }}
-                                </div>
-                            </div>
+                    <div class="swiper-{{ forloop.index }} swiper">
+
+                        <div class="swiper-header">
+                            <span class="swiper-button-prev slider-nav-link">{{ '<' | escape }}</span>
+                            <div class="swiper-pagination"></div>
+                            <span class="swiper-button-next slider-nav-link">{{ '>' | escape }}</span>
                         </div>
-                    {% endfor %}
-  
+                    
+                        <div class="swiper-wrapper">
+                            {% for entry in post.metafields.lookbook.entries.value %}
+                                <div class="swiper-slide">
+                                        <img src="{{ entry.image | image_url: width: 2200 }}" />
+                                    
+                                    <div class="caption">
+                                        <div class="caption-wrapper">
+                                            {{ entry.caption | metafield_tag }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
                 </article>
             {% endfor %}
 
@@ -80,9 +85,8 @@
             console.log('selected value: ' + selectedValue);
 
             $('.article-component').css('display', 'none');
-            $('#'+selectedValue).css('display', 'flex');
-
-            //$('.counter').text( $('.count').attr('data-count') + ' / ' + $('.count').attr('data-total') );
+            $('#'+selectedValue).css('display', 'block');
+            
         });
 
     })(jQuery);
