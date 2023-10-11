@@ -384,7 +384,11 @@
                 ul {
                     margin-top: 20px;
                     list-style: disc;
-                    list-style-position: inside;
+                    list-style-position: outside;
+                    margin-left: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
                 }
             }
         }
