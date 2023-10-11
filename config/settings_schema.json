@@ -19,6 +19,17 @@
     ]
   },
   {
+    "name": "Password Page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "password_page_assets",
+        "label": "Show Assets on Password Page?",
+        "default": true
+      }
+    ]
+  },
+  {
     "name": "Navbar",
     "settings": [
       {

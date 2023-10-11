@@ -11,12 +11,7 @@
     justify-content: center;
 
     .about-wrapper.desktop {
-        display: grid;
-        align-items: center;
         padding-top: 80px;
-    }
-    .about-wrapper.mobile {
-        display: none;
     }
 
     .about-wrapper {
@@ -79,14 +74,6 @@
 
     .about-component {
         justify-content: flex-start;
-
-        .about-wrapper.desktop {
-            display: none;
-        }
-        .about-wrapper.mobile {
-            display: flex;
-            align-items: flex-start;
-        }
 
         .about-wrapper {
             flex-direction: column;

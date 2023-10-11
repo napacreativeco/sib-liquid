@@ -32,9 +32,9 @@
       </div>
 
   {% else %}
-    <div class="page-wrapper default-page">
-        {{ page.content }}
-      </div>
+    <div class="page-wrapper default-page {{ page.handle }}">
+      {{ page.content }}
+    </div>
   {% endif %}
 
 {% schema %}
