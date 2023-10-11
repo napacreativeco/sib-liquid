@@ -33,7 +33,7 @@
 
   {% else %}
     <div class="page-wrapper default-page {{ page.handle }}">
-      {{ page.content }}
+      {{ page.content | newline_to_br }}
     </div>
   {% endif %}
 
