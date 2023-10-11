@@ -42,7 +42,7 @@
             endif
           -%}
 
-          <button data-state="disabled" id="ProductSubmitButton-{{ section_id }}" type="submit" name="add" class="product-form__submit" {%- if product.selected_or_first_available_variant.available == false %}disabled="disabled"{% endif %}>
+          <button data-state="enabled" id="ProductSubmitButton-{{ section_id }}" type="submit" name="add" class="product-form__submit" {%- if product.selected_or_first_available_variant.available == false %}disabled="disabled"{% endif %}>
             <span class="buttons-not-added">
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 <style>

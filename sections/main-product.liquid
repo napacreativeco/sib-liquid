@@ -118,9 +118,10 @@
         </div>
 
         <div class="details-panel">
+
           <div class="technical-details">
             {% if product.metafields.product.technical_details != blank %}
-              <details>
+              <details class="tech-details">
                 <summary>{{ settings.technical_details_title | default: "technical details" | downcase }}</summary>
                 <ul>
                   {% for detail in product.metafields.product.technical_details.value %}
@@ -130,24 +131,25 @@
               </details>
             {% endif %}
           </div>
+
           <div class="size-chart">
             {% if product.metafields.sizechart.size_chart_dress != blank %}
-              <details>
+              <details class="size-details">
                 <summary>{{ settings.size_chart_title | default: "size chart" | downcase }}</summary>
                 {% render 'throne--sizechart-dress' %}
               </details>
             {% elsif product.metafields.sizechart.size_chart_bottoms != blank %}
-              <details>
+              <details class="size-details">
                 <summary>{{ settings.size_chart_title | default: "size chart" | downcase }}</summary>
                 {% render 'throne--sizechart-pants' %}
               </details>
             {% elsif product.metafields.sizechart.size_chart_tops != blank %}
-              <details>
+              <details class="size-details">
                 <summary>{{ settings.size_chart_title | default: "size chart" | downcase }}</summary>
                 {% render 'throne--sizechart-tops' %}
               </details>
             {% elsif product.metafields.sizechart.size_chart_boots != blank %}
-              <details>
+              <details class="size-details">
                 <summary>{{ settings.size_chart_title | default: "size chart" | downcase }}</summary>
                 {% render 'throne--sizechart-boots' %}
               </details>
@@ -320,6 +322,22 @@
 
 </section>
 
+
+<script>
+  var details = document.querySelectorAll("details");
+
+// Add the onclick listeners.
+details.forEach((targetDetail) => {
+  targetDetail.addEventListener("click", () => {
+    // Close all the details that are not targetDetail.
+    details.forEach((detail) => {
+      if (detail !== targetDetail) {
+        detail.removeAttribute("open");
+      }
+    });
+  });
+});
+</script>
 
 {% schema %}
   {

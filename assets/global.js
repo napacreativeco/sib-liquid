@@ -901,10 +901,8 @@ class VariantSelects extends HTMLElement {
 
     // throne
     if (this.currentVariant.available) { 
-      //console.log('its available');
       jQuery('.product-form__submit').attr('data-state', 'clickable');
     } else {
-      //jQuery('.buttons-not-added').text('sold out');
       jQuery('.buttons-soldout').css('display', 'block');
       jQuery('.product-form__submit').attr('data-state', 'disabled');
     }

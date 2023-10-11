@@ -1,17 +1,15 @@
 <div class="throne--navbar">
   <div class="navbar-wrapper">
     <div class="logo">
-      <a href="{{ '/' | escape }}" title="Home">
-        {% if settings.navbar_logo %}
-          <a href="{{ shop.url }}" title="{{ shop.name }}">
-            <img id="user-logo" src="{{ settings.navbar_logo | image_url: width: 500 }}" alt="{{ shop.name }}" />        
-          </a>
-        {% else %}
-          <a href="{{ shop.url }}" title="{{ shop.name }}">
-            <img id="default-logo" src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" /> 
-          </a>
-        {% endif %}
-      </a>
+      {% if settings.navbar_logo %}
+        <a href="{{ shop.url }}" title="{{ shop.name }}">
+          <img id="user-logo" src="{{ settings.navbar_logo | image_url: width: 500 }}" alt="{{ shop.name }}" />        
+        </a>
+      {% else %}
+        <a href="{{ shop.url }}" title="{{ shop.name }}">
+          <img id="default-logo" src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" /> 
+        </a>
+      {% endif %}
     </div>
 
     {% if template.name == 'index' %}
