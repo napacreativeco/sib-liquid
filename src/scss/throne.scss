@@ -157,6 +157,15 @@ a {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .default-page.about {
+    padding: 80px var(--side-padding);
+    img {
+      width: 100%;
+    }
+  }
+}
+
 /* Parts */
 @import './navbar.scss';
 @import './404.scss';
