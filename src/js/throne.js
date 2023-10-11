@@ -181,6 +181,12 @@
             },
             onComplete: function() {
               $('#user-logo').css('display', 'block');
+
+              console.log(e.currentTarget.attr('data-url'));
+
+              if (e.currentTarget.dataset('url') != '') {
+                window.location = e.currentTarget.dataset('url');
+              }
             }
           });
 
