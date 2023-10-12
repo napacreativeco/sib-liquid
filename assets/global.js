@@ -898,7 +898,7 @@ class VariantSelects extends HTMLElement {
     this.removeErrorMessage();
     this.updateVariantStatuses();
 
-
+  
     // throne
     if (this.currentVariant.available) { 
       jQuery('.product-form__submit').attr('data-state', 'clickable');

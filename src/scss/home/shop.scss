@@ -316,6 +316,7 @@
             ul.products-grid.grid {
                 padding: 0 15px;
                 grid-template-columns: repeat(2, 1fr);
+                grid-gap: 40px 14px;
 
                 li.item {
                     .product-data {
