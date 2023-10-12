@@ -1,26 +1,11 @@
 <table class="size-chart-table size-chart-bottoms">
     <thead>
       <th class="label">{{ 'size:' | escape | downcase }}</th>
-      {% if product.metafields.sizechart.size_chart_bottoms.value.waist_s != blank 
-            or product.metafields.sizechart.size_chart_bottoms.value.length_s != blank %}
         <th>{{ 'S' | escape }}</th>
-      {% endif %}
-      {% if product.metafields.sizechart.size_chart_bottoms.value.waist_m != blank 
-            or product.metafields.sizechart.size_chart_bottoms.value.length_m != blank %}
         <th>{{ 'M' | escape }}</th>
-      {% endif %}
-      {% if product.metafields.sizechart.size_chart_bottoms.value.waist_l != blank 
-            or product.metafields.sizechart.size_chart_bottoms.value.length_l != blank %}
         <th>{{ 'L' | escape }}</th>
-      {% endif %}
-      {% if product.metafields.sizechart.size_chart_bottoms.value.waist_xl != blank 
-            or product.metafields.sizechart.size_chart_bottoms.value.length_xl != blank %}
         <th>{{ 'XL' | escape }}</th>
-      {% endif %}
-      {% if product.metafields.sizechart.size_chart_bottoms.value.waist_xl != blank
-            or product.metafields.sizechart.size_chart_bottoms.value.length_xl != blank %}
         <th>{{ 'XXL' | escape }}</th>
-      {% endif %}
     </thead>
     <tbody>
       {% if product.metafields.sizechart.size_chart_bottoms.value.waist_s != blank 
