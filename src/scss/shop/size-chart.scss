@@ -21,89 +21,121 @@
         text-decoration: underline;
     }
 
-    .size-chart-table {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        margin-top: 20px;
+    // .size-chart-table {
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: flex-end;
+    //     margin-top: 20px;
 
-        thead {
-            width: 100%;
+    //     thead {
+    //         width: 100%;
 
-            tr {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-                gap: 10px;
-                margin: 0 0 10px 0;
+    //         tr {
+    //             display: flex;
+    //             flex-direction: row;
+    //             align-items: center;
+    //             justify-content: space-between;
+    //             width: 100%;
+    //             gap: 10px;
+    //             margin: 0 0 10px 0;
 
-                th {
-                    text-align: center;
-                    text-transform: uppercase;
-                    font-size: 14px;
-                    font-weight: normal;
-                    width: 100%;
-                    padding: 0 4px;
-                    text-align: center;
-                }
+    //             th {
+    //                 text-align: center;
+    //                 text-transform: uppercase;
+    //                 font-size: 14px;
+    //                 font-weight: normal;
+    //                 width: 100%;
+    //                 padding: 0 4px;
+    //                 text-align: center;
+    //             }
 
-                th:first-of-type {
-                    text-transform: lowercase;
-                    width: 50px;
-                    text-align: left;
-                }
-            }
-        }
+    //             th:first-of-type {
+    //                 text-transform: lowercase;
+    //                 width: 50px;
+    //                 text-align: left;
+    //             }
+    //         }
+    //     }
 
-        tbody {
-            width: 100%;
+    //     tbody {
+    //         width: 100%;
 
-            tr {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: flex-start;
-                gap: 10px;
-                margin: 0 0 10px 0;
+    //         tr {
+    //             display: flex;
+    //             flex-direction: row;
+    //             align-items: center;
+    //             justify-content: flex-start;
+    //             gap: 10px;
+    //             margin: 0 0 10px 0;
     
-                td {
-                    text-align: center;
-                    font-size: 14px;
-                    width: 100%;
-                    vertical-align: middle;
-                    padding: 0 4px;
-                    white-space: nowrap;
+    //             td {
+    //                 text-align: center;
+    //                 font-size: 14px;
+    //                 width: 100%;
+    //                 vertical-align: middle;
+    //                 padding: 0 4px;
+    //                 white-space: nowrap;
         
-                    .label {
-                        text-align: left;
-                        display: block;
-                        padding-right: 10px;
-                    }
+    //                 .label {
+    //                     text-align: left;
+    //                     display: block;
+    //                     padding-right: 10px;
+    //                 }
             
-                }
+    //             }
     
-                td:first-of-type {
-                    text-transform: lowercase;
-                    width: 50px;
-                    text-align: left;
-                }
+    //             td:first-of-type {
+    //                 text-transform: lowercase;
+    //                 width: 50px;
+    //                 text-align: left;
+    //             }
+    //         }
+
+    //     }
+
+
+
+
+
+    //     th.legend,
+    //     td.legend {
+    //         text-align: left;
+    //         margin-right: 22px;
+    //         vertical-align: middle;
+    //     }
+
+    // }
+
+    .size-chart-table {
+        margin-top: 30px;
+        width: 100%;
+        
+        tr {
+            width: 100%;
+
+            th {
+                width: 100%;
+                text-align: center;
+            }
+            
+            th:first-of-type {
+                text-align: left;
+                padding-right: 10px;
+                padding-left: 0;
             }
 
+            td {
+                width: 100%;
+                text-align: center;
+                padding: 0 8px;
+            }
+
+            td:first-of-type {
+                text-align: left;
+                padding-right: 10px;
+                padding-left: 0;
+            }
         }
-
-
-
-
-
-        th.legend,
-        td.legend {
-            text-align: left;
-            margin-right: 22px;
-            vertical-align: middle;
-        }
-
     }
 
 }
