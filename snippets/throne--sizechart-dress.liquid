@@ -1,50 +1,13 @@
 <table class="size-chart-table size-chart-dress">
     <thead>
-      <th class="label">{{ 'size:' | escape | downcase }}</th>
-      
-      {% if product.metafields.sizechart.size_chart_dress.value.bust_xxs != blank 
-            or product.metafields.sizechart.size_chart_dress.value.waist_xxs != blank
-            or product.metafields.sizechart.size_chart_dress.value.hips_xxs != blank %}
-        <th>  
-          {{ 'XXS' | escape }}
-        </th>
-      {% endif %}
-        
-      {% if product.metafields.sizechart.size_chart_dress.value.bust_xs != blank 
-            or product.metafields.sizechart.size_chart_dress.value.waist_xs != blank
-            or product.metafields.sizechart.size_chart_dress.value.hips_xs != blank %}
-        <th>  
-          {{ 'XS' | escape }}
-        </th>
-      {% endif %}
-      
-      {% if product.metafields.sizechart.size_chart_dress.value.bust_s != blank 
-            or product.metafields.sizechart.size_chart_dress.value.waist_s != blank
-            or product.metafields.sizechart.size_chart_dress.value.hips_s != blank %}
-        <th> 
-          {{ 'S' | escape }}
-        </th>
-      {% endif %}
-
-      {% if product.metafields.sizechart.size_chart_dress.value.bust_m != blank
-            or product.metafields.sizechart.size_chart_dress.value.waist_m != blank
-            or product.metafields.sizechart.size_chart_dress.value.hips_m != blank %}
-        <th>
-          {{ 'M' | escape }}
-        </th>
-      {% endif %}
-    
-      {% if product.metafields.sizechart.size_chart_dress.value.bust_l != blank 
-            or product.metafields.sizechart.size_chart_dress.value.waist_l != blank
-            or product.metafields.sizechart.size_chart_dress.value.hips_l != blank %}
-        <th>
-          {{ 'L' | escape }}
-        </th>
-      {% endif %}
-    
-    </thead>
+        <th class="label">{{ 'size:' | escape | downcase }}</th>
+        <th>{{ 'XXS' | escape }}</th>
+        <th>{{ 'XS' | escape }}</th>
+        <th>{{ 'S' | escape }}</th>
+        <th>{{ 'M' | escape }}</th>
+        <th>{{ 'L' | escape }}</th>
+      </thead>
     <tbody>
-
       {% if product.metafields.sizechart.size_chart_dress.value.bust_xxs != blank
             or product.metafields.sizechart.size_chart_dress.value.bust_xs != blank
             or product.metafields.sizechart.size_chart_dress.value.bust_s != blank
@@ -52,21 +15,11 @@
             or product.metafields.sizechart.size_chart_dress.value.bust_l != blank %}
         <tr id="bust">
           <td class="label">{{ 'bust:' | escape | downcase }}</td>
-          {% if product.metafields.sizechart.size_chart_dress.value.bust_xxs != blank %}
             <td>{{ product.metafields.sizechart.size_chart_dress.value.bust_xxs }}</td>
-          {% endif %}
-          {% if product.metafields.sizechart.size_chart_dress.value.bust_xs != blank %}
             <td>{{ product.metafields.sizechart.size_chart_dress.value.bust_xs }}</td>
-          {% endif %}
-          {% if product.metafields.sizechart.size_chart_dress.value.bust_s != blank %}
             <td>{{ product.metafields.sizechart.size_chart_dress.value.bust_s }}</td>
-          {% endif %}
-          {% if product.metafields.sizechart.size_chart_dress.value.bust_m != blank %}
             <td>{{ product.metafields.sizechart.size_chart_dress.value.bust_m }}</td>
-          {% endif %}
-          {% if product.metafields.sizechart.size_chart_dress.value.bust_l != blank %}
             <td>{{ product.metafields.sizechart.size_chart_dress.value.bust_l }}</td>
-          {% endif %}
         </tr>
       {% endif %}
 
@@ -77,21 +30,11 @@
             or product.metafields.sizechart.size_chart_dress.value.waist_l != blank %}
         <tr id="waist">
           <td class="label">{{ 'waist:' | escape | downcase }}</td>
-          {% if product.metafields.sizechart.size_chart_dress.value.waist_xxs != blank %}
-            <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_xxs }}</td>
-          {% endif %}
-          {% if product.metafields.sizechart.size_chart_dress.value.waist_xs != blank %}
-            <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_xs }}</td>
-          {% endif %}
-          {% if product.metafields.sizechart.size_chart_dress.value.waist_s != blank %}
-            <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_s }}</td>
-          {% endif %}
-          {% if product.metafields.sizechart.size_chart_dress.value.waist_m != blank %}
-            <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_m }}</td>
-          {% endif %}
-          {% if product.metafields.sizechart.size_chart_dress.value.waist_l != blank %}
-            <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_l }}</td>
-          {% endif %}
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_xxs }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_xs }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_s }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_m }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.waist_l }}</td>
         </tr>
       {% endif %}
 
@@ -102,21 +45,11 @@
             or product.metafields.sizechart.size_chart_dress.value.hips_l != blank %}
         <tr id="hips">
           <td class="label">{{ 'hips:' | escape | downcase }}</td>
-          {% if product.metafields.sizechart.size_chart_dress.value.hips_xxs != blank %}
-            <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_xxs }}</td>
-          {% endif %}
-          {% if product.metafields.sizechart.size_chart_dress.value.hips_xs != blank %}
-            <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_xs }}</td>
-          {% endif %}
-          {% if product.metafields.sizechart.size_chart_dress.value.hips_s != blank %}
-            <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_s }}</td>
-          {% endif %}
-          {% if product.metafields.sizechart.size_chart_dress.value.hips_m != blank %}
-            <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_m }}</td>
-          {% endif %}
-          {% if product.metafields.sizechart.size_chart_dress.value.hips_l != blank %}
-            <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_l }}</td>
-          {% endif %}
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_xxs }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_xs }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_s }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_m }}</td>
+          <td>{{ product.metafields.sizechart.size_chart_dress.value.hips_l }}</td>
         </tr>
       {% endif %}
 
