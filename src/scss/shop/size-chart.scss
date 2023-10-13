@@ -38,7 +38,7 @@
         .label {
             text-align: left;
             display: block;
-            padding-right: 60px;
+            padding-right: 10px;
         }
 
         th {
@@ -46,7 +46,8 @@
             text-transform: uppercase;
             font-size: 14px;
             font-weight: normal;
-            width: 1.8rem;
+            min-width: 1.8rem;
+            padding: 0 4px;
         }
 
         th:first-of-type {
@@ -56,8 +57,9 @@
         td {
             text-align: center;
             font-size: 14px;
-            width: 1.8rem;
+            min-width: 1.8rem;
             vertical-align: middle;
+            padding: 0 4px;
         }
 
         th.legend,
