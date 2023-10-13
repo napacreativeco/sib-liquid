@@ -1,6 +1,7 @@
 <table class="size-chart-table size-chart-boots">
     <thead>
-      <th class="label">{{ 'size:' | escape }}</th>
+      <tr>
+        <th class="label">{{ 'size:' | escape }}</th>
         <th>{{ '39' | escape }}</th>
         <th>{{ '40' | escape }}</th>
         <th>{{ '41' | escape }}</th>
@@ -9,6 +10,7 @@
         <th>{{ '44' | escape }}</th>
         <th>{{ '45' | escape }}</th>
         <th>{{ '46' | escape }}</th>
+      </tr>
     </thead>
     <tbody>
       {% if product.metafields.sizechart.size_chart_boots.value.boot-39 != blank 

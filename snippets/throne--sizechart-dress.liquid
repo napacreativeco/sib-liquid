@@ -1,11 +1,13 @@
 <table class="size-chart-table size-chart-dress">
     <thead>
-        <th class="label">{{ 'size:' | escape | downcase }}</th>
-        <th>{{ 'XXS' | escape }}</th>
-        <th>{{ 'XS' | escape }}</th>
-        <th>{{ 'S' | escape }}</th>
-        <th>{{ 'M' | escape }}</th>
-        <th>{{ 'L' | escape }}</th>
+        <tr>
+          <th class="label">{{ 'size:' | escape | downcase }}</th>
+          <th>{{ 'XXS' | escape }}</th>
+          <th>{{ 'XS' | escape }}</th>
+          <th>{{ 'S' | escape }}</th>
+          <th>{{ 'M' | escape }}</th>
+          <th>{{ 'L' | escape }}</th>
+        </tr>
       </thead>
     <tbody>
       {% if product.metafields.sizechart.size_chart_dress.value.bust_xxs != blank
