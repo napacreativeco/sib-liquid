@@ -5,7 +5,7 @@
     "navbar_logo": "shopify:\/\/shop_images\/logo_1.svg",
     "navbar_logo_alt": "shopify:\/\/shop_images\/logo_1.svg",
     "cart_icon": "shopify:\/\/shop_images\/cart.gif",
-    "marquee_visible": true,
+    "marquee_visible": false,
     "marquee_background_color": "#000000",
     "marquee_text_color": "#404040",
     "marquee_speed": 22,
