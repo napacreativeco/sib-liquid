@@ -42,7 +42,7 @@
       <div class="hero-logo">
         {% if section.settings.hero_logo_large %}
           {% comment %}<img id="user-hero-logo" style="width: {{ section.settings.hero_logo_width | default: '' }}px;" src="{{ section.settings.hero_logo_large | image_url: section.settings.hero_logo_width }}" alt="{{ shop.name }}" />{% endcomment %}
-          <svg id="user-hero-logo" style="width: {{ section.settings.hero_logo_width | default: '200' }}px;" src="{{ section.settings.hero_logo_large | image_url: section.settings.hero_logo_width }}"></svg>
+          <svg id="user-hero-logo" style="width: {{ section.settings.hero_logo_width | default: '200' }}px;" src="{{ section.settings.hero_logo_large | image_url: width: section.settings.hero_logo_width }}"></svg>
         {% else %}
           <img id="default-hero-logo" src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" />
         {% endif %}
