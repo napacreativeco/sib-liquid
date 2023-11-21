@@ -1,7 +1,10 @@
 <ul class="hero-footer-links">
 {% for link in linklists.footer.links %}
     <li>
-        <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+        <a 
+          style="color: color !important;" 
+          href="{{ link.url }}" 
+          title="{{ link.title }}">{{ link.title }}</a>
     </li>
 {% endfor %}
 </ul>
