@@ -2,7 +2,7 @@
 {% for link in linklists.footer.links %}
     <li>
         <a 
-          style="color: color !important;" 
+          style="color: {{ color }} !important;" 
           href="{{ link.url }}" 
           title="{{ link.title }}">{{ link.title }}</a>
     </li>
