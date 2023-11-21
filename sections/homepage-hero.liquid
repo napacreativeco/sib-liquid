@@ -41,7 +41,7 @@
 
       <div class="hero-logo">
         {% if section.settings.hero_logo_large %}
-          <img style="filter: invert(1);" id="user-hero-logo" style="width: {{ section.settings.hero_logo_width | default: '' }}px;" src="{{ section.settings.hero_logo_large | image_url: section.settings.hero_logo_width }}" alt="{{ shop.name }}" />
+          <img {% if section.settings.invert_logo == true %} style="filter: invert(1);" {% endif %} id="user-hero-logo" style="width: {{ section.settings.hero_logo_width | default: '' }}px;" src="{{ section.settings.hero_logo_large | image_url: section.settings.hero_logo_width }}" alt="{{ shop.name }}" />
         {% else %}
           <img id="default-hero-logo" src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" />
         {% endif %}
@@ -169,6 +169,13 @@
         "id": "hero_text_color",
         "label": "Text Color",
         "info": "Adjust here once adding a new background image."
+      },
+      {
+        "type": "checkbox",
+        "id": "invert_logo",
+        "label": "Invert Logo",
+        "default": false,
+        "info": "Check the box to invert the logo color"
       },
       {
         "type": "image_picker",
