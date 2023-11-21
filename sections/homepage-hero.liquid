@@ -49,25 +49,30 @@
 
       <ul>
         <li>
-          <span class="scroll-to-link hero-link" data-component="shop-component">
+          <span style="color: {{ section.settings.hero_text_color }} !important;" class="scroll-to-link hero-link" data-component="shop-component">
             {{ 'Shop' | escape }}
           </span>
         </li>
         <li>
-          <span class="scroll-to-link hero-link"
+          <span 
+            style="color: {{ section.settings.hero_text_color }} !important;" 
+            class="scroll-to-link hero-link"
             onclick="setTimeout(function() { window.location='/pages/about'; }, 400)">
             {{ 'About' | escape }}
           </span>
         </li>
         <li>
           <span
+            style="color: {{ section.settings.hero_text_color }} !important;" 
             class="scroll-to-link hero-link"
             onclick="setTimeout(function() { window.location='/blogs/lookbook'; }, 400)">
             {{ 'Lookbook' | escape }}
           </span>
         </li>
         <li>
-          <span class="hero-link newsletter-opener">
+          <span 
+            style="color: {{ section.settings.hero_text_color }} !important;" 
+            class="hero-link newsletter-opener">
             {{ 'Newsletter' | escape }}
           </span>
         </li>
@@ -159,6 +164,12 @@
       "groups": ["header", "footer"]
     },
     "settings": [
+      {
+        "type": "color",
+        "id": "hero_text_color",
+        "label": "Text Color",
+        "info": "Adjust here once adding a new background image."
+      },
       {
         "type": "image_picker",
         "id": "hero_logo_large",
