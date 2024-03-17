@@ -3,11 +3,9 @@
     "hero": {
       "type": "homepage-hero",
       "settings": {
-        "hero_text_color": "#ffffff",
-        "invert_logo": true,
-        "hero_logo_large": "shopify:\/\/shop_images\/logo_1.svg",
-        "hero_background_desktop": "shopify:\/\/shop_images\/black.png",
-        "hero_background_mobile": "shopify:\/\/shop_images\/black.png"
+        "hero_text_color": "#000000",
+        "invert_logo": false,
+        "hero_logo_large": "shopify:\/\/shop_images\/logo_1.svg"
       }
     },
     "home_collection": {
