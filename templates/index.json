@@ -5,7 +5,9 @@
       "settings": {
         "hero_text_color": "#000000",
         "invert_logo": false,
-        "hero_logo_large": "shopify:\/\/shop_images\/logo_1.svg"
+        "hero_logo_large": "shopify:\/\/shop_images\/logo_1.svg",
+        "hero_background_desktop": "shopify:\/\/shop_images\/WHITEBACKGROUND.png",
+        "hero_background_mobile": "shopify:\/\/shop_images\/WHITEBACKGROUND.png"
       }
     },
     "home_collection": {
